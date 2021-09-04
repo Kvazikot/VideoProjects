@@ -1,5 +1,9 @@
 # Probabilitys of the "Terminator scenario".
 
+[video_id]: https://youtu.be/rcdyICwGFVA
+
+| [Видео с текстом][video_id] | [Скачать субтитры](https://downsub.com/?url=https://youtu.be/rcdyICwGFVA) |
+|---|---|
 
 ## [Таблица](https://www.tablesgenerator.com/markdown_tables#) клипов
 | n | URL | Название | Продолжительность | Эффект |
