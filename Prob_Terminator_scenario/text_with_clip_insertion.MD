@@ -1,7 +1,7 @@
 # Probabilitys of the "Terminator scenario".
-https://www.tablesgenerator.com/markdown_tables#
 
-## Таблица клипов
+
+## [Таблица](https://www.tablesgenerator.com/markdown_tables#) клипов
 | n | URL | Название | Продолжительность | Эффект |
 |---|---|---|---|---|
 | 1 | https://www.youtube.com/watch?v=u54IPWqF6no | John Wheeler - The Delayed Choice experiment | 00:20 | fade_in |
