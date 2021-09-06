@@ -20,8 +20,7 @@
 [nanobot]: https://youtu.be/YdjERhTczAs?t=43
 [big_bang1]: https://youtu.be/UcgV4OFRS-w?t=6
 [double_slit1]: https://youtu.be/ayvbKafw2g0?t=35
-[lukimson1]Страна Тартария и битвы диванных историков
-https://www.youtube.com/watch?v=LJw6bxc7dVg
+[lukimson1]https://www.youtube.com/watch?v=LJw6bxc7dVg
 
 | [Видео с текстом][video_id] | [Скачать субтитры](https://downsub.com/?url=https://youtu.be/jJDyYRg63Zc) |
 |---|---|
@@ -36,17 +35,18 @@ https://www.youtube.com/watch?v=LJw6bxc7dVg
 | 5 | [nanobot]                  | 00:00 | 00:15 | fade_in |
 | 6 | [big_bang1]                | 00:00 | 00:10 | fade_in |
 | 6 | [double_slit1]             | 00:00 | 00:10 | fade_in |
-
+| 6 | [lukimson1]                | 00:00 | 00:10 | fade_in |
 | 5 | [tartar_1]                 | 00:20 | 00:20 | fade_in |
 | 6 | [tartar_2]                 | 00:00 | 00:20 | zoom_in |
 ______________________________________________________
 
 ## Комментарии исходных видеоматериалов
 | n | URL | Время Начало | Время конец | Комментарии |
+|---|---|---|---|---|
 | 1 |[Великая Тартария. Нас обманывают. Официальную историю опровергают карты][tartar_1] | 00:01 | 00:03 | НАйти карту Тартарии из этого фрагмента |
 | 2 |[Evidence of The Vast Empire of Tartaria & Exceptional Old World Architecture - Relaxation. Part 1][tartar_2] | 00:01 | 00:03 | НАйти карту Тартарии из этого фрагмента |
-| 3 |[Страна Тартария и битвы диванных историков][lukimson1]| 00:01 | 00:03 | Вырезать фрагмент из этого видео про изобретение телефонов в СССР и критику тартарии в целом |
-|---|---|---|---|---|
+| 3 |[Страна Тартария и битвы диванных историков][lukimson1] | 00:01 | 00:03 | Вырезать фрагмент из этого видео про изобретение телефонов в СССР и критику тартарии в целом |
+
 
 
 # 3д эффекты и сцены. 3д куб на фоне изображения черной дыры.
