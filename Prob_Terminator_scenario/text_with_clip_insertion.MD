@@ -14,7 +14,7 @@
 [nanobot]: https://youtu.be/YdjERhTczAs?t=43
 [big_bang1]: https://youtu.be/UcgV4OFRS-w?t=6
 [double_slit1]: https://youtu.be/ayvbKafw2g0?t=35
-[lukimson1]https://www.youtube.com/watch?v=LJw6bxc7dVg
+[lukimson1]: https://www.youtube.com/watch?v=LJw6bxc7dVg
 
 | [Видео с текстом][video_id] | [Скачать субтитры](https://downsub.com/?url=https://youtu.be/jJDyYRg63Zc) |
 |---|---|
