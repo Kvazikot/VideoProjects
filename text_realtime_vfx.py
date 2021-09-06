@@ -11,12 +11,14 @@ try:
     from pyshaders import from_files_names, ShaderCompilationError 
     import pyglet
     import time
+    import random
     import numpy as np
     import ctypes
     from pyglet import image
     from pyglet.window import key
     import pyglet.gl as gl
     from pyglet.gl import *
+    import pyrr
     from pyrr import Matrix44 as matrix, Vector3 as vector, Quaternion as quaternion
 
 except ImportError:
@@ -34,57 +36,47 @@ except ImportError:
     import pyshaders
     
     
-frag = """
-#version 400 core
+f = open("base_frag.glsl.c")
+frag = f.read()
 
-out vec4 color_frag;
 
-uniform sampler2D Background;
-varying vec2 v_texcoord;
-varying vec2 uv;
-uniform vec3 color = vec3(1.0, 1.0, 1.0);
+f = open("base_vert.glsl.c")
+vert = f.read()
 
-void main()
-{
-  float y = v_texcoord.y;
-  float x = clamp(v_texcoord.x, 0.2, 0.3);
-  vec2 c = vec2(1, 1);
-  float d = 1.0 - distance(c, vec2(x, y));
-  float thick = 0.1;
-  if( d > 0.3 && d < 0.3 + thick)
-     color_frag = vec4(0, 0, 0, 1.0);
-  else
-     color_frag = vec4(1, 1, 1, 1.0);
-  color_frag = texture2D(Background, uv);
-  //d = clamp(d, 0.0, 0.2);
-  //color_frag = vec4(d, d, d, 1.0);
-}
-"""
 
-vert = """
-#version 400 core
-uniform vec2 TexelSize = vec2(1.0, 1.0);
-uniform mat4 uMVMatrix = mat4( 1, 5, 9, 2,
-                               2, 6, 10, 2,
-                               2, 6, 10, 2,
-                               3, 7, 11, 2);
-layout(location = 0)in vec2 vert;
-varying vec2 v_texcoord;
-varying vec2 uv;
 
-void main()
-{
-  gl_Position = vec4(vec3(vert, 0) , 1) * uMVMatrix;
-  // Pass texture coordinate to fragment shader
-  // Value will be automatically interpolated to fragments inside polygon faces
-  v_texcoord = vert.xy + vec2(1, 1); 
-  float aspect = TexelSize.y / TexelSize.x;
-  uv = vert.xy;
- //vec3(gl_MultiTexCoord0 - 0.5) * 1.0;
+def test_matrix1():    
+    angles = pyrr.euler.create(roll=0.0, pitch=0.0, yaw=50.0, dtype=None)
+    model = pyrr.matrix44.create_from_eulers(angles)
+    #model = pyrr.matrix44.create_from_matrix33(model)
+    #print(f"model=\n{model}")
+    model = pyrr.Matrix44.identity()
+    model[0,2] = 0.5 # translate x
+    model[1,2] = 0 # translate z
+    model[2,2] = 0
+    model = model.transpose()
+    #print(f"model=\n{model}")
+    proj = pyrr.matrix44.create_perspective_projection(45, 1, 1, 1000) #create_orthogonal_projection(0,1,1,0,0,1000)
+    view = pyrr.matrix44.create_look_at(np.array([0,15,0]), 
+                                        np.array([0,0,0]), 
+                                        np.array([1,0,0]))
+     
+    # set modelview matrix 2 variants
+    #1. https://docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.transform.Rotation.html
+    #2. https://pyrr.readthedocs.io/en/latest/api_matrix.html
+    mvp =  model * proj *  view
 
-}
-"""
+    A = np.array([0,0,0,1])
+    #print(f"A={A}")
+    A = A @ mvp
+    #print(f"A'' = {A}")
     
+    B = np.array([1,0,1,1]) * 0.5
+    #print(f"B={B}")
+    B = B @ mvp
+    B = (B[0],B[2],B[1])
+    #print(f"B'' = {B}")    
+    return mvp    
 # Window creation
 window = pyglet.window.Window(visible=True, width=1280, height=720, resizable=True)
 
@@ -100,7 +92,7 @@ except ShaderCompilationError as e:
 shader.use()
 #Triangle creation
 quads = pyglet.graphics.vertex_list(4,
-    ('v2f', (0, 0, 1, 0, 1, 1, 0, 1)),
+    ('v2f', (-1, -1, 1, -1, 1, 1, -1, 1)),
 )
 
 pngfile = f"D:\\projects\\VideoProjects\\Prob_Terminator_scenario\\text.png"
@@ -139,14 +131,15 @@ def on_draw():
     loc =glGetUniformLocation(shader.pid, "TexelSize".encode('utf-8'))
     glUniform2f(loc, TexelSize[0], TexelSize[1])
     
-    # set modelview matrix
-    modelmtx = matrix.from_scale([2, 2, 2]) * matrix.from_translation([0.5, 0.5, 0])
-    loc2 = glGetUniformLocation(shader.pid, "uMVMatrix".encode('utf-8'))
-    #app = lambda y: [np.float(i) for i in modelmtx]
-    app = np.array([1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1])
-    print(len(app))
+   
     # модельная матрица
-    glUniformMatrix4fv(loc2, 1, GL_FALSE, get_data(modelmtx) )
+    loc2 = glGetUniformLocation(shader.pid, "mvp".encode('utf-8'))
+    mvp = test_matrix1()
+    glUniformMatrix4fv(loc2, 1, GL_FALSE, get_data(mvp) )
+    loc3 = glGetUniformLocation(shader.pid, "params".encode('utf-8'))
+    params = test_matrix1()
+    params[0,0] = random.randint(1,1000)
+    glUniformMatrix4fv(loc3, 1, GL_FALSE, get_data(params) )
     #print(shader.uniforms)
     quads.draw(GL_QUADS)
 
@@ -166,5 +159,11 @@ def on_key_press(symbol, modifiers):
     if symbol in color_map.keys():
         shader.uniforms.color = color_map[symbol]
 
+def update(dt):
+    # ...
+    on_draw()
+    
+test_matrix1()
+pyglet.clock.schedule_interval(update, 0.1)
 pyglet.app.run()
 
