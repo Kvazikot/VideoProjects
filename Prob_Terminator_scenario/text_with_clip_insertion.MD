@@ -1,10 +1,4 @@
 # Probabilitys of the "Terminator scenario".
-## Текущие Вопросы 
-- [x] How to script video editing in After Effects?
-- [x] How to script video editing in MAGIX?
-- [ ] What scripting language is used in After Effects?
-- [ ] Где взять видео о тартарии из [источника][tartar_1]
-
 
 [video_id]: https://youtu.be/jJDyYRg63Zc
 [tartar_1]: https://youtu.be/V53f9SuV_Hs?t=115
@@ -196,3 +190,4 @@ Kvazikot
 17. Bit by Bit An Illustrated History of Computers by Stan Augarten 
 18. Dawn of the New Everything Encounters with Reality and Virtual Reality by Jaron Lanier 
 19. Античность. Символизм. Технетика by Кудрин Б.И. 
+
