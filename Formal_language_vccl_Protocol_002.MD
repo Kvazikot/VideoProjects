@@ -11,7 +11,7 @@ Sorces i.e. urls of the videos is defined in the head of the document before the
 # 3 Levels of security. Sybtatic freedom. Allowed Tokens
 
 allowed_python_tokens:= for range while lambda map list set str
-
+[maninblack1]: "Memory eraser from the man in black movie scene" 
 # Hard-coded Rules
 ```
 :vsrc 
@@ -19,6 +19,7 @@ allowed_python_tokens:= for range while lambda map list set str
 :eol. 
 ```
 
+Tag src defines urls or file paths. 
 ```
 <00:00:50><src wheeler_1><vfx zoom, fade_out(time_sec=0.2),para_text(color=#00FF0022)> <br>
 In John Wheeler's famous double slit thought experiment ...
@@ -37,6 +38,10 @@ Now I'm not talking about a literal scenario when naked terminators leave the ti
 ```
 
 # Machine Fredom Rules (MFR)
+Tag src that defines urls in MFR can be defined more broadly 
+as: 
+```
+[maninblack1]: "Memory eraser from the man in black movie scene" 
 ```
 MFR is used when you dont know exact future context of 
 the paragraph or basicaly dont want to define keywords.
@@ -46,7 +51,7 @@ Let the machine do the boring job.
 keywords are marked with * * is used in ML algorithm 
 for more precise defining the context (italic in markdown rendered page)
 
-
+```
 :free
 No exact date is known when *Wheeler* came up with the idea 
 for the quantum eraser experiment. 
