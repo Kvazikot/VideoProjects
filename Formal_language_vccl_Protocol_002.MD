@@ -40,9 +40,12 @@ Now I'm not talking about a literal scenario when naked terminators leave the ti
 ```
 MFR is used when you dont know exact future context of 
 the paragraph or basicaly dont want to define keywords.
-Let the machine do the dirty work :)
+It allows to use code-generator like Codex for example trained on vccl rules 
+to generate hard-coded version of the script including neccesary security levels 
+Let the machine do the boring job. 
 keywords are marked with * * is used in ML algorithm 
 for more precise defining the context (italic in markdown rendered page)
+
 
 :free
 No exact date is known when *Wheeler* came up with the idea 
