@@ -26,29 +26,29 @@ In John Wheeler's famous double slit thought experiment ...
 
 ```
 <00:00:50><list=particles img1,img2,img3><list(map(trace(lambda x: x*2), range(3)))><stack hstack><vfx slideshow> 
-<br>In John Wheeler's famous double slit thought experiment ...
+In John Wheeler's famous double slit thought experiment ...
 ```
 
 
 ```
 <00:01:06> <src wheeler_1,terminator_nude,nanobot,big_bang1> No exact date is known 
-<br>when Wheeler came up with the idea for the quantum eraser experiment. 
-<br>Now I'm not talking about a literal scenario when naked terminators leave the time machine.
+when Wheeler came up with the idea for the quantum eraser experiment. 
+Now I'm not talking about a literal scenario when naked terminators leave the time machine.
 ```
 
 # Machine Fredom Rules (MFR)
 ```
-<br>MFR is used when you dont know exact future context of 
-<br>the paragraph or basicaly dont want to define keywords.
+MFR is used when you dont know exact future context of 
+the paragraph or basicaly dont want to define keywords.
 Let the machine do the dirty work :)
 keywords are marked with * * is used in ML algorithm 
-<br>for more precise defining the context (italic in markdown rendered page)
+for more precise defining the context (italic in markdown rendered page)
 
 :free
 No exact date is known when *Wheeler* came up with the idea 
-<br>for the quantum eraser experiment. 
-<br>Now I'm not talking about a literal scenario when 
-<br>naked terminators leave the time machine.
+for the quantum eraser experiment. 
+Now I'm not talking about a literal scenario when 
+naked terminators leave the time machine.
 :eol.
 ```
 
