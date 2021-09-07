@@ -61,7 +61,7 @@ In John Wheeler's famous double slit thought experiment ...
 ```
 
 ```
-<00:00:50><list=particles img1,img2,img3><list(map(trace(lambda x: x*2), range(3)))><stack hstack><vfx slideshow> 
+<00:00:50><list img1,img2,img3><list(map(trace(lambda x: x*2), range(3)))><stack hstack><vfx slideshow> 
 In John Wheeler's famous double slit thought experiment ...
 ```
 
