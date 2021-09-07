@@ -9,7 +9,7 @@ Document creation date: 02 September 2021
 * Occam's principle. The programmer works with the text or description of the desired content, and not with the timeline GUI of video editing software and its oddities
 * Completely standalone software script for editing different video options is possible for different categories of people or contexts.
 * High density of information packing typical for Discovery, PBS Nova and other reference scientific channels.
-* Content is similar to what the futurist Issak Arthur does, but with the addition of an alternate story
+* Content is similar to what the futurist Issac Arthur does, but with the addition of an alternate history
 * Inserts on 3D scenes from different sf films are welcomed. You can bypass the automatic copyright checker using the Rubik's cube effect or other geometric distortions. See [QuasiCode] for video translation into asci codes (https://github.com/Kvazikot/QuasiCode/blob/master/QuasiCode_EncoderDoc.MD)
 * In the future, of course, you need to create your own 3D scenes, but because of their high cost, you can use YouTube content to promote the channel
 * Change voice. My voice sounds closer to nerd than Herodotus.
