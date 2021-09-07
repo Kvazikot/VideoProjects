@@ -8,7 +8,9 @@ using System;
 using System.IO;
  
 public class Client : MonoBehaviour {
- 
+    public int port = 8000;
+    string host = "127.0.0.1";
+
     public string clientName;
     private bool socketReady;
     public static string response;
@@ -25,6 +27,7 @@ public class Client : MonoBehaviour {
     void Start () {
  
         DontDestroyOnLoad(gameObject); //don't destroy the client when moving on to the next scene
+        ConnectToServer(host, port);
     }
    
     // Update is called once per frame

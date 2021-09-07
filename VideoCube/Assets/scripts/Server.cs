@@ -12,7 +12,7 @@ using System.IO;
 public class Server : MonoBehaviour {
    
     public int port = 8000;
-    string host = "";
+    string host = "127.0.0.1";
  
     static List<ServerClient> clients;
     static List<ServerClient> disconnectList;
@@ -56,15 +56,16 @@ public class Server : MonoBehaviour {
     // Use this for initialization
     void Start () {
  
-        //try
-        //{
-        //    //start server
-        //    CreateServer();
-        //}
-        //catch (Exception ex)
-        //{
-        //    Debug.Log("Error when creating the server " + ex.Message);
-        //}
+        try
+        {
+            Init();
+            //start server
+            CreateServer();
+        }
+        catch (Exception ex)
+        {
+            Debug.Log("Error when creating the server " + ex.Message);
+        }
     }
    
     // Update is called once per frame
@@ -127,7 +128,7 @@ public class Server : MonoBehaviour {
             Debug.Log("Setting up the server...");
            
             //bind socket
-            serverSocket.Bind(new IPEndPoint(IPAddress.Any, port));
+            serverSocket.Bind(new IPEndPoint(IPAddress.Loopback, port));
             Debug.Log("socket bound");
  
             //start listening
