@@ -19,7 +19,7 @@
 | [Видео с текстом][video_id] | [Скачать субтитры](https://downsub.com/?url=https://youtu.be/jJDyYRg63Zc) |
 |---|---|
 
-## Монтажная [таблица](https://www.tablesgenerator.com/markdown_tables#) эффектов
+## Монтажная таблица эффектов
 | n | URL | Начало | Продолжительность | Эффект |
 |---|---|---|---|---|
 | 1 | [John Wheeler - The Delayed Choice experiment][wheeler_1] |  | 00:20 | 00:20 | fade_in |
