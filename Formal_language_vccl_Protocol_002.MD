@@ -7,6 +7,7 @@ Document creation date: 02 September 2021
 * See [document](https://github.com/Kvazikot/VideoProjects/blob/master/Video_content_creation_Protocol_001_eng.MD) describing software stack that need to be develop
 * The Heisenberg Uncertainty Principle works in our favor when you want to change human history by changing just one byte of your video content description
 * Provide the ability to schedule a convenient time for creative work, leaving the entire routine to the machine.
+* Probably we cant teach AI to some not trivial level of estetics by providing feeed back in the form of likes on video with automated content creation
 
 The language vccl is a form of [Embedded Generalized Markup Language](https://ru.wikipedia.org/wiki/Generalized_Markup_Language)
 
