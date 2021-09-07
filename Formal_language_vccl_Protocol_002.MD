@@ -11,7 +11,7 @@ Sorces i.e. urls of the videos is defined in the head of the document before the
 # 3 Levels of security. Sybtatic freedom. Allowed Tokens
 
 allowed_python_tokens:= for range while lambda map list set str
-[maninblack1]: "Memory eraser from the man in black movie scene" 
+
 # Hard-coded Rules
 ```
 :vsrc 
