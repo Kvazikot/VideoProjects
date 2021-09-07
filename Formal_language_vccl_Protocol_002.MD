@@ -67,7 +67,7 @@ In John Wheeler's famous double slit thought experiment ...
 
 
 ```
-<00:01:06> <src wheeler_1,terminator_nude,nanobot,big_bang1> No exact date is known 
+<00:01:06> <src wheeler_1,terminator_nude,nanobot,big_bang1><vfx videocube,para_text> No exact date is known 
 when Wheeler came up with the idea for the quantum eraser experiment. 
 Now I'm not talking about a literal scenario when naked terminators leave the time machine.
 This is done for the fun of the audience, as well as the batteries in the "matrix", because Hollywood films are designed for a mass audience. I am talking about the possibilities offered by quantum theory to erase information in the future, to influence the past no matter how distant. Delta t could be 5 milliseconds to detect a cancer cell, or it could be the age at which the universe was born.
