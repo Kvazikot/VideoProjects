@@ -1,12 +1,18 @@
-Протокол #002 описывающий <br>
-"vccl - Формальный язык построения видеоконтента на основе текстового описания" <br>
+Protocol #002 describes <br>
+"vccl - Video content creation language <br>
 Баранов Владимир vsbaranov83@gmail.com <br>
-Дата создания документа: 02 сентября 2021 года
+Date of first release: 02 september 2021 
 
-Язык описания видеоконтента vccl является формой [Embedded Generalized Markup Language](https://ru.wikipedia.org/wiki/Generalized_Markup_Language)
+The language vccl is a form of [Embedded Generalized Markup Language](https://ru.wikipedia.org/wiki/Generalized_Markup_Language)
 
-# Теги используемые в языке описания видеоконтента
-Источники определяются вначале документа используя невидимые для MarkDown теги <br>
+# Special tags for embed vccl into a naration text of the video
+Sorces i.e. urls of the videos is defined in the head of the document before the main text and use MarkDown bracket tags <br>
+
+# 3 Levels of security. Sybtatic freedom. Allowed Tokens
+
+allowed_python_tokens:= for range while lambda map list set str
+
+# Hard-coded Rules
 ```
 :vsrc 
 [label]: [http://video-hosting/video-id] 
@@ -14,33 +20,40 @@
 ```
 
 ```
-<00:00:50><src wheeler_1><vfx zoom, fade_out(time_sec=0.2),para_text(color=#00FF0022)> В известном мысленном эксперименте Джона Уиллера с двумя щелями...
+<00:00:50><src wheeler_1><vfx zoom, fade_out(time_sec=0.2),para_text(color=#00FF0022)> <br>
+In John Wheeler's famous double slit thought experiment ...
 ```
 
 ```
-<00:00:50><list=particles img1,img2,img3><list(map(trace(lambda x: x*2), range(3)))><stack hstack><vfx slideshow> В известном мысленном эксперименте Джона Уиллера с двумя щелями...
+<00:00:50><list=particles img1,img2,img3><list(map(trace(lambda x: x*2), range(3)))><stack hstack><vfx slideshow> 
+<br>In John Wheeler's famous double slit thought experiment ...
 ```
 
 
 ```
-<00:01:06> <src wheeler_1,terminator_nude,nanobot,big_bang1> Неизвестна точная дата когда Уилеру пришла идея эксперимента с квантовым ластиком. Я сейчас не говорю о буквальном сценарии когда из машины времени выходят голые терминаторы. 
+<00:01:06> <src wheeler_1,terminator_nude,nanobot,big_bang1> No exact date is known 
+<br>when Wheeler came up with the idea for the quantum eraser experiment. 
+<br>Now I'm not talking about a literal scenario when naked terminators leave the time machine.
 ```
 
-
-# Опишем язык на примере одного моего текста
-
-Текст ролика. О вероятности реализации сценария аля "Терминатор".
-Kvazikot июль 2021
-
+# Machine Fredom Rules (MFR)
 ```
-<00:00:50> <e fade_out,para_text> В известном мысленном эксперименте Джона Уиллера с двумя щелями и отложенном выборе был предложена[1] проверка гипотезы о том что прошлое можно изменить стирая информацию о наблюдении в будущем.
+<br>MFR is used when you dont know exact future context of 
+<br>the paragraph or basicaly dont want to define keywords.
+Let the machine do the dirty work :)
+keywords are marked with * * is used in ML algorithm 
+<br>for more precise defining the context (italic in markdown rendered page)
+
+:free
+No exact date is known when *Wheeler* came up with the idea 
+<br>for the quantum eraser experiment. 
+<br>Now I'm not talking about a literal scenario when 
+<br>naked terminators leave the time machine.
+:eol.
 ```
 
+# Pauses
+You can define pauses beetween chunks of narrated text as:
+```
 [pause][10-20 sec]
-
-<00:01:06> <v wheeler_1,terminator_nude,nanobot,big_bang1> <e 3d_cube,fade_in,para_text> Неизвестна точная дата когда Уилеру пришла идея эксперимента с квантовым ластиком. Я сейчас не говорю о буквальном сценарии когда из машины времени выходят голые терминаторы. Это сделано ради потехи публики как и батарейки в "матрице", ведь голивудские фильмы расчитанны на массового зрителя. Я говорю о возможности предоставляемые квантовой теорией по стиранию информации в будущем, чтобы влиять на прошлое не имеет значения насколько отдаленное. Дельта t может быть 5 миллисекунд для обнаружения раковой клетки, а может быть возраст рождения вселенной.
-
-[pause][10-20 sec]
-
-<00:02:35> Что известно точно это то что реализовать эксперимент с отложенным выбором удалось только в восьмидесятых 1984. At the University of Maryland, Carroll Alley, Oleg Jakubowicz, and William Wickes—on a laboratory bench. Странное совпадение - фильм Терминатор вшел в 1984 году.
- 
+```
