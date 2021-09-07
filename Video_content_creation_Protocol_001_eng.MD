@@ -6,7 +6,7 @@ Document creation date: 02 September 2021
 
 * All software should be developed taking into account its use in realtime streams.
 * All software should be reused in different contexts and different episodes of a futuristic science podcast.
-* Occam's principle. The programmer works with the text or description of the desired content, and not with the timeline and its oddities
+* Occam's principle. The programmer works with the text or description of the desired content, and not with the timeline GUI of video editing software and its oddities
 * Completely standalone software script for editing different video options is possible for different categories of people or contexts.
 * High density of information packing typical for Discovery, PBS Nova and other reference scientific channels.
 * Content is similar to what the futurist Issak Arthur does, but with the addition of an alternate story
