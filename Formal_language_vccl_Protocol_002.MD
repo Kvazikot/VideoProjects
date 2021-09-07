@@ -13,7 +13,10 @@ The language vccl is a form of [Embedded Generalized Markup Language](https://ru
 # Special tags for embed vccl into a naration text of the video
 Sorces i.e. urls of the videos is defined in the head of the document before the main text and use MarkDown bracket tags <br>
 
-# 3 Levels of security. Sybtatic freedom. Allowed Tokens
+# 3 Levels of security. Syntatic freedom. Allowed Tokens
+If we assume to embed some python syntax into the vccl we need to narrow the scope of possible programs
+We can define map of allowed functions or modules involved only in building video content(3d rendering, vfx, borowing video from youtube) 
+or more general tokens. 
 
 allowed_python_tokens:= for range while lambda map list set str
 
