@@ -28,7 +28,7 @@ as:
 [maninblack1]: "Memory eraser from the man in black movie scene" 
 ```
 MFR is used when you dont know exact future context of 
-the paragraph or basicaly dont want to define keywords.
+the paragraph or basicaly dont want to define detailed rules i.e. functions with fixed parametres.
 It allows to use code-generator like Codex for example trained on vccl rules 
 to generate hard-coded version of the script including neccesary security levels 
 Let the machine do the boring job. 
