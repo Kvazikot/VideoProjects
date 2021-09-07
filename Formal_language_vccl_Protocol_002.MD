@@ -1,7 +1,11 @@
 Protocol #002 describes <br>
 "vccl - Video content creation language <br>
-Баранов Владимир vsbaranov83@gmail.com <br>
-Date of first release: 02 september 2021 
+Baranov Vladimir vsbaranov83@gmail.com <br>
+Document creation date: 02 September 2021
+
+* Formal language for constructing video content based on text, taking into account the capabilities of Codex systems (GPT-3)
+* The Heisenberg Uncertainty Principle works in our favor when you want to change human history by changing just one byte of your video content description
+* Provide the ability to schedule a convenient time for creative work, leaving the entire routine to the machine.
 
 The language vccl is a form of [Embedded Generalized Markup Language](https://ru.wikipedia.org/wiki/Generalized_Markup_Language)
 

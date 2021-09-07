@@ -196,7 +196,13 @@ public class Server : MonoBehaviour {
                             ReadCallback, socket);
        
     }
- 
+
+    void ParsePacketFromClient(byte[] data, int bytesRead)
+    {
+        //store the data received
+        content = Encoding.ASCII.GetString(data);
+    }
+
     void ReadCallback(IAsyncResult ar)
     {
  
@@ -229,7 +235,9 @@ public class Server : MonoBehaviour {
         client.tcpSocket.BeginReceive(serverBuffer, 0, serverBuffer.Length, 0,
                                       new AsyncCallback(ReadCallback), client.tcpSocket);
         /////////////////
- 
+
+        ParsePacketFromClient(data, bytesRead);
+
         //store the data received
         content = Encoding.ASCII.GetString(serverBuffer);
  
