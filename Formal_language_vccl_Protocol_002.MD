@@ -4,6 +4,7 @@ Baranov Vladimir vsbaranov83@gmail.com <br>
 Document creation date: 02 September 2021
 
 * Formal language for constructing video content based on text, taking into account the capabilities of Codex systems (GPT-3)
+* See [document](https://github.com/Kvazikot/VideoProjects/blob/master/Video_content_creation_Protocol_001_eng.MD) describing software stack that need to be develope
 * The Heisenberg Uncertainty Principle works in our favor when you want to change human history by changing just one byte of your video content description
 * Provide the ability to schedule a convenient time for creative work, leaving the entire routine to the machine.
 
