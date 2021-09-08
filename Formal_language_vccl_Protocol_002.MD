@@ -8,6 +8,7 @@ Document creation date: 02 September 2021
 * The Heisenberg Uncertainty Principle works in our favor when you want to change human history by changing just one byte of your video content description
 * Provide the ability to schedule a convenient time for creative work, leaving the entire routine to the machine.
 * Probably we cant teach AI to some not trivial level of estetics by providing feeed back in the form of likes on video with automated content creation
+* Hard-coded rules at the lowest level may include chunks of shader code with several control parametres (uniforms)
 
 The language vccl is a form of [Embedded Generalized Markup Language](https://ru.wikipedia.org/wiki/Generalized_Markup_Language)
 
