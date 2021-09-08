@@ -13,17 +13,6 @@ Document creation date: 02 September 2021
 
 The language vccl is a form of [Embedded Generalized Markup Language](https://ru.wikipedia.org/wiki/Generalized_Markup_Language)
 
-# Special tags for embed vccl into a naration text of the video
-Sorces i.e. urls of the videos is defined in the head of the document before the main text and use MarkDown bracket tags <br>
-
-# 3 Levels of security. Syntatic freedom. Allowed Tokens
-If we assume to embed some python syntax into the vccl we need to narrow the scope of possible programs
-We can define map of allowed functions or modules involved only in building video content(3d rendering, vfx, borowing video from youtube) 
-or more general tokens. 
-
-allowed_python_tokens:= for range while lambda map list set str
-
-
 # Machine Fredom Rules (MFR)
 Tag src that defines urls in MFR can be defined more broadly 
 as: 
@@ -85,6 +74,16 @@ This is done for the fun of the audience, as well as the batteries in the "matri
 [pause] [10-20 sec]
 ```
 
+
+# Special tags for embed vccl into a naration text of the video
+Sorces i.e. urls of the videos is defined in the head of the document before the main text and use MarkDown bracket tags <br>
+
+# 3 Levels of security. Syntatic freedom. Allowed Tokens
+If we assume to embed some python syntax into the vccl we need to narrow the scope of possible programs
+We can define map of allowed functions or modules involved only in building video content(3d rendering, vfx, borowing video from youtube) 
+or more general tokens. 
+
+allowed_python_tokens:= for range while lambda map list set str
 
 
 
