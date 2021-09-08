@@ -71,18 +71,18 @@ public class vccp : MonoBehaviour {
         {
             
 
-            string fileName = "d:\\projects\\VideoProjects\\examples\\PyEngine3D-master\\Resource\\Externals\\Textures\\sponza\\background.png";
-			if ( File.Exists(fileName) )
-				pixels1 = File.ReadAllBytes(fileName);
-			else
-				return;			
+            // string fileName = "d:\\projects\\VideoProjects\\examples\\PyEngine3D-master\\Resource\\Externals\\Textures\\sponza\\background.png";
+			// if ( File.Exists(fileName) )
+				// pixels1 = File.ReadAllBytes(fileName);
+			// else
+				// return;			
+            //ImageConversion.LoadImage(texture, pixels1); 
 			Texture2D texture = new Texture2D(packet.width, packet.height, packet.format, false);
-            ImageConversion.LoadImage(texture, pixels1); 
 			Debug.Log($"texture format {texture.format}");
 			Color32[] pixels2 = new Color32[texture.width * texture.height];
 			SetCheckBoardPattern(ref pixels2, texture.width, texture.height);
 			texture.SetPixels32(pixels2);
-			texture.Apply();
+			texture.Apply(false);
             GetComponent<Renderer>().material.mainTexture = texture;
             createdTexures.Add(texture);
             Debug.Log($"Texture created {texture.GetNativeTexturePtr().ToInt32()}");
@@ -91,20 +91,24 @@ public class vccp : MonoBehaviour {
 
     void SetCheckBoardPattern(ref Color32[] colors, int width, int height)
     {
-        Color32 color = new Color32();
+        Color32 color1 = new Color32(255,0,0,1);
+		Color32 color2 = new Color32(0,255,0,1);
 		
 		int num_cells = 20;
 		int cell_size = width / num_cells;
-        
+	    bool bWhite = true;        
         for (int j = 0; j < height; j++)
 		{
+            if ((j % cell_size) == 0)
+               bWhite = !bWhite;
             for (int i = 0; i < width; i++)
             {
-                if ((j % cell_size) == 0 || (i % cell_size) == 0)
-                    color = new Color32(0, 0, 0, 0);
-                else
-                    color = new Color32(0, 255, 0, 255);
-                colors[j * width + i] = color;
+                if ((i % cell_size) == 0)
+                    bWhite = !bWhite;
+				if( bWhite )
+					colors[j * width + i] = color1;
+				else
+					colors[j * width + i] = color2;
             }
 		}
     }
