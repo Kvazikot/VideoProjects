@@ -41,6 +41,7 @@ You can define pauses beetween chunks of narrated text as:
 ```
 [pause][10-20 sec]
 ```
+Pauses ca be filled with any random stuff related to the topic.
 
 # Hard-coded Rules
 ```
