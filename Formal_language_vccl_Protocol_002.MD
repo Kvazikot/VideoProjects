@@ -28,7 +28,7 @@ keywords are marked with * * is used in ML algorithm
 for more precise defining the context (italic in markdown rendered page)
 
 ```
-:free
+:fly_bird_fly_tag
 No exact date is known when *Wheeler* came up with the idea 
 for the quantum eraser experiment. 
 Now I'm not talking about a literal scenario when 
