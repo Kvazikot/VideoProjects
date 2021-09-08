@@ -1,6 +1,6 @@
 Protocol #002 describes <br>
 "vccl - Video content creation language <br>
-Baranov Vladimir vsbaranov83@gmail.com <br>
+Vladimir Baranov vsbaranov83@gmail.com <br>
 Document creation date: 02 September 2021
 
 * Formal language for constructing video content based on text, taking into account the capabilities of Codex systems (GPT-3)
