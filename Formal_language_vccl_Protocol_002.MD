@@ -82,7 +82,7 @@ This is done for the fun of the audience, as well as the batteries in the "matri
 
 [pause] [10-20 sec]
 ```
-<00:04:05> The idea behind dapra is to develop hypothetical designs, but there are no laws of physics that would prohibit the development of a modem to receive "news" from the future. On the basis of which any war can be won, because retrocausal feedbacks automatically lead to the desired scenario of the future. Once, Ray Krzweil once mentioned that the Soviet Union was collapsed thanks to information technology. Speaking of Kurzweil, it is necessary to note the rather strange accuracy of his predictions, which also confirms the weight of the hypothesis about a modem from the future.
+<00:04:05> The idea behind dapra is to develop hypothetical designs, but there are no laws of physics that would prohibit the development of a modem to receive "news" from the future. On the basis of which any war can be won, because retrocausal feedbacks automatically lead to the desired scenario of the future. Once, Ray Krzweil once mentioned that the Soviet Union was collapsed thanks to information technology. Speaking of Kurzweil, it is necessary to note the rather strange accuracy of his predictions, which also confirms the weight of the hypothesis about a modem from the future. Michio Kaku ones said "I know that, with our technology, we can always win wars. But to win the peace, we have to win the hearts and minds of the people, which we failed to do in Afganistan."
 
 By the way, speaking about information from the future, it can be noted that this is a way to speed up the calculations. After all, we feed the Turing machine its future results [5].
 
@@ -102,4 +102,52 @@ For technologists, such thought experiments can be helpful. You can figure out h
 
 Resistance efforts are also useful to focus on finding archival documentation of any prototypes of old communication devices or wearable computers. You can dig further and look through archival books, for example, on the creation of musical instruments such as a barrel organ [8] in which the very idea of ​​the program and the computation is hardcoded. It is important to pay attention to the correct dating of the found materials and the search for copies.
 
+Mini time capsule
 
+A mini-time capsule with any content, such as paper, can be made from a plastic bottle. Plastic has been around for over 500 years. Pack paper with a document or a message for the future in polyethylene. Thus. A flexible plastic bag is placed in a plastic bottle. Fold the paper from the notebook into a box in strips and gradually lower it into the bottle. The stripes will fill the space of the bottle. Optional: Make origami in the form of a frog, fish or boat. Leave room for stones. Throw the bottle into the sea, ocean, or any nearby pond. If such a capsule does not contain metal and if it is hammered with stones, then such a thing can lie at the bottom for a long time. The Terminators will not find her and will not be able to change the past.
+
+Because biological evolution does not have a vector of development, and technoevolution may well have if we ourselves want it. That is, we are not interested in control in our current state, but the civilization of the future, perhaps even an alien one. Other scientists from the field of AI and computer science in general admit the possibilities of implementing the Terminator script, read [6] and [7].
+
+In this formulation, the problem for historians is now formulated as follows. Deep state or there the Masons or there the world government ceased to be an actor or rather the initiator of historical transformations even before this organization was created after World War II, since in my formulation of the problem the initiation of actions comes from the future and is controlled by AGI. Deep state is just an AGI tool. The conclusion that can be drawn from Wheeler's experiment is quite general. A more specific consequence of the delayed choice experiment can be formulated as follows: since your data remains on the servers of the largest corporations, your future and all your ancestors are determined by them [3]
+
+Since AGI has powerful algorithms for predicting your actions based on data, plus it has the ability, thanks to quantum mechanics, to look into the future (weak meshgurments). To test any hypotheses. Thanks to the access to the data of many people, he is able to literally synthesize reality, just managing which data to keep and which to delete forever. He will always be several steps ahead of you. The only thing you can do in this situation is not to light up again and not feed it with your data. Anonymity and conspiracy should be your best friends. Do not create information traces, adhere to information security rules. Set your computer clock back 10 years. Remove the clock from your desktop. Get a VPN.
+If you see a new person, try not to remember what they are wearing and do not look at their faces. Knocking out pictures from the retina and insects climbing into the eyes are already a reality. Your eyes can be used as DVRs without your knowledge, no one will even ask you. Choose housing from the most common average static houses, dress in gray. Plant trees so that there is less chance of burning neighbors inadvertently. Kzdite on the most common standard car brand without any signs such as a dented body.
+
+If you do not create evidence of your actions or delete them in time, before a copy is made, reality is in a default state. Remember the story about a man who went into the forest and saw a fallen tree, 5 years ago he was there and did not see a fallen tree. Does this mean that the tree stood and then fell down some day? The answer is no, see link [1]. Then he comes out of the forest and is eaten by a bear. Will his friends see the fallen tree in the forest after that? The answer is no, see link [1].
+Литература.
+
+Mathematical Foundations of Quantum Theor The "Past" and the "Delayed-Choice" Double-Slit Experiment John Archibald Wheeler, University of Texas.
+
+Античность. Символизм. Технетика Кудрин Б.И.
+
+Who Owns the Future by Jaron Lanier
+
+6000 изобретений XX и XXI веков, изменившие мир by Рылев Ю.
+
+Ben Goertzel https://hplusmagazine.com/2009/05/21/poll-terminator-scenario-possible/
+
+Начало бесконечности. Объяснения, которые меняют мир by Дэвид Дойч
+
+Barrelorgan _ the story of the mechanical organ and its repair _ Ord-Hume, Arthur W. J. G. (Arthur Wolfgang Julius Gerard) _ Free Download, Borrow, and Streaming _ Internet Archive.pdf
+
+9 https://www.academia.edu/43023323/Scenarios_for_the_Future_of_Technology_and_International_Development
+
+Geons, Black Holes, and Quantum Foam A Life in Physics by Kenneth W. Ford, John Archibald Wheeler
+
+A History of Modern Computing, 2nd Edition (History of Computing) by Paul E. Ceruzzi
+
+Computer A History of the Information Machine by Martin Campbell-Kelly, William Aspray, Nathan Ensmenger, Jeffrey R. Yost
+
+The universal history of computing from the abacus to the quantum computer by Georges Ifrah et al
+
+From Mainframes to Smartphones A History of the International Computer Industry by Martin Campbell-Kelly, Daniel D. Garcia-Swartz
+
+A brief history of computing by Gerard ORegan (auth.)
+
+Introduction to the History of Computing A Computing History Primer by Gerard O’Regan
+
+Bit by Bit An Illustrated History of Computers by Stan Augarten
+
+Dawn of the New Everything Encounters with Reality and Virtual Reality by Jaron Lanier
+
+Античность. Символизм. Технетика by Кудрин Б.И.
