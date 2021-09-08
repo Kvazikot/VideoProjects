@@ -38,10 +38,11 @@ naked terminators leave the time machine.
 
 # Pauses
 You can define pauses beetween chunks of narrated text as:
+Pauses will be filled with any random stuff related to the topic.
 ```
 [pause][10-20 sec]
 ```
-Pauses ca be filled with any random stuff related to the topic.
+
 
 # Hard-coded Rules
 ```
