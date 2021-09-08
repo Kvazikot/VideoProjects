@@ -1,4 +1,4 @@
-﻿/*+---------------------------------------------------------------------------------------+  <br>
+/*+---------------------------------------------------------------------------------------+  <br>
   + - + - + copytight by Kvazikot<br>
   + - + - + email: vsbaranov83 @gmail.com<br>
   + - + - + github: http://github.com/Kvazikot/VideoCube  <br>
@@ -11,11 +11,13 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public class vccp : MonoBehaviour {
-    List<Texture2D> receivedImages;
-    List<Texture2D> createdTexures;
+    List<Texture2D> receivedImages = new List<Texture2D>();
+    List<Texture2D> createdTexures = new List<Texture2D>();
+    public TextAsset imageAsset;
 
     public class Packet
     {
@@ -64,29 +66,47 @@ public class vccp : MonoBehaviour {
 
     void HandleTexturePacket(TextureDescrPacket packet, Color32[] pixels)
     {
+        byte[] pixels1 = new byte[1];
         if (packet.job == Job.CREATE_NEW_TEXTURE)
         {
-            Texture2D texture = new Texture2D(packet.width, packet.height, packet.format, false);
-            texture.SetPixels32(pixels);
+            
+
+            string fileName = "d:\\projects\\VideoProjects\\examples\\PyEngine3D-master\\Resource\\Externals\\Textures\\sponza\\background.png";
+			if ( File.Exists(fileName) )
+				pixels1 = File.ReadAllBytes(fileName);
+			else
+				return;			
+			Texture2D texture = new Texture2D(packet.width, packet.height, packet.format, false);
+            ImageConversion.LoadImage(texture, pixels1); 
+			Debug.Log($"texture format {texture.format}");
+			Color32[] pixels2 = new Color32[texture.width * texture.height];
+			SetCheckBoardPattern(ref pixels2, texture.width, texture.height);
+			texture.SetPixels32(pixels2);
+			texture.Apply();
             GetComponent<Renderer>().material.mainTexture = texture;
             createdTexures.Add(texture);
+            Debug.Log($"Texture created {texture.GetNativeTexturePtr().ToInt32()}");
         }
     }
 
     void SetCheckBoardPattern(ref Color32[] colors, int width, int height)
     {
         Color32 color = new Color32();
+		
+		int num_cells = 20;
+		int cell_size = width / num_cells;
         
-        for (int j = height; j > 0; j--)
-            for (int i = width; i > 0; i--)
+        for (int j = 0; j < height; j++)
+		{
+            for (int i = 0; i < width; i++)
             {
-                if ((j % 20) == 0 && (i % 20) == 0)
-                    color = new Color(0, 0, 0, 0);
+                if ((j % cell_size) == 0 || (i % cell_size) == 0)
+                    color = new Color32(0, 0, 0, 0);
                 else
-                    color = new Color(64, 41, 45, 255);
+                    color = new Color32(0, 255, 0, 255);
                 colors[j * width + i] = color;
             }
-
+		}
     }
 
     void Test1ReceiveFromClient()
@@ -100,6 +120,11 @@ public class vccp : MonoBehaviour {
         HandleTexturePacket(packet, colors);
     }
 
+    void Start()
+    {
+        Test1ReceiveFromClient();
+    }
+    
     // Update is called once per frame
     void Update () {
 		

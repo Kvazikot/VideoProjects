@@ -12,7 +12,6 @@ using System.IO;
 public class Server : MonoBehaviour {
    
     public int port = 8000;
-    string host = "127.0.0.1";
  
     static List<ServerClient> clients;
     static List<ServerClient> disconnectList;
