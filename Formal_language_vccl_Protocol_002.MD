@@ -81,7 +81,7 @@ This is done for the fun of the audience, as well as the batteries in the "matri
 <00:02:35> What is known for sure is that it was only in the 1980s that the delayed choice experiment was implemented. At the University of Maryland, Carroll Alley, Oleg Jakubowicz, and William Wickes — on a laboratory bench. Strange coincidence - The Terminator movie entered in 1984.
 
 [pause] [10-20 sec]
-
+```
 <00:04:05> The idea behind dapra is to develop hypothetical designs, but there are no laws of physics that would prohibit the development of a modem to receive "news" from the future. On the basis of which any war can be won, because retrocausal feedbacks automatically lead to the desired scenario of the future. Once, Ray Krzweil once mentioned that the Soviet Union was collapsed thanks to information technology. Speaking of Kurzweil, it is necessary to note the rather strange accuracy of his predictions, which also confirms the weight of the hypothesis about a modem from the future.
 
 By the way, speaking about information from the future, it can be noted that this is a way to speed up the calculations. After all, we feed the Turing machine its future results [5].
@@ -101,5 +101,5 @@ Perhaps already at that time in the 70-80s, the leaders of the resistance learne
 For technologists, such thought experiments can be helpful. You can figure out how with the technologies of the 70s and 80s, for example in the field of radar, to create something that can influence genetics, it is possible to record additional information in DNA. Because DNA is much more reliable than magnetic carriers. That is, it is desirable to find people who, for example, have high intelligence, and at the same time an autism spectrum disorder, which may indicate an abnormal mutation of a large number of genes at once, which is not characteristic of the environment in which they were born. In short, it is interesting to study any anomalies in relation to the data on the place of residence, if such data were not prudently destroyed and documented.
 
 Resistance efforts are also useful to focus on finding archival documentation of any prototypes of old communication devices or wearable computers. You can dig further and look through archival books, for example, on the creation of musical instruments such as a barrel organ [8] in which the very idea of ​​the program and the computation is hardcoded. It is important to pay attention to the correct dating of the found materials and the search for copies.
-```
+
 
