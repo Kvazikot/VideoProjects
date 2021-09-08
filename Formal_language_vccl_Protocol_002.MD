@@ -9,6 +9,7 @@ Document creation date: 02 September 2021
 * Provide the ability to schedule a convenient time for creative work, leaving the entire routine to the machine.
 * Probably we cant teach AI to some not trivial level of estetics by providing feeed back in the form of likes on video with automated content creation
 * Hard-coded rules at the lowest level may include chunks of shader code with several control parametres (uniforms)
+* In the end stages of development one could create simple 3d scene with animation based only on text description. 
 
 The language vccl is a form of [Embedded Generalized Markup Language](https://ru.wikipedia.org/wiki/Generalized_Markup_Language)
 
