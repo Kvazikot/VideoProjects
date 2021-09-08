@@ -46,13 +46,22 @@ Pauses will be filled with any random stuff related to the topic.
 
 # Hard-coded Rules
 ```
+Tag vsrc defines urls or file paths. 
 :vsrc 
 [label]: [http://video-hosting/video-id] 
 :eol. 
 ```
 
-Tag src defines urls or file paths. 
+Tag vfx description
 ```
+videocube = "Take 3d rimitive cube and make video on textures. "
+```
+
+Tag orbit movement description
+```
+orbit = "Move camera by orbit around cube. And go out of the galaxy to the blackhole. That is the wrong tag  "
+```
+
 <00:00:50><src wheeler_1><vfx zoom, fade_out(time_sec=0.2),para_text(color=#00FF0022)> <br>
 In John Wheeler's famous double slit thought experiment ...
 ```
