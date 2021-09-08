@@ -82,6 +82,37 @@ This is done for the fun of the audience, as well as the batteries in the "matri
 
 [pause] [10-20 sec]
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# END OF MY BORING TEXT (IS NOT A GPT-3 :))))
+____________________________________________________________________________________________________________________________________________________
 <00:04:05> The idea behind dapra is to develop hypothetical designs, but there are no laws of physics that would prohibit the development of a modem to receive "news" from the future. On the basis of which any war can be won, because retrocausal feedbacks automatically lead to the desired scenario of the future. Once, Ray Krzweil once mentioned that the Soviet Union was collapsed thanks to information technology. Speaking of Kurzweil, it is necessary to note the rather strange accuracy of his predictions, which also confirms the weight of the hypothesis about a modem from the future. Michio Kaku ones said "I know that, with our technology, we can always win wars. But to win the peace, we have to win the hearts and minds of the people, which we failed to do in Afganistan."
 
 By the way, speaking about information from the future, it can be noted that this is a way to speed up the calculations. After all, we feed the Turing machine its future results [5].
