@@ -6,7 +6,7 @@ Document creation date: 02 September 2021
 * Formal language for constructing video content based on text, taking into account the capabilities of GPT-3 systems (like Codex)
 * See [document](https://github.com/Kvazikot/VideoProjects/blob/master/Video_content_creation_Protocol_001_eng.MD) describing software stack that need to be develop
 * The Heisenberg Uncertainty Principle works in our favor when you want to change human history by changing just one byte of your video content description
-* Provide the ability to schedule a convenient time for creative work, leaving the entire routine to the machine.
+* Provide the ability to schedule a convenient time for creative work, leaving the entire routine to the machine. But also i want to provide some fredom in creativity expression to the machine
 * Probably we cant teach AI to some not trivial level of estetics by providing feeed back in the form of likes on video with automated content creation
 * Hard-coded rules at the lowest level may include chunks of shader code with several control parametres (uniforms)
 * In the end stages of this project one could create simple 3d scene with animation based only on text description from the Unity Assets free stuff. The level of details of such scenes is far less important rather then diversity of content.
