@@ -64,15 +64,12 @@ orbit = "Move camera by orbit around cube. And go out of the galaxy to the black
 
 <00:00:50><src wheeler_1><vfx zoom, fade_out(time_sec=0.2),para_text(color=#00FF0022)> <br>
 In John Wheeler's famous double slit thought experiment ...
-```
+
 
 ```
 <00:00:50><list img1,img2,img3><list(map(trace(lambda x: x*2), range(3)))><stack hstack><vfx slideshow> 
 In John Wheeler's famous double slit thought experiment ...
-```
 
-
-```
 <00:01:06> <src wheeler_1,terminator_nude,nanobot,big_bang1><vfx videocube,para_text> No exact date is known 
 when Wheeler came up with the idea for the quantum eraser experiment. 
 Now I'm not talking about a literal scenario when naked terminators leave the time machine.
