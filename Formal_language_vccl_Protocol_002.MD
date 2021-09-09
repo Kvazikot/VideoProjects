@@ -10,6 +10,7 @@ Document creation date: 02 September 2021
 * Probably we cant teach AI to some not trivial level of estetics by providing feeed back in the form of likes on video with automated content creation
 * Hard-coded rules at the lowest level may include chunks of shader code with several control parametres (uniforms)
 * In the end stages of this project one could create simple 3d scene with animation based only on text description from the Unity Assets free stuff. The level of details of such scenes is far less important rather then diversity of end result (uploadable video).
+* The ultimate goal of the project may be to make a cool toy for the kids in minecraft like game
 
 The language vccl is a form of [Embedded Generalized Markup Language](https://ru.wikipedia.org/wiki/Generalized_Markup_Language)
 
