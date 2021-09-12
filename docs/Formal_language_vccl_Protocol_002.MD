@@ -1,3 +1,28 @@
+  + - - - + - + - -
+  + - + - + copyright by Vladimir Baranov (Kvazikot)  <br>
+  + - + - + email: vsbaranov83@gmail.com  <br>
+  + - + - + github: http://github.com/Kvazikot/VideoProjects  <br>
+```
+                            )            (
+                           /(   (\___/)  )\
+                          ( #)  \ ('')| ( #
+                           ||___c\  > '__||
+                           ||**** ),_/ **'|
+                     .__   |'* ___| |___*'|
+                      \_\  |' (    ~   ,)'|
+                       ((  |' /(.  '  .)\ |
+                        \\_|_/ <_ _____> \______________
+                         /   '-, \   / ,-'      ______  \
+                b'ger   /      (//   \\)     __/     /   \
+                                            './_____/
+```              
+  
+| Activity | Reward |
+|---|---|
+|Punishment for not inovating  |-80 |
+|Punishment for trying inovating but failing | -5 |
+| Reward for successful inovation | 100000 |
+
 Protocol #002 describes <br>
 "vccl - Video content creation language <br>
 Vladimir Baranov vsbaranov83@gmail.com <br>
