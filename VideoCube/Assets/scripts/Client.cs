@@ -11,6 +11,7 @@ public class Client : MonoBehaviour {
     public int port = 8000;
     string host = "127.0.0.1";
 
+    public vccp  protocol;
     public string clientName;
     private bool socketReady;
     public static string response;
@@ -25,9 +26,29 @@ public class Client : MonoBehaviour {
  
     // Use this for initialization
     void Start () {
- 
+
+        protocol = GetComponent<vccp>();
         DontDestroyOnLoad(gameObject); //don't destroy the client when moving on to the next scene
         ConnectToServer(host, port);
+
+    }
+
+    // Algorithm is foolowing:
+    // 1. Create Texture 
+    // 2. Encode pixels to jpeg data
+    // 3. Create texture packet
+    //  while( packetCounter < 100 ):            
+    //      4. Transfer texture packet
+    //      5. Decrease packet counter
+    //      6. Change pixels
+    //      7. Send another packet
+    static byte[] PreapreTestDataForTransfer()
+    {
+        vccp.CookedData data = vccp.CookTexturePacket();
+        byte[] byteData = Encoding.ASCII.GetBytes(data.json_object);
+        Debug.Log("message sent to the server " + data.json_object);
+        // add pixels data to byteData
+        return byteData;
     }
    
     // Update is called once per frame
@@ -64,7 +85,7 @@ public class Client : MonoBehaviour {
  
             // Send test data to the remote device.
             SendData(clientSocket, "This is a test");
-            Debug.Log("message sent to the server");
+            
  
  
             // Receive the response from the remote device.
@@ -111,9 +132,11 @@ public class Client : MonoBehaviour {
     //send data to server
     public static void SendData(Socket client, string data)
     {
+        byte[] byteData = PreapreTestDataForTransfer();
+        Debug.Log($"SendData to Server json:{byteData.Length} bytes");
+
         //convert the string data to bytes
-        byte[] byteData = Encoding.ASCII.GetBytes(data);
- 
+        //byte[] byteData = Encoding.ASCII.GetBytes(data);
         // Begin sending the data to the remote device.
         client.BeginSend(byteData, 0, byteData.Length, 0,
             new AsyncCallback(SendCallBack), client);

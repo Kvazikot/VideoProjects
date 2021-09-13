@@ -14,6 +14,9 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
+
+
+
 public class vccp : MonoBehaviour {
     List<Texture2D> receivedImages = new List<Texture2D>();
     List<Texture2D> createdTexures = new List<Texture2D>();
@@ -38,8 +41,8 @@ public class vccp : MonoBehaviour {
             this.json_object = json_object;
             this.jpeg_data = jpeg_data;
         }
-        string json_object;
-        byte[] jpeg_data;
+        public string json_object;
+        public byte[] jpeg_data;
     }
 
 // uncompressed frame
@@ -53,9 +56,13 @@ public class vccp : MonoBehaviour {
         public Job job = Job.CREATE_NEW_TEXTURE;
     }
 
-    CookedData CookTexturePacket(Texture2D tex)
+    static public CookedData CookTexturePacket()
     {
         // Encode texture into PNG
+        ChekerBoardTexture checkerboard = new ChekerBoardTexture();
+        checkerboard.Generate();
+        checkerboard.InitTexture();
+        Texture2D tex = checkerboard.texture;
         byte[] bytes = tex.EncodeToJPG();
         TextureDescrPacket pckt = new TextureDescrPacket();
         pckt.uuid = "01701412-0f44-11ec-a466-38b1dbc8b668";
@@ -64,53 +71,25 @@ public class vccp : MonoBehaviour {
         return new CookedData(JsonUtility.ToJson(pckt), bytes);
     }
 
-    void HandleTexturePacket(TextureDescrPacket packet, Color32[] pixels)
+
+    void HandleTexturePacketFromClient(TextureDescrPacket packet, Color32[] pixels)
     {
         byte[] pixels1 = new byte[1];
         if (packet.job == Job.CREATE_NEW_TEXTURE)
         {
-            
-
             // string fileName = "d:\\projects\\VideoProjects\\examples\\PyEngine3D-master\\Resource\\Externals\\Textures\\sponza\\background.png";
-			// if ( File.Exists(fileName) )
-				// pixels1 = File.ReadAllBytes(fileName);
-			// else
-				// return;			
+            // if ( File.Exists(fileName) )
+            // pixels1 = File.ReadAllBytes(fileName);
+            // else
+            // return;			
             //ImageConversion.LoadImage(texture, pixels1); 
-			Texture2D texture = new Texture2D(packet.width, packet.height, packet.format, false);
-			Debug.Log($"texture format {texture.format}");
-			Color32[] pixels2 = new Color32[texture.width * texture.height];
-			SetCheckBoardPattern(ref pixels2, texture.width, texture.height);
-			texture.SetPixels32(pixels2);
-			texture.Apply(false);
-            GetComponent<Renderer>().material.mainTexture = texture;
-            createdTexures.Add(texture);
-            Debug.Log($"Texture created {texture.GetNativeTexturePtr().ToInt32()}");
+            ProcTexture texture = new ProcTexture();
+            texture.setParametres(packet.width, packet.height, packet.format);
+            texture.InitTexture();
+            GetComponent<Renderer>().material.mainTexture = texture.texture;
+            createdTexures.Add(texture.texture);
+            Debug.Log($"Texture created {texture.texture.GetNativeTexturePtr().ToInt32()}");
         }
-    }
-
-    void SetCheckBoardPattern(ref Color32[] colors, int width, int height)
-    {
-        Color32 color1 = new Color32(255,0,0,1);
-		Color32 color2 = new Color32(0,255,0,1);
-		
-		int num_cells = 20;
-		int cell_size = width / num_cells;
-	    bool bWhite = true;        
-        for (int j = 0; j < height; j++)
-		{
-            if ((j % cell_size) == 0)
-               bWhite = !bWhite;
-            for (int i = 0; i < width; i++)
-            {
-                if ((i % cell_size) == 0)
-                    bWhite = !bWhite;
-				if( bWhite )
-					colors[j * width + i] = color1;
-				else
-					colors[j * width + i] = color2;
-            }
-		}
     }
 
     void Test1ReceiveFromClient()
@@ -120,8 +99,7 @@ public class vccp : MonoBehaviour {
         packet.width = 256;
         packet.height = 256;
         Color32[] colors = new Color32[packet.width * packet.height];
-        SetCheckBoardPattern(ref colors, packet.width, packet.height);
-        HandleTexturePacket(packet, colors);
+        HandleTexturePacketFromClient(packet, colors);
     }
 
     void Start()

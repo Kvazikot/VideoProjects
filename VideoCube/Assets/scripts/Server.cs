@@ -246,7 +246,7 @@ public class Server : MonoBehaviour {
  
         //OnIncommingData(client, content);
  
-        Debug.Log("client sent: " );
+        Debug.Log($"client sent json object: {content}");
  
     }
  
