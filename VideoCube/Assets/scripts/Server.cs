@@ -58,8 +58,6 @@ public class Server : MonoBehaviour {
         try
         {
             Init();
-            //start server
-            CreateServer();
         }
         catch (Exception ex)
         {
@@ -125,9 +123,16 @@ public class Server : MonoBehaviour {
         try
         {
             Debug.Log("Setting up the server...");
-           
+
             //bind socket
-            serverSocket.Bind(new IPEndPoint(IPAddress.Loopback, port));
+            byte b = 127;
+            var ip = 0;
+            ip = (b << 24) + 1; // 127.0.0.1
+            string hex = ip.ToString("X2");
+            Debug.Log($"Shifted byte: {Convert.ToString(ip, toBase: 2)}");
+            Debug.Log($"Shifted byte hex: {Convert.ToString(ip, toBase: 16)}");
+            serverSocket.Bind(new IPEndPoint(0, port));
+            
             Debug.Log("socket bound");
  
             //start listening

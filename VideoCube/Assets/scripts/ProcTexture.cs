@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,7 +13,12 @@ public class ProcTexture  {
     public ProcTexture()
     {
         parametres = new Dictionary<string, string>();
-         //{"num_cells", "20"}, {"color1", "255,0,0,5"}};
+        parametres["width"] = Convert.ToString(128, toBase: 10);
+        parametres["height"] = parametres["width"];
+        TextureFormat format = TextureFormat.ARGB32;
+        parametres["format"] = format.ToString();
+
+        //{"num_cells", "20"}, {"color1", "255,0,0,5"}};
     }
 
     public virtual void Generate()    {    }

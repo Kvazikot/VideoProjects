@@ -8,7 +8,7 @@ public class serialize : MonoBehaviour
 
     void Start()
     {
-        Debug.Log(SaveToString());
+        //Debug.Log(SaveToString());
     }
 
     public string SaveToString()

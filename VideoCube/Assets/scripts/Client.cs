@@ -9,17 +9,18 @@ using System.IO;
  
 public class Client : MonoBehaviour {
     public int port = 8000;
-    string host = "127.0.0.1";
+    string host = "192.168.43.249";
+    int n_frame = 0;
 
     public vccp  protocol;
     public string clientName;
     private bool socketReady;
     public static string response;
     private static byte[] clientBuffer = new byte[1024];
- 
+
     //creating the socket TCP
     public Socket clientSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
- 
+
     //declare end point
     public IPEndPoint conn;
  
@@ -29,7 +30,6 @@ public class Client : MonoBehaviour {
 
         protocol = GetComponent<vccp>();
         DontDestroyOnLoad(gameObject); //don't destroy the client when moving on to the next scene
-        ConnectToServer(host, port);
 
     }
 
@@ -53,7 +53,18 @@ public class Client : MonoBehaviour {
    
     // Update is called once per frame
     void Update () {
- 
+        n_frame++;
+        if (n_frame == 100)
+        {
+            port = 8000;
+            ConnectToServer(host, port);
+        }
+
+        if(n_frame > 100 && (n_frame % 100)  == 0)
+            // Send test data to the remote device.
+            SendData(clientSocket, "This is a test");
+
+
         if (socketReady)
         {
             //check for new messages
@@ -77,7 +88,16 @@ public class Client : MonoBehaviour {
         try
         {
             //create end point to connect
-            conn = new IPEndPoint(IPAddress.Parse(hostAdd), port);
+            //bind socket
+            byte b = 127;
+            var ip = 0;
+            ip = (1 << 24) + b; // 127.0.0.1
+            //string hex = ip.ToString("X2");
+            //Debug.Log($"Shifted byte: {Convert.ToString(ip, toBase: 2)}");
+            //Debug.Log($"Shifted byte hex: {Convert.ToString(ip, toBase: 16)}");
+            //clientSocket.Bind(new IPEndPoint(IPAddress.Parse(host), port+1));
+
+            conn = new IPEndPoint(IPAddress.Parse(host), port);
             //connect to server
             clientSocket.BeginConnect(conn, ConnectCallback, clientSocket);
             socketReady = true;

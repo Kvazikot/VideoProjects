@@ -60,8 +60,9 @@ public class vccp : MonoBehaviour {
     {
         // Encode texture into PNG
         ChekerBoardTexture checkerboard = new ChekerBoardTexture();
-        checkerboard.Generate();
         checkerboard.InitTexture();
+        checkerboard.Generate();
+
         Texture2D tex = checkerboard.texture;
         byte[] bytes = tex.EncodeToJPG();
         TextureDescrPacket pckt = new TextureDescrPacket();
