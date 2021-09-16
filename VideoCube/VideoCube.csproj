@@ -255,6 +255,7 @@
     <Compile Include="Assets\scripts\ProcTexture.cs" />
     <Compile Include="Assets\scripts\serialize.cs" />
     <Compile Include="Assets\scripts\Server.cs" />
+    <Compile Include="Assets\scripts\shared.cs" />
     <Compile Include="Assets\scripts\vccp.cs" />
   </ItemGroup>
   <ItemGroup>

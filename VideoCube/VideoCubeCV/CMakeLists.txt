@@ -1,0 +1,64 @@
+cmake_minimum_required(VERSION 3.13)
+
+project(VideoCubeCV)
+set( CMAKE_VERBOSE_MAKEFILE on )
+set( OpenCV_DIR "D:\\opencv\\build" )
+set( Qt5Widgets_DIR "D:\\Qt5\\5.9.9\\msvc2017_64\\lib\\cmake\\Qt5Widgets" )
+
+find_package(OpenCV REQUIRED )
+# Widgets finds its own dependencies (QtGui and QtCore).
+find_package(Qt5Widgets REQUIRED)
+
+set(CMAKE_VERBOSE_MAKEFILE ON)
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
+
+set(CMAKE_AUTOUIC ON)
+set(CMAKE_AUTOMOC ON)
+
+
+# The Qt5Widgets_INCLUDES also includes the include directories for
+# dependencies QtCore and QtGui
+include_directories(${Qt5Widgets_INCLUDES})
+# We need add -DQT_WIDGETS_LIB when using QtWidgets in Qt 5.
+add_definitions(${Qt5Widgets_DEFINITIONS})
+set(CMAKE_BUILD_TYPE Release)
+
+set(SOURCES main.cpp 
+           dialog.cpp  
+           shared.cpp
+)
+
+
+set ( UI_HEADERS
+   ui_dialog.h
+)
+
+
+include_directories(.)
+
+set ( UIS
+ dialog.ui
+)
+
+
+set(HEADERS dialog.h 
+    shared.h
+    ui_dialog.h
+)
+
+QT5_WRAP_CPP(calculator_HEADERS_MOC ${calculator_HEADERS})
+QT5_WRAP_UI(UI_HEADERS ${UIS})
+
+# Forms and resources
+#FORMS += dialog.ui
+
+#include_directories(${DIR}/headers /usr/include)
+#link_directories (${DIR}/src/utils /opt/local/lib)
+add_executable(${PROJECT_NAME} ${UI_HEADERS} ${SOURCES} ${HEADERS} )
+# The Qt5Widgets_LIBRARIES variable also includes QtGui and QtCore
+target_link_libraries(${PROJECT_NAME} ${Qt5Widgets_LIBRARIES})
+
+add_definitions(-DUSE_AVX_INSTRUCTIONS=1)
+
+#TARGET_LINK_LIBRARIES(VideoCubeCV opencv_core opencv_imgproc opencv_video)
+target_link_libraries( VideoCubeCV ${OpenCV_LIBS} )

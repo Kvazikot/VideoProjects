@@ -124,10 +124,8 @@ GameObject:
   - component: {fileID: 260282534}
   - component: {fileID: 260282533}
   - component: {fileID: 260282532}
-  - component: {fileID: 260282536}
-  - component: {fileID: 260282538}
-  - component: {fileID: 260282537}
   - component: {fileID: 260282539}
+  - component: {fileID: 260282536}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -209,38 +207,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 260282531}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc310554eb287f24ea3f115af38c3e74, type: 3}
+  m_Script: {fileID: 11500000, guid: f4408c316e973e34bbea020fce7b8e23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerName: 
-  lives: 0
-  health: 0
---- !u!114 &260282537
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 260282531}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67dbeae64599db341923cb0d48c63482, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  port: 8000
-  clientName: 
---- !u!114 &260282538
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 260282531}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6926a917444a6dc458ca746c98bb0bcb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  port: 8000
-  content: 
 --- !u!114 &260282539
 MonoBehaviour:
   m_ObjectHideFlags: 0

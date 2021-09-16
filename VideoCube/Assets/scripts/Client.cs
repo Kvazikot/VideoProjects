@@ -104,7 +104,7 @@ public class Client : MonoBehaviour {
             Debug.Log("Client socket ready: "+ socketReady);
  
             // Send test data to the remote device.
-            SendData(clientSocket, "This is a test");
+            //SendData(clientSocket, "This is a test");
             
  
  
