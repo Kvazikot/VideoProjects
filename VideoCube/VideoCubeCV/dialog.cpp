@@ -62,13 +62,7 @@ void Dialog::loadFromFile()
     }
     ui.label->setPixmap(QPixmap::fromImage(image));
 
-    // load into shared memory
-    QBuffer buffer;
-    buffer.open(QBuffer::ReadWrite);
-    QDataStream out(&buffer);
-    out << image;
-    int size = buffer.size();
-
+    sharedmem.writeImage(image);
 }
 
 void Dialog::loadFromMemory()

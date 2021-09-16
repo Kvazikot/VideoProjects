@@ -1,6 +1,8 @@
 #ifndef SHARED_H
 #define SHARED_H
 
+#include <QImage>
+
 class Shared
 {
 public:
@@ -9,6 +11,8 @@ public:
     Shared();
     int Init();
     int Update();
+    void writeJson();
+    void writeImage(QImage& image);
 
 };
 

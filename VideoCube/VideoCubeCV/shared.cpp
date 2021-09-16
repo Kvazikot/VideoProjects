@@ -22,14 +22,18 @@
 #include <windows.h>
 #include <string>
 #include <QDebug>
+#include <QBuffer>
+#include <QJsonDocument>
+#include <QJsonObject>
 #include <tchar.h>
 #include "print.h"
 
 //For shared memory with Unity
-#define BUF_SIZE 256
+const int HEADER_SIZE = 10;
+const int BUFFER_SIZE = 1980 * 1080 + HEADER_SIZE; //HD FRAME ARGB32 + HEADER SIZE
 TCHAR szMapName[] = TEXT("UnityFileMappingObject");
 TCHAR szCountName[] = TEXT("UnityFileCountObject");
-signed int sharedMemOut[7];
+signed int sharedMemOut[BUFFER_SIZE];
 
 LPCTSTR pBuf;
 HANDLE hMapFile;
@@ -48,7 +52,7 @@ int Shared::Init()
                 NULL,                    // default security
                 PAGE_READWRITE,          // read/write access
                 0,                       // maximum object size (high-order DWORD)
-                BUF_SIZE,                // maximum object size (low-order DWORD)
+                BUFFER_SIZE,                // maximum object size (low-order DWORD)
                 szMapName);                 // name of mapping object
 
     if (hMapFile == NULL)
@@ -60,7 +64,7 @@ int Shared::Init()
                                  FILE_MAP_ALL_ACCESS, // read/write permission
                                  0,
                                  0,
-                                 BUF_SIZE);
+                                 BUFFER_SIZE);
 
     if (pBuf == NULL)
     {
@@ -69,6 +73,35 @@ int Shared::Init()
         return -1;
     }
     return 0;
+}
+
+void Shared::writeJson()
+{
+    QString json = "{'uuid':'01701412-0f44-11ec-a466-38b1dbc8b668','size':0,'texture_id':1262813792,'width':128,'height':128,'format':5,'job':0}";
+    QJsonDocument document = QJsonDocument::fromJson(json.toUtf8());
+    QJsonObject data = document.object();
+    QString call = data["call"].toString();
+}
+
+void Shared::writeImage(QImage& image)
+{
+    // load into shared memory
+    QBuffer buffer;
+    buffer.open(QBuffer::ReadWrite);
+    QDataStream out(&buffer);
+    out << image;
+    int size = buffer.size();
+    sharedMemOut[0] = (int)count;
+    sharedMemOut[1] = size;
+    sharedMemOut[2] = -1;
+    sharedMemOut[3] = image.width();
+    sharedMemOut[4] = image.height();
+    sharedMemOut[5] = 0; //format
+    sharedMemOut[6] = 5;
+    sharedMemOut[7] = 6;
+
+    CopyMemory((PVOID)pBuf, sharedMemOut, (HEADER_SIZE * sizeof(signed int)));
+    CopyMemory((PVOID)&pBuf[HEADER_SIZE], buffer.data(), size);
 }
 
 int Shared::Update()
