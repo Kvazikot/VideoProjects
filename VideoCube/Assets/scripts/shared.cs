@@ -30,6 +30,8 @@ public class shared : MonoBehaviour
         static extern bool CloseHandle(IntPtr hObject);
     */
     string szMapName = "UnityFileMappingObject";
+    const int HEADER_SIZE = 10;
+    const int BUF_SIZE = 1980 * 1080 * 4 + HEADER_SIZE * 4; //HD FRAME ARGB32 + HEADER SIZE
 
     const UInt32 STANDARD_RIGHTS_REQUIRED = 0x000F0000;
     const UInt32 SECTION_QUERY = 0x0001;
@@ -61,7 +63,7 @@ public class shared : MonoBehaviour
     {
         sHandle = new SafeFileHandle(hHandle, true);
         sharedInputCount = 0;
-        attachSuccessful = Attach(szMapName, 256);
+        attachSuccessful = Attach(szMapName, BUF_SIZE);
     }
 
     unsafe public bool Attach(string SharedMemoryName, UInt32 NumBytes)
@@ -90,7 +92,7 @@ public class shared : MonoBehaviour
     {
         if (!attachSuccessful)
         {
-            attachSuccessful = Attach(szMapName, 256);
+            attachSuccessful = Attach(szMapName, BUF_SIZE);
             return;
         }
     }
@@ -108,6 +110,7 @@ public class shared : MonoBehaviour
         {
             return;
         }
+        //vccp.CookTexturePacket();
         count = Marshal.ReadInt32(pBuffer, 0);
         Debug.Log($"count={count}");
         X0 = Marshal.ReadInt32(pBuffer, 4);

@@ -68,7 +68,8 @@ public class vccp : MonoBehaviour {
         TextureDescrPacket pckt = new TextureDescrPacket();
         pckt.uuid = "01701412-0f44-11ec-a466-38b1dbc8b668";
         pckt.texture_id = tex.GetNativeTexturePtr().ToInt32();
-        pckt.job = Job.CREATE_NEW_TEXTURE;      
+        pckt.job = Job.CREATE_NEW_TEXTURE;
+        Debug.Log(JsonUtility.ToJson(pckt));
         return new CookedData(JsonUtility.ToJson(pckt), bytes);
     }
 

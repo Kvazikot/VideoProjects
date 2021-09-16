@@ -30,7 +30,7 @@
 
 //For shared memory with Unity
 const int HEADER_SIZE = 10;
-const int BUFFER_SIZE = 1980 * 1080 + HEADER_SIZE; //HD FRAME ARGB32 + HEADER SIZE
+const int BUFFER_SIZE = 1980 * 1080 * 4 + HEADER_SIZE * 4; //HD FRAME ARGB32 + HEADER SIZE
 TCHAR szMapName[] = TEXT("UnityFileMappingObject");
 TCHAR szCountName[] = TEXT("UnityFileCountObject");
 signed int sharedMemOut[BUFFER_SIZE];
