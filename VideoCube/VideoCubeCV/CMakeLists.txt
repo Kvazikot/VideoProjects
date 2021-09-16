@@ -25,6 +25,7 @@ set(CMAKE_BUILD_TYPE Release)
 
 set(SOURCES main.cpp 
            dialog.cpp  
+           print.cpp
            shared.cpp
 )
 
@@ -43,6 +44,7 @@ set ( UIS
 
 set(HEADERS dialog.h 
     shared.h
+    print.h
     ui_dialog.h
 )
 

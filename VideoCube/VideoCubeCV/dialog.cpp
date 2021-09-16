@@ -23,6 +23,7 @@
 #include <QFileDialog>
 #include <QBuffer>
 #include <QtCore/QDebug>
+#include "print.h"
 
 Shared sharedmem;
 
@@ -30,12 +31,18 @@ Dialog::Dialog(QWidget *parent)
   : QDialog(parent)
 {
     ui.setupUi(this);
-    sharedmem.Init();
+    map_to_prn(this);
     connect(ui.loadFromFileButton, SIGNAL(clicked()), SLOT(loadFromFile()));
     connect(ui.loadFromSharedMemoryButton,
             SIGNAL(clicked()),
             SLOT(loadFromMemory()));
     setWindowTitle(tr("SharedMemory Example"));
+    startTimer(100);
+}
+
+void Dialog::showEvent(QShowEvent *event)
+{
+    sharedmem.Init();
 }
 
 void Dialog::timerEvent(QTimerEvent* event)
@@ -76,3 +83,7 @@ void Dialog::loadFromMemory()
 }
 
 
+void Dialog::print(const QString &input)
+{
+    ui.plainTextEdit->appendPlainText(input);
+}

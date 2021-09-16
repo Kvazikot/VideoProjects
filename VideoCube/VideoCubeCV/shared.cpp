@@ -23,7 +23,7 @@
 #include <string>
 #include <QDebug>
 #include <tchar.h>
-
+#include "print.h"
 
 //For shared memory with Unity
 #define BUF_SIZE 256
@@ -53,7 +53,7 @@ int Shared::Init()
 
     if (hMapFile == NULL)
     {
-        qDebug("Could not create file mapping object (%d).\n", GetLastError());
+        prn("Could not create file mapping object (%d).\n", GetLastError());
         return -1;
     }
     pBuf = (LPTSTR)MapViewOfFile(hMapFile,   // handle to map object
@@ -64,7 +64,7 @@ int Shared::Init()
 
     if (pBuf == NULL)
     {
-        qDebug("Could not map view of file (%d).\n", GetLastError() );
+        prn("Could not map view of file (%d).\n", GetLastError() );
         CloseHandle(hMapFile);
         return -1;
     }
@@ -73,7 +73,6 @@ int Shared::Init()
 
 int Shared::Update()
 {
-    int count = 0;
     sharedMemOut[0] = (int)count;
     sharedMemOut[1] = 1;
     sharedMemOut[2] = 2;
@@ -82,5 +81,6 @@ int Shared::Update()
     sharedMemOut[5] = 5;
     sharedMemOut[6] = 6;
     CopyMemory((PVOID)pBuf, sharedMemOut, (7 * sizeof(signed int)));
+    prn("count %d", count++);
     return count;
 }

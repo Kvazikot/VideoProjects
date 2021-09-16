@@ -63,9 +63,11 @@ class Dialog : public QDialog
     Dialog(QWidget *parent = 0);
 
   public slots:
+    void print(const QString &input);
     void loadFromFile();
     void loadFromMemory();
     void timerEvent(QTimerEvent* event);
+    void showEvent(QShowEvent *event);
   private:
     Ui::Dialog ui;
 };
