@@ -46,7 +46,7 @@ Document creation date: 02 September 2021
 # List of 3d scenes
 * VideoCube
 * [Barth Sextic](https://github.com/Kvazikot/VideoProjects/blob/master/docs/Video_content_creation_Protocol_001_eng.MD#barth-sextic-as-a-scene)
-* [Worm hole tunel](https://github.com/Kvazikot/Tunel/blob/master/ChangeLogAndIdeas.txt)
+* [Worm hole tunel](https://github.com/Kvazikot/Tunel/blob/master/docs/Tunel_Ideas.MD)
 
 
 # General algorithm for creating video content for youtube
