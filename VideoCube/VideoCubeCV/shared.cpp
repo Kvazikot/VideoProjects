@@ -40,7 +40,12 @@ HANDLE hMapFile;
 
 Shared::Shared()
 {
+    ZeroHeader();
+}
 
+void Shared::ZeroHeader()
+{
+    memset(sharedMemOut, 0, HEADER_SIZE * 4 );
 }
 
 int Shared::Init()
@@ -72,6 +77,8 @@ int Shared::Init()
         CloseHandle(hMapFile);
         return -1;
     }
+
+
     return 0;
 }
 
@@ -101,19 +108,22 @@ void Shared::writeImage(QImage& image)
     sharedMemOut[7] = 6;
 
     CopyMemory((PVOID)pBuf, sharedMemOut, (HEADER_SIZE * sizeof(signed int)));
-    CopyMemory((PVOID)&pBuf[HEADER_SIZE], buffer.data(), size);
+    CopyMemory((PVOID)&sharedMemOut[HEADER_SIZE], buffer.data(), size);
 }
 
 int Shared::Update()
 {
     sharedMemOut[0] = (int)count;
-    sharedMemOut[1] = 1;
-    sharedMemOut[2] = 2;
-    sharedMemOut[3] = 3;
-    sharedMemOut[4] = 4;
-    sharedMemOut[5] = 5;
-    sharedMemOut[6] = 6;
+    //sharedMemOut[1] = 1;
+    //sharedMemOut[2] = 2;
+    //sharedMemOut[3] = 3;
+    //sharedMemOut[4] = rand();
+    //sharedMemOut[5] = 5;
+    //sharedMemOut[6] = 6;
+    //header
     CopyMemory((PVOID)pBuf, sharedMemOut, (7 * sizeof(signed int)));
+    // image pixels
+    CopyMemory((PVOID)(pBuf + HEADER_SIZE * 4), &sharedMemOut[HEADER_SIZE], sharedMemOut[1]);
     prn("count %d", count++);
     return count;
 }

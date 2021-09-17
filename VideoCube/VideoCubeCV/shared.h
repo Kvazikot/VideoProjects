@@ -9,6 +9,7 @@ public:
     int count = 0;
 
     Shared();
+    void ZeroHeader();
     int Init();
     int Update();
     void writeJson();

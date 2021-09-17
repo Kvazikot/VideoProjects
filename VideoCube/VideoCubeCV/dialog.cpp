@@ -61,6 +61,8 @@ void Dialog::loadFromFile()
         return;
     }
     ui.label->setPixmap(QPixmap::fromImage(image));
+    ui.label->setScaledContents(true);
+    ui.label->repaint();
 
     sharedmem.writeImage(image);
 }
