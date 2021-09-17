@@ -22,6 +22,7 @@
 #include <windows.h>
 #include <string>
 #include <QDebug>
+#include <QFile>
 #include <QBuffer>
 #include <QJsonDocument>
 #include <QJsonObject>
@@ -90,14 +91,56 @@ void Shared::writeJson()
     QString call = data["call"].toString();
 }
 
+void Shared::writeImage(QString filename, int w, int h)
+{
+    QFile file(filename);
+    if (!file.open(QIODevice::ReadOnly))
+        return;
+    QByteArray buffer = file.readAll();
+    int size = buffer.size();
+    png_datasize =  size;
+    sharedMemOut[0] = (int)count;
+    sharedMemOut[1] = size;
+    sharedMemOut[2] = -1;
+    sharedMemOut[3] = w;
+    sharedMemOut[4] = h;
+    sharedMemOut[5] = 0; //format
+    sharedMemOut[6] = 5;
+    sharedMemOut[7] = 6;
+
+    char *src = buffer.data();
+    char *dst = (char*)(sharedMemOut);
+    dst = dst + HEADER_SIZE * 4;
+    while (size!=0) {
+        *dst = *src;
+        --size; dst++; src++;
+    }
+    prn("Shared::writeImage");
+    dst = (char*)(sharedMemOut);
+    dst = dst + HEADER_SIZE * 4;
+    //*dst = 0x44; dst++;
+    //*dst = 0x55; dst++;
+    //*dst = 0x66; dst++;
+
+
+}
+
 void Shared::writeImage(QImage& image)
 {
     // load into shared memory
     QBuffer buffer;
     buffer.open(QBuffer::ReadWrite);
     QDataStream out(&buffer);
+    out.setVersion(0);
+
+
+
+    prn("stream version %d", out.version());
+    // resize image for testing purpuose
+    image = image.scaled(128, 128);
     out << image;
     int size = buffer.size();
+    png_datasize =  size;
     sharedMemOut[0] = (int)count;
     sharedMemOut[1] = size;
     sharedMemOut[2] = -1;
@@ -107,8 +150,13 @@ void Shared::writeImage(QImage& image)
     sharedMemOut[6] = 5;
     sharedMemOut[7] = 6;
 
-    CopyMemory((PVOID)pBuf, sharedMemOut, (HEADER_SIZE * sizeof(signed int)));
-    CopyMemory((PVOID)&sharedMemOut[HEADER_SIZE], buffer.data(), size);
+    char *src = (char*)buffer.data().data();
+    char *dst = (char*)(sharedMemOut);
+    dst = dst + HEADER_SIZE * 4;
+    while (size!=0) {
+        *dst = *src;
+        --size; dst++; src++;
+    }
 }
 
 int Shared::Update()
@@ -121,9 +169,9 @@ int Shared::Update()
     //sharedMemOut[5] = 5;
     //sharedMemOut[6] = 6;
     //header
-    CopyMemory((PVOID)pBuf, sharedMemOut, (7 * sizeof(signed int)));
+    CopyMemory((PVOID)pBuf, sharedMemOut, (HEADER_SIZE * sizeof(signed int) + png_datasize));
     // image pixels
-    CopyMemory((PVOID)(pBuf + HEADER_SIZE * 4), &sharedMemOut[HEADER_SIZE], sharedMemOut[1]);
-    prn("count %d", count++);
+    //CopyMemory((PVOID)(pBuf + HEADER_SIZE * 4), &sharedMemOut[HEADER_SIZE], sharedMemOut[1]);
+    prn("count %d writed %d", count++, (HEADER_SIZE * sizeof(signed int) + png_datasize));
     return count;
 }

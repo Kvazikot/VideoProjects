@@ -3,6 +3,7 @@ using System.Collections;
 using System;
 using System.Runtime.InteropServices;
 using Microsoft.Win32.SafeHandles;
+using System.IO;
 
 public class shared : MonoBehaviour
 {
@@ -31,7 +32,9 @@ public class shared : MonoBehaviour
     */
     string szMapName = "UnityFileMappingObject";
     const int HEADER_SIZE = 10;
-    const int BUF_SIZE = 1980 * 1080 * 4 + HEADER_SIZE * 4; //HD FRAME ARGB32 + HEADER SIZE
+    const int BUFFER_SIZE = 1980 * 1080 * 4 + HEADER_SIZE * 4; //HD FRAME ARGB32 + HEADER SIZE
+    byte[] pixels = new byte[BUFFER_SIZE];
+    int n_frame = 0;
 
     const UInt32 STANDARD_RIGHTS_REQUIRED = 0x000F0000;
     const UInt32 SECTION_QUERY = 0x0001;
@@ -50,20 +53,19 @@ public class shared : MonoBehaviour
     private IntPtr pBuffer;
     private int sharedInputCount;
     bool attachSuccessful;
-    //
+    
+    //bytes to read from shared memory
     int count;
-    int X0;
-    int Y0;
-    int X1 = -1;
-    int Y1 = -1;
-    int SQ0 = -1;
-    int SQ1 = -1;
+    int size;
+    int w;
+    int h;
+    int format;
 
     void Start()
     {
         sHandle = new SafeFileHandle(hHandle, true);
         sharedInputCount = 0;
-        attachSuccessful = Attach(szMapName, BUF_SIZE);
+        attachSuccessful = Attach(szMapName, BUFFER_SIZE);
     }
 
     unsafe public bool Attach(string SharedMemoryName, UInt32 NumBytes)
@@ -92,7 +94,7 @@ public class shared : MonoBehaviour
     {
         if (!attachSuccessful)
         {
-            attachSuccessful = Attach(szMapName, BUF_SIZE);
+            attachSuccessful = Attach(szMapName, BUFFER_SIZE);
             return;
         }
     }
@@ -103,28 +105,72 @@ public class shared : MonoBehaviour
             Detach();
         }
     }
+
+    void CreateTexture(int w, int h, TextureFormat format, byte[] pixels_png)
+    {
+        Texture2D texture = new Texture2D(w, h, format, false);
+         //string fileName = "D:\\projects\\VideoProjects\\VideoCube\\VideoCubeCV\\NicePng_vintage-paper-png_9772625.png";
+         //if ( File.Exists(fileName) )
+         //   pixels_png = File.ReadAllBytes(fileName);
+
+         // output first 10 bytes of pixels array
+        string byte_string = "";
+        for (int i = 0; i < 10; i++)
+            byte_string += $"{Convert.ToString(pixels_png[i], toBase: 16)},";
+        Debug.Log($"pixels_png={byte_string}");
+
+
+        //if (ImageConversion.LoadImage(texture, pixels_png))
+        if ( texture.LoadImage(pixels_png) )
+            Debug.Log("PNG decoded!");
+        else
+            Debug.Log("PNG is NOT decoded!");
+        texture.Apply(false);
+        GetComponent<Renderer>().material.mainTexture = texture;
+        //createdTexures.Add(texture.texture);
+        Debug.Log($"Texture created {w}x{h} ");
+    }
+
     void FixedUpdate()
     {
-        //get Shared memory Input
-        if (!attachSuccessful)
+        n_frame++;
+        if (n_frame % 100 == 0)
         {
-            return;
+            //get Shared memory Input
+            if (!attachSuccessful)
+            {
+                return;
+            }
+            //vccp.CookTexturePacket();
+            count = Marshal.ReadInt32(pBuffer, 0);
+            //Debug.Log($"count={count}");
+            size = Marshal.ReadInt32(pBuffer, 4);
+            Debug.Log($"size={size}");
+            w = Marshal.ReadInt32(pBuffer, 12);
+            Debug.Log($"w={w}");
+            h = Marshal.ReadInt32(pBuffer, 16);
+            Debug.Log($"h={h}");
+            format = Marshal.ReadInt32(pBuffer, 20);
+            Debug.Log($"format={format}");
+
+            if (size > 0 && size < BUFFER_SIZE)
+            {
+                int offset = HEADER_SIZE * 4;
+                while (size != 0)
+                {
+                    pixels[offset - HEADER_SIZE * 4] = Marshal.ReadByte(pBuffer, offset);
+                    --size;
+                    offset++;
+                }
+                // output first 10 bytes of pixels
+                string byte_string="";
+                for (int i = 0; i < 10; i++)
+                    byte_string+=$"{Convert.ToString(pixels[i], toBase: 16)},";
+                Debug.Log($"pixels={byte_string}");
+                //Marshal.Copy(pBuffer + HEADER_SIZE * 4, pixels, 0, size);
+                CreateTexture(w, h, TextureFormat.ARGB32, pixels);
+            }
         }
-        //vccp.CookTexturePacket();
-        count = Marshal.ReadInt32(pBuffer, 0);
-        Debug.Log($"count={count}");
-        X0 = Marshal.ReadInt32(pBuffer, 4);
-        Debug.Log($"X0={X0}");
-        Y0 = Marshal.ReadInt32(pBuffer, 8);
-        Debug.Log($"Y0={Y0}");
-        X1 = Marshal.ReadInt32(pBuffer, 12);
-        Debug.Log($"X1={X1}");
-        Y1 = Marshal.ReadInt32(pBuffer, 16);
-        Debug.Log($"Y1={Y1}");
-        SQ0 = Marshal.ReadInt32(pBuffer, 20);
-        Debug.Log($"SQ0={SQ0}");
-        SQ1 = Marshal.ReadInt32(pBuffer, 24);
-        Debug.Log($"SQ1={SQ1}");
 
 
     }

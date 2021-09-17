@@ -7,6 +7,7 @@ class Shared
 {
 public:
     int count = 0;
+    int png_datasize = 0;
 
     Shared();
     void ZeroHeader();
@@ -14,6 +15,7 @@ public:
     int Update();
     void writeJson();
     void writeImage(QImage& image);
+    void writeImage(QString filename, int w, int h);
 
 };
 
