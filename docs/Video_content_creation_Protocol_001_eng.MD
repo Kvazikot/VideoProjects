@@ -77,6 +77,19 @@ An example of text for with processing rules and content description is [here] (
 It is implemented on Unity and is able to receive via Berkeley Waves i.e. Berkeley Sockets commands from the Python script master.
 VdeoCube is a collection of programs. Historically, the first 3D effect using video frames transmitted over sockets from a Python program.
 The idea of ​​a Rubik's cube where instead of colored sub-cubes, TVs with video frames are presented.
+Bercley sockets eventially was replaced by shared memory
+
+# Barth Sextic as a scene
+This surface is a good way to build in Unity. 
+I knew about this wonderful structure from [Tibees blog](https://www.youtube.com/channel/UC52kszkc08-acFOuogFl5jw)
+"A sextic surface is one defined by a polynomial equation of degree 6. The Barth sextic, drawn above by Craig Kaplan, is the sextic surface with the maximum possible number of ordinary double points: that is, points where it looks like the origin of the cone in 3-dimensional space defined by"
+
+After the VideoCube program be ready. Video Textures 
+Description of algebraic geometry can be found on [American Mathematical Sosiety site.](https://blogs.ams.org/visualinsight/2016/04/15/barth-sextic/) 
+
+
+# Background as worm hole tunel
+Bla bla bla
 
 # Communication protocol between a Unity application and a Python script
 Package Type 1 Instruction
