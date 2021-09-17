@@ -124,6 +124,6 @@ The pipeline looks something like this
 10. Sends it a frame image via sockets or this application itself reads
 
 # Links and books
-2. [American Mathematical Society. Official books.](https://bookstore.ams.org/browse)
+2. [American Mathematical Society.  Certainly official books.](https://bookstore.ams.org/browse)
 3. Eric W. Weisstein. CRC Concise Encyclopedia of Mathematics, Second Edition
-4. [American Mathematical Society. Books that is in superposition of official and unofficial.](https://b-ok.as/s/American%20Mathematical%20Society) 
+4. [American Mathematical Society. Science cannot determine the official status of these books.](https://b-ok.as/s/American%20Mathematical%20Society) 
