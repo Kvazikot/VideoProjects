@@ -122,3 +122,8 @@ The pipeline looks something like this
 8. Joins frames from different sources writes everything to the paragraph1.mp4 file
 9. Launches the application on Unity (eg VideoCube).
 10. Sends it a frame image via sockets or this application itself reads
+
+# Links and books
+2. [American Mathematical Society. Official books.](https://bookstore.ams.org/browse)
+3. Eric W. Weisstein. CRC Concise Encyclopedia of Mathematics, Second Edition
+4. [American Mathematical Society. Books that is in superposition of official and unofficial.](https://b-ok.as/s/American%20Mathematical%20Society) 
