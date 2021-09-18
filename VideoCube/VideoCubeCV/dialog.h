@@ -73,7 +73,7 @@ class Dialog : public QDialog
     void closeEvent(QCloseEvent *);
     void timerEvent(QTimerEvent* event);
     void showEvent(QShowEvent *event);
-    void setPixmap(int screen_number, cv::Mat mat);
+    void setPixmap(int screen_number, QPixmap& pix);
 
   private:
     Ui::Dialog ui;

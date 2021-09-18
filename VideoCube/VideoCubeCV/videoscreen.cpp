@@ -19,6 +19,8 @@
 */
 
 #include <QDebug>
+#include <QImage>
+#include <QPixmap>
 #include <opencv2/opencv.hpp>
 #include <QtConcurrent>
 #include <QFuture>
@@ -55,15 +57,23 @@ public:
 
 
 VideoScreen::VideoScreen()
+    : QObject()
 {
 
+}
+
+void VideoScreen::test1()
+{
     int n = cv::getNumberOfCPUs();
     prn("getNumberOfCPUs() = %d", n);
     int n1 = cv::getNumThreads();
     prn("getNumThreads() = %d", n1);
     Mat3b img = Mat3b::zeros(80,80);
     parallel_for_(Range{ 0, 64 }, RandomFillBody{ img }, 8);
-    emit sigSetPixmap(0, img);
+    auto format = QImage::Format_RGB888;
+    QPixmap pix = QPixmap::fromImage(QImage((unsigned char*) img.data, img.cols, img.rows, format));
+
+    emit sigSetPixmap(0, pix);
 }
 
 

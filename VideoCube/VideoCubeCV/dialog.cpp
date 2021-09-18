@@ -47,7 +47,8 @@ void Dialog::showEvent(QShowEvent *event)
     sharedmem.Init();
     sharedmem.writeImage("../NicePng_vintage-paper-png_9772625.png", image.width(), image.height());
     VideoScreen* screen = new VideoScreen();
-    connect(screen, SIGNAL(sigSetPixmap), this, SLOT(setPixmap));
+    connect(screen, SIGNAL(sigSetPixmap(int, QPixmap&)), this, SLOT(setPixmap(int, QPixmap&)));
+    screen->test1();
 }
 
 void Dialog::closeEvent(QCloseEvent *)
@@ -55,11 +56,9 @@ void Dialog::closeEvent(QCloseEvent *)
     delete screen;
 }
 
-void Dialog::setPixmap(int screen_number, cv::Mat mat)
+void Dialog::setPixmap(int screen_number, QPixmap& mat)
 {
-    auto format = QImage::Format_RGB888;
-    QPixmap pix = QPixmap::fromImage(QImage((unsigned char*) mat.data, mat.cols, mat.rows, format));
-    ui.label->setPixmap(pix);
+    ui.label->setPixmap(mat);
 }
 
 void Dialog::timerEvent(QTimerEvent* event)

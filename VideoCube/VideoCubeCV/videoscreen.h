@@ -21,6 +21,7 @@
 #ifndef VIDEOSCREEN_H
 #define VIDEOSCREEN_H
 
+#include <QObject>
 #include <QStringList>
 #include <opencv2/core/utility.hpp>
 #include <opencv2/opencv.hpp>
@@ -53,8 +54,9 @@ public:
 
     VideoScreen();
     void openSources(QStringList filenames);
+    void test1();
 signals:
-    void sigSetPixmap(int screen_number, cv::Mat mat);
+    void sigSetPixmap(int screen_number, QPixmap& pix);
 
 };
 

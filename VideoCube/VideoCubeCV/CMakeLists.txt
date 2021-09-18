@@ -46,6 +46,7 @@ set ( UIS
  dialog.ui
 )
 
+#set(HEADERS_MOC videoscreen.h)
 
 set(HEADERS dialog.h 
     shared.h
@@ -54,7 +55,7 @@ set(HEADERS dialog.h
     ui_dialog.h
 )
 
-QT5_WRAP_CPP(calculator_HEADERS_MOC ${calculator_HEADERS})
+QT5_WRAP_CPP(HEADERS_MOC ${HEADERS_MOC})
 QT5_WRAP_UI(UI_HEADERS ${UIS})
 
 # Forms and resources
