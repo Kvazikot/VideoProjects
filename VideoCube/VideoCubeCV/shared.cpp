@@ -172,6 +172,6 @@ int Shared::Update()
     CopyMemory((PVOID)pBuf, sharedMemOut, (HEADER_SIZE * sizeof(signed int) + png_datasize));
     // image pixels
     //CopyMemory((PVOID)(pBuf + HEADER_SIZE * 4), &sharedMemOut[HEADER_SIZE], sharedMemOut[1]);
-    prn("count %d writed %d", count++, (HEADER_SIZE * sizeof(signed int) + png_datasize));
+    log_status("count %d writed %d", count++, (HEADER_SIZE * sizeof(signed int) + png_datasize));
     return count;
 }

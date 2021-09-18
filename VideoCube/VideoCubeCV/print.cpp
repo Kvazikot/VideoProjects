@@ -29,9 +29,21 @@ ConsolePrn::ConsolePrn()
     time_last_prn = 0;
 }
 
-void map_to_prn(QObject* w)
+void map_to_prn(QObject* w, int slot_n)
 {
-    QObject::connect(&cns, SIGNAL( print_sig(const QString &) ), w, SLOT(print(const QString &)) );
+    switch(slot_n)
+    {
+        case 0:
+            QObject::connect(&cns, SIGNAL( print_sig(const QString &) ), w, SLOT(print(const QString &)) );
+        break;
+        case 1:
+            QObject::connect(&cns, SIGNAL( print_status_sig(const QString &) ), w, SLOT(print_status(const QString &)) );
+        break;
+        default:
+            QObject::connect(&cns, SIGNAL( print_sig(const QString &) ), w, SLOT(print(const QString &)) );
+        break;
+    }
+
 }
 
 
@@ -43,6 +55,12 @@ void ConsolePrn::prn(char* str)
 { 
     QString s = QString(tr(str));
 	emit print_sig(s); 
+}
+
+void ConsolePrn::log(char* str)
+{
+    QString s = QString(tr(str));
+    emit print_status_sig(s);
 }
 
 void ConsolePrn::prn2(QString str)
@@ -74,5 +92,20 @@ void prn(const char* fmt,...)
     va_end(ap);
     
 	cns.prn(mu_printftmp);
+}
+
+void log_status(const char* fmt,...)
+{
+    va_list ap;
+
+    va_start(ap, fmt);
+    #ifdef WIN32
+    _vsnprintf(mu_printftmp, 60000, fmt, ap);
+    #else
+    vsnprintf(mu_printftmp, 60000, fmt, ap);
+    #endif
+    va_end(ap);
+
+    cns.log(mu_printftmp);
 }
 

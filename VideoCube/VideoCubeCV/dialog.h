@@ -52,8 +52,11 @@
 #define DIALOG_H
 
 #include <qdialog.h>
+#include <QCloseEvent>
+#include <opencv2/core/mat.hpp>
 #include "ui_dialog.h"
-
+#include "shared.h"
+#include "videoscreen.h"
 //! [0]
 class Dialog : public QDialog
 {
@@ -64,12 +67,19 @@ class Dialog : public QDialog
 
   public slots:
     void print(const QString &input);
+    void print_status(const QString &input);
     void loadFromFile();
     void loadFromMemory();
+    void closeEvent(QCloseEvent *);
     void timerEvent(QTimerEvent* event);
     void showEvent(QShowEvent *event);
+    void setPixmap(int screen_number, cv::Mat mat);
+
   private:
     Ui::Dialog ui;
+    Shared sharedmem;
+    VideoScreen* screen;
+
 };
 //! [0]
 

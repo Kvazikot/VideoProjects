@@ -13,16 +13,19 @@ public:
     ConsolePrn();
     ConsolePrn(const ConsolePrn& cam):QObject()    { cam;    }
 
-		void prn(char* str);
-        void prn2(QString str);
+    void prn(char* str);
+    void prn2(QString str);
+    void log(char* str);
 signals:
 	void print_sig(const QString & str);
+    void print_status_sig(const QString & str);
 };
 
 void init_prn();
-void map_to_prn(QObject* w);
+void map_to_prn(QObject* w, int slot_n=0);
 void prn(const char* fmt,...);
 void prn_skip(const char* fmt,...);
+void log_status(const char* fmt,...);
 #define mu_printf prn
 void prn2(QString str);
 void print(QString str);

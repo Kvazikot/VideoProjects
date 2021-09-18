@@ -58,12 +58,12 @@ VideoScreen::VideoScreen()
 {
 
     int n = cv::getNumberOfCPUs();
-    //prn("getNumberOfCPUs() = %d", n);
+    prn("getNumberOfCPUs() = %d", n);
     int n1 = cv::getNumThreads();
-    //prn("getNumThreads() = %d", n1);
+    prn("getNumThreads() = %d", n1);
     Mat3b img = Mat3b::zeros(80,80);
-    //parallel_for_(Range{ 0, 64 }, RandomFillBody{ img }, 8);
-
+    parallel_for_(Range{ 0, 64 }, RandomFillBody{ img }, 8);
+    emit sigSetPixmap(0, img);
 }
 
 

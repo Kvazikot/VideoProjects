@@ -26,13 +26,12 @@
 #include "print.h"
 #include "videoscreen.h"
 
-Shared sharedmem;
-
 Dialog::Dialog(QWidget *parent)
   : QDialog(parent)
 {
     ui.setupUi(this);
-    map_to_prn(this);
+    map_to_prn(this, 0);
+    map_to_prn(this, 1);
     connect(ui.loadFromFileButton, SIGNAL(clicked()), SLOT(loadFromFile()));
     connect(ui.loadFromSharedMemoryButton,
             SIGNAL(clicked()),
@@ -48,6 +47,19 @@ void Dialog::showEvent(QShowEvent *event)
     sharedmem.Init();
     sharedmem.writeImage("../NicePng_vintage-paper-png_9772625.png", image.width(), image.height());
     VideoScreen* screen = new VideoScreen();
+    connect(screen, SIGNAL(sigSetPixmap), this, SLOT(setPixmap));
+}
+
+void Dialog::closeEvent(QCloseEvent *)
+{
+    delete screen;
+}
+
+void Dialog::setPixmap(int screen_number, cv::Mat mat)
+{
+    auto format = QImage::Format_RGB888;
+    QPixmap pix = QPixmap::fromImage(QImage((unsigned char*) mat.data, mat.cols, mat.rows, format));
+    ui.label->setPixmap(pix);
 }
 
 void Dialog::timerEvent(QTimerEvent* event)
@@ -87,4 +99,9 @@ void Dialog::loadFromMemory()
 void Dialog::print(const QString &input)
 {
     ui.plainTextEdit->appendPlainText(input);
+}
+
+void Dialog::print_status(const QString &input)
+{
+    ui.statusBar->setText(input);
 }

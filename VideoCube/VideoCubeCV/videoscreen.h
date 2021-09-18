@@ -45,13 +45,16 @@ public:
     int current_frame;
 };
 
-class VideoScreen
+class VideoScreen : public QObject
 {
+    Q_OBJECT
 public:
     Source frames_n[MAX_SOURCES];
 
     VideoScreen();
     void openSources(QStringList filenames);
+signals:
+    void sigSetPixmap(int screen_number, cv::Mat mat);
 
 };
 
