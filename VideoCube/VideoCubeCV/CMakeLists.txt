@@ -1,13 +1,16 @@
-cmake_minimum_required(VERSION 3.13)
+#cmake_minimum_required(VERSION 3.18)
 
 project(VideoCubeCV)
 set( CMAKE_VERBOSE_MAKEFILE on )
 set( OpenCV_DIR "D:\\opencv\\build" )
 set( Qt5Widgets_DIR "D:\\Qt5\\5.9.9\\msvc2017_64\\lib\\cmake\\Qt5Widgets" )
+set( Qt5Concurrent_DIR "D:\\Qt5\\5.9.9\\msvc2017_64\\lib\\cmake\\Qt5Concurrent" )
 
 find_package(OpenCV REQUIRED )
+find_package(TBB REQUIRED)
 # Widgets finds its own dependencies (QtGui and QtCore).
 find_package(Qt5Widgets REQUIRED)
+find_package(Qt5Concurrent REQUIRED)
 
 set(CMAKE_VERBOSE_MAKEFILE ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
@@ -19,6 +22,7 @@ set(CMAKE_AUTOMOC ON)
 # The Qt5Widgets_INCLUDES also includes the include directories for
 # dependencies QtCore and QtGui
 include_directories(${Qt5Widgets_INCLUDES})
+include_directories(${Qt5Concurrent_INCLUDES})
 # We need add -DQT_WIDGETS_LIB when using QtWidgets in Qt 5.
 add_definitions(${Qt5Widgets_DEFINITIONS})
 set(CMAKE_BUILD_TYPE Release)
@@ -27,6 +31,7 @@ set(SOURCES main.cpp
            dialog.cpp  
            print.cpp
            shared.cpp
+           videoscreen.cpp
 )
 
 
@@ -44,6 +49,7 @@ set ( UIS
 
 set(HEADERS dialog.h 
     shared.h
+    videoscreen.h
     print.h
     ui_dialog.h
 )
@@ -58,7 +64,8 @@ QT5_WRAP_UI(UI_HEADERS ${UIS})
 #link_directories (${DIR}/src/utils /opt/local/lib)
 add_executable(${PROJECT_NAME} ${UI_HEADERS} ${SOURCES} ${HEADERS} )
 # The Qt5Widgets_LIBRARIES variable also includes QtGui and QtCore
-target_link_libraries(${PROJECT_NAME} ${Qt5Widgets_LIBRARIES})
+target_link_libraries(${PROJECT_NAME} ${Qt5Widgets_LIBRARIES} ${Qt5Concurrent_LIBRARIES})
+target_link_libraries(${PROJECT_NAME} TBB::tbb)
 
 add_definitions(-DUSE_AVX_INSTRUCTIONS=1)
 

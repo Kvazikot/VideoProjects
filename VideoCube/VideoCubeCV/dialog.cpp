@@ -24,6 +24,7 @@
 #include <QBuffer>
 #include <QtCore/QDebug>
 #include "print.h"
+#include "videoscreen.h"
 
 Shared sharedmem;
 
@@ -46,6 +47,7 @@ void Dialog::showEvent(QShowEvent *event)
     ui.label->setPixmap(QPixmap::fromImage(image));
     sharedmem.Init();
     sharedmem.writeImage("../NicePng_vintage-paper-png_9772625.png", image.width(), image.height());
+    VideoScreen* screen = new VideoScreen();
 }
 
 void Dialog::timerEvent(QTimerEvent* event)
