@@ -5,5 +5,5 @@
 
 Опиание проекта: здесь я планирую выкладывать тексты своих видеороликов для ютьюба, а также все исходники из которых они состоят исключая никому не нужные потроха. Любые програмные идеи я выкладываю под лицензией MIT, мои тексты вы можете использовать без каких-либо ограничений. 
 
-Читайте [документ](https://github.com/Kvazikot/VideoProjects/blob/master/Video_content_creation_Protocol_001.MD) описывающий общий алгоритм создания видеоконтента<br> 
+Читайте [документ](https://github.com/Kvazikot/VideoProjects/blob/master/docs/Video_content_creation_Protocol_001_eng.MD) описывающий общий алгоритм создания видеоконтента<br> 
 Сейчас я работаю над проектом описанным в документе [О вероятности реализации сценария аля "Терминатор"](https://github.com/Kvazikot/VideoProjects/blob/master/Prob_Terminator_scenario/text_with_clip_insertion.MD)

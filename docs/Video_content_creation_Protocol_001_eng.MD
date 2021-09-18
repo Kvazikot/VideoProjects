@@ -16,7 +16,7 @@
                 b'ger   /      (//   \\)     __/     /   \
                                             './_____/
 ```              
-  
+## Musk's Reward Function  
 | Activity | Reward |
 |---|---|
 |Punishment for not inovating  |-80 |
@@ -43,6 +43,10 @@ Document creation date: 02 September 2021
 * The Heisenberg Uncertainty Principle works in our favor when you want to change human history by changing just one byte of your video content description
 * Provide the ability to schedule a convenient time for creative work, leaving the entire routine to the computer.
 
+# List of 3d scenes
+* VideoCube
+* [Barth Sextic](https://github.com/Kvazikot/VideoProjects/blob/master/docs/Video_content_creation_Protocol_001_eng.MD#barth-sextic-as-a-scene)
+* [Worm hole tunel](https://github.com/Kvazikot/Tunel/blob/master/docs/Tunel_Ideas.MD)
 
 
 # General algorithm for creating video content for youtube
@@ -77,6 +81,19 @@ An example of text for with processing rules and content description is [here] (
 It is implemented on Unity and is able to receive via Berkeley Waves i.e. Berkeley Sockets commands from the Python script master.
 VdeoCube is a collection of programs. Historically, the first 3D effect using video frames transmitted over sockets from a Python program.
 The idea of ​​a Rubik's cube where instead of colored sub-cubes, TVs with video frames are presented.
+Bercley sockets eventially was replaced by shared memory
+
+# Barth Sextic as a scene
+This surface is a good way to build in Unity. 
+I knew about this wonderful structure from [Tibees blog](https://www.youtube.com/channel/UC52kszkc08-acFOuogFl5jw)
+"A sextic surface is one defined by a polynomial equation of degree 6. The Barth sextic, drawn above by Craig Kaplan, is the sextic surface with the maximum possible number of ordinary double points: that is, points where it looks like the origin of the cone in 3-dimensional space defined by"
+
+After the VideoCube program be ready. Video Textures 
+Description of algebraic geometry can be found on [American Mathematical Sosiety site.](https://blogs.ams.org/visualinsight/2016/04/15/barth-sextic/) 
+
+
+# Background as worm hole tunel
+Bla bla bla
 
 # Communication protocol between a Unity application and a Python script
 Package Type 1 Instruction
@@ -105,3 +122,8 @@ The pipeline looks something like this
 8. Joins frames from different sources writes everything to the paragraph1.mp4 file
 9. Launches the application on Unity (eg VideoCube).
 10. Sends it a frame image via sockets or this application itself reads
+
+# Links and books
+2. [American Mathematical Society.  Certainly official books.](https://bookstore.ams.org/browse)
+3. Eric W. Weisstein. CRC Concise Encyclopedia of Mathematics, Second Edition
+4. [American Mathematical Society. Science cannot determine the official status of these books.](https://b-ok.as/s/American%20Mathematical%20Society) 
