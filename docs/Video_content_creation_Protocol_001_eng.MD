@@ -47,6 +47,7 @@ Document creation date: 02 September 2021
 * VideoCube
 * [Barth Sextic](https://github.com/Kvazikot/VideoProjects/blob/master/docs/Video_content_creation_Protocol_001_eng.MD#barth-sextic-as-a-scene)
 * [Worm hole tunel](https://github.com/Kvazikot/Tunel/blob/master/docs/Tunel_Ideas.MD)
+* Screenshots on a 3d quad and camera animation with random motion along curve with random zooming
 
 
 # General algorithm for creating video content for youtube
