@@ -3,7 +3,6 @@
 <br/>
 [Мой сайт на гугле.](https://script.google.com/macros/s/AKfycbz0aqkpdEQKaj4dkH7ume_hPS_eOnH7T5tXqvYcO_ovtyOk4m_zD3WOui4Nnm51wx8/exec) <br>
 [Мой сайт на гугле. Самая последняя версия.](https://script.google.com/macros/s/AKfycbxkW4R_jrQVM0I7ichQrGRL6SLs29YqZqpZy5y-JN7rWu0I1nbRS9-EXDk1U2Yvjd4/exec?page=index.html) <br>
-[Мой сайт на гугле. Новости.](https://script.google.com/macros/s/AKfycbxkW4R_jrQVM0I7ichQrGRL6SLs29YqZqpZy5y-JN7rWu0I1nbRS9-EXDk1U2Yvjd4/exec?page=news.html) <br>
 
 
 
