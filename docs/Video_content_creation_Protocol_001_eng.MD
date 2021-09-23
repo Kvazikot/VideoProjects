@@ -27,7 +27,7 @@ Baranov Vladimir vsbaranov83@gmail.com <br>
 Document creation date: 02 September 2021
 
 
-# It is desirable to implement:
+# It is desirable to implement (requirements):
 
 * All software should be developed taking into account its use in realtime streams.
 * All software should be reused in different contexts and different episodes of a futuristic science podcast.
@@ -42,6 +42,9 @@ Document creation date: 02 September 2021
 * Formal language for constructing video content based on text, taking into account the capabilities of Codex systems (GPT-3)
 * The Heisenberg Uncertainty Principle works in our favor when you want to change human history by changing just one byte of your video content description
 * Provide the ability to schedule a convenient time for creative work, leaving the entire routine to the computer.
+
+# Specifications
+GUI can be made using Qt library.
 
 # List of 3d scenes
 * VideoCube
