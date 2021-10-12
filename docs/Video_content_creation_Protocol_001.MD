@@ -126,7 +126,10 @@ VdeoCube - это коллекция программ. Исторически п
 13.  Добавляет музыкальное сопровождение см. r14.
 14.  Подготавливает следующее видео.
 
-# Диаграмма общего взаимодействия ПО VideoCube
+# Диаграмма общего взаимодействия ПО VideoCube с использованием только Qt и app7CoreLib 
+![image](https://github.com/Kvazikot/VideoProjects/blob/master/VideoCube/VideoCubeCV/diagrams/VideoCubeCore_Diagram_App7.png)
+
+# Диаграмма общего взаимодействия ПО VideoCube с подключением Unity через shared memory 
 ![image](https://github.com/Kvazikot/VideoProjects/blob/master/VideoCube/VideoCubeCV/diagrams/VideoCubeCore_Diagram.png)
 
 # Диаграмма общего взаимодействия ПО VideoCube с использованием MoviePy
