@@ -843,7 +843,7 @@
                          </base-DElement>
                          <object>{16968103-a290-4c54-9cd3-e61712f66394}</object>
                          <name>Python</name>
-                         <pos>x:-15;y:-50</pos>
+                         <pos>x:-15;y:295</pos>
                          <rect>x:-65;y:-15;w:130;h:30</rect>
                          <auto-sized>false</auto-sized>
                          <visual-role>0</visual-role>
@@ -864,9 +864,9 @@
                           </DElement>
                          </base-DElement>
                          <object>{e4f550a0-9632-4d0c-917d-5bf30afef83c}</object>
-                         <name>VideoCore.py</name>
+                         <name>VideoCubeCore.py</name>
                          <pos>x:-15;y:400</pos>
-                         <rect>x:-65;y:-30;w:130;h:60</rect>
+                         <rect>x:-80;y:-30;w:160;h:60</rect>
                          <visual-role>0</visual-role>
                         </DObject>
                        </base-DObject>
@@ -885,7 +885,7 @@
                          </base-DElement>
                          <object>{910f3ebf-2869-4368-8197-cedb30f1613b}</object>
                          <name>MoviePy</name>
-                         <pos>x:170;y:-50</pos>
+                         <pos>x:-15;y:240</pos>
                          <rect>x:-65;y:-15;w:130;h:30</rect>
                          <auto-sized>false</auto-sized>
                          <visual-role>0</visual-role>
@@ -971,7 +971,7 @@
                     </item>
                    </qlist>
                   </elements>
-                  <last-modified>1634057242211</last-modified>
+                  <last-modified>1634057599674</last-modified>
                   <toolbarid>General</toolbarid>
                  </MDiagram>
                 </base-MDiagram>
@@ -2583,7 +2583,7 @@
                     <uid>{e4f550a0-9632-4d0c-917d-5bf30afef83c}</uid>
                    </MElement>
                   </base-MElement>
-                  <name>VideoCore.py</name>
+                  <name>VideoCubeCore.py</name>
                   <relations>
                    <handles>
                     <handles>
