@@ -44,6 +44,7 @@ include_directories(.)
 
 set ( UIS
  dialog.ui
+ mainwindow_ver1.ui
 )
 
 #set(HEADERS_MOC videoscreen.h)
