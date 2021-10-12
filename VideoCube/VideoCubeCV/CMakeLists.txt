@@ -45,6 +45,8 @@ include_directories(.)
 set ( UIS
  dialog.ui
  mainwindow_ver1.ui
+ libs.qmodel
+ libs_app7.qmodel
 )
 
 #set(HEADERS_MOC videoscreen.h)

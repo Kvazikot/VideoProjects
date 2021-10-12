@@ -50,8 +50,8 @@
                          <object>{5b85cc8d-c6f4-4927-a797-0bd42b5d1612}</object>
                          <context>VideoCube </context>
                          <name>VideoCubeCore</name>
-                         <pos>x:750;y:455</pos>
-                         <rect>x:-110;y:-65;w:220;h:130</rect>
+                         <pos>x:735;y:435</pos>
+                         <rect>x:-95;y:-45;w:190;h:90</rect>
                          <auto-sized>false</auto-sized>
                          <visual-role>0</visual-role>
                         </DObject>
@@ -281,7 +281,7 @@
                          </base-DElement>
                          <object>{007aee5b-8a6d-4030-b797-f779b2750191}</object>
                          <name>3dVideoCube</name>
-                         <pos>x:305;y:160</pos>
+                         <pos>x:330;y:165</pos>
                          <rect>x:-40;y:-30;w:80;h:60</rect>
                          <visual-role>0</visual-role>
                         </DObject>
@@ -343,24 +343,6 @@
                          <object>{72784bfe-7cb2-4862-8459-d684b81ebdc7}</object>
                          <a>{c906bc32-ff69-4aa3-9b0a-6dc63590431c}</a>
                          <b>{52559f6e-0301-4854-8a4f-3d2cd73c8849}</b>
-                        </DRelation>
-                       </base-DRelation>
-                      </DDependency>
-                     </instance>
-                    </item>
-                    <item>
-                     <instance type="DDependency">
-                      <DDependency>
-                       <base-DRelation>
-                        <DRelation>
-                         <base-DElement>
-                          <DElement>
-                           <uid>{e221d606-52f6-45bf-9608-ab6cc90fd468}</uid>
-                          </DElement>
-                         </base-DElement>
-                         <object>{9f9dce5e-f1a2-4502-9d0d-7dc0408e0bd2}</object>
-                         <a>{9ecb9688-e162-4f68-9c6f-c85e5e2aeb53}</a>
-                         <b>{67e15ef4-949d-47f4-9f8e-0e74b54c1a06}</b>
                         </DRelation>
                        </base-DRelation>
                       </DDependency>
@@ -594,7 +576,7 @@
                          </base-DElement>
                          <object>{98e6ed33-b557-445b-8b9c-e7f4afb9cc68}</object>
                          <name>QtOpenGL</name>
-                         <pos>x:75;y:460</pos>
+                         <pos>x:80;y:415</pos>
                          <rect>x:-55;y:-20;w:110;h:40</rect>
                          <auto-sized>false</auto-sized>
                          <visual-role>0</visual-role>
@@ -602,24 +584,6 @@
                        </base-DObject>
                        <shape-editable>false</shape-editable>
                       </DItem>
-                     </instance>
-                    </item>
-                    <item>
-                     <instance type="DDependency">
-                      <DDependency>
-                       <base-DRelation>
-                        <DRelation>
-                         <base-DElement>
-                          <DElement>
-                           <uid>{7baf6e41-01d2-4c81-8a7c-82285cec133d}</uid>
-                          </DElement>
-                         </base-DElement>
-                         <object>{71c6e35a-03cf-47ea-bd00-26fe7d13d067}</object>
-                         <a>{9bb99536-d9dd-4811-b08a-bbe174cce3bd}</a>
-                         <b>{d2c0ca41-56ce-4851-a407-99bf421b4e14}</b>
-                        </DRelation>
-                       </base-DRelation>
-                      </DDependency>
                      </instance>
                     </item>
                     <item>
@@ -634,8 +598,8 @@
                          </base-DElement>
                          <object>{8e9112c5-17f8-4379-b8dd-4f8a374e1c3f}</object>
                          <name>VideoCube </name>
-                         <pos>x:825;y:430</pos>
-                         <rect>x:-235;y:-145;w:470;h:290</rect>
+                         <pos>x:825;y:505</pos>
+                         <rect>x:-235;y:-220;w:470;h:440</rect>
                          <auto-sized>false</auto-sized>
                          <visual-role>0</visual-role>
                         </DObject>
@@ -683,9 +647,83 @@
                       </DDependency>
                      </instance>
                     </item>
+                    <item>
+                     <instance type="DDependency">
+                      <DDependency>
+                       <base-DRelation>
+                        <DRelation>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{3ec59923-bdbd-43a0-939c-be577347aaac}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{a180725b-5d26-47ea-9156-eb38b6d6d42a}</object>
+                         <a>{9bb99536-d9dd-4811-b08a-bbe174cce3bd}</a>
+                         <b>{04d96bc4-08d0-409c-880c-9a2499cf298f}</b>
+                        </DRelation>
+                       </base-DRelation>
+                      </DDependency>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DDependency">
+                      <DDependency>
+                       <base-DRelation>
+                        <DRelation>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{3019611a-dd35-4f18-a8e1-deeecba03311}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{b4fc061a-4e8d-468f-8542-3e6cee5c24d9}</object>
+                         <a>{5991dd34-7916-43a2-b864-be36132c28bd}</a>
+                         <b>{04d96bc4-08d0-409c-880c-9a2499cf298f}</b>
+                        </DRelation>
+                       </base-DRelation>
+                      </DDependency>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DComponent">
+                      <DComponent>
+                       <base-DObject>
+                        <DObject>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{2d00b0ef-33bd-432e-b9c0-7f0dfcb760b1}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{9678f6b0-c919-4828-ac5b-9c1e946c1cf4}</object>
+                         <name>PluginFactory</name>
+                         <pos>x:720;y:575</pos>
+                         <rect>x:-65;y:-30;w:130;h:60</rect>
+                         <visual-role>0</visual-role>
+                        </DObject>
+                       </base-DObject>
+                      </DComponent>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DDependency">
+                      <DDependency>
+                       <base-DRelation>
+                        <DRelation>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{a836e8bb-5fe9-439d-8230-3aefd28c3aba}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{dea0fdec-c321-4d5b-ac10-5d4e17cd2f3b}</object>
+                         <a>{2d00b0ef-33bd-432e-b9c0-7f0dfcb760b1}</a>
+                         <b>{67e15ef4-949d-47f4-9f8e-0e74b54c1a06}</b>
+                        </DRelation>
+                       </base-DRelation>
+                      </DDependency>
+                     </instance>
+                    </item>
                    </qlist>
                   </elements>
-                  <last-modified>1634059801036</last-modified>
+                  <last-modified>1634060912141</last-modified>
                   <toolbarid>General</toolbarid>
                  </MDiagram>
                 </base-MDiagram>
@@ -727,6 +765,28 @@
                              </base-MElement>
                              <a>{03b7954a-23dc-42b5-9005-92ffdcc3336b}</a>
                              <b>{35780129-0b99-4af2-9b0d-67891f5c5e60}</b>
+                            </MRelation>
+                           </base-MRelation>
+                          </MDependency>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                      <item>
+                       <handle>
+                        <uid>{b4fc061a-4e8d-468f-8542-3e6cee5c24d9}</uid>
+                        <target>
+                         <instance type="MDependency">
+                          <MDependency>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{b4fc061a-4e8d-468f-8542-3e6cee5c24d9}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{03b7954a-23dc-42b5-9005-92ffdcc3336b}</a>
+                             <b>{8e9112c5-17f8-4379-b8dd-4f8a374e1c3f}</b>
                             </MRelation>
                            </base-MRelation>
                           </MDependency>
@@ -2281,6 +2341,28 @@
                         </target>
                        </handle>
                       </item>
+                      <item>
+                       <handle>
+                        <uid>{a180725b-5d26-47ea-9156-eb38b6d6d42a}</uid>
+                        <target>
+                         <instance type="MDependency">
+                          <MDependency>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{a180725b-5d26-47ea-9156-eb38b6d6d42a}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{98e6ed33-b557-445b-8b9c-e7f4afb9cc68}</a>
+                             <b>{8e9112c5-17f8-4379-b8dd-4f8a374e1c3f}</b>
+                            </MRelation>
+                           </base-MRelation>
+                          </MDependency>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
                      </qlist>
                     </handles>
                    </handles>
@@ -2521,6 +2603,524 @@
                         </target>
                        </handle>
                       </item>
+                      <item>
+                       <handle>
+                        <uid>{62681f35-8baf-416f-9b01-d87a4e49a345}</uid>
+                        <target>
+                         <instance type="MCanvasDiagram">
+                          <MCanvasDiagram>
+                           <base-MDiagram>
+                            <MDiagram>
+                             <base-MObject>
+                              <MObject>
+                               <base-MElement>
+                                <MElement>
+                                 <uid>{62681f35-8baf-416f-9b01-d87a4e49a345}</uid>
+                                </MElement>
+                               </base-MElement>
+                               <name>VideoCube </name>
+                              </MObject>
+                             </base-MObject>
+                             <elements>
+                              <qlist>
+                               <item>
+                                <instance type="DComponent">
+                                 <DComponent>
+                                  <base-DObject>
+                                   <DObject>
+                                    <base-DElement>
+                                     <DElement>
+                                      <uid>{0fd539fa-41ad-437d-8bdd-dedf7539f374}</uid>
+                                     </DElement>
+                                    </base-DElement>
+                                    <object>{a32a9708-5fbc-45a5-9a7e-4b75653605d2}</object>
+                                    <name>PluginFactory</name>
+                                    <pos>x:150;y:130</pos>
+                                    <rect>x:-65;y:-30;w:130;h:60</rect>
+                                    <visual-role>0</visual-role>
+                                   </DObject>
+                                  </base-DObject>
+                                 </DComponent>
+                                </instance>
+                               </item>
+                               <item>
+                                <instance type="DItem">
+                                 <DItem>
+                                  <base-DObject>
+                                   <DObject>
+                                    <base-DElement>
+                                     <DElement>
+                                      <uid>{a52e9a62-93d7-477f-a8c5-8af630ddde6e}</uid>
+                                     </DElement>
+                                    </base-DElement>
+                                    <object>{ba5b066f-f933-48af-95fa-de06da73ca8b}</object>
+                                    <name>Загрузка списка плагинов</name>
+                                    <pos>x:400;y:85</pos>
+                                    <rect>x:-75;y:-15;w:150;h:30</rect>
+                                    <visual-role>0</visual-role>
+                                   </DObject>
+                                  </base-DObject>
+                                  <variety>activity</variety>
+                                  <shape-editable>false</shape-editable>
+                                 </DItem>
+                                </instance>
+                               </item>
+                               <item>
+                                <instance type="DItem">
+                                 <DItem>
+                                  <base-DObject>
+                                   <DObject>
+                                    <base-DElement>
+                                     <DElement>
+                                      <uid>{8afa3e40-2e49-48f1-9f63-dbd16f32dc7e}</uid>
+                                     </DElement>
+                                    </base-DElement>
+                                    <object>{d6e94ea0-b612-40d5-b593-687f0cb38d94}</object>
+                                    <name>Динамическая загрузка dll</name>
+                                    <pos>x:410;y:140</pos>
+                                    <rect>x:-75;y:-15;w:150;h:30</rect>
+                                    <visual-role>0</visual-role>
+                                   </DObject>
+                                  </base-DObject>
+                                  <variety>activity</variety>
+                                  <shape-editable>false</shape-editable>
+                                 </DItem>
+                                </instance>
+                               </item>
+                               <item>
+                                <instance type="DDependency">
+                                 <DDependency>
+                                  <base-DRelation>
+                                   <DRelation>
+                                    <base-DElement>
+                                     <DElement>
+                                      <uid>{9a2d96ec-3316-4914-94df-f894d1a5ca2a}</uid>
+                                     </DElement>
+                                    </base-DElement>
+                                    <object>{d22a9445-f331-44c5-a585-00f89f39bfdf}</object>
+                                    <a>{0fd539fa-41ad-437d-8bdd-dedf7539f374}</a>
+                                    <b>{a52e9a62-93d7-477f-a8c5-8af630ddde6e}</b>
+                                   </DRelation>
+                                  </base-DRelation>
+                                 </DDependency>
+                                </instance>
+                               </item>
+                               <item>
+                                <instance type="DDependency">
+                                 <DDependency>
+                                  <base-DRelation>
+                                   <DRelation>
+                                    <base-DElement>
+                                     <DElement>
+                                      <uid>{bdd77c7c-602e-427f-8af8-b61dcbbcf877}</uid>
+                                     </DElement>
+                                    </base-DElement>
+                                    <object>{16dfa182-f3d6-4f26-8877-c4a055f509c4}</object>
+                                    <a>{0fd539fa-41ad-437d-8bdd-dedf7539f374}</a>
+                                    <b>{8afa3e40-2e49-48f1-9f63-dbd16f32dc7e}</b>
+                                   </DRelation>
+                                  </base-DRelation>
+                                 </DDependency>
+                                </instance>
+                               </item>
+                               <item>
+                                <instance type="DClass">
+                                 <DClass>
+                                  <base-DObject>
+                                   <DObject>
+                                    <base-DElement>
+                                     <DElement>
+                                      <uid>{4ec5ee4f-f82a-40b3-9a14-6108005231de}</uid>
+                                     </DElement>
+                                    </base-DElement>
+                                    <object>{63cab29a-e35d-4340-a1c0-d3d9e7936728}</object>
+                                    <stereotypes>
+                                     <qlist>
+                                      <item>entity</item>
+                                     </qlist>
+                                    </stereotypes>
+                                    <name>PluginFactory</name>
+                                    <pos>x:385;y:365</pos>
+                                    <rect>x:-105;y:-80;w:210;h:160</rect>
+                                    <auto-sized>false</auto-sized>
+                                    <visual-role>5</visual-role>
+                                   </DObject>
+                                  </base-DObject>
+                                  <show-all-members>true</show-all-members>
+                                 </DClass>
+                                </instance>
+                               </item>
+                               <item>
+                                <instance type="DClass">
+                                 <DClass>
+                                  <base-DObject>
+                                   <DObject>
+                                    <base-DElement>
+                                     <DElement>
+                                      <uid>{eae3183c-affd-4488-b0f4-77e477be01d7}</uid>
+                                     </DElement>
+                                    </base-DElement>
+                                    <object>{e9b77fad-95a0-402d-add9-9eb56abc4db7}</object>
+                                    <name>QPluginLoader </name>
+                                    <pos>x:95;y:365</pos>
+                                    <rect>x:-45;y:-30;w:90;h:60</rect>
+                                    <auto-sized>false</auto-sized>
+                                    <visual-role>0</visual-role>
+                                   </DObject>
+                                  </base-DObject>
+                                 </DClass>
+                                </instance>
+                               </item>
+                               <item>
+                                <instance type="DAssociation">
+                                 <DAssociation>
+                                  <base-DRelation>
+                                   <DRelation>
+                                    <base-DElement>
+                                     <DElement>
+                                      <uid>{814c7259-95fa-4829-810b-0aece74aba1b}</uid>
+                                     </DElement>
+                                    </base-DElement>
+                                    <object>{431db6c6-5faf-4819-9cb7-7138b9125811}</object>
+                                    <a>{eae3183c-affd-4488-b0f4-77e477be01d7}</a>
+                                    <b>{4ec5ee4f-f82a-40b3-9a14-6108005231de}</b>
+                                   </DRelation>
+                                  </base-DRelation>
+                                  <a>
+                                   <DAssociationEnd>
+                                    <cradinality>*</cradinality>
+                                    <navigable>true</navigable>
+                                   </DAssociationEnd>
+                                  </a>
+                                  <b>
+                                   <DAssociationEnd>
+                                    <kind>1</kind>
+                                   </DAssociationEnd>
+                                  </b>
+                                 </DAssociation>
+                                </instance>
+                               </item>
+                               <item>
+                                <instance type="DAnnotation">
+                                 <DAnnotation>
+                                  <base-DElement>
+                                   <DElement>
+                                    <uid>{7b70b93d-0505-49a9-b087-3808993eebae}</uid>
+                                   </DElement>
+                                  </base-DElement>
+                                  <text>Основные процессы выполняемые Фабрикой Плагинов</text>
+                                  <pos>x:85;y:25</pos>
+                                  <rect>x:0;y:0;w:295;h:29</rect>
+                                 </DAnnotation>
+                                </instance>
+                               </item>
+                              </qlist>
+                             </elements>
+                             <last-modified>1634061033333</last-modified>
+                             <toolbarid>Activities</toolbarid>
+                            </MDiagram>
+                           </base-MDiagram>
+                          </MCanvasDiagram>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                      <item>
+                       <handle>
+                        <uid>{a32a9708-5fbc-45a5-9a7e-4b75653605d2}</uid>
+                        <target>
+                         <instance type="MComponent">
+                          <MComponent>
+                           <base-MObject>
+                            <MObject>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{a32a9708-5fbc-45a5-9a7e-4b75653605d2}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <name>PluginFactory</name>
+                             <relations>
+                              <handles>
+                               <handles>
+                                <qlist>
+                                 <item>
+                                  <handle>
+                                   <uid>{d22a9445-f331-44c5-a585-00f89f39bfdf}</uid>
+                                   <target>
+                                    <instance type="MDependency">
+                                     <MDependency>
+                                      <base-MRelation>
+                                       <MRelation>
+                                        <base-MElement>
+                                         <MElement>
+                                          <uid>{d22a9445-f331-44c5-a585-00f89f39bfdf}</uid>
+                                         </MElement>
+                                        </base-MElement>
+                                        <a>{a32a9708-5fbc-45a5-9a7e-4b75653605d2}</a>
+                                        <b>{ba5b066f-f933-48af-95fa-de06da73ca8b}</b>
+                                       </MRelation>
+                                      </base-MRelation>
+                                     </MDependency>
+                                    </instance>
+                                   </target>
+                                  </handle>
+                                 </item>
+                                 <item>
+                                  <handle>
+                                   <uid>{16dfa182-f3d6-4f26-8877-c4a055f509c4}</uid>
+                                   <target>
+                                    <instance type="MDependency">
+                                     <MDependency>
+                                      <base-MRelation>
+                                       <MRelation>
+                                        <base-MElement>
+                                         <MElement>
+                                          <uid>{16dfa182-f3d6-4f26-8877-c4a055f509c4}</uid>
+                                         </MElement>
+                                        </base-MElement>
+                                        <a>{a32a9708-5fbc-45a5-9a7e-4b75653605d2}</a>
+                                        <b>{d6e94ea0-b612-40d5-b593-687f0cb38d94}</b>
+                                       </MRelation>
+                                      </base-MRelation>
+                                     </MDependency>
+                                    </instance>
+                                   </target>
+                                  </handle>
+                                 </item>
+                                </qlist>
+                               </handles>
+                              </handles>
+                             </relations>
+                            </MObject>
+                           </base-MObject>
+                          </MComponent>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                      <item>
+                       <handle>
+                        <uid>{ba5b066f-f933-48af-95fa-de06da73ca8b}</uid>
+                        <target>
+                         <instance type="MItem">
+                          <MItem>
+                           <base-MObject>
+                            <MObject>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{ba5b066f-f933-48af-95fa-de06da73ca8b}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <name>Загрузка списка плагинов</name>
+                            </MObject>
+                           </base-MObject>
+                           <variety-editable>false</variety-editable>
+                           <variety>activity</variety>
+                          </MItem>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                      <item>
+                       <handle>
+                        <uid>{d6e94ea0-b612-40d5-b593-687f0cb38d94}</uid>
+                        <target>
+                         <instance type="MItem">
+                          <MItem>
+                           <base-MObject>
+                            <MObject>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{d6e94ea0-b612-40d5-b593-687f0cb38d94}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <name>Динамическая загрузка dll</name>
+                            </MObject>
+                           </base-MObject>
+                           <variety-editable>false</variety-editable>
+                           <variety>activity</variety>
+                          </MItem>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                      <item>
+                       <handle>
+                        <uid>{63cab29a-e35d-4340-a1c0-d3d9e7936728}</uid>
+                        <target>
+                         <instance type="MClass">
+                          <MClass>
+                           <base-MObject>
+                            <MObject>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{63cab29a-e35d-4340-a1c0-d3d9e7936728}</uid>
+                               <stereotypes>
+                                <qlist>
+                                 <item>entity</item>
+                                </qlist>
+                               </stereotypes>
+                              </MElement>
+                             </base-MElement>
+                             <name>PluginFactory</name>
+                            </MObject>
+                           </base-MObject>
+                           <members>
+                            <qlist>
+                             <item>
+                              <MClassMember>
+                               <uid>{94efaa6c-087e-4cb1-a33f-67eb6e2964b2}</uid>
+                               <type>1</type>
+                               <declaration>QString name</declaration>
+                              </MClassMember>
+                             </item>
+                             <item>
+                              <MClassMember>
+                               <uid>{06b7ce9c-fe5b-49d2-811d-d078f8730604}</uid>
+                               <type>1</type>
+                               <declaration>bool loaded</declaration>
+                              </MClassMember>
+                             </item>
+                             <item>
+                              <MClassMember>
+                               <uid>{1cac715c-4f21-4062-b702-04cc1721fcf4}</uid>
+                               <type>2</type>
+                               <declaration>int Load()</declaration>
+                              </MClassMember>
+                             </item>
+                             <item>
+                              <MClassMember>
+                               <uid>{b0983934-6351-4d87-9136-7fa1fbe42300}</uid>
+                               <type>2</type>
+                               <declaration>int UnLoad()</declaration>
+                              </MClassMember>
+                             </item>
+                             <item>
+                              <MClassMember>
+                               <uid>{1fd8d7b9-900e-4992-9a70-e5cc180922c0}</uid>
+                               <type>2</type>
+                               <declaration>int ReLoad()</declaration>
+                              </MClassMember>
+                             </item>
+                             <item>
+                              <MClassMember>
+                               <uid>{12eaa5f6-9950-46e4-a2f9-d067eed881d6}</uid>
+                               <type>2</type>
+                               <declaration>int LoadList(QListView&amp; listviewWidget)</declaration>
+                              </MClassMember>
+                             </item>
+                            </qlist>
+                           </members>
+                          </MClass>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                      <item>
+                       <handle>
+                        <uid>{cabddfdc-c07f-421d-83b7-7932d4f108b9}</uid>
+                        <target>
+                         <instance type="MItem">
+                          <MItem>
+                           <base-MObject>
+                            <MObject>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{cabddfdc-c07f-421d-83b7-7932d4f108b9}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <name>QPluginader </name>
+                            </MObject>
+                           </base-MObject>
+                          </MItem>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                      <item>
+                       <handle>
+                        <uid>{e9b77fad-95a0-402d-add9-9eb56abc4db7}</uid>
+                        <target>
+                         <instance type="MClass">
+                          <MClass>
+                           <base-MObject>
+                            <MObject>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{e9b77fad-95a0-402d-add9-9eb56abc4db7}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <name>QPluginLoader </name>
+                             <relations>
+                              <handles>
+                               <handles>
+                                <qlist>
+                                 <item>
+                                  <handle>
+                                   <uid>{c776a4af-63d6-4459-8d9c-dd799460b186}</uid>
+                                   <target>
+                                    <instance type="MInheritance">
+                                     <MInheritance>
+                                      <base-MRelation>
+                                       <MRelation>
+                                        <base-MElement>
+                                         <MElement>
+                                          <uid>{c776a4af-63d6-4459-8d9c-dd799460b186}</uid>
+                                         </MElement>
+                                        </base-MElement>
+                                        <a>{e9b77fad-95a0-402d-add9-9eb56abc4db7}</a>
+                                        <b>{63cab29a-e35d-4340-a1c0-d3d9e7936728}</b>
+                                       </MRelation>
+                                      </base-MRelation>
+                                     </MInheritance>
+                                    </instance>
+                                   </target>
+                                  </handle>
+                                 </item>
+                                 <item>
+                                  <handle>
+                                   <uid>{431db6c6-5faf-4819-9cb7-7138b9125811}</uid>
+                                   <target>
+                                    <instance type="MAssociation">
+                                     <MAssociation>
+                                      <base-MRelation>
+                                       <MRelation>
+                                        <base-MElement>
+                                         <MElement>
+                                          <uid>{431db6c6-5faf-4819-9cb7-7138b9125811}</uid>
+                                         </MElement>
+                                        </base-MElement>
+                                        <a>{e9b77fad-95a0-402d-add9-9eb56abc4db7}</a>
+                                        <b>{63cab29a-e35d-4340-a1c0-d3d9e7936728}</b>
+                                       </MRelation>
+                                      </base-MRelation>
+                                      <a>
+                                       <MAssociationEnd>
+                                        <cardinality>*</cardinality>
+                                        <navigable>true</navigable>
+                                       </MAssociationEnd>
+                                      </a>
+                                      <b>
+                                       <MAssociationEnd>
+                                        <kind>1</kind>
+                                       </MAssociationEnd>
+                                      </b>
+                                     </MAssociation>
+                                    </instance>
+                                   </target>
+                                  </handle>
+                                 </item>
+                                </qlist>
+                               </handles>
+                              </handles>
+                             </relations>
+                            </MObject>
+                           </base-MObject>
+                          </MClass>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
                      </qlist>
                     </handles>
                    </handles>
@@ -2600,6 +3200,57 @@
                  </MObject>
                 </base-MObject>
                </MItem>
+              </instance>
+             </target>
+            </handle>
+           </item>
+           <item>
+            <handle>
+             <uid>{9678f6b0-c919-4828-ac5b-9c1e946c1cf4}</uid>
+             <target>
+              <instance type="MComponent">
+               <MComponent>
+                <base-MObject>
+                 <MObject>
+                  <base-MElement>
+                   <MElement>
+                    <uid>{9678f6b0-c919-4828-ac5b-9c1e946c1cf4}</uid>
+                   </MElement>
+                  </base-MElement>
+                  <name>PluginFactory</name>
+                  <relations>
+                   <handles>
+                    <handles>
+                     <qlist>
+                      <item>
+                       <handle>
+                        <uid>{dea0fdec-c321-4d5b-ac10-5d4e17cd2f3b}</uid>
+                        <target>
+                         <instance type="MDependency">
+                          <MDependency>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{dea0fdec-c321-4d5b-ac10-5d4e17cd2f3b}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{9678f6b0-c919-4828-ac5b-9c1e946c1cf4}</a>
+                             <b>{007aee5b-8a6d-4030-b797-f779b2750191}</b>
+                            </MRelation>
+                           </base-MRelation>
+                          </MDependency>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                     </qlist>
+                    </handles>
+                   </handles>
+                  </relations>
+                 </MObject>
+                </base-MObject>
+               </MComponent>
               </instance>
              </target>
             </handle>
