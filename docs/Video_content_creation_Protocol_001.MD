@@ -157,8 +157,8 @@ VdeoCube - это коллекция программ. Исторически п
 со свободой слова, где нет цензуры и втом числе копирайт чеккеров. 
 
 # Скриншоты прототипы основнорго экрана VideoCubeGUI.
-[!image](https://github.com/Kvazikot/VideoProjects/blob/master/screenshots/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA_2021_10_12_19_27_48_323.png)
-[!image](https://github.com/Kvazikot/VideoProjects/blob/master/screenshots/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA_2021_10_12_19_28_01_186.png)
+![image](https://github.com/Kvazikot/VideoProjects/blob/master/screenshots/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA_2021_10_12_19_27_48_323.png)
+![image](https://github.com/Kvazikot/VideoProjects/blob/master/screenshots/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA_2021_10_12_19_28_01_186.png)
 
 # Вопросы:
 1. Посмотреть можно ли в пайтоне отрендерить веб шрифты?   
