@@ -27,7 +27,7 @@ Baranov Vladimir vsbaranov83@gmail.com <br>
 Document creation date: 02 September 2021
 
 
-# It is desirable to implement:
+# It is desirable to implement (requirements):
 
 * All software should be developed taking into account its use in realtime streams.
 * All software should be reused in different contexts and different episodes of a futuristic science podcast.
@@ -43,10 +43,14 @@ Document creation date: 02 September 2021
 * The Heisenberg Uncertainty Principle works in our favor when you want to change human history by changing just one byte of your video content description
 * Provide the ability to schedule a convenient time for creative work, leaving the entire routine to the computer.
 
+# Specifications
+GUI can be made using Qt library.
+
 # List of 3d scenes
 * VideoCube
 * [Barth Sextic](https://github.com/Kvazikot/VideoProjects/blob/master/docs/Video_content_creation_Protocol_001_eng.MD#barth-sextic-as-a-scene)
 * [Worm hole tunel](https://github.com/Kvazikot/Tunel/blob/master/docs/Tunel_Ideas.MD)
+* Screenshots on a 3d quad and camera animation with random motion along curve with random zooming
 
 
 # General algorithm for creating video content for youtube
