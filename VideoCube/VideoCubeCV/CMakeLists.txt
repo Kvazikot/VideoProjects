@@ -1,10 +1,10 @@
-#cmake_minimum_required(VERSION 3.18)
+cmake_minimum_required(VERSION 3.18)
 
 project(VideoCubeCV)
 set( CMAKE_VERBOSE_MAKEFILE on )
-set( OpenCV_DIR "D:\\opencv\\build" )
-set( Qt5Widgets_DIR "D:\\Qt5\\5.9.9\\msvc2017_64\\lib\\cmake\\Qt5Widgets" )
-set( Qt5Concurrent_DIR "D:\\Qt5\\5.9.9\\msvc2017_64\\lib\\cmake\\Qt5Concurrent" )
+set( OpenCV_DIR "D:\\opencv\\build2" )
+set( Qt5Widgets_DIR "C:\\Qt\\Qt5.12.11\\5.12.11\\msvc2017_64\\lib\\cmake\\Qt5Widgets" )
+set( Qt5Concurrent_DIR "C:\\Qt\\Qt5.12.11\\5.12.11\\msvc2017_64\\lib\\cmake\\Qt5Concurrent" )
 
 find_package(OpenCV REQUIRED )
 find_package(TBB REQUIRED)
