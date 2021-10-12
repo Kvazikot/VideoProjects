@@ -48,8 +48,9 @@
                           </DElement>
                          </base-DElement>
                          <object>{5b85cc8d-c6f4-4927-a797-0bd42b5d1612}</object>
-                         <name>App7CoreLIB</name>
-                         <pos>x:430;y:295</pos>
+                         <context>VideoCube </context>
+                         <name>VideoCubeCore</name>
+                         <pos>x:750;y:455</pos>
                          <rect>x:-110;y:-65;w:220;h:130</rect>
                          <auto-sized>false</auto-sized>
                          <visual-role>0</visual-role>
@@ -70,7 +71,7 @@
                          </base-DElement>
                          <object>{03b7954a-23dc-42b5-9005-92ffdcc3336b}</object>
                          <name>QtWidgets</name>
-                         <pos>x:-5;y:525</pos>
+                         <pos>x:70;y:535</pos>
                          <rect>x:-55;y:-20;w:110;h:40</rect>
                          <auto-sized>false</auto-sized>
                          <visual-role>0</visual-role>
@@ -92,7 +93,7 @@
                          </base-DElement>
                          <object>{35780129-0b99-4af2-9b0d-67891f5c5e60}</object>
                          <name>VideoCubeGUI</name>
-                         <pos>x:300;y:515</pos>
+                         <pos>x:375;y:525</pos>
                          <rect>x:-130;y:-95;w:260;h:190</rect>
                          <auto-sized>false</auto-sized>
                          <visual-role>0</visual-role>
@@ -176,7 +177,7 @@
                          </base-DElement>
                          <object>{e9e95208-cf04-444b-8eff-8a6339f86c80}</object>
                          <name>New Actor</name>
-                         <pos>x:100;y:735</pos>
+                         <pos>x:365;y:720</pos>
                          <rect>x:-10;y:-20;w:20;h:40</rect>
                          <visual-role>0</visual-role>
                         </DObject>
@@ -260,7 +261,7 @@
                          </base-DElement>
                          <object>{d8b0b2ab-0484-4809-a71f-d2c1b90d377e}</object>
                          <name>VideoCubePlugin</name>
-                         <pos>x:185;y:20</pos>
+                         <pos>x:305;y:50</pos>
                          <rect>x:-50;y:-30;w:100;h:60</rect>
                          <visual-role>0</visual-role>
                         </DObject>
@@ -280,7 +281,7 @@
                          </base-DElement>
                          <object>{007aee5b-8a6d-4030-b797-f779b2750191}</object>
                          <name>3dVideoCube</name>
-                         <pos>x:320;y:125</pos>
+                         <pos>x:305;y:160</pos>
                          <rect>x:-40;y:-30;w:80;h:60</rect>
                          <visual-role>0</visual-role>
                         </DObject>
@@ -319,7 +320,7 @@
                          <object>{04011b84-d2f7-4168-abdd-96bd62cc357d}</object>
                          <context>VideoCubeGUI</context>
                          <name>Текстовое описание видеоконтента</name>
-                         <pos>x:290;y:535</pos>
+                         <pos>x:365;y:545</pos>
                          <rect>x:-105;y:-30;w:210;h:60</rect>
                          <auto-sized>false</auto-sized>
                          <visual-role>0</visual-role>
@@ -413,7 +414,7 @@
                          </base-DElement>
                          <object>{7f9a9a2a-b0a3-4092-acb9-81b8ac40ba59}</object>
                          <name>Youtube сервис</name>
-                         <pos>x:625;y:20</pos>
+                         <pos>x:720;y:60</pos>
                          <rect>x:-75;y:-35;w:150;h:70</rect>
                          <auto-sized>false</auto-sized>
                          <visual-role>0</visual-role>
@@ -494,7 +495,7 @@
                          </base-DElement>
                          <object>{c47f9c74-04fd-408d-b8cb-5928599e928a}</object>
                          <name>Поиск по хештегам</name>
-                         <pos>x:825;y:195</pos>
+                         <pos>x:875;y:180</pos>
                          <rect>x:-70;y:-20;w:140;h:40</rect>
                          <auto-sized>false</auto-sized>
                          <visual-role>0</visual-role>
@@ -553,7 +554,7 @@
                          </base-DElement>
                          <object>{25e26d65-4bf9-4163-b15e-0b3a121c9900}</object>
                          <name>QtCore</name>
-                         <pos>x:-10;y:590</pos>
+                         <pos>x:65;y:600</pos>
                          <rect>x:-55;y:-20;w:110;h:40</rect>
                          <auto-sized>false</auto-sized>
                          <visual-role>0</visual-role>
@@ -593,7 +594,7 @@
                          </base-DElement>
                          <object>{98e6ed33-b557-445b-8b9c-e7f4afb9cc68}</object>
                          <name>QtOpenGL</name>
-                         <pos>x:0;y:450</pos>
+                         <pos>x:75;y:460</pos>
                          <rect>x:-55;y:-20;w:110;h:40</rect>
                          <auto-sized>false</auto-sized>
                          <visual-role>0</visual-role>
@@ -621,224 +622,74 @@
                       </DDependency>
                      </instance>
                     </item>
+                    <item>
+                     <instance type="DPackage">
+                      <DPackage>
+                       <base-DObject>
+                        <DObject>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{04d96bc4-08d0-409c-880c-9a2499cf298f}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{8e9112c5-17f8-4379-b8dd-4f8a374e1c3f}</object>
+                         <name>VideoCube </name>
+                         <pos>x:825;y:430</pos>
+                         <rect>x:-235;y:-145;w:470;h:290</rect>
+                         <auto-sized>false</auto-sized>
+                         <visual-role>0</visual-role>
+                        </DObject>
+                       </base-DObject>
+                      </DPackage>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DItem">
+                      <DItem>
+                       <base-DObject>
+                        <DObject>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{0d451dc2-d3ab-4b46-852a-05cc201becb4}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{c82f0524-58e6-4c38-bd8c-4a9af9678a6e}</object>
+                         <name>App7CoreLib</name>
+                         <pos>x:970;y:460</pos>
+                         <rect>x:-65;y:-20;w:130;h:40</rect>
+                         <auto-sized>false</auto-sized>
+                         <visual-role>0</visual-role>
+                        </DObject>
+                       </base-DObject>
+                       <shape-editable>false</shape-editable>
+                      </DItem>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DDependency">
+                      <DDependency>
+                       <base-DRelation>
+                        <DRelation>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{9cbe4215-2112-4910-a911-0266c57d5071}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{5aae17a6-ddee-4937-9591-80d2a012f07a}</object>
+                         <a>{0d451dc2-d3ab-4b46-852a-05cc201becb4}</a>
+                         <b>{9ecb9688-e162-4f68-9c6f-c85e5e2aeb53}</b>
+                        </DRelation>
+                       </base-DRelation>
+                      </DDependency>
+                     </instance>
+                    </item>
                    </qlist>
                   </elements>
-                  <last-modified>1634059137899</last-modified>
+                  <last-modified>1634059801036</last-modified>
                   <toolbarid>General</toolbarid>
                  </MDiagram>
                 </base-MDiagram>
                </MCanvasDiagram>
-              </instance>
-             </target>
-            </handle>
-           </item>
-           <item>
-            <handle>
-             <uid>{5b85cc8d-c6f4-4927-a797-0bd42b5d1612}</uid>
-             <target>
-              <instance type="MComponent">
-               <MComponent>
-                <base-MObject>
-                 <MObject>
-                  <base-MElement>
-                   <MElement>
-                    <uid>{5b85cc8d-c6f4-4927-a797-0bd42b5d1612}</uid>
-                   </MElement>
-                  </base-MElement>
-                  <name>App7CoreLIB</name>
-                  <relations>
-                   <handles>
-                    <handles>
-                     <qlist>
-                      <item>
-                       <handle>
-                        <uid>{2534aedc-3342-4a24-b127-216758a5bf05}</uid>
-                        <target>
-                         <instance type="MDependency">
-                          <MDependency>
-                           <base-MRelation>
-                            <MRelation>
-                             <base-MElement>
-                              <MElement>
-                               <uid>{2534aedc-3342-4a24-b127-216758a5bf05}</uid>
-                               <stereotypes>
-                                <qlist>
-                                 <item>boundary</item>
-                                </qlist>
-                               </stereotypes>
-                              </MElement>
-                             </base-MElement>
-                             <a>{5b85cc8d-c6f4-4927-a797-0bd42b5d1612}</a>
-                             <b>{35780129-0b99-4af2-9b0d-67891f5c5e60}</b>
-                            </MRelation>
-                           </base-MRelation>
-                          </MDependency>
-                         </instance>
-                        </target>
-                       </handle>
-                      </item>
-                      <item>
-                       <handle>
-                        <uid>{8bdb120f-60ae-4527-a3c1-285b414d0901}</uid>
-                        <target>
-                         <instance type="MDependency">
-                          <MDependency>
-                           <base-MRelation>
-                            <MRelation>
-                             <base-MElement>
-                              <MElement>
-                               <uid>{8bdb120f-60ae-4527-a3c1-285b414d0901}</uid>
-                              </MElement>
-                             </base-MElement>
-                             <a>{5b85cc8d-c6f4-4927-a797-0bd42b5d1612}</a>
-                             <b>{62e6489f-ee31-4b6a-a732-9b241249c4ab}</b>
-                            </MRelation>
-                           </base-MRelation>
-                          </MDependency>
-                         </instance>
-                        </target>
-                       </handle>
-                      </item>
-                      <item>
-                       <handle>
-                        <uid>{9f9dce5e-f1a2-4502-9d0d-7dc0408e0bd2}</uid>
-                        <target>
-                         <instance type="MDependency">
-                          <MDependency>
-                           <base-MRelation>
-                            <MRelation>
-                             <base-MElement>
-                              <MElement>
-                               <uid>{9f9dce5e-f1a2-4502-9d0d-7dc0408e0bd2}</uid>
-                              </MElement>
-                             </base-MElement>
-                             <a>{5b85cc8d-c6f4-4927-a797-0bd42b5d1612}</a>
-                             <b>{007aee5b-8a6d-4030-b797-f779b2750191}</b>
-                            </MRelation>
-                           </base-MRelation>
-                          </MDependency>
-                         </instance>
-                        </target>
-                       </handle>
-                      </item>
-                      <item>
-                       <handle>
-                        <uid>{e4ba529f-afc2-490b-b197-7981a574a436}</uid>
-                        <target>
-                         <instance type="MDependency">
-                          <MDependency>
-                           <base-MRelation>
-                            <MRelation>
-                             <base-MElement>
-                              <MElement>
-                               <uid>{e4ba529f-afc2-490b-b197-7981a574a436}</uid>
-                              </MElement>
-                             </base-MElement>
-                             <name>Скачивание источников</name>
-                             <a>{5b85cc8d-c6f4-4927-a797-0bd42b5d1612}</a>
-                             <b>{7f9a9a2a-b0a3-4092-acb9-81b8ac40ba59}</b>
-                            </MRelation>
-                           </base-MRelation>
-                          </MDependency>
-                         </instance>
-                        </target>
-                       </handle>
-                      </item>
-                      <item>
-                       <handle>
-                        <uid>{1aee17cc-0494-4194-99e3-9bbaa7c56cac}</uid>
-                        <target>
-                         <instance type="MDependency">
-                          <MDependency>
-                           <base-MRelation>
-                            <MRelation>
-                             <base-MElement>
-                              <MElement>
-                               <uid>{1aee17cc-0494-4194-99e3-9bbaa7c56cac}</uid>
-                              </MElement>
-                             </base-MElement>
-                             <a>{5b85cc8d-c6f4-4927-a797-0bd42b5d1612}</a>
-                             <b>{7f9a9a2a-b0a3-4092-acb9-81b8ac40ba59}</b>
-                            </MRelation>
-                           </base-MRelation>
-                          </MDependency>
-                         </instance>
-                        </target>
-                       </handle>
-                      </item>
-                      <item>
-                       <handle>
-                        <uid>{cce43330-2355-4f4a-81ad-6a2b63c1b768}</uid>
-                        <target>
-                         <instance type="MDependency">
-                          <MDependency>
-                           <base-MRelation>
-                            <MRelation>
-                             <base-MElement>
-                              <MElement>
-                               <uid>{cce43330-2355-4f4a-81ad-6a2b63c1b768}</uid>
-                              </MElement>
-                             </base-MElement>
-                             <a>{5b85cc8d-c6f4-4927-a797-0bd42b5d1612}</a>
-                             <b>{7f9a9a2a-b0a3-4092-acb9-81b8ac40ba59}</b>
-                            </MRelation>
-                           </base-MRelation>
-                          </MDependency>
-                         </instance>
-                        </target>
-                       </handle>
-                      </item>
-                      <item>
-                       <handle>
-                        <uid>{bff4fe1a-d39f-4dbc-b0d4-5e040547add7}</uid>
-                        <target>
-                         <instance type="MDependency">
-                          <MDependency>
-                           <base-MRelation>
-                            <MRelation>
-                             <base-MElement>
-                              <MElement>
-                               <uid>{bff4fe1a-d39f-4dbc-b0d4-5e040547add7}</uid>
-                              </MElement>
-                             </base-MElement>
-                             <a>{5b85cc8d-c6f4-4927-a797-0bd42b5d1612}</a>
-                             <b>{f45ed45e-8723-4504-b933-b7dd5bf64640}</b>
-                            </MRelation>
-                           </base-MRelation>
-                          </MDependency>
-                         </instance>
-                        </target>
-                       </handle>
-                      </item>
-                      <item>
-                       <handle>
-                        <uid>{0193eb44-d9e0-47ab-89e1-c53b036b211b}</uid>
-                        <target>
-                         <instance type="MDependency">
-                          <MDependency>
-                           <base-MRelation>
-                            <MRelation>
-                             <base-MElement>
-                              <MElement>
-                               <uid>{0193eb44-d9e0-47ab-89e1-c53b036b211b}</uid>
-                              </MElement>
-                             </base-MElement>
-                             <a>{5b85cc8d-c6f4-4927-a797-0bd42b5d1612}</a>
-                             <b>{c47f9c74-04fd-408d-b8cb-5928599e928a}</b>
-                            </MRelation>
-                           </base-MRelation>
-                          </MDependency>
-                         </instance>
-                        </target>
-                       </handle>
-                      </item>
-                     </qlist>
-                    </handles>
-                   </handles>
-                  </relations>
-                 </MObject>
-                </base-MObject>
-               </MComponent>
               </instance>
              </target>
             </handle>
@@ -2423,6 +2274,318 @@
                              </base-MElement>
                              <a>{98e6ed33-b557-445b-8b9c-e7f4afb9cc68}</a>
                              <b>{35780129-0b99-4af2-9b0d-67891f5c5e60}</b>
+                            </MRelation>
+                           </base-MRelation>
+                          </MDependency>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                     </qlist>
+                    </handles>
+                   </handles>
+                  </relations>
+                 </MObject>
+                </base-MObject>
+               </MItem>
+              </instance>
+             </target>
+            </handle>
+           </item>
+           <item>
+            <handle>
+             <uid>{8e9112c5-17f8-4379-b8dd-4f8a374e1c3f}</uid>
+             <target>
+              <instance type="MPackage">
+               <MPackage>
+                <base-MObject>
+                 <MObject>
+                  <base-MElement>
+                   <MElement>
+                    <uid>{8e9112c5-17f8-4379-b8dd-4f8a374e1c3f}</uid>
+                   </MElement>
+                  </base-MElement>
+                  <name>VideoCube </name>
+                  <children>
+                   <handles>
+                    <handles>
+                     <qlist>
+                      <item>
+                       <handle>
+                        <uid>{5b85cc8d-c6f4-4927-a797-0bd42b5d1612}</uid>
+                        <target>
+                         <instance type="MComponent">
+                          <MComponent>
+                           <base-MObject>
+                            <MObject>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{5b85cc8d-c6f4-4927-a797-0bd42b5d1612}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <name>VideoCubeCore</name>
+                             <relations>
+                              <handles>
+                               <handles>
+                                <qlist>
+                                 <item>
+                                  <handle>
+                                   <uid>{2534aedc-3342-4a24-b127-216758a5bf05}</uid>
+                                   <target>
+                                    <instance type="MDependency">
+                                     <MDependency>
+                                      <base-MRelation>
+                                       <MRelation>
+                                        <base-MElement>
+                                         <MElement>
+                                          <uid>{2534aedc-3342-4a24-b127-216758a5bf05}</uid>
+                                          <stereotypes>
+                                           <qlist>
+                                            <item>boundary</item>
+                                           </qlist>
+                                          </stereotypes>
+                                         </MElement>
+                                        </base-MElement>
+                                        <a>{5b85cc8d-c6f4-4927-a797-0bd42b5d1612}</a>
+                                        <b>{35780129-0b99-4af2-9b0d-67891f5c5e60}</b>
+                                       </MRelation>
+                                      </base-MRelation>
+                                     </MDependency>
+                                    </instance>
+                                   </target>
+                                  </handle>
+                                 </item>
+                                 <item>
+                                  <handle>
+                                   <uid>{8bdb120f-60ae-4527-a3c1-285b414d0901}</uid>
+                                   <target>
+                                    <instance type="MDependency">
+                                     <MDependency>
+                                      <base-MRelation>
+                                       <MRelation>
+                                        <base-MElement>
+                                         <MElement>
+                                          <uid>{8bdb120f-60ae-4527-a3c1-285b414d0901}</uid>
+                                         </MElement>
+                                        </base-MElement>
+                                        <a>{5b85cc8d-c6f4-4927-a797-0bd42b5d1612}</a>
+                                        <b>{62e6489f-ee31-4b6a-a732-9b241249c4ab}</b>
+                                       </MRelation>
+                                      </base-MRelation>
+                                     </MDependency>
+                                    </instance>
+                                   </target>
+                                  </handle>
+                                 </item>
+                                 <item>
+                                  <handle>
+                                   <uid>{9f9dce5e-f1a2-4502-9d0d-7dc0408e0bd2}</uid>
+                                   <target>
+                                    <instance type="MDependency">
+                                     <MDependency>
+                                      <base-MRelation>
+                                       <MRelation>
+                                        <base-MElement>
+                                         <MElement>
+                                          <uid>{9f9dce5e-f1a2-4502-9d0d-7dc0408e0bd2}</uid>
+                                         </MElement>
+                                        </base-MElement>
+                                        <a>{5b85cc8d-c6f4-4927-a797-0bd42b5d1612}</a>
+                                        <b>{007aee5b-8a6d-4030-b797-f779b2750191}</b>
+                                       </MRelation>
+                                      </base-MRelation>
+                                     </MDependency>
+                                    </instance>
+                                   </target>
+                                  </handle>
+                                 </item>
+                                 <item>
+                                  <handle>
+                                   <uid>{e4ba529f-afc2-490b-b197-7981a574a436}</uid>
+                                   <target>
+                                    <instance type="MDependency">
+                                     <MDependency>
+                                      <base-MRelation>
+                                       <MRelation>
+                                        <base-MElement>
+                                         <MElement>
+                                          <uid>{e4ba529f-afc2-490b-b197-7981a574a436}</uid>
+                                         </MElement>
+                                        </base-MElement>
+                                        <name>Скачивание источников</name>
+                                        <a>{5b85cc8d-c6f4-4927-a797-0bd42b5d1612}</a>
+                                        <b>{7f9a9a2a-b0a3-4092-acb9-81b8ac40ba59}</b>
+                                       </MRelation>
+                                      </base-MRelation>
+                                     </MDependency>
+                                    </instance>
+                                   </target>
+                                  </handle>
+                                 </item>
+                                 <item>
+                                  <handle>
+                                   <uid>{1aee17cc-0494-4194-99e3-9bbaa7c56cac}</uid>
+                                   <target>
+                                    <instance type="MDependency">
+                                     <MDependency>
+                                      <base-MRelation>
+                                       <MRelation>
+                                        <base-MElement>
+                                         <MElement>
+                                          <uid>{1aee17cc-0494-4194-99e3-9bbaa7c56cac}</uid>
+                                         </MElement>
+                                        </base-MElement>
+                                        <a>{5b85cc8d-c6f4-4927-a797-0bd42b5d1612}</a>
+                                        <b>{7f9a9a2a-b0a3-4092-acb9-81b8ac40ba59}</b>
+                                       </MRelation>
+                                      </base-MRelation>
+                                     </MDependency>
+                                    </instance>
+                                   </target>
+                                  </handle>
+                                 </item>
+                                 <item>
+                                  <handle>
+                                   <uid>{cce43330-2355-4f4a-81ad-6a2b63c1b768}</uid>
+                                   <target>
+                                    <instance type="MDependency">
+                                     <MDependency>
+                                      <base-MRelation>
+                                       <MRelation>
+                                        <base-MElement>
+                                         <MElement>
+                                          <uid>{cce43330-2355-4f4a-81ad-6a2b63c1b768}</uid>
+                                         </MElement>
+                                        </base-MElement>
+                                        <a>{5b85cc8d-c6f4-4927-a797-0bd42b5d1612}</a>
+                                        <b>{7f9a9a2a-b0a3-4092-acb9-81b8ac40ba59}</b>
+                                       </MRelation>
+                                      </base-MRelation>
+                                     </MDependency>
+                                    </instance>
+                                   </target>
+                                  </handle>
+                                 </item>
+                                 <item>
+                                  <handle>
+                                   <uid>{bff4fe1a-d39f-4dbc-b0d4-5e040547add7}</uid>
+                                   <target>
+                                    <instance type="MDependency">
+                                     <MDependency>
+                                      <base-MRelation>
+                                       <MRelation>
+                                        <base-MElement>
+                                         <MElement>
+                                          <uid>{bff4fe1a-d39f-4dbc-b0d4-5e040547add7}</uid>
+                                         </MElement>
+                                        </base-MElement>
+                                        <a>{5b85cc8d-c6f4-4927-a797-0bd42b5d1612}</a>
+                                        <b>{f45ed45e-8723-4504-b933-b7dd5bf64640}</b>
+                                       </MRelation>
+                                      </base-MRelation>
+                                     </MDependency>
+                                    </instance>
+                                   </target>
+                                  </handle>
+                                 </item>
+                                 <item>
+                                  <handle>
+                                   <uid>{0193eb44-d9e0-47ab-89e1-c53b036b211b}</uid>
+                                   <target>
+                                    <instance type="MDependency">
+                                     <MDependency>
+                                      <base-MRelation>
+                                       <MRelation>
+                                        <base-MElement>
+                                         <MElement>
+                                          <uid>{0193eb44-d9e0-47ab-89e1-c53b036b211b}</uid>
+                                         </MElement>
+                                        </base-MElement>
+                                        <a>{5b85cc8d-c6f4-4927-a797-0bd42b5d1612}</a>
+                                        <b>{c47f9c74-04fd-408d-b8cb-5928599e928a}</b>
+                                       </MRelation>
+                                      </base-MRelation>
+                                     </MDependency>
+                                    </instance>
+                                   </target>
+                                  </handle>
+                                 </item>
+                                </qlist>
+                               </handles>
+                              </handles>
+                             </relations>
+                            </MObject>
+                           </base-MObject>
+                          </MComponent>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                     </qlist>
+                    </handles>
+                   </handles>
+                  </children>
+                 </MObject>
+                </base-MObject>
+               </MPackage>
+              </instance>
+             </target>
+            </handle>
+           </item>
+           <item>
+            <handle>
+             <uid>{290fae8a-65ec-4271-a21a-f80c3af12968}</uid>
+             <target>
+              <instance type="MComponent">
+               <MComponent>
+                <base-MObject>
+                 <MObject>
+                  <base-MElement>
+                   <MElement>
+                    <uid>{290fae8a-65ec-4271-a21a-f80c3af12968}</uid>
+                   </MElement>
+                  </base-MElement>
+                  <name>New Component</name>
+                 </MObject>
+                </base-MObject>
+               </MComponent>
+              </instance>
+             </target>
+            </handle>
+           </item>
+           <item>
+            <handle>
+             <uid>{c82f0524-58e6-4c38-bd8c-4a9af9678a6e}</uid>
+             <target>
+              <instance type="MItem">
+               <MItem>
+                <base-MObject>
+                 <MObject>
+                  <base-MElement>
+                   <MElement>
+                    <uid>{c82f0524-58e6-4c38-bd8c-4a9af9678a6e}</uid>
+                   </MElement>
+                  </base-MElement>
+                  <name>App7CoreLib</name>
+                  <relations>
+                   <handles>
+                    <handles>
+                     <qlist>
+                      <item>
+                       <handle>
+                        <uid>{5aae17a6-ddee-4937-9591-80d2a012f07a}</uid>
+                        <target>
+                         <instance type="MDependency">
+                          <MDependency>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{5aae17a6-ddee-4937-9591-80d2a012f07a}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{c82f0524-58e6-4c38-bd8c-4a9af9678a6e}</a>
+                             <b>{5b85cc8d-c6f4-4927-a797-0bd42b5d1612}</b>
                             </MRelation>
                            </base-MRelation>
                           </MDependency>
