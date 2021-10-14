@@ -146,6 +146,7 @@ VdeoCube - это коллекция программ. Исторически п
 <b>Недостатки это схемы:</b>
 * m44.1. Использование Python снижает производительность
 * m44.2. Использование сразу 3 языков (си++, Python, c# ). Неудобно поддерживать и развивать код.
+* m44.3. Проект MoviePy похоже больше не двигается
 
 # Диаграмма общего взаимодействия ПО VideoCube с использованием [OpenShotLibrary](https://github.com/OpenShot/libopenshot)
 ![image](https://github.com/Kvazikot/VideoProjects/blob/master/VideoCube/VideoCubeCV/diagrams/VideoCubeCore_Diagram_OpenShot.png)
