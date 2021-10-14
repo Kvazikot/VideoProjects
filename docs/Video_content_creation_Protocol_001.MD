@@ -135,6 +135,8 @@ VdeoCube - это коллекция программ. Исторически п
 # Диаграмма общего взаимодействия ПО VideoCube с использованием MoviePy
 ![image](https://github.com/Kvazikot/VideoProjects/blob/master/VideoCube/VideoCubeCV/diagrams/VideoCubeCore_Diagram_Python.png)
 
+# Диаграмма общего взаимодействия ПО VideoCube с использованием [OpenShotLibrary](https://github.com/OpenShot/libopenshot)
+https://github.com/Kvazikot/VideoProjects/blob/master/VideoCube/VideoCubeCV/diagrams/VideoCubeCore_Diagram_OpenShot.png
 
 # Протокол подготовоки видео ролика к загрузке на ютьюб
 На выходе мы получаем 5-10 видеороликов с разным содержанием. Это удобно на даче с узким каналом.
