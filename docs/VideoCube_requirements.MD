@@ -200,6 +200,7 @@ VdeoCube - это коллекция программ. Исторически п
 
 # Функциональная схема ядра VideoCubeCV.
 ![image](https://github.com/Kvazikot/VideoProjects/blob/master/VideoCube/VideoCubeCV/diagrams/VideoCubeCore_Diagram_Core.png)
+
 <b>Недостатки этой схемы:</b>
 * m75.1 
     * 
@@ -213,6 +214,7 @@ VdeoCube - это коллекция программ. Исторически п
 
 # Блоксхема видеомонтажа
 ![image](https://github.com/Kvazikot/VideoProjects/blob/master/VideoCube/VideoCubeCV/diagrams/VideoCubeCore_BlockDiagram_ClipComposiion.png)
+
 <b>Недостатки этой схемы:</b>
 * m75.1 
     * 
