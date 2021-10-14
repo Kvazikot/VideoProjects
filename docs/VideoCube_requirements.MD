@@ -202,6 +202,11 @@ VdeoCube - это коллекция программ. Исторически п
 * p65.2 
 * 
 
+# Функциональная схема ядра VideoCubeCV.
+![image](https://github.com/Kvazikot/VideoProjects/blob/master/VideoCube/VideoCubeCV/diagrams/VideoCubeCore_Diagram_Core.png)
+
+# Блоксхема видеомонтажа
+![image](https://github.com/Kvazikot/VideoProjects/blob/master/VideoCube/VideoCubeCV/diagrams/VideoCubeCore_BlockDiagram_ClipComposiion.png)
 
 # Вопросы:
 1. Посмотреть можно ли в пайтоне отрендерить веб шрифты?   
