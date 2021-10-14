@@ -50,7 +50,7 @@
                          <object>{5b85cc8d-c6f4-4927-a797-0bd42b5d1612}</object>
                          <context>VideoCube </context>
                          <name>VideoCubeCore</name>
-                         <pos>x:735;y:435</pos>
+                         <pos>x:725;y:505</pos>
                          <rect>x:-95;y:-45;w:190;h:90</rect>
                          <auto-sized>false</auto-sized>
                          <visual-role>0</visual-role>
@@ -93,7 +93,7 @@
                          </base-DElement>
                          <object>{35780129-0b99-4af2-9b0d-67891f5c5e60}</object>
                          <name>VideoCubeGUI</name>
-                         <pos>x:375;y:525</pos>
+                         <pos>x:375;y:560</pos>
                          <rect>x:-130;y:-95;w:260;h:190</rect>
                          <auto-sized>false</auto-sized>
                          <visual-role>0</visual-role>
@@ -132,7 +132,7 @@
                          </base-DElement>
                          <object>{72b387f7-bd25-42c7-a14e-81044339eff3}</object>
                          <name>OpenCV</name>
-                         <pos>x:125;y:240</pos>
+                         <pos>x:830;y:770</pos>
                          <rect>x:-55;y:-15;w:110;h:30</rect>
                          <auto-sized>false</auto-sized>
                          <visual-role>0</visual-role>
@@ -199,7 +199,7 @@
                          </base-DElement>
                          <object>{25d09e51-8b59-4a06-b48e-51e63c0b044a}</object>
                          <name>gstreamer</name>
-                         <pos>x:125;y:175</pos>
+                         <pos>x:130;y:235</pos>
                          <rect>x:-55;y:-15;w:110;h:30</rect>
                          <auto-sized>false</auto-sized>
                          <visual-role>0</visual-role>
@@ -256,55 +256,18 @@
                         <DObject>
                          <base-DElement>
                           <DElement>
-                           <uid>{f723fa4c-6ae3-46df-9c91-d0709147d1d5}</uid>
-                          </DElement>
-                         </base-DElement>
-                         <object>{d8b0b2ab-0484-4809-a71f-d2c1b90d377e}</object>
-                         <name>VideoCubePlugin</name>
-                         <pos>x:305;y:50</pos>
-                         <rect>x:-50;y:-30;w:100;h:60</rect>
-                         <visual-role>0</visual-role>
-                        </DObject>
-                       </base-DObject>
-                      </DClass>
-                     </instance>
-                    </item>
-                    <item>
-                     <instance type="DClass">
-                      <DClass>
-                       <base-DObject>
-                        <DObject>
-                         <base-DElement>
-                          <DElement>
                            <uid>{67e15ef4-949d-47f4-9f8e-0e74b54c1a06}</uid>
                           </DElement>
                          </base-DElement>
                          <object>{007aee5b-8a6d-4030-b797-f779b2750191}</object>
+                         <context>VideoCube </context>
                          <name>3dVideoCube</name>
-                         <pos>x:330;y:165</pos>
+                         <pos>x:945;y:540</pos>
                          <rect>x:-40;y:-30;w:80;h:60</rect>
                          <visual-role>0</visual-role>
                         </DObject>
                        </base-DObject>
                       </DClass>
-                     </instance>
-                    </item>
-                    <item>
-                     <instance type="DInheritance">
-                      <DInheritance>
-                       <base-DRelation>
-                        <DRelation>
-                         <base-DElement>
-                          <DElement>
-                           <uid>{df73e954-f91b-41ea-aa1c-795c1726e953}</uid>
-                          </DElement>
-                         </base-DElement>
-                         <object>{4fe87fcb-55c1-46fa-92ce-d8fe302c9aae}</object>
-                         <a>{f723fa4c-6ae3-46df-9c91-d0709147d1d5}</a>
-                         <b>{67e15ef4-949d-47f4-9f8e-0e74b54c1a06}</b>
-                        </DRelation>
-                       </base-DRelation>
-                      </DInheritance>
                      </instance>
                     </item>
                     <item>
@@ -320,7 +283,7 @@
                          <object>{04011b84-d2f7-4168-abdd-96bd62cc357d}</object>
                          <context>VideoCubeGUI</context>
                          <name>Текстовое описание видеоконтента</name>
-                         <pos>x:365;y:545</pos>
+                         <pos>x:365;y:580</pos>
                          <rect>x:-105;y:-30;w:210;h:60</rect>
                          <auto-sized>false</auto-sized>
                          <visual-role>0</visual-role>
@@ -367,24 +330,6 @@
                      </instance>
                     </item>
                     <item>
-                     <instance type="DDependency">
-                      <DDependency>
-                       <base-DRelation>
-                        <DRelation>
-                         <base-DElement>
-                          <DElement>
-                           <uid>{02a79386-1c3d-48e6-94c0-7c379e1b8fea}</uid>
-                          </DElement>
-                         </base-DElement>
-                         <object>{fca8f8dd-e545-46e0-9c81-87ff16d41a2a}</object>
-                         <a>{85f55dc9-883f-45f9-8c18-875b8476e19b}</a>
-                         <b>{9ecb9688-e162-4f68-9c6f-c85e5e2aeb53}</b>
-                        </DRelation>
-                       </base-DRelation>
-                      </DDependency>
-                     </instance>
-                    </item>
-                    <item>
                      <instance type="DItem">
                       <DItem>
                        <base-DObject>
@@ -418,7 +363,7 @@
                          </base-DElement>
                          <object>{f45ed45e-8723-4504-b933-b7dd5bf64640}</object>
                          <name>Скачивание источников</name>
-                         <pos>x:625;y:175</pos>
+                         <pos>x:620;y:225</pos>
                          <rect>x:-75;y:-20;w:150;h:40</rect>
                          <auto-sized>false</auto-sized>
                          <visual-role>0</visual-role>
@@ -477,7 +422,7 @@
                          </base-DElement>
                          <object>{c47f9c74-04fd-408d-b8cb-5928599e928a}</object>
                          <name>Поиск по хештегам</name>
-                         <pos>x:875;y:180</pos>
+                         <pos>x:870;y:220</pos>
                          <rect>x:-70;y:-20;w:140;h:40</rect>
                          <auto-sized>false</auto-sized>
                          <visual-role>0</visual-role>
@@ -598,8 +543,8 @@
                          </base-DElement>
                          <object>{8e9112c5-17f8-4379-b8dd-4f8a374e1c3f}</object>
                          <name>VideoCube </name>
-                         <pos>x:825;y:505</pos>
-                         <rect>x:-235;y:-220;w:470;h:440</rect>
+                         <pos>x:815;y:480</pos>
+                         <rect>x:-235;y:-125;w:470;h:250</rect>
                          <auto-sized>false</auto-sized>
                          <visual-role>0</visual-role>
                         </DObject>
@@ -619,7 +564,7 @@
                          </base-DElement>
                          <object>{c82f0524-58e6-4c38-bd8c-4a9af9678a6e}</object>
                          <name>App7CoreLib</name>
-                         <pos>x:970;y:460</pos>
+                         <pos>x:945;y:305</pos>
                          <rect>x:-65;y:-20;w:130;h:40</rect>
                          <auto-sized>false</auto-sized>
                          <visual-role>0</visual-role>
@@ -684,23 +629,67 @@
                      </instance>
                     </item>
                     <item>
-                     <instance type="DComponent">
-                      <DComponent>
+                     <instance type="DItem">
+                      <DItem>
                        <base-DObject>
                         <DObject>
                          <base-DElement>
                           <DElement>
-                           <uid>{2d00b0ef-33bd-432e-b9c0-7f0dfcb760b1}</uid>
+                           <uid>{0f0641e5-22da-455d-9760-55e941062b9d}</uid>
                           </DElement>
                          </base-DElement>
-                         <object>{9678f6b0-c919-4828-ac5b-9c1e946c1cf4}</object>
-                         <name>PluginFactory</name>
-                         <pos>x:720;y:575</pos>
-                         <rect>x:-65;y:-30;w:130;h:60</rect>
+                         <object>{1d0fe680-6c60-40ee-99ce-0710322591d3}</object>
+                         <name>ffmpeg 3.4</name>
+                         <pos>x:585;y:775</pos>
+                         <rect>x:-35;y:-15;w:70;h:30</rect>
+                         <auto-sized>false</auto-sized>
                          <visual-role>0</visual-role>
                         </DObject>
                        </base-DObject>
-                      </DComponent>
+                       <shape-editable>false</shape-editable>
+                      </DItem>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DItem">
+                      <DItem>
+                       <base-DObject>
+                        <DObject>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{5db58e4c-dc0e-4f8f-bfd9-2915033cf699}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{e3841158-4002-420e-a016-7081d46d9753}</object>
+                         <name>ImageMagick</name>
+                         <pos>x:690;y:770</pos>
+                         <rect>x:-40;y:-15;w:80;h:30</rect>
+                         <visual-role>0</visual-role>
+                        </DObject>
+                       </base-DObject>
+                       <shape-editable>false</shape-editable>
+                      </DItem>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DItem">
+                      <DItem>
+                       <base-DObject>
+                        <DObject>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{e41f033b-b5ca-49d6-b368-6582e8e307c2}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{7faf05d1-29fe-417b-b7e0-e47965973b57}</object>
+                         <name>OpenShot Library</name>
+                         <pos>x:725;y:680</pos>
+                         <rect>x:-50;y:-15;w:100;h:30</rect>
+                         <visual-role>0</visual-role>
+                        </DObject>
+                       </base-DObject>
+                       <shape-editable>false</shape-editable>
+                      </DItem>
                      </instance>
                     </item>
                     <item>
@@ -710,11 +699,104 @@
                         <DRelation>
                          <base-DElement>
                           <DElement>
-                           <uid>{a836e8bb-5fe9-439d-8230-3aefd28c3aba}</uid>
+                           <uid>{17752b97-c555-45b1-812f-7427c03717ea}</uid>
                           </DElement>
                          </base-DElement>
-                         <object>{dea0fdec-c321-4d5b-ac10-5d4e17cd2f3b}</object>
-                         <a>{2d00b0ef-33bd-432e-b9c0-7f0dfcb760b1}</a>
+                         <object>{c1e00907-b432-4456-9402-3cf0d08f61da}</object>
+                         <a>{e41f033b-b5ca-49d6-b368-6582e8e307c2}</a>
+                         <b>{9ecb9688-e162-4f68-9c6f-c85e5e2aeb53}</b>
+                        </DRelation>
+                       </base-DRelation>
+                      </DDependency>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DDependency">
+                      <DDependency>
+                       <base-DRelation>
+                        <DRelation>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{15425433-348b-4ecc-ba0f-604ff9a180b0}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{38008823-38e1-4b3f-895f-98ff0d9af6f0}</object>
+                         <a>{0f0641e5-22da-455d-9760-55e941062b9d}</a>
+                         <b>{e41f033b-b5ca-49d6-b368-6582e8e307c2}</b>
+                        </DRelation>
+                       </base-DRelation>
+                      </DDependency>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DDependency">
+                      <DDependency>
+                       <base-DRelation>
+                        <DRelation>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{48a8461c-c38c-4f7a-94a9-bec4929aba4e}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{99b21d48-b0ba-43ab-9d21-b0acc5e2964f}</object>
+                         <a>{5db58e4c-dc0e-4f8f-bfd9-2915033cf699}</a>
+                         <b>{e41f033b-b5ca-49d6-b368-6582e8e307c2}</b>
+                        </DRelation>
+                       </base-DRelation>
+                      </DDependency>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DDependency">
+                      <DDependency>
+                       <base-DRelation>
+                        <DRelation>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{9d0d0556-c319-476f-b2f3-fe6d4e202ff0}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{130997a1-68d7-4af5-8303-c73475fc3444}</object>
+                         <a>{85f55dc9-883f-45f9-8c18-875b8476e19b}</a>
+                         <b>{e41f033b-b5ca-49d6-b368-6582e8e307c2}</b>
+                        </DRelation>
+                       </base-DRelation>
+                      </DDependency>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DClass">
+                      <DClass>
+                       <base-DObject>
+                        <DObject>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{57bbab08-6c8e-4255-8947-0bc1e0d4a770}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{c3828de0-6ab0-46e5-8373-bb1c78b22ff5}</object>
+                         <context>VideoCube </context>
+                         <name>VideoCubePlugin</name>
+                         <pos>x:945;y:440</pos>
+                         <rect>x:-50;y:-30;w:100;h:60</rect>
+                         <visual-role>0</visual-role>
+                        </DObject>
+                       </base-DObject>
+                      </DClass>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DDependency">
+                      <DDependency>
+                       <base-DRelation>
+                        <DRelation>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{87e22775-6c74-4143-a778-aa7be7df770f}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{2e18a285-940a-4482-972a-5a7a1eecbfc1}</object>
+                         <a>{57bbab08-6c8e-4255-8947-0bc1e0d4a770}</a>
                          <b>{67e15ef4-949d-47f4-9f8e-0e74b54c1a06}</b>
                         </DRelation>
                        </base-DRelation>
@@ -723,7 +805,7 @@
                     </item>
                    </qlist>
                   </elements>
-                  <last-modified>1634060912141</last-modified>
+                  <last-modified>1634185455793</last-modified>
                   <toolbarid>General</toolbarid>
                  </MDiagram>
                 </base-MDiagram>
@@ -910,6 +992,50 @@
                              </base-MElement>
                              <a>{72b387f7-bd25-42c7-a14e-81044339eff3}</a>
                              <b>{5b85cc8d-c6f4-4927-a797-0bd42b5d1612}</b>
+                            </MRelation>
+                           </base-MRelation>
+                          </MDependency>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                      <item>
+                       <handle>
+                        <uid>{aa74133f-1c77-4dca-a18b-56843194d605}</uid>
+                        <target>
+                         <instance type="MDependency">
+                          <MDependency>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{aa74133f-1c77-4dca-a18b-56843194d605}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{72b387f7-bd25-42c7-a14e-81044339eff3}</a>
+                             <b>{aa462f0d-1e52-4dc2-8a5a-cffd2f8a64cc}</b>
+                            </MRelation>
+                           </base-MRelation>
+                          </MDependency>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                      <item>
+                       <handle>
+                        <uid>{130997a1-68d7-4af5-8303-c73475fc3444}</uid>
+                        <target>
+                         <instance type="MDependency">
+                          <MDependency>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{130997a1-68d7-4af5-8303-c73475fc3444}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{72b387f7-bd25-42c7-a14e-81044339eff3}</a>
+                             <b>{7faf05d1-29fe-417b-b7e0-e47965973b57}</b>
                             </MRelation>
                            </base-MRelation>
                           </MDependency>
@@ -1289,79 +1415,6 @@
                             </MRelation>
                            </base-MRelation>
                           </MInheritance>
-                         </instance>
-                        </target>
-                       </handle>
-                      </item>
-                     </qlist>
-                    </handles>
-                   </handles>
-                  </relations>
-                 </MObject>
-                </base-MObject>
-               </MClass>
-              </instance>
-             </target>
-            </handle>
-           </item>
-           <item>
-            <handle>
-             <uid>{007aee5b-8a6d-4030-b797-f779b2750191}</uid>
-             <target>
-              <instance type="MClass">
-               <MClass>
-                <base-MObject>
-                 <MObject>
-                  <base-MElement>
-                   <MElement>
-                    <uid>{007aee5b-8a6d-4030-b797-f779b2750191}</uid>
-                   </MElement>
-                  </base-MElement>
-                  <name>3dVideoCube</name>
-                  <relations>
-                   <handles>
-                    <handles>
-                     <qlist>
-                      <item>
-                       <handle>
-                        <uid>{ccba1169-4214-4686-8f93-fdb648e8fc2a}</uid>
-                        <target>
-                         <instance type="MDependency">
-                          <MDependency>
-                           <base-MRelation>
-                            <MRelation>
-                             <base-MElement>
-                              <MElement>
-                               <uid>{ccba1169-4214-4686-8f93-fdb648e8fc2a}</uid>
-                              </MElement>
-                             </base-MElement>
-                             <a>{007aee5b-8a6d-4030-b797-f779b2750191}</a>
-                             <b>{b1548427-fe06-4748-b838-b2704b6cf477}</b>
-                            </MRelation>
-                           </base-MRelation>
-                          </MDependency>
-                         </instance>
-                        </target>
-                       </handle>
-                      </item>
-                      <item>
-                       <handle>
-                        <uid>{9c6f0e68-8d35-45ee-90ec-3de536bdcdd3}</uid>
-                        <target>
-                         <instance type="MDependency">
-                          <MDependency>
-                           <base-MRelation>
-                            <MRelation>
-                             <base-MElement>
-                              <MElement>
-                               <uid>{9c6f0e68-8d35-45ee-90ec-3de536bdcdd3}</uid>
-                              </MElement>
-                             </base-MElement>
-                             <a>{007aee5b-8a6d-4030-b797-f779b2750191}</a>
-                             <b>{62e6489f-ee31-4b6a-a732-9b241249c4ab}</b>
-                            </MRelation>
-                           </base-MRelation>
-                          </MDependency>
                          </instance>
                         </target>
                        </handle>
@@ -2592,6 +2645,28 @@
                                    </target>
                                   </handle>
                                  </item>
+                                 <item>
+                                  <handle>
+                                   <uid>{04dd4618-31c8-4a3e-96ee-81dec923902f}</uid>
+                                   <target>
+                                    <instance type="MDependency">
+                                     <MDependency>
+                                      <base-MRelation>
+                                       <MRelation>
+                                        <base-MElement>
+                                         <MElement>
+                                          <uid>{04dd4618-31c8-4a3e-96ee-81dec923902f}</uid>
+                                         </MElement>
+                                        </base-MElement>
+                                        <a>{5b85cc8d-c6f4-4927-a797-0bd42b5d1612}</a>
+                                        <b>{aa462f0d-1e52-4dc2-8a5a-cffd2f8a64cc}</b>
+                                       </MRelation>
+                                      </base-MRelation>
+                                     </MDependency>
+                                    </instance>
+                                   </target>
+                                  </handle>
+                                 </item>
                                 </qlist>
                                </handles>
                               </handles>
@@ -3121,6 +3196,172 @@
                         </target>
                        </handle>
                       </item>
+                      <item>
+                       <handle>
+                        <uid>{aa462f0d-1e52-4dc2-8a5a-cffd2f8a64cc}</uid>
+                        <target>
+                         <instance type="MItem">
+                          <MItem>
+                           <base-MObject>
+                            <MObject>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{aa462f0d-1e52-4dc2-8a5a-cffd2f8a64cc}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <name>OpenShot C++ Library</name>
+                            </MObject>
+                           </base-MObject>
+                          </MItem>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                      <item>
+                       <handle>
+                        <uid>{19ab213b-7a5e-4ab3-9f09-f8387696fb6c}</uid>
+                        <target>
+                         <instance type="MComponent">
+                          <MComponent>
+                           <base-MObject>
+                            <MObject>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{19ab213b-7a5e-4ab3-9f09-f8387696fb6c}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <name>New Component</name>
+                            </MObject>
+                           </base-MObject>
+                          </MComponent>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                      <item>
+                       <handle>
+                        <uid>{007aee5b-8a6d-4030-b797-f779b2750191}</uid>
+                        <target>
+                         <instance type="MClass">
+                          <MClass>
+                           <base-MObject>
+                            <MObject>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{007aee5b-8a6d-4030-b797-f779b2750191}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <name>3dVideoCube</name>
+                             <relations>
+                              <handles>
+                               <handles>
+                                <qlist>
+                                 <item>
+                                  <handle>
+                                   <uid>{ccba1169-4214-4686-8f93-fdb648e8fc2a}</uid>
+                                   <target>
+                                    <instance type="MDependency">
+                                     <MDependency>
+                                      <base-MRelation>
+                                       <MRelation>
+                                        <base-MElement>
+                                         <MElement>
+                                          <uid>{ccba1169-4214-4686-8f93-fdb648e8fc2a}</uid>
+                                         </MElement>
+                                        </base-MElement>
+                                        <a>{007aee5b-8a6d-4030-b797-f779b2750191}</a>
+                                        <b>{b1548427-fe06-4748-b838-b2704b6cf477}</b>
+                                       </MRelation>
+                                      </base-MRelation>
+                                     </MDependency>
+                                    </instance>
+                                   </target>
+                                  </handle>
+                                 </item>
+                                 <item>
+                                  <handle>
+                                   <uid>{9c6f0e68-8d35-45ee-90ec-3de536bdcdd3}</uid>
+                                   <target>
+                                    <instance type="MDependency">
+                                     <MDependency>
+                                      <base-MRelation>
+                                       <MRelation>
+                                        <base-MElement>
+                                         <MElement>
+                                          <uid>{9c6f0e68-8d35-45ee-90ec-3de536bdcdd3}</uid>
+                                         </MElement>
+                                        </base-MElement>
+                                        <a>{007aee5b-8a6d-4030-b797-f779b2750191}</a>
+                                        <b>{62e6489f-ee31-4b6a-a732-9b241249c4ab}</b>
+                                       </MRelation>
+                                      </base-MRelation>
+                                     </MDependency>
+                                    </instance>
+                                   </target>
+                                  </handle>
+                                 </item>
+                                </qlist>
+                               </handles>
+                              </handles>
+                             </relations>
+                            </MObject>
+                           </base-MObject>
+                          </MClass>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                      <item>
+                       <handle>
+                        <uid>{c3828de0-6ab0-46e5-8373-bb1c78b22ff5}</uid>
+                        <target>
+                         <instance type="MClass">
+                          <MClass>
+                           <base-MObject>
+                            <MObject>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{c3828de0-6ab0-46e5-8373-bb1c78b22ff5}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <name>VideoCubePlugin</name>
+                             <relations>
+                              <handles>
+                               <handles>
+                                <qlist>
+                                 <item>
+                                  <handle>
+                                   <uid>{2e18a285-940a-4482-972a-5a7a1eecbfc1}</uid>
+                                   <target>
+                                    <instance type="MDependency">
+                                     <MDependency>
+                                      <base-MRelation>
+                                       <MRelation>
+                                        <base-MElement>
+                                         <MElement>
+                                          <uid>{2e18a285-940a-4482-972a-5a7a1eecbfc1}</uid>
+                                         </MElement>
+                                        </base-MElement>
+                                        <a>{c3828de0-6ab0-46e5-8373-bb1c78b22ff5}</a>
+                                        <b>{007aee5b-8a6d-4030-b797-f779b2750191}</b>
+                                       </MRelation>
+                                      </base-MRelation>
+                                     </MDependency>
+                                    </instance>
+                                   </target>
+                                  </handle>
+                                 </item>
+                                </qlist>
+                               </handles>
+                              </handles>
+                             </relations>
+                            </MObject>
+                           </base-MObject>
+                          </MClass>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
                      </qlist>
                     </handles>
                    </handles>
@@ -3251,6 +3492,203 @@
                  </MObject>
                 </base-MObject>
                </MComponent>
+              </instance>
+             </target>
+            </handle>
+           </item>
+           <item>
+            <handle>
+             <uid>{1d0fe680-6c60-40ee-99ce-0710322591d3}</uid>
+             <target>
+              <instance type="MItem">
+               <MItem>
+                <base-MObject>
+                 <MObject>
+                  <base-MElement>
+                   <MElement>
+                    <uid>{1d0fe680-6c60-40ee-99ce-0710322591d3}</uid>
+                   </MElement>
+                  </base-MElement>
+                  <name>ffmpeg 3.4</name>
+                  <relations>
+                   <handles>
+                    <handles>
+                     <qlist>
+                      <item>
+                       <handle>
+                        <uid>{d21942f3-1f4b-4a82-8cf0-9db128812800}</uid>
+                        <target>
+                         <instance type="MDependency">
+                          <MDependency>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{d21942f3-1f4b-4a82-8cf0-9db128812800}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{1d0fe680-6c60-40ee-99ce-0710322591d3}</a>
+                             <b>{aa462f0d-1e52-4dc2-8a5a-cffd2f8a64cc}</b>
+                            </MRelation>
+                           </base-MRelation>
+                          </MDependency>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                      <item>
+                       <handle>
+                        <uid>{38008823-38e1-4b3f-895f-98ff0d9af6f0}</uid>
+                        <target>
+                         <instance type="MDependency">
+                          <MDependency>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{38008823-38e1-4b3f-895f-98ff0d9af6f0}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{1d0fe680-6c60-40ee-99ce-0710322591d3}</a>
+                             <b>{7faf05d1-29fe-417b-b7e0-e47965973b57}</b>
+                            </MRelation>
+                           </base-MRelation>
+                          </MDependency>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                     </qlist>
+                    </handles>
+                   </handles>
+                  </relations>
+                 </MObject>
+                </base-MObject>
+               </MItem>
+              </instance>
+             </target>
+            </handle>
+           </item>
+           <item>
+            <handle>
+             <uid>{e3841158-4002-420e-a016-7081d46d9753}</uid>
+             <target>
+              <instance type="MItem">
+               <MItem>
+                <base-MObject>
+                 <MObject>
+                  <base-MElement>
+                   <MElement>
+                    <uid>{e3841158-4002-420e-a016-7081d46d9753}</uid>
+                   </MElement>
+                  </base-MElement>
+                  <name>ImageMagick</name>
+                  <relations>
+                   <handles>
+                    <handles>
+                     <qlist>
+                      <item>
+                       <handle>
+                        <uid>{4ed5c4fe-af9d-46d3-bb37-765e646e1a81}</uid>
+                        <target>
+                         <instance type="MDependency">
+                          <MDependency>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{4ed5c4fe-af9d-46d3-bb37-765e646e1a81}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{e3841158-4002-420e-a016-7081d46d9753}</a>
+                             <b>{aa462f0d-1e52-4dc2-8a5a-cffd2f8a64cc}</b>
+                            </MRelation>
+                           </base-MRelation>
+                          </MDependency>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                      <item>
+                       <handle>
+                        <uid>{99b21d48-b0ba-43ab-9d21-b0acc5e2964f}</uid>
+                        <target>
+                         <instance type="MDependency">
+                          <MDependency>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{99b21d48-b0ba-43ab-9d21-b0acc5e2964f}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{e3841158-4002-420e-a016-7081d46d9753}</a>
+                             <b>{7faf05d1-29fe-417b-b7e0-e47965973b57}</b>
+                            </MRelation>
+                           </base-MRelation>
+                          </MDependency>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                     </qlist>
+                    </handles>
+                   </handles>
+                  </relations>
+                 </MObject>
+                </base-MObject>
+               </MItem>
+              </instance>
+             </target>
+            </handle>
+           </item>
+           <item>
+            <handle>
+             <uid>{7faf05d1-29fe-417b-b7e0-e47965973b57}</uid>
+             <target>
+              <instance type="MItem">
+               <MItem>
+                <base-MObject>
+                 <MObject>
+                  <base-MElement>
+                   <MElement>
+                    <uid>{7faf05d1-29fe-417b-b7e0-e47965973b57}</uid>
+                   </MElement>
+                  </base-MElement>
+                  <name>OpenShot Library</name>
+                  <relations>
+                   <handles>
+                    <handles>
+                     <qlist>
+                      <item>
+                       <handle>
+                        <uid>{c1e00907-b432-4456-9402-3cf0d08f61da}</uid>
+                        <target>
+                         <instance type="MDependency">
+                          <MDependency>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{c1e00907-b432-4456-9402-3cf0d08f61da}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{7faf05d1-29fe-417b-b7e0-e47965973b57}</a>
+                             <b>{5b85cc8d-c6f4-4927-a797-0bd42b5d1612}</b>
+                            </MRelation>
+                           </base-MRelation>
+                          </MDependency>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                     </qlist>
+                    </handles>
+                   </handles>
+                  </relations>
+                 </MObject>
+                </base-MObject>
+               </MItem>
               </instance>
              </target>
             </handle>

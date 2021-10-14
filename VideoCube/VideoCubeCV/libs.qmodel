@@ -70,7 +70,7 @@
                          </base-DElement>
                          <object>{03b7954a-23dc-42b5-9005-92ffdcc3336b}</object>
                          <name>QtWidgets</name>
-                         <pos>x:-10;y:525</pos>
+                         <pos>x:-30;y:650</pos>
                          <rect>x:-70;y:-20;w:140;h:40</rect>
                          <auto-sized>false</auto-sized>
                          <visual-role>0</visual-role>
@@ -803,7 +803,7 @@
                          </base-DElement>
                          <object>{25e26d65-4bf9-4163-b15e-0b3a121c9900}</object>
                          <name>QtCore</name>
-                         <pos>x:-10;y:585</pos>
+                         <pos>x:-30;y:705</pos>
                          <rect>x:-55;y:-15;w:110;h:30</rect>
                          <auto-sized>false</auto-sized>
                          <visual-role>0</visual-role>
@@ -854,26 +854,6 @@
                      </instance>
                     </item>
                     <item>
-                     <instance type="DComponent">
-                      <DComponent>
-                       <base-DObject>
-                        <DObject>
-                         <base-DElement>
-                          <DElement>
-                           <uid>{21a3fcad-898c-4f6a-ab73-3c801a8ff3ba}</uid>
-                          </DElement>
-                         </base-DElement>
-                         <object>{e4f550a0-9632-4d0c-917d-5bf30afef83c}</object>
-                         <name>VideoCubeCore.py</name>
-                         <pos>x:-15;y:400</pos>
-                         <rect>x:-80;y:-30;w:160;h:60</rect>
-                         <visual-role>0</visual-role>
-                        </DObject>
-                       </base-DObject>
-                      </DComponent>
-                     </instance>
-                    </item>
-                    <item>
                      <instance type="DItem">
                       <DItem>
                        <base-DObject>
@@ -915,17 +895,56 @@
                      </instance>
                     </item>
                     <item>
+                     <instance type="DPackage">
+                      <DPackage>
+                       <base-DObject>
+                        <DObject>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{3ff3dff6-181f-4e3e-b394-83efce3d6acc}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{073d7a30-309f-4968-8cab-331b6ffd55e4}</object>
+                         <name>VideoCubeCore.py</name>
+                         <pos>x:-15;y:515</pos>
+                         <rect>x:-100;y:-55;w:200;h:110</rect>
+                         <auto-sized>false</auto-sized>
+                         <visual-role>0</visual-role>
+                        </DObject>
+                       </base-DObject>
+                      </DPackage>
+                     </instance>
+                    </item>
+                    <item>
                      <instance type="DDependency">
                       <DDependency>
                        <base-DRelation>
                         <DRelation>
                          <base-DElement>
                           <DElement>
-                           <uid>{e95cf46e-fd59-450d-8353-737a0e09f740}</uid>
+                           <uid>{301f9a87-ed09-4ea5-b14d-e6770ed55407}</uid>
                           </DElement>
                          </base-DElement>
-                         <object>{720a6e35-fc83-48af-92e2-eb8ac7f297b8}</object>
-                         <a>{21a3fcad-898c-4f6a-ab73-3c801a8ff3ba}</a>
+                         <object>{f0655c93-f252-4d97-8b85-0b125f8e2e02}</object>
+                         <a>{3ff3dff6-181f-4e3e-b394-83efce3d6acc}</a>
+                         <b>{bac3b442-3999-4e95-9296-dc290720bfce}</b>
+                        </DRelation>
+                       </base-DRelation>
+                      </DDependency>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DDependency">
+                      <DDependency>
+                       <base-DRelation>
+                        <DRelation>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{c6ab1f38-5167-4b00-b359-ba95d769bd66}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{88923ad9-b92c-414d-b23d-5c5629dcc080}</object>
+                         <a>{3ff3dff6-181f-4e3e-b394-83efce3d6acc}</a>
                          <b>{b8199ef1-2cf8-4376-b53f-464006d3b82b}</b>
                         </DRelation>
                        </base-DRelation>
@@ -939,39 +958,20 @@
                         <DRelation>
                          <base-DElement>
                           <DElement>
-                           <uid>{bf39978f-824b-4601-9378-858a8241d66b}</uid>
+                           <uid>{3b0ed233-d590-4040-b502-25936dabaef8}</uid>
                           </DElement>
                          </base-DElement>
-                         <object>{9f896336-7a84-4bda-bb7d-09e439402390}</object>
-                         <a>{bac3b442-3999-4e95-9296-dc290720bfce}</a>
-                         <b>{21a3fcad-898c-4f6a-ab73-3c801a8ff3ba}</b>
-                        </DRelation>
-                       </base-DRelation>
-                      </DDependency>
-                     </instance>
-                    </item>
-                    <item>
-                     <instance type="DDependency">
-                      <DDependency>
-                       <base-DRelation>
-                        <DRelation>
-                         <base-DElement>
-                          <DElement>
-                           <uid>{07aa9ea6-4c59-40c4-a0ad-d28a2f1d945a}</uid>
-                          </DElement>
-                         </base-DElement>
-                         <object>{7165c736-1670-4200-96b4-94624255441e}</object>
-                         <a>{21a3fcad-898c-4f6a-ab73-3c801a8ff3ba}</a>
+                         <object>{b70ac376-abc4-4866-a372-3f96dc894003}</object>
+                         <a>{3ff3dff6-181f-4e3e-b394-83efce3d6acc}</a>
                          <b>{d2c0ca41-56ce-4851-a407-99bf421b4e14}</b>
                         </DRelation>
                        </base-DRelation>
-                       <direction>1</direction>
                       </DDependency>
                      </instance>
                     </item>
                    </qlist>
                   </elements>
-                  <last-modified>1634057599674</last-modified>
+                  <last-modified>1634182570681</last-modified>
                   <toolbarid>General</toolbarid>
                  </MDiagram>
                 </base-MDiagram>
@@ -2661,6 +2661,1064 @@
                  </MObject>
                 </base-MObject>
                </MItem>
+              </instance>
+             </target>
+            </handle>
+           </item>
+           <item>
+            <handle>
+             <uid>{073d7a30-309f-4968-8cab-331b6ffd55e4}</uid>
+             <target>
+              <instance type="MPackage">
+               <MPackage>
+                <base-MObject>
+                 <MObject>
+                  <base-MElement>
+                   <MElement>
+                    <uid>{073d7a30-309f-4968-8cab-331b6ffd55e4}</uid>
+                   </MElement>
+                  </base-MElement>
+                  <name>VideoCubeCore.py</name>
+                  <children>
+                   <handles>
+                    <handles>
+                     <qlist>
+                      <item>
+                       <handle>
+                        <uid>{bafebab2-eaa8-4685-9731-e72fc033adec}</uid>
+                        <target>
+                         <instance type="MCanvasDiagram">
+                          <MCanvasDiagram>
+                           <base-MDiagram>
+                            <MDiagram>
+                             <base-MObject>
+                              <MObject>
+                               <base-MElement>
+                                <MElement>
+                                 <uid>{bafebab2-eaa8-4685-9731-e72fc033adec}</uid>
+                                </MElement>
+                               </base-MElement>
+                               <name>VideoCubeCore.py</name>
+                              </MObject>
+                             </base-MObject>
+                             <elements>
+                              <qlist>
+                               <item>
+                                <instance type="DClass">
+                                 <DClass>
+                                  <base-DObject>
+                                   <DObject>
+                                    <base-DElement>
+                                     <DElement>
+                                      <uid>{b9575962-4bf5-4b93-bfc6-7b21c9cfd601}</uid>
+                                     </DElement>
+                                    </base-DElement>
+                                    <object>{1eff9f80-f1b9-46a4-a090-1e5c470aff19}</object>
+                                    <name>PyCodogen</name>
+                                    <pos>x:455;y:-60</pos>
+                                    <rect>x:-40;y:-30;w:80;h:60</rect>
+                                    <auto-sized>false</auto-sized>
+                                    <visual-role>0</visual-role>
+                                   </DObject>
+                                  </base-DObject>
+                                 </DClass>
+                                </instance>
+                               </item>
+                               <item>
+                                <instance type="DAnnotation">
+                                 <DAnnotation>
+                                  <base-DElement>
+                                   <DElement>
+                                    <uid>{ea4f2c22-4daf-4af9-b971-81197a6602a3}</uid>
+                                   </DElement>
+                                  </base-DElement>
+                                  <text>Список источников (n_src)
+Общее время всего клипа
+Список переходов
+Список vfx
+ 
+
+</text>
+                                  <pos>x:110;y:-100</pos>
+                                  <rect>x:0;y:0;w:151;h:107</rect>
+                                  <auto-sized>false</auto-sized>
+                                 </DAnnotation>
+                                </instance>
+                               </item>
+                               <item>
+                                <instance type="DItem">
+                                 <DItem>
+                                  <base-DObject>
+                                   <DObject>
+                                    <base-DElement>
+                                     <DElement>
+                                      <uid>{42bd97c0-49a7-4679-bf79-0c83c700e0b2}</uid>
+                                     </DElement>
+                                    </base-DElement>
+                                    <object>{85abb822-8d53-41b8-b24d-2d41df9dcf1d}</object>
+                                    <pos>x:185;y:-65</pos>
+                                    <rect>x:-90;y:-35;w:180;h:70</rect>
+                                    <auto-sized>false</auto-sized>
+                                    <visual-role>0</visual-role>
+                                   </DObject>
+                                  </base-DObject>
+                                  <shape-editable>false</shape-editable>
+                                 </DItem>
+                                </instance>
+                               </item>
+                               <item>
+                                <instance type="DDependency">
+                                 <DDependency>
+                                  <base-DRelation>
+                                   <DRelation>
+                                    <base-DElement>
+                                     <DElement>
+                                      <uid>{02f31926-ce38-4656-91c3-518186742577}</uid>
+                                     </DElement>
+                                    </base-DElement>
+                                    <object>{22b457f7-549f-4c6e-b131-03a4043579a8}</object>
+                                    <a>{42bd97c0-49a7-4679-bf79-0c83c700e0b2}</a>
+                                    <b>{b9575962-4bf5-4b93-bfc6-7b21c9cfd601}</b>
+                                   </DRelation>
+                                  </base-DRelation>
+                                 </DDependency>
+                                </instance>
+                               </item>
+                               <item>
+                                <instance type="DItem">
+                                 <DItem>
+                                  <base-DObject>
+                                   <DObject>
+                                    <base-DElement>
+                                     <DElement>
+                                      <uid>{bf26e79c-a79a-4409-8821-042f6449c5be}</uid>
+                                     </DElement>
+                                    </base-DElement>
+                                    <object>{fa1f3e50-4857-4ab8-893d-9db98cf49835}</object>
+                                    <name>from moviepy.editor import *
+from moviepy.video.tools.segmenting import findObjects
+
+# Load the image specifying the regions.
+im = ImageClip(&quot;../../ultracompositing/motif.png&quot;)
+
+# Loacate the regions, return a list of ImageClips
+regions = findObjects(im)
+
+
+# Load 7 clips from the US National Parks. Public Domain :D
+clips = [VideoFileClip(n, audio=False).subclip(18,22) for n in
+     [ &quot;../../videos/romo_0004.mov&quot;,
+      &quot;../../videos/apis-0001.mov&quot;,
+      &quot;../../videos/romo_0001.mov&quot;,
+      &quot;../../videos/elma_s0003.mov&quot;,
+      &quot;../../videos/elma_s0002.mov&quot;,
+      &quot;../../videos/calo-0007.mov&quot;,
+      &quot;../../videos/grsm_0005.mov&quot;]]
+
+# fit each clip into its region
+comp_clips =  [c.resize(r.size)
+                .set_mask(r.mask)
+                .set_pos(r.screenpos)
+               for c,r in zip(clips,regions)]
+
+cc = CompositeVideoClip(comp_clips,im.size)
+cc.resize(0.6).write_videofile(&quot;../../composition.mp4&quot;)
+
+# Note that this particular composition takes quite a long time of
+# rendering (about 20s on my computer for just 4s of video).</name>
+                                    <pos>x:830;y:180</pos>
+                                    <rect>x:-240;y:-315;w:480;h:630</rect>
+                                    <auto-sized>false</auto-sized>
+                                    <visual-role>0</visual-role>
+                                   </DObject>
+                                  </base-DObject>
+                                  <shape-editable>false</shape-editable>
+                                 </DItem>
+                                </instance>
+                               </item>
+                               <item>
+                                <instance type="DDependency">
+                                 <DDependency>
+                                  <base-DRelation>
+                                   <DRelation>
+                                    <base-DElement>
+                                     <DElement>
+                                      <uid>{6d73af16-6052-4ea6-8ff9-01000d2ba462}</uid>
+                                     </DElement>
+                                    </base-DElement>
+                                    <object>{c9e71b38-b0cc-4aa8-9e44-7457ca75d3df}</object>
+                                    <a>{b9575962-4bf5-4b93-bfc6-7b21c9cfd601}</a>
+                                    <b>{bf26e79c-a79a-4409-8821-042f6449c5be}</b>
+                                   </DRelation>
+                                  </base-DRelation>
+                                 </DDependency>
+                                </instance>
+                               </item>
+                               <item>
+                                <instance type="DItem">
+                                 <DItem>
+                                  <base-DObject>
+                                   <DObject>
+                                    <base-DElement>
+                                     <DElement>
+                                      <uid>{605710d5-fa72-4b76-a8d7-4400eb997577}</uid>
+                                     </DElement>
+                                    </base-DElement>
+                                    <object>{383a05d6-17a3-437c-ac67-cdd9e39f6c30}</object>
+                                    <pos>x:210;y:40</pos>
+                                    <rect>x:-20;y:-20;w:40;h:40</rect>
+                                    <visual-role>0</visual-role>
+                                   </DObject>
+                                  </base-DObject>
+                                  <variety>start</variety>
+                                  <shape-editable>false</shape-editable>
+                                 </DItem>
+                                </instance>
+                               </item>
+                               <item>
+                                <instance type="DItem">
+                                 <DItem>
+                                  <base-DObject>
+                                   <DObject>
+                                    <base-DElement>
+                                     <DElement>
+                                      <uid>{5af42f32-1566-440e-8e82-187b422a534f}</uid>
+                                     </DElement>
+                                    </base-DElement>
+                                    <object>{94002b42-b070-4940-880e-f061065fe6a3}</object>
+                                    <name>Разбиение видео на n_src VideoClips</name>
+                                    <pos>x:210;y:115</pos>
+                                    <rect>x:-110;y:-15;w:220;h:30</rect>
+                                    <auto-sized>false</auto-sized>
+                                    <visual-role>0</visual-role>
+                                   </DObject>
+                                  </base-DObject>
+                                  <variety>activity</variety>
+                                  <shape-editable>false</shape-editable>
+                                 </DItem>
+                                </instance>
+                               </item>
+                               <item>
+                                <instance type="DItem">
+                                 <DItem>
+                                  <base-DObject>
+                                   <DObject>
+                                    <base-DElement>
+                                     <DElement>
+                                      <uid>{5b1f56dd-a826-4562-8d3f-14a52cbcc6ce}</uid>
+                                     </DElement>
+                                    </base-DElement>
+                                    <object>{142a2da7-c52d-4b7b-8719-8f134509c808}</object>
+                                    <name>fit each clip into its region</name>
+                                    <pos>x:210;y:195</pos>
+                                    <rect>x:-70;y:-15;w:140;h:30</rect>
+                                    <visual-role>0</visual-role>
+                                   </DObject>
+                                  </base-DObject>
+                                  <variety>activity</variety>
+                                  <shape-editable>false</shape-editable>
+                                 </DItem>
+                                </instance>
+                               </item>
+                               <item>
+                                <instance type="DAnnotation">
+                                 <DAnnotation>
+                                  <base-DElement>
+                                   <DElement>
+                                    <uid>{0da388d3-edd9-4402-a284-dc17e1eb7ba6}</uid>
+                                   </DElement>
+                                  </base-DElement>
+                                  <text>Список источников (n_src)
+Общее время всего клипа
+Список переходов
+Список vfx
+ 
+
+</text>
+                                  <pos>x:110;y:-100</pos>
+                                  <rect>x:0;y:0;w:151;h:107</rect>
+                                  <auto-sized>false</auto-sized>
+                                 </DAnnotation>
+                                </instance>
+                               </item>
+                               <item>
+                                <instance type="DItem">
+                                 <DItem>
+                                  <base-DObject>
+                                   <DObject>
+                                    <base-DElement>
+                                     <DElement>
+                                      <uid>{c2cceffd-3869-4537-a323-bfc62b2b66e1}</uid>
+                                     </DElement>
+                                    </base-DElement>
+                                    <object>{5720fc20-b481-4375-a2b9-af4afc6e9a4a}</object>
+                                    <name>Применение vfx</name>
+                                    <pos>x:210;y:280</pos>
+                                    <rect>x:-50;y:-15;w:100;h:30</rect>
+                                    <visual-role>0</visual-role>
+                                   </DObject>
+                                  </base-DObject>
+                                  <variety>activity</variety>
+                                  <shape-editable>false</shape-editable>
+                                 </DItem>
+                                </instance>
+                               </item>
+                               <item>
+                                <instance type="DConnection">
+                                 <DConnection>
+                                  <base-DRelation>
+                                   <DRelation>
+                                    <base-DElement>
+                                     <DElement>
+                                      <uid>{5b1297c7-d532-4ed0-9ea4-778f2ad669ce}</uid>
+                                     </DElement>
+                                    </base-DElement>
+                                    <object>{407eab87-b9a8-4eb3-8861-727f17ba78cc}</object>
+                                    <a>{605710d5-fa72-4b76-a8d7-4400eb997577}</a>
+                                    <b>{5af42f32-1566-440e-8e82-187b422a534f}</b>
+                                   </DRelation>
+                                  </base-DRelation>
+                                  <custom-relation>Controlflow</custom-relation>
+                                  <a>
+                                   <DConnectionEnd>
+                                    <navigable>true</navigable>
+                                   </DConnectionEnd>
+                                  </a>
+                                 </DConnection>
+                                </instance>
+                               </item>
+                               <item>
+                                <instance type="DConnection">
+                                 <DConnection>
+                                  <base-DRelation>
+                                   <DRelation>
+                                    <base-DElement>
+                                     <DElement>
+                                      <uid>{493bd97a-4522-4bf9-9827-c691d54b6d14}</uid>
+                                     </DElement>
+                                    </base-DElement>
+                                    <object>{a9205a14-e8b8-49b3-a69b-ff50acb2c03c}</object>
+                                    <a>{5af42f32-1566-440e-8e82-187b422a534f}</a>
+                                    <b>{5b1f56dd-a826-4562-8d3f-14a52cbcc6ce}</b>
+                                   </DRelation>
+                                  </base-DRelation>
+                                  <custom-relation>Controlflow</custom-relation>
+                                  <a>
+                                   <DConnectionEnd>
+                                    <navigable>true</navigable>
+                                   </DConnectionEnd>
+                                  </a>
+                                 </DConnection>
+                                </instance>
+                               </item>
+                               <item>
+                                <instance type="DConnection">
+                                 <DConnection>
+                                  <base-DRelation>
+                                   <DRelation>
+                                    <base-DElement>
+                                     <DElement>
+                                      <uid>{4934af10-b909-453c-83f2-57612affa26f}</uid>
+                                     </DElement>
+                                    </base-DElement>
+                                    <object>{16d815e8-4873-44f9-a3cc-5f6f8de0caac}</object>
+                                    <a>{5b1f56dd-a826-4562-8d3f-14a52cbcc6ce}</a>
+                                    <b>{c2cceffd-3869-4537-a323-bfc62b2b66e1}</b>
+                                   </DRelation>
+                                  </base-DRelation>
+                                  <custom-relation>Controlflow</custom-relation>
+                                  <a>
+                                   <DConnectionEnd>
+                                    <navigable>true</navigable>
+                                   </DConnectionEnd>
+                                  </a>
+                                 </DConnection>
+                                </instance>
+                               </item>
+                               <item>
+                                <instance type="DItem">
+                                 <DItem>
+                                  <base-DObject>
+                                   <DObject>
+                                    <base-DElement>
+                                     <DElement>
+                                      <uid>{07c63af6-a07d-4a16-bf9e-dd2fb8971348}</uid>
+                                     </DElement>
+                                    </base-DElement>
+                                    <object>{9c22d35e-1e4c-4eda-9fc3-8e1fa110942a}</object>
+                                    <name>Композиция конечного клипа</name>
+                                    <pos>x:210;y:380</pos>
+                                    <rect>x:-85;y:-15;w:170;h:30</rect>
+                                    <auto-sized>false</auto-sized>
+                                    <visual-role>0</visual-role>
+                                   </DObject>
+                                  </base-DObject>
+                                  <variety>activity</variety>
+                                  <shape-editable>false</shape-editable>
+                                 </DItem>
+                                </instance>
+                               </item>
+                               <item>
+                                <instance type="DConnection">
+                                 <DConnection>
+                                  <base-DRelation>
+                                   <DRelation>
+                                    <base-DElement>
+                                     <DElement>
+                                      <uid>{3f96cd48-513f-4c26-a5b2-a8ac211942bd}</uid>
+                                     </DElement>
+                                    </base-DElement>
+                                    <object>{222d2515-6397-4e72-a9b6-993ae16384d2}</object>
+                                    <a>{c2cceffd-3869-4537-a323-bfc62b2b66e1}</a>
+                                    <b>{07c63af6-a07d-4a16-bf9e-dd2fb8971348}</b>
+                                   </DRelation>
+                                  </base-DRelation>
+                                  <custom-relation>Controlflow</custom-relation>
+                                  <a>
+                                   <DConnectionEnd>
+                                    <navigable>true</navigable>
+                                   </DConnectionEnd>
+                                  </a>
+                                 </DConnection>
+                                </instance>
+                               </item>
+                               <item>
+                                <instance type="DItem">
+                                 <DItem>
+                                  <base-DObject>
+                                   <DObject>
+                                    <base-DElement>
+                                     <DElement>
+                                      <uid>{b60de5a6-ff6f-4b42-bf3a-dafd675212fb}</uid>
+                                     </DElement>
+                                    </base-DElement>
+                                    <object>{949fe132-56ce-40e8-95c4-410d9d36e6b8}</object>
+                                    <pos>x:210;y:495</pos>
+                                    <rect>x:-20;y:-20;w:40;h:40</rect>
+                                    <visual-role>0</visual-role>
+                                   </DObject>
+                                  </base-DObject>
+                                  <variety>start</variety>
+                                  <shape-editable>false</shape-editable>
+                                 </DItem>
+                                </instance>
+                               </item>
+                               <item>
+                                <instance type="DDependency">
+                                 <DDependency>
+                                  <base-DRelation>
+                                   <DRelation>
+                                    <base-DElement>
+                                     <DElement>
+                                      <uid>{8b105f2e-f862-4426-9d49-ac85c68c11b5}</uid>
+                                     </DElement>
+                                    </base-DElement>
+                                    <object>{bf85de11-9fa2-4e29-822e-f2b64c162d2e}</object>
+                                    <a>{07c63af6-a07d-4a16-bf9e-dd2fb8971348}</a>
+                                    <b>{b60de5a6-ff6f-4b42-bf3a-dafd675212fb}</b>
+                                   </DRelation>
+                                  </base-DRelation>
+                                 </DDependency>
+                                </instance>
+                               </item>
+                              </qlist>
+                             </elements>
+                             <last-modified>1634183312730</last-modified>
+                             <toolbarid>Activities</toolbarid>
+                            </MDiagram>
+                           </base-MDiagram>
+                          </MCanvasDiagram>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                      <item>
+                       <handle>
+                        <uid>{1eff9f80-f1b9-46a4-a090-1e5c470aff19}</uid>
+                        <target>
+                         <instance type="MClass">
+                          <MClass>
+                           <base-MObject>
+                            <MObject>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{1eff9f80-f1b9-46a4-a090-1e5c470aff19}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <name>PyCodogen</name>
+                             <relations>
+                              <handles>
+                               <handles>
+                                <qlist>
+                                 <item>
+                                  <handle>
+                                   <uid>{c9e71b38-b0cc-4aa8-9e44-7457ca75d3df}</uid>
+                                   <target>
+                                    <instance type="MDependency">
+                                     <MDependency>
+                                      <base-MRelation>
+                                       <MRelation>
+                                        <base-MElement>
+                                         <MElement>
+                                          <uid>{c9e71b38-b0cc-4aa8-9e44-7457ca75d3df}</uid>
+                                         </MElement>
+                                        </base-MElement>
+                                        <a>{1eff9f80-f1b9-46a4-a090-1e5c470aff19}</a>
+                                        <b>{fa1f3e50-4857-4ab8-893d-9db98cf49835}</b>
+                                       </MRelation>
+                                      </base-MRelation>
+                                     </MDependency>
+                                    </instance>
+                                   </target>
+                                  </handle>
+                                 </item>
+                                </qlist>
+                               </handles>
+                              </handles>
+                             </relations>
+                            </MObject>
+                           </base-MObject>
+                          </MClass>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                      <item>
+                       <handle>
+                        <uid>{33cb8083-7552-4e95-b6bc-1645be4b30a5}</uid>
+                        <target>
+                         <instance type="MItem">
+                          <MItem>
+                           <base-MObject>
+                            <MObject>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{33cb8083-7552-4e95-b6bc-1645be4b30a5}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <name>Список источниов \n</name>
+                            </MObject>
+                           </base-MObject>
+                          </MItem>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                      <item>
+                       <handle>
+                        <uid>{85abb822-8d53-41b8-b24d-2d41df9dcf1d}</uid>
+                        <target>
+                         <instance type="MItem">
+                          <MItem>
+                           <base-MObject>
+                            <MObject>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{85abb822-8d53-41b8-b24d-2d41df9dcf1d}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <relations>
+                              <handles>
+                               <handles>
+                                <qlist>
+                                 <item>
+                                  <handle>
+                                   <uid>{22b457f7-549f-4c6e-b131-03a4043579a8}</uid>
+                                   <target>
+                                    <instance type="MDependency">
+                                     <MDependency>
+                                      <base-MRelation>
+                                       <MRelation>
+                                        <base-MElement>
+                                         <MElement>
+                                          <uid>{22b457f7-549f-4c6e-b131-03a4043579a8}</uid>
+                                         </MElement>
+                                        </base-MElement>
+                                        <a>{85abb822-8d53-41b8-b24d-2d41df9dcf1d}</a>
+                                        <b>{1eff9f80-f1b9-46a4-a090-1e5c470aff19}</b>
+                                       </MRelation>
+                                      </base-MRelation>
+                                     </MDependency>
+                                    </instance>
+                                   </target>
+                                  </handle>
+                                 </item>
+                                </qlist>
+                               </handles>
+                              </handles>
+                             </relations>
+                            </MObject>
+                           </base-MObject>
+                          </MItem>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                      <item>
+                       <handle>
+                        <uid>{fa1f3e50-4857-4ab8-893d-9db98cf49835}</uid>
+                        <target>
+                         <instance type="MItem">
+                          <MItem>
+                           <base-MObject>
+                            <MObject>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{fa1f3e50-4857-4ab8-893d-9db98cf49835}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <name>from moviepy.editor import *
+from moviepy.video.tools.segmenting import findObjects
+
+# Load the image specifying the regions.
+im = ImageClip(&quot;../../ultracompositing/motif.png&quot;)
+
+# Loacate the regions, return a list of ImageClips
+regions = findObjects(im)
+
+
+# Load 7 clips from the US National Parks. Public Domain :D
+clips = [VideoFileClip(n, audio=False).subclip(18,22) for n in
+     [ &quot;../../videos/romo_0004.mov&quot;,
+      &quot;../../videos/apis-0001.mov&quot;,
+      &quot;../../videos/romo_0001.mov&quot;,
+      &quot;../../videos/elma_s0003.mov&quot;,
+      &quot;../../videos/elma_s0002.mov&quot;,
+      &quot;../../videos/calo-0007.mov&quot;,
+      &quot;../../videos/grsm_0005.mov&quot;]]
+
+# fit each clip into its region
+comp_clips =  [c.resize(r.size)
+                .set_mask(r.mask)
+                .set_pos(r.screenpos)
+               for c,r in zip(clips,regions)]
+
+cc = CompositeVideoClip(comp_clips,im.size)
+cc.resize(0.6).write_videofile(&quot;../../composition.mp4&quot;)
+
+# Note that this particular composition takes quite a long time of
+# rendering (about 20s on my computer for just 4s of video).</name>
+                            </MObject>
+                           </base-MObject>
+                          </MItem>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                      <item>
+                       <handle>
+                        <uid>{a226fe05-448b-423c-a671-c6306e608bd9}</uid>
+                        <target>
+                         <instance type="MItem">
+                          <MItem>
+                           <base-MObject>
+                            <MObject>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{a226fe05-448b-423c-a671-c6306e608bd9}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <name>Разбиение вдео</name>
+                            </MObject>
+                           </base-MObject>
+                           <variety-editable>false</variety-editable>
+                           <variety>usecase</variety>
+                          </MItem>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                      <item>
+                       <handle>
+                        <uid>{383a05d6-17a3-437c-ac67-cdd9e39f6c30}</uid>
+                        <target>
+                         <instance type="MItem">
+                          <MItem>
+                           <base-MObject>
+                            <MObject>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{383a05d6-17a3-437c-ac67-cdd9e39f6c30}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <relations>
+                              <handles>
+                               <handles>
+                                <qlist>
+                                 <item>
+                                  <handle>
+                                   <uid>{407eab87-b9a8-4eb3-8861-727f17ba78cc}</uid>
+                                   <target>
+                                    <instance type="MConnection">
+                                     <MConnection>
+                                      <base-MRelation>
+                                       <MRelation>
+                                        <base-MElement>
+                                         <MElement>
+                                          <uid>{407eab87-b9a8-4eb3-8861-727f17ba78cc}</uid>
+                                         </MElement>
+                                        </base-MElement>
+                                        <a>{383a05d6-17a3-437c-ac67-cdd9e39f6c30}</a>
+                                        <b>{94002b42-b070-4940-880e-f061065fe6a3}</b>
+                                       </MRelation>
+                                      </base-MRelation>
+                                      <custom-relation>Controlflow</custom-relation>
+                                      <a>
+                                       <MConnectionEnd>
+                                        <navigable>true</navigable>
+                                       </MConnectionEnd>
+                                      </a>
+                                     </MConnection>
+                                    </instance>
+                                   </target>
+                                  </handle>
+                                 </item>
+                                </qlist>
+                               </handles>
+                              </handles>
+                             </relations>
+                            </MObject>
+                           </base-MObject>
+                           <variety-editable>false</variety-editable>
+                           <variety>start</variety>
+                          </MItem>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                      <item>
+                       <handle>
+                        <uid>{94002b42-b070-4940-880e-f061065fe6a3}</uid>
+                        <target>
+                         <instance type="MItem">
+                          <MItem>
+                           <base-MObject>
+                            <MObject>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{94002b42-b070-4940-880e-f061065fe6a3}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <name>Разбиение видео на n_src VideoClips</name>
+                             <relations>
+                              <handles>
+                               <handles>
+                                <qlist>
+                                 <item>
+                                  <handle>
+                                   <uid>{a9205a14-e8b8-49b3-a69b-ff50acb2c03c}</uid>
+                                   <target>
+                                    <instance type="MConnection">
+                                     <MConnection>
+                                      <base-MRelation>
+                                       <MRelation>
+                                        <base-MElement>
+                                         <MElement>
+                                          <uid>{a9205a14-e8b8-49b3-a69b-ff50acb2c03c}</uid>
+                                         </MElement>
+                                        </base-MElement>
+                                        <a>{94002b42-b070-4940-880e-f061065fe6a3}</a>
+                                        <b>{142a2da7-c52d-4b7b-8719-8f134509c808}</b>
+                                       </MRelation>
+                                      </base-MRelation>
+                                      <custom-relation>Controlflow</custom-relation>
+                                      <a>
+                                       <MConnectionEnd>
+                                        <navigable>true</navigable>
+                                       </MConnectionEnd>
+                                      </a>
+                                     </MConnection>
+                                    </instance>
+                                   </target>
+                                  </handle>
+                                 </item>
+                                </qlist>
+                               </handles>
+                              </handles>
+                             </relations>
+                            </MObject>
+                           </base-MObject>
+                           <variety-editable>false</variety-editable>
+                           <variety>activity</variety>
+                          </MItem>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                      <item>
+                       <handle>
+                        <uid>{142a2da7-c52d-4b7b-8719-8f134509c808}</uid>
+                        <target>
+                         <instance type="MItem">
+                          <MItem>
+                           <base-MObject>
+                            <MObject>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{142a2da7-c52d-4b7b-8719-8f134509c808}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <name>fit each clip into its region</name>
+                             <relations>
+                              <handles>
+                               <handles>
+                                <qlist>
+                                 <item>
+                                  <handle>
+                                   <uid>{16d815e8-4873-44f9-a3cc-5f6f8de0caac}</uid>
+                                   <target>
+                                    <instance type="MConnection">
+                                     <MConnection>
+                                      <base-MRelation>
+                                       <MRelation>
+                                        <base-MElement>
+                                         <MElement>
+                                          <uid>{16d815e8-4873-44f9-a3cc-5f6f8de0caac}</uid>
+                                         </MElement>
+                                        </base-MElement>
+                                        <a>{142a2da7-c52d-4b7b-8719-8f134509c808}</a>
+                                        <b>{5720fc20-b481-4375-a2b9-af4afc6e9a4a}</b>
+                                       </MRelation>
+                                      </base-MRelation>
+                                      <custom-relation>Controlflow</custom-relation>
+                                      <a>
+                                       <MConnectionEnd>
+                                        <navigable>true</navigable>
+                                       </MConnectionEnd>
+                                      </a>
+                                     </MConnection>
+                                    </instance>
+                                   </target>
+                                  </handle>
+                                 </item>
+                                </qlist>
+                               </handles>
+                              </handles>
+                             </relations>
+                            </MObject>
+                           </base-MObject>
+                           <variety-editable>false</variety-editable>
+                           <variety>activity</variety>
+                          </MItem>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                      <item>
+                       <handle>
+                        <uid>{5720fc20-b481-4375-a2b9-af4afc6e9a4a}</uid>
+                        <target>
+                         <instance type="MItem">
+                          <MItem>
+                           <base-MObject>
+                            <MObject>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{5720fc20-b481-4375-a2b9-af4afc6e9a4a}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <name>Применение vfx</name>
+                             <relations>
+                              <handles>
+                               <handles>
+                                <qlist>
+                                 <item>
+                                  <handle>
+                                   <uid>{222d2515-6397-4e72-a9b6-993ae16384d2}</uid>
+                                   <target>
+                                    <instance type="MConnection">
+                                     <MConnection>
+                                      <base-MRelation>
+                                       <MRelation>
+                                        <base-MElement>
+                                         <MElement>
+                                          <uid>{222d2515-6397-4e72-a9b6-993ae16384d2}</uid>
+                                         </MElement>
+                                        </base-MElement>
+                                        <a>{5720fc20-b481-4375-a2b9-af4afc6e9a4a}</a>
+                                        <b>{9c22d35e-1e4c-4eda-9fc3-8e1fa110942a}</b>
+                                       </MRelation>
+                                      </base-MRelation>
+                                      <custom-relation>Controlflow</custom-relation>
+                                      <a>
+                                       <MConnectionEnd>
+                                        <navigable>true</navigable>
+                                       </MConnectionEnd>
+                                      </a>
+                                     </MConnection>
+                                    </instance>
+                                   </target>
+                                  </handle>
+                                 </item>
+                                </qlist>
+                               </handles>
+                              </handles>
+                             </relations>
+                            </MObject>
+                           </base-MObject>
+                           <variety-editable>false</variety-editable>
+                           <variety>activity</variety>
+                          </MItem>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                      <item>
+                       <handle>
+                        <uid>{9c22d35e-1e4c-4eda-9fc3-8e1fa110942a}</uid>
+                        <target>
+                         <instance type="MItem">
+                          <MItem>
+                           <base-MObject>
+                            <MObject>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{9c22d35e-1e4c-4eda-9fc3-8e1fa110942a}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <name>Композиция конечного клипа</name>
+                             <relations>
+                              <handles>
+                               <handles>
+                                <qlist>
+                                 <item>
+                                  <handle>
+                                   <uid>{bf85de11-9fa2-4e29-822e-f2b64c162d2e}</uid>
+                                   <target>
+                                    <instance type="MDependency">
+                                     <MDependency>
+                                      <base-MRelation>
+                                       <MRelation>
+                                        <base-MElement>
+                                         <MElement>
+                                          <uid>{bf85de11-9fa2-4e29-822e-f2b64c162d2e}</uid>
+                                         </MElement>
+                                        </base-MElement>
+                                        <a>{9c22d35e-1e4c-4eda-9fc3-8e1fa110942a}</a>
+                                        <b>{949fe132-56ce-40e8-95c4-410d9d36e6b8}</b>
+                                       </MRelation>
+                                      </base-MRelation>
+                                     </MDependency>
+                                    </instance>
+                                   </target>
+                                  </handle>
+                                 </item>
+                                </qlist>
+                               </handles>
+                              </handles>
+                             </relations>
+                            </MObject>
+                           </base-MObject>
+                           <variety-editable>false</variety-editable>
+                           <variety>activity</variety>
+                          </MItem>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                      <item>
+                       <handle>
+                        <uid>{949fe132-56ce-40e8-95c4-410d9d36e6b8}</uid>
+                        <target>
+                         <instance type="MItem">
+                          <MItem>
+                           <base-MObject>
+                            <MObject>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{949fe132-56ce-40e8-95c4-410d9d36e6b8}</uid>
+                              </MElement>
+                             </base-MElement>
+                            </MObject>
+                           </base-MObject>
+                           <variety-editable>false</variety-editable>
+                           <variety>start</variety>
+                          </MItem>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                     </qlist>
+                    </handles>
+                   </handles>
+                  </children>
+                  <relations>
+                   <handles>
+                    <handles>
+                     <qlist>
+                      <item>
+                       <handle>
+                        <uid>{f0655c93-f252-4d97-8b85-0b125f8e2e02}</uid>
+                        <target>
+                         <instance type="MDependency">
+                          <MDependency>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{f0655c93-f252-4d97-8b85-0b125f8e2e02}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{073d7a30-309f-4968-8cab-331b6ffd55e4}</a>
+                             <b>{16968103-a290-4c54-9cd3-e61712f66394}</b>
+                            </MRelation>
+                           </base-MRelation>
+                          </MDependency>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                      <item>
+                       <handle>
+                        <uid>{88923ad9-b92c-414d-b23d-5c5629dcc080}</uid>
+                        <target>
+                         <instance type="MDependency">
+                          <MDependency>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{88923ad9-b92c-414d-b23d-5c5629dcc080}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{073d7a30-309f-4968-8cab-331b6ffd55e4}</a>
+                             <b>{7f9a9a2a-b0a3-4092-acb9-81b8ac40ba59}</b>
+                            </MRelation>
+                           </base-MRelation>
+                          </MDependency>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                      <item>
+                       <handle>
+                        <uid>{b70ac376-abc4-4866-a372-3f96dc894003}</uid>
+                        <target>
+                         <instance type="MDependency">
+                          <MDependency>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{b70ac376-abc4-4866-a372-3f96dc894003}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{073d7a30-309f-4968-8cab-331b6ffd55e4}</a>
+                             <b>{35780129-0b99-4af2-9b0d-67891f5c5e60}</b>
+                            </MRelation>
+                           </base-MRelation>
+                          </MDependency>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                     </qlist>
+                    </handles>
+                   </handles>
+                  </relations>
+                 </MObject>
+                </base-MObject>
+               </MPackage>
               </instance>
              </target>
             </handle>
