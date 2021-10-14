@@ -134,9 +134,23 @@ VdeoCube - это коллекция программ. Исторически п
 
 # Диаграмма общего взаимодействия ПО VideoCube с использованием MoviePy
 ![image](https://github.com/Kvazikot/VideoProjects/blob/master/VideoCube/VideoCubeCV/diagrams/VideoCubeCore_Diagram_Python.png)
+<b>Преимущества этой схемы:</b>
+* p44.1. Пайтон код легко читать и легко сгенерировать
+* p44.2. Присутствие Unity в цепочке 3д рендеринга повышает шансы на развитие проекта по поути генератора 3д сцен
+
+<b>Недостатки это схемы:</b>
+* m44.1. Использование Python снижает производительность
+* m44.2. Использование сразу 3 языков (си++, Python, c# ). Неудобно поддерживать и развивать код.
 
 # Диаграмма общего взаимодействия ПО VideoCube с использованием [OpenShotLibrary](https://github.com/OpenShot/libopenshot)
 ![image](https://github.com/Kvazikot/VideoProjects/blob/master/VideoCube/VideoCubeCV/diagrams/VideoCubeCore_Diagram_OpenShot.png)
+<b>Недостатки этой схемы:</b>
+* 
+* 
+<b>Преимущества этой схемы:</b>
+* p55.1. Существование опен сорсного редактора видео на основе библиотеки [OpenShotLibrary](https://github.com/OpenShot/libopenshot)
+* p55.2. Отсутствие Unity в цепочке 3д рендеринга упрощает установку и вообще распространение софта
+* p55.3. Присутствие пайтон биндингов в OpenShotLibrary позволяет генерировать код на пайтоне.
 
 # Протокол подготовоки видео ролика к загрузке на ютьюб
 На выходе мы получаем 5-10 видеороликов с разным содержанием. Это удобно на даче с узким каналом.
