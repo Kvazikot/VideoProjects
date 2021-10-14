@@ -4178,7 +4178,7 @@
                                                            </DElement>
                                                           </base-DElement>
                                                           <object>{b4c12622-426b-442d-879c-6102d91abbe6}</object>
-                                                          <pos>x:165;y:-10</pos>
+                                                          <pos>x:165;y:15</pos>
                                                           <rect>x:-20;y:-20;w:40;h:40</rect>
                                                           <visual-role>0</visual-role>
                                                          </DObject>
@@ -4288,7 +4288,7 @@
                                                           </base-DElement>
                                                           <object>{12c7f4a0-d1f3-4c9d-b483-76f25c6b9a19}</object>
                                                           <name>Спросить у юзера точную подгонку параметров</name>
-                                                          <pos>x:170;y:540</pos>
+                                                          <pos>x:165;y:540</pos>
                                                           <rect>x:-135;y:-15;w:270;h:30</rect>
                                                           <visual-role>0</visual-role>
                                                          </DObject>
@@ -4296,21 +4296,6 @@
                                                         <variety>activity</variety>
                                                         <shape-editable>false</shape-editable>
                                                        </DItem>
-                                                      </instance>
-                                                     </item>
-                                                     <item>
-                                                      <instance type="DBoundary">
-                                                       <DBoundary>
-                                                        <base-DElement>
-                                                         <DElement>
-                                                          <uid>{a335aa9b-1733-4523-9bd2-dc68bf42c483}</uid>
-                                                         </DElement>
-                                                        </base-DElement>
-                                                        <text>Блок схема видеомонтажа
-</text>
-                                                        <pos>x:165;y:-80</pos>
-                                                        <rect>x:-140;y:-25;w:280;h:50</rect>
-                                                       </DBoundary>
                                                       </instance>
                                                      </item>
                                                      <item>
@@ -4325,7 +4310,7 @@
                                                           </base-DElement>
                                                           <object>{cfbc3336-31e4-4032-8c22-d9e878114409}</object>
                                                           <name>New Actor</name>
-                                                          <pos>x:385;y:470</pos>
+                                                          <pos>x:45;y:445</pos>
                                                           <rect>x:-10;y:-20;w:20;h:40</rect>
                                                           <visual-role>0</visual-role>
                                                          </DObject>
@@ -4347,7 +4332,7 @@
                                                           </base-DElement>
                                                           <object>{dbd56ffe-8c8a-4262-93ad-7a3f23f54722}</object>
                                                           <name>Спросить формат выходного файла</name>
-                                                          <pos>x:170;y:620</pos>
+                                                          <pos>x:165;y:620</pos>
                                                           <rect>x:-100;y:-15;w:200;h:30</rect>
                                                           <visual-role>0</visual-role>
                                                          </DObject>
@@ -4536,7 +4521,7 @@
                                                            </DElement>
                                                           </base-DElement>
                                                           <object>{0c95db53-4e24-436f-bc36-c833aa2cff17}</object>
-                                                          <pos>x:170;y:700</pos>
+                                                          <pos>x:165;y:700</pos>
                                                           <rect>x:-20;y:-20;w:40;h:40</rect>
                                                           <visual-role>0</visual-role>
                                                          </DObject>
@@ -4590,7 +4575,7 @@
                                                      </item>
                                                     </qlist>
                                                    </elements>
-                                                   <last-modified>1634200986937</last-modified>
+                                                   <last-modified>1634202683137</last-modified>
                                                    <toolbarid>Activities</toolbarid>
                                                   </MDiagram>
                                                  </base-MDiagram>
