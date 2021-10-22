@@ -251,3 +251,5 @@ MoviePy + автоматизация Photoshop через ActiveX
 4. How to syntesize voice python scripting with Google speech synthesis?
 5. How to syntesize do voice morphing ?
 6. How to connect Python3 script and Unity application using sockets?
+
+# [Ссылки и видео](https://github.com/Kvazikot/VideoProjects/blob/master/docs/VideoCube_links.MD)
