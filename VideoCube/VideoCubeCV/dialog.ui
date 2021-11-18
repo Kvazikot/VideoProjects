@@ -6,21 +6,14 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>623</width>
-    <height>489</height>
+    <width>664</width>
+    <height>594</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
   <layout class="QGridLayout">
-   <item row="4" column="1">
-    <widget class="QPushButton" name="loadFromSharedMemoryButton">
-     <property name="text">
-      <string>Display Image From Shared Memory</string>
-     </property>
-    </widget>
-   </item>
    <item row="1" column="1">
     <widget class="QLabel" name="label">
      <property name="sizePolicy">
@@ -56,6 +49,13 @@
      </property>
     </widget>
    </item>
+   <item row="4" column="1">
+    <widget class="QLabel" name="statusBar">
+     <property name="text">
+      <string>Status bar</string>
+     </property>
+    </widget>
+   </item>
    <item row="2" column="1">
     <widget class="QPlainTextEdit" name="plainTextEdit">
      <property name="maximumSize">
@@ -66,10 +66,24 @@
      </property>
     </widget>
    </item>
-   <item row="3" column="1">
-    <widget class="QLabel" name="statusBar">
+   <item row="6" column="1">
+    <widget class="QPushButton" name="loadFromSharedMemoryButton">
      <property name="text">
-      <string>Status bar</string>
+      <string>Display Image From Shared Memory</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <widget class="QCheckBox" name="checkBox">
+     <property name="text">
+      <string>CheckBox</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="1">
+    <widget class="QPushButton" name="readSrcButton">
+     <property name="text">
+      <string>Read sources test</string>
      </property>
     </widget>
    </item>

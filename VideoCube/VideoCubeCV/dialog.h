@@ -75,7 +75,12 @@ class Dialog : public QDialog
     void showEvent(QShowEvent *event);
     void setPixmap(int screen_number, QPixmap& pix);
 
-  private:
+    int OpenSourcesTest();
+
+private slots:
+    void on_readSrcButton_clicked();
+
+private:
     Ui::Dialog ui;
     Shared sharedmem;
     VideoScreen* screen;

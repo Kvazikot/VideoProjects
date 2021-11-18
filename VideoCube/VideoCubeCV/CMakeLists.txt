@@ -2,21 +2,29 @@ cmake_minimum_required(VERSION 3.18)
 
 project(VideoCubeCV)
 set( CMAKE_VERBOSE_MAKEFILE on )
+
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTORCC ON)
+set(CMAKE_AUTOUIC ON)
+
+
 set( OpenCV_DIR "D:\\opencv\\build2" )
-set( Qt5Widgets_DIR "C:\\Qt\\Qt5.12.11\\5.12.11\\msvc2017_64\\lib\\cmake\\Qt5Widgets" )
-set( Qt5Concurrent_DIR "C:\\Qt\\Qt5.12.11\\5.12.11\\msvc2017_64\\lib\\cmake\\Qt5Concurrent" )
+set( Qt5_DIR "D:\\Qt\\Qt5.12.10\\" )
+
+if(CMAKE_VERSION VERSION_LESS "3.7.0")
+    set(CMAKE_INCLUDE_CURRENT_DIR ON)
+endif()
+
+find_package(Qt5 COMPONENTS Widgets REQUIRED)
 
 find_package(OpenCV REQUIRED )
-find_package(TBB REQUIRED)
+#find_package(TBB REQUIRED)
 # Widgets finds its own dependencies (QtGui and QtCore).
-find_package(Qt5Widgets REQUIRED)
-find_package(Qt5Concurrent REQUIRED)
 
 set(CMAKE_VERBOSE_MAKEFILE ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
-
-set(CMAKE_AUTOUIC ON)
-set(CMAKE_AUTOMOC ON)
 
 
 # The Qt5Widgets_INCLUDES also includes the include directories for
@@ -45,7 +53,6 @@ include_directories(.)
 set ( UIS
  dialog.ui
  mainwindow_ver1.ui
- libs_app7.qmodel
 )
 
 #set(HEADERS_MOC videoscreen.h)

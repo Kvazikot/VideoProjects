@@ -24,6 +24,7 @@
 
 int main(int argc, char *argv[])
 {
+    //qApp->addLibraryPath("./platforms");
     QApplication application(argc, argv);
     Dialog dialog;
     dialog.show();

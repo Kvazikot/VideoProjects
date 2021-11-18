@@ -21,6 +21,7 @@
 #include "dialog.h"
 #include <shared.h>
 #include <QFileDialog>
+#include <QPixmap>
 #include <QBuffer>
 #include <QtCore/QDebug>
 #include "print.h"
@@ -40,6 +41,12 @@ Dialog::Dialog(QWidget *parent)
     startTimer(100);
 }
 
+int Dialog::OpenSourcesTest()
+{
+
+   return 1;
+}
+
 void Dialog::showEvent(QShowEvent *event)
 {
     QImage image("../NicePng_vintage-paper-png_9772625.png");
@@ -48,12 +55,17 @@ void Dialog::showEvent(QShowEvent *event)
     sharedmem.writeImage("../NicePng_vintage-paper-png_9772625.png", image.width(), image.height());
     VideoScreen* screen = new VideoScreen();
     connect(screen, SIGNAL(sigSetPixmap(int, QPixmap&)), this, SLOT(setPixmap(int, QPixmap&)));
-    screen->test1();
+
+    /// !!!!! ----- - AHTUNG RUNNING TESTS - ----------!!!!!!
+    //screen->test1();
+    screen->test_resize();
 }
 
 void Dialog::closeEvent(QCloseEvent *)
 {
     delete screen;
+    //destroyAllWindows();
+
 }
 
 void Dialog::setPixmap(int screen_number, QPixmap& mat)
@@ -89,8 +101,6 @@ void Dialog::loadFromMemory()
     QBuffer buffer;
     QDataStream in(&buffer);
     QImage image;
-
-
     ui.label->setPixmap(QPixmap::fromImage(image));
 }
 
@@ -103,4 +113,9 @@ void Dialog::print(const QString &input)
 void Dialog::print_status(const QString &input)
 {
     ui.statusBar->setText(input);
+}
+
+void Dialog::on_readSrcButton_clicked()
+{
+    prn("Result of OpenSourcesTest is %d", OpenSourcesTest());
 }

@@ -4157,7 +4157,7 @@
                                                           </base-DElement>
                                                           <object>{2b5a6cec-8526-46e7-b1ff-1d79ec95c3fc}</object>
                                                           <name>Разбор тегов vccp</name>
-                                                          <pos>x:165;y:100</pos>
+                                                          <pos>x:180;y:140</pos>
                                                           <rect>x:-55;y:-15;w:110;h:30</rect>
                                                           <visual-role>0</visual-role>
                                                          </DObject>
@@ -4178,7 +4178,7 @@
                                                            </DElement>
                                                           </base-DElement>
                                                           <object>{b4c12622-426b-442d-879c-6102d91abbe6}</object>
-                                                          <pos>x:165;y:15</pos>
+                                                          <pos>x:180;y:55</pos>
                                                           <rect>x:-20;y:-20;w:40;h:40</rect>
                                                           <visual-role>0</visual-role>
                                                          </DObject>
@@ -4200,7 +4200,7 @@
                                                           </base-DElement>
                                                           <object>{04ecb5f5-612e-4b7e-9248-f14bd7708405}</object>
                                                           <name>Разбиение  абзаца на отдельные клипы</name>
-                                                          <pos>x:165;y:270</pos>
+                                                          <pos>x:180;y:310</pos>
                                                           <rect>x:-110;y:-15;w:220;h:30</rect>
                                                           <visual-role>0</visual-role>
                                                          </DObject>
@@ -4222,7 +4222,7 @@
                                                           </base-DElement>
                                                           <object>{49cc0577-e79e-4971-905a-8ab0298d88ae}</object>
                                                           <name>Расстановка переходов и склеек (transformations)</name>
-                                                          <pos>x:165;y:365</pos>
+                                                          <pos>x:180;y:405</pos>
                                                           <rect>x:-140;y:-15;w:280;h:30</rect>
                                                           <visual-role>0</visual-role>
                                                          </DObject>
@@ -4244,7 +4244,7 @@
                                                           </base-DElement>
                                                           <object>{e970d2ab-3ea3-45f2-9b2a-125cc1de8a97}</object>
                                                           <name>Сколько времени занимает абзац?</name>
-                                                          <pos>x:165;y:170</pos>
+                                                          <pos>x:180;y:210</pos>
                                                           <rect>x:-100;y:-15;w:200;h:30</rect>
                                                           <visual-role>0</visual-role>
                                                          </DObject>
@@ -4266,7 +4266,7 @@
                                                           </base-DElement>
                                                           <object>{179e55e1-cf33-49b3-a971-e9f74a5c32b6}</object>
                                                           <name>Автоматическая расстановка vfx</name>
-                                                          <pos>x:165;y:450</pos>
+                                                          <pos>x:180;y:490</pos>
                                                           <rect>x:-95;y:-15;w:190;h:30</rect>
                                                           <visual-role>0</visual-role>
                                                          </DObject>
@@ -4288,7 +4288,7 @@
                                                           </base-DElement>
                                                           <object>{12c7f4a0-d1f3-4c9d-b483-76f25c6b9a19}</object>
                                                           <name>Спросить у юзера точную подгонку параметров</name>
-                                                          <pos>x:165;y:540</pos>
+                                                          <pos>x:180;y:580</pos>
                                                           <rect>x:-135;y:-15;w:270;h:30</rect>
                                                           <visual-role>0</visual-role>
                                                          </DObject>
@@ -4310,7 +4310,7 @@
                                                           </base-DElement>
                                                           <object>{cfbc3336-31e4-4032-8c22-d9e878114409}</object>
                                                           <name>New Actor</name>
-                                                          <pos>x:45;y:445</pos>
+                                                          <pos>x:60;y:485</pos>
                                                           <rect>x:-10;y:-20;w:20;h:40</rect>
                                                           <visual-role>0</visual-role>
                                                          </DObject>
@@ -4332,7 +4332,7 @@
                                                           </base-DElement>
                                                           <object>{dbd56ffe-8c8a-4262-93ad-7a3f23f54722}</object>
                                                           <name>Спросить формат выходного файла</name>
-                                                          <pos>x:165;y:620</pos>
+                                                          <pos>x:180;y:660</pos>
                                                           <rect>x:-100;y:-15;w:200;h:30</rect>
                                                           <visual-role>0</visual-role>
                                                          </DObject>
@@ -4521,7 +4521,7 @@
                                                            </DElement>
                                                           </base-DElement>
                                                           <object>{0c95db53-4e24-436f-bc36-c833aa2cff17}</object>
-                                                          <pos>x:165;y:700</pos>
+                                                          <pos>x:180;y:765</pos>
                                                           <rect>x:-20;y:-20;w:40;h:40</rect>
                                                           <visual-role>0</visual-role>
                                                          </DObject>
@@ -4575,7 +4575,7 @@
                                                      </item>
                                                     </qlist>
                                                    </elements>
-                                                   <last-modified>1634202683137</last-modified>
+                                                   <last-modified>1634203900095</last-modified>
                                                    <toolbarid>Activities</toolbarid>
                                                   </MDiagram>
                                                  </base-MDiagram>
@@ -5125,6 +5125,28 @@
                                                  </base-MObject>
                                                  <variety-editable>false</variety-editable>
                                                  <variety>termination</variety>
+                                                </MItem>
+                                               </instance>
+                                              </target>
+                                             </handle>
+                                            </item>
+                                            <item>
+                                             <handle>
+                                              <uid>{73f95aed-d2a4-4e62-957a-fb3c53fa925e}</uid>
+                                              <target>
+                                               <instance type="MItem">
+                                                <MItem>
+                                                 <base-MObject>
+                                                  <MObject>
+                                                   <base-MElement>
+                                                    <MElement>
+                                                     <uid>{73f95aed-d2a4-4e62-957a-fb3c53fa925e}</uid>
+                                                    </MElement>
+                                                   </base-MElement>
+                                                  </MObject>
+                                                 </base-MObject>
+                                                 <variety-editable>false</variety-editable>
+                                                 <variety>activity</variety>
                                                 </MItem>
                                                </instance>
                                               </target>

@@ -56,6 +56,7 @@ public:
 };
 
 
+
 VideoScreen::VideoScreen()
     : QObject()
 {
@@ -65,7 +66,7 @@ VideoScreen::VideoScreen()
 void VideoScreen::test1()
 {
     int n = cv::getNumberOfCPUs();
-    prn("getNumberOfCPUs() = %d", n);
+    prn("getNumberOfCPUs() = %d ", n);
     int n1 = cv::getNumThreads();
     prn("getNumThreads() = %d", n1);
     Mat3b img = Mat3b::zeros(80,80);
@@ -76,22 +77,46 @@ void VideoScreen::test1()
     emit sigSetPixmap(0, pix);
 }
 
-
-Source::Source()
+void VideoScreen::test_resize()
 {
+    Source src1, src2, src3, src4;
+    src1.Open("e:\\VIDEO\\Idiocracy.2006.WEB-DL.1080p.mkv");
+    src2.Open("e:\\VIDEO\\Le.Dernier.Yoyage.2020.HDRip-AVC.mkv");
+    src3.Open("e:\\VIDEO\\The.Mutation.2021.WEB-DLRip.avi");
+    src4.Open("e:\\VIDEO\\Injustice.2021.BDRip.feofanio.avi");
 
+    src1.getNextFrame();
+    src2.getNextFrame();
+    src3.getNextFrame();
+    src4.getNextFrame();
+    std::vector<Source> sources;
+    sources.push_back(src1);
+    sources.push_back(src2);
+    sources.push_back(src3);
+    sources.push_back(src4);
 
+    for(auto b = sources.begin(); b < sources.end(); b++)
+    {
+      b->show();
+      prn("output source %d %d", b->frame.cols, b->frame.rows);
+    }
+   return;
+    ParallelVideoResizer resizer_obj(sources);
+    parallel_for_(Range{ 0, 16 }, resizer_obj, 9);
+
+    auto format = QImage::Format_RGB888;
+    Mat& img = *resizer_obj.outMat;
+    QPixmap pix = QPixmap::fromImage(QImage((unsigned char*) img.data, img.cols, img.rows, format));
+
+    for(auto b = sources.begin(); b < sources.end(); b++)
+    {
+      b->show();
+      prn("output source %d %d", b->frame.cols, b->frame.rows);
+    }
+
+    emit sigSetPixmap(0, pix);
 }
 
-int Source::Open()
-{
-    return 0;
-}
-
-Source::~Source()
-{
-
-}
 
 void test()
 {
@@ -102,27 +127,3 @@ void test()
     LOG() << "OUT";
 }
 
-
-int main1()
-{
-    LOG() << "Calling test()...";
-
-    QThreadPool::globalInstance()->setMaxThreadCount(THREADS_NUMBER);
-
-    // open sources
-
-    //QFuture<QImage> frames;
-    auto f = QtConcurrent::run( test );
-
-    LOG() << "Running test()...";
-
-    // ...                             ...
-    // ... You can do other stuff here ...
-    // ...                             ...
-
-    f.waitForFinished(); // Blocking call to wait for function to finish
-
-    LOG() << "Exiting...";
-
-    return 0;
-}
