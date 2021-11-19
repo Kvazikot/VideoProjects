@@ -23,6 +23,7 @@
 
 #include <QObject>
 #include <QStringList>
+#include <QMutex>
 #include <QTime>
 #include "print.h"
 #include <opencv2/core/utility.hpp>
@@ -33,17 +34,23 @@
 #include "opencv2/opencv.hpp"
 
 #define MAX_SOURCES 20
+#define CACHE_SIZE 30
 
 using namespace cv;
 
 class Source
 {
 public:
-    Source()
+    Source(QString filename)
     {
         cap = 0;
+        this->filename = filename;
         id = rand();
         frame = Mat3b::zeros(70, 70);
+        current_frame = 0;
+        for(int i=0; i < CACHE_SIZE + 1; i++)
+            frames_cache.push_back(Mat3b::zeros(70, 70));
+
     }
     ~Source()
     {
@@ -58,18 +65,45 @@ public:
     }
     int reopen()
     {
-        if(cap==0) cap = new cv::VideoCapture(filename.toStdString());
+        if(cap==0)
+        {
+            cap = new cv::VideoCapture(filename.toStdString());
+            cap->set(cv::CAP_PROP_POS_MSEC, 144 * 1000 ); //10 sec skipped
+        }
         return 1;
     }
-    cv::Mat getNextFrame()
+
+    // read n consecutive frames
+    int precache()
     {
-        reopen();
-        if(cap->isOpened()){
-           // Capture frame-by-frame
-           cap->set(cv::CAP_PROP_POS_MSEC, 144 * 1000 ); //10 sec skipped
-           *cap >> frame;
-           //prn("frame readed %d %d", frame.cols, frame.rows);
+        int n_readed = 0;
+        for(int i=0; i < CACHE_SIZE; i++)
+        {
+            if(cap->isOpened()){
+                if( !cap->retrieve(frames_cache[i]) )
+                   break;
+                n_readed++;
+            }
         }
+        return n_readed;
+    }
+    cv::Mat3b getNextFrame()
+    {
+        mutex.lock();
+        if(cap->isOpened()){
+            *cap >> frame;
+            //n_readed++;
+        }
+        mutex.unlock();
+        return frame;
+        if((current_frame % CACHE_SIZE) == 0)
+           precache();
+
+        if(current_frame > CACHE_SIZE)
+            frame = frames_cache[current_frame % CACHE_SIZE];
+        else
+            frame = frames_cache[current_frame];
+        current_frame++;
         return frame;
     }
 
@@ -86,20 +120,22 @@ public:
     }
 
     QString      filename;
+    QMutex       mutex;
     cv::VideoCapture* cap;
-    Mat frame;
+    std::vector<Mat3b>  frames_cache;
+    Mat3b frame;
     int current_frame;
     int id;
 };
 
 class ParallelVideoResizer : public ParallelLoopBody
 {
-    std::vector<Source>* Sorces_list;
+    std::vector<Source*>* Sorces_list;
     Size output_size;
 
 public:
     ParallelVideoResizer(){}
-    ParallelVideoResizer(std::vector<Source>* sorces_list, int output_width, int output_height)
+    ParallelVideoResizer(std::vector<Source*>* sorces_list, int output_width, int output_height)
     {
         Sorces_list = sorces_list;
         output_size = Size(output_width, output_height);
@@ -107,15 +143,15 @@ public:
 
     void operator()(const Range& range) const override
     {
-        int devisor = Sorces_list->size()/2;
+        int devisor = 4;
         Size size = Size(output_size.width/devisor, output_size.height/devisor);
+        prn("range %d %d ", range.start, range.end);
         if( (range.start/2) < Sorces_list->size())
         {
-            auto src1 = &(*Sorces_list)[range.start/2];
+            Source* src1 = (*Sorces_list)[range.start/2];
             src1->reopen();
-            src1->getNextFrame();
-            Mat& src = src1->frame;
-            Mat temp;
+            Mat3b src = src1->getNextFrame();
+            Mat3b temp;
             resize(src, temp, size);
             src1->setFrame(temp);
         }
@@ -158,7 +194,7 @@ class VideoScreen : public QObject
 {
     Q_OBJECT
 public:
-    Source frames_n[MAX_SOURCES];
+    std::vector<Source*> sources;
 
     VideoScreen();
     void openSources(QStringList filenames);
@@ -166,6 +202,9 @@ public:
     void test_resize();
 signals:
     void sigSetPixmap(int screen_number, QPixmap& pix);
+
+public slots:
+    void onTimerUpdate();
 
 };
 

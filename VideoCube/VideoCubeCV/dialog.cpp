@@ -71,6 +71,7 @@ void Dialog::closeEvent(QCloseEvent *)
 void Dialog::setPixmap(int screen_number, QPixmap& mat)
 {
     ui.label->setPixmap(mat);
+    repaint();
 }
 
 void Dialog::timerEvent(QTimerEvent* event)

@@ -23,6 +23,7 @@
 #include <QPixmap>
 #include <opencv2/opencv.hpp>
 #include <QtConcurrent>
+#include <QApplication>
 #include <QFuture>
 #include <QThread>
 #include <print.h>
@@ -77,45 +78,63 @@ void VideoScreen::test1()
     emit sigSetPixmap(0, pix);
 }
 
+void VideoScreen::onTimerUpdate()
+{
+    prn("n frame = %d", 1);
+
+    ParallelVideoResizer resizer_obj(&sources, 1024, 768);
+    parallel_for_(Range{ 0, 16 }, resizer_obj, 9);
+    //return;
+    // show source ¹ 1
+    Source* src1 = sources[0];
+    auto format = QImage::Format_RGB888;
+    Mat& img = src1->frame;
+    QPixmap pix = QPixmap::fromImage(QImage((unsigned char*) img.data, img.cols, img.rows, format));
+    emit sigSetPixmap(0, pix);
+    //QApplication::processEvents();
+
+}
+
 void VideoScreen::test_resize()
 {
-    Source src1, src2, src3, src4;
-    src1.Open("e:\\VIDEO\\Idiocracy.2006.WEB-DL.1080p.mkv");
-    src2.Open("e:\\VIDEO\\Le.Dernier.Yoyage.2020.HDRip-AVC.mkv");
-    src3.Open("e:\\VIDEO\\The.Mutation.2021.WEB-DLRip.avi");
-    src4.Open("e:\\VIDEO\\Injustice.2021.BDRip.feofanio.avi");
+    Source* src1 = new Source("e:\\VIDEO\\Idiocracy.2006.WEB-DL.1080p.mkv");
+    Source* src2 = new Source("e:\\VIDEO\\Le.Dernier.Yoyage.2020.HDRip-AVC.mkv");
+    Source* src3 = new Source("e:\\VIDEO\\The.Mutation.2021.WEB-DLRip.avi");
+    Source* src4 = new Source("e:\\VIDEO\\Injustice.2021.BDRip.feofanio.avi");
+    Source* src5 = new Source("e:\\VIDEO\\Idiocracy.2006.WEB-DL.1080p.mkv");
+    Source* src6 = new Source("e:\\VIDEO\\Le.Dernier.Yoyage.2020.HDRip-AVC.mkv");
+    Source* src7 = new Source("e:\\VIDEO\\The.Mutation.2021.WEB-DLRip.avi");
+    Source* src8 = new Source("e:\\VIDEO\\Injustice.2021.BDRip.feofanio.avi");
+    Source* src9 = new Source("e:\\VIDEO\\Idiocracy.2006.WEB-DL.1080p.mkv");
+    Source* src10 = new Source("e:\\VIDEO\\Le.Dernier.Yoyage.2020.HDRip-AVC.mkv");
+    Source* src11 = new Source("e:\\VIDEO\\The.Mutation.2021.WEB-DLRip.avi");
+    Source* src12 = new Source("e:\\VIDEO\\Injustice.2021.BDRip.feofanio.avi");
 
-    src1.getNextFrame();
-    src2.getNextFrame();
-    src3.getNextFrame();
-    src4.getNextFrame();
-    std::vector<Source> sources;
     sources.push_back(src1);
     sources.push_back(src2);
     sources.push_back(src3);
     sources.push_back(src4);
+    sources.push_back(src5);
+    sources.push_back(src6);
+    sources.push_back(src7);
+    sources.push_back(src8);
+    sources.push_back(src9);
+    sources.push_back(src10);
+    sources.push_back(src11);
+    sources.push_back(src12);
 
 //    for(auto b = sources.begin(); b < sources.end(); b++)
 //    {
 //      b->show();
 //      prn("output source %d %d", b->frame.cols, b->frame.rows);
 //    }
-
-    ParallelVideoResizer resizer_obj(&sources, 1024, 768);
-    parallel_for_(Range{ 0, 16 }, resizer_obj, 9);
-
-    //auto format = QImage::Format_RGB888;
-    //Mat& img = *resizer_obj.outMat;
-    //QPixmap pix = QPixmap::fromImage(QImage((unsigned char*) img.data, img.cols, img.rows, format));
-    //emit sigSetPixmap(0, pix);
-
-    for(auto b = sources.begin(); b < sources.end(); b++)
-    {
-      b->show();
-      prn("output source %d %d", b->frame.cols, b->frame.rows);
-    }
+//    return;
 
 
+    QTimer* timer = new QTimer();
+    timer->setInterval(1000);
+    connect(timer, SIGNAL(timeout()), this, SLOT(onTimerUpdate()));
+    timer->start(1000);
 }
 
 
