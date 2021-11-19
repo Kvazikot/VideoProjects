@@ -23,6 +23,7 @@
 
 #include <QObject>
 #include <QStringList>
+#include <QTime>
 #include "print.h"
 #include <opencv2/core/utility.hpp>
 #include <opencv2/opencv.hpp>
@@ -67,9 +68,14 @@ public:
            // Capture frame-by-frame
            cap->set(cv::CAP_PROP_POS_MSEC, 144 * 1000 ); //10 sec skipped
            *cap >> frame;
-           prn("frame readed %d %d", frame.cols, frame.rows);
+           //prn("frame readed %d %d", frame.cols, frame.rows);
         }
         return frame;
+    }
+
+    void setFrame(Mat& fr)
+    {
+        frame = fr;
     }
 
     void show()
@@ -89,35 +95,29 @@ public:
 class ParallelVideoResizer : public ParallelLoopBody
 {
     std::vector<Source>* Sorces_list;
+    Size output_size;
 
 public:
-    Mat* outMat;
     ParallelVideoResizer(){}
-    ParallelVideoResizer(std::vector<Source>& sorces_list)
+    ParallelVideoResizer(std::vector<Source>* sorces_list, int output_width, int output_height)
     {
-        Sorces_list = &sorces_list;
-//        for(auto b = sorces_list.begin(); b < sorces_list.end(); b++)
-//        {
-//           b->Open(b->filename);
-//           prn(" cap = %d", b->cap);
-//        }
-        outMat = new Mat3b(1024, 768);
-        *outMat = Mat3b::zeros(1024, 768);
+        Sorces_list = sorces_list;
+        output_size = Size(output_width, output_height);
     }
 
     void operator()(const Range& range) const override
     {
         int devisor = Sorces_list->size()/2;
-        prn("range start %d end %d index %d devisor %d", range.start, range.end, range.start/2, devisor);
-
+        Size size = Size(output_size.width/devisor, output_size.height/devisor);
         if( (range.start/2) < Sorces_list->size())
         {
-            auto inp1 = (*Sorces_list)[range.start/2];
-            inp1.reopen();
-            inp1.getNextFrame();
-            Mat& src = inp1.frame;
-            prn("src size (%d %d) - dst size (%d %d) ", src.cols, src.rows, outMat->cols/devisor, outMat->rows/devisor);
-            resize(src, src, Size(outMat->cols/devisor, outMat->rows/devisor));
+            auto src1 = &(*Sorces_list)[range.start/2];
+            src1->reopen();
+            src1->getNextFrame();
+            Mat& src = src1->frame;
+            Mat temp;
+            resize(src, temp, size);
+            src1->setFrame(temp);
         }
     }
 };

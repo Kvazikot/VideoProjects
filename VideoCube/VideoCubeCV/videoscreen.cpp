@@ -95,18 +95,19 @@ void VideoScreen::test_resize()
     sources.push_back(src3);
     sources.push_back(src4);
 
-    for(auto b = sources.begin(); b < sources.end(); b++)
-    {
-      b->show();
-      prn("output source %d %d", b->frame.cols, b->frame.rows);
-    }
-   return;
-    ParallelVideoResizer resizer_obj(sources);
+//    for(auto b = sources.begin(); b < sources.end(); b++)
+//    {
+//      b->show();
+//      prn("output source %d %d", b->frame.cols, b->frame.rows);
+//    }
+
+    ParallelVideoResizer resizer_obj(&sources, 1024, 768);
     parallel_for_(Range{ 0, 16 }, resizer_obj, 9);
 
-    auto format = QImage::Format_RGB888;
-    Mat& img = *resizer_obj.outMat;
-    QPixmap pix = QPixmap::fromImage(QImage((unsigned char*) img.data, img.cols, img.rows, format));
+    //auto format = QImage::Format_RGB888;
+    //Mat& img = *resizer_obj.outMat;
+    //QPixmap pix = QPixmap::fromImage(QImage((unsigned char*) img.data, img.cols, img.rows, format));
+    //emit sigSetPixmap(0, pix);
 
     for(auto b = sources.begin(); b < sources.end(); b++)
     {
@@ -114,7 +115,7 @@ void VideoScreen::test_resize()
       prn("output source %d %d", b->frame.cols, b->frame.rows);
     }
 
-    emit sigSetPixmap(0, pix);
+
 }
 
 
