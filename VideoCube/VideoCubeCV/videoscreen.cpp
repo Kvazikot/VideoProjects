@@ -85,7 +85,7 @@ void VideoScreen::onTimerUpdate()
 
     t.start();
     ParallelVideoResizer resizer_obj(&sources, 1024, 768);
-    parallel_for_(Range{ 0, 16 }, resizer_obj, 9);    
+    parallel_for_(Range{ 0, 16 }, resizer_obj, 5);
     t.stop();
     prn("ParallelVideoResizer started time %f msecs!", t.time(Timer::MSEC));
     t.clear();
@@ -93,10 +93,9 @@ void VideoScreen::onTimerUpdate()
     // output all sorces
     //for(int i=0; i < sources.size(); i++)
     //    sources[i]->show();
-
     t.start();
     MultiVideoTexture multi_texture_obj(&sources);
-    parallel_for_(Range{ 0, 16 }, multi_texture_obj, 9);
+    parallel_for_(Range{ 0, 16 }, multi_texture_obj, 5);
     t.stop();
     prn("MultiVideoTexture started %f msecs!",  t.time(Timer::MSEC));
     t.clear();
@@ -119,27 +118,11 @@ void VideoScreen::test_resize()
     Source* src2 = new Source("e:\\VIDEO\\Le.Dernier.Yoyage.2020.HDRip-AVC.mkv");
     Source* src3 = new Source("e:\\VIDEO\\The.Mutation.2021.WEB-DLRip.avi");
     Source* src4 = new Source("e:\\VIDEO\\Injustice.2021.BDRip.feofanio.avi");
-    Source* src5 = new Source("e:\\VIDEO\\Idiocracy.2006.WEB-DL.1080p.mkv");
-    Source* src6 = new Source("e:\\VIDEO\\Le.Dernier.Yoyage.2020.HDRip-AVC.mkv");
-    Source* src7 = new Source("e:\\VIDEO\\The.Mutation.2021.WEB-DLRip.avi");
-    Source* src8 = new Source("e:\\VIDEO\\Injustice.2021.BDRip.feofanio.avi");
-    Source* src9 = new Source("e:\\VIDEO\\Idiocracy.2006.WEB-DL.1080p.mkv");
-    Source* src10 = new Source("e:\\VIDEO\\Le.Dernier.Yoyage.2020.HDRip-AVC.mkv");
-    Source* src11 = new Source("e:\\VIDEO\\The.Mutation.2021.WEB-DLRip.avi");
-    Source* src12 = new Source("e:\\VIDEO\\Injustice.2021.BDRip.feofanio.avi");
 
     sources.push_back(src1);
     sources.push_back(src2);
     sources.push_back(src3);
     sources.push_back(src4);
-    sources.push_back(src5);
-    sources.push_back(src6);
-    sources.push_back(src7);
-    sources.push_back(src8);
-    sources.push_back(src9);
-    sources.push_back(src10);
-    sources.push_back(src11);
-    sources.push_back(src12);
 
 //    for(auto b = sources.begin(); b < sources.end(); b++)
 //    {

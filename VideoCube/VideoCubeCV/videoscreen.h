@@ -195,13 +195,13 @@ public:
 
 class MultiVideoTexture : public ParallelLoopBody
 {
-    std::vector<Source*>* Sorces_list;
+    SourcesList sorces_list;
 public:
     Mat3b outMat;
     MultiVideoTexture(){}
-    MultiVideoTexture(std::vector<Source*>* sorces_list)
+    MultiVideoTexture(std::vector<Source*>* src_list)
     {
-        Sorces_list = sorces_list;
+        sorces_list = *src_list;
         outMat = Mat3b::zeros(1024, 768);
     }
 
@@ -211,7 +211,9 @@ public:
         //Vec3b color_blue{ 0, 0, 255 };
 
         int index = range.start/2;
-        Source* inp1 = (*Sorces_list)[index];
+        if(index >= sorces_list.size())
+            return;
+        Source* inp1 = sorces_list[index];
         Mat3b& src = inp1->frame;
 
         Mat3b temp;

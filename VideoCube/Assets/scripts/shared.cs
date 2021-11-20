@@ -134,7 +134,7 @@ public class shared : MonoBehaviour
     void FixedUpdate()
     {
         n_frame++;
-        if (n_frame % 100 == 0)
+        //if (n_frame % 100 == 0)
         {
             //get Shared memory Input
             if (!attachSuccessful)
