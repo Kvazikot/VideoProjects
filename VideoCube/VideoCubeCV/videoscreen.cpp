@@ -91,8 +91,8 @@ void VideoScreen::onTimerUpdate()
     t.clear();
 
     // output all sorces
-    for(int i=0; i < sources.size(); i++)
-        sources[i]->show();
+    //for(int i=0; i < sources.size(); i++)
+    //    sources[i]->show();
 
     t.start();
     MultiVideoTexture multi_texture_obj(&sources);

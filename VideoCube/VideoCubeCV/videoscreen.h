@@ -180,7 +180,7 @@ public:
     MultiVideoTexture(std::vector<Source*>* sorces_list)
     {
         Sorces_list = sorces_list;
-        outMat = Mat3b::zeros(100, 100);
+        outMat = Mat3b::zeros(1024, 768);
     }
 
     void operator()(const Range& range) const override
@@ -193,30 +193,34 @@ public:
         Mat3b& src = inp1->frame;
 
         Mat3b temp;
-        int devisor = 1;
+        int devisor = 2;
         Size size = Size(outMat.cols/devisor, outMat.rows/devisor);
         resize(src, temp, size);
 
         int w = size.width;
         int h = size.height;
         int y = 0; int x = 0;
-        if( index == 0 )
-            outMat(Range{ 0, outMat.rows }, Range{ 0, outMat.cols }) = temp;
-
-        //temp.copyTo(outMat);
-        return;
+        //if( index == 0 )
         if( index == 0 )
         {
-            outMat(Range{ y, y + h }, Range{ x, x + w }) = temp;
+            cv::Mat subImg = outMat(Range{ 0, h }, Range{ 0, w });
+            temp.copyTo(subImg);
         }
         if( index == 1 )
         {
-            outMat(Range{ y, y + h }, Range{ x + w, x + 2 * w }) = temp;
+            cv::Mat subImg = outMat(Range{ y, y + h }, Range{ x + w, x + 2 * w });
+            temp.copyTo(subImg);
         }
         if( index == 2 )
-            outMat(Range{ y + h, y + 2 * h }, Range{ x, x + w }) = temp;
+        {
+            cv::Mat subImg = outMat(Range{ y + h, y + 2 * h }, Range{ x, x + w });
+            temp.copyTo(subImg);
+        }
         if( index == 3 )
-            outMat(Range{ y + h, y + 2 * h }, Range{ x + w, x + 2 * w }) = temp;
+        {
+            cv::Mat subImg = outMat(Range{ y + h, y + 2 * h }, Range{ x + w, x + 2 * w });
+            temp.copyTo(subImg);
+        }
 
     }
 };
