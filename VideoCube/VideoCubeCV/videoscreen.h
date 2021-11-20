@@ -142,35 +142,47 @@ public:
     int id;
 };
 
-class ParallelVideoResizer : public ParallelLoopBody
+class SourcesList : public std::vector<Source*>
 {
-    std::vector<Source*>* Sorces_list;
-    Size output_size;
-
 public:
-    ParallelVideoResizer(){}
-    ParallelVideoResizer(std::vector<Source*>* sorces_list, int output_width, int output_height)
+    SourcesList(){}
+    SourcesList(std::vector<Source*> list):
+      std::vector<Source*>(list)
     {
-        Sorces_list = sorces_list;
-        shuffle();
-        output_size = Size(output_width, output_height);
-    }
 
+    }
     void shuffle()
     {
         std::random_device rd;
         std::mt19937 g(rd());
-        std::shuffle(Sorces_list->begin(), Sorces_list->end(), g);
+        std::shuffle(begin(), end(), g);
     }
+
+};
+
+class ParallelVideoResizer : public ParallelLoopBody
+{
+    SourcesList sorces_list;
+    Size output_size;
+
+public:
+    ParallelVideoResizer(){}
+    ParallelVideoResizer(std::vector<Source*>* src_list, int output_width, int output_height)
+    {
+        sorces_list = *src_list;
+        sorces_list.shuffle();
+        output_size = Size(output_width, output_height);
+    }
+
 
     void operator()(const Range& range) const override
     {
         int devisor = 4;
         Size size = Size(output_size.width/devisor, output_size.height/devisor);
         prn("range %d %d ", range.start, range.end);
-        if( (range.start/2) < Sorces_list->size())
+        if( (range.start/2) < sorces_list.size())
         {
-            Source* src1 = (*Sorces_list)[range.start/2];
+            Source* src1 = sorces_list[range.start/2];
             src1->reopen();
             Mat3b src = src1->getNextFrame();
             Mat3b temp;
