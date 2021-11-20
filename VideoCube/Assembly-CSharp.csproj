@@ -28,7 +28,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
-    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -37,7 +37,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
-    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup>
     <NoConfig>true</NoConfig>
@@ -615,6 +615,10 @@
       <Project>{CD873CBD-EA6F-75B3-A235-9C6EC7A1D63F}</Project>
       <Name>Unity.Timeline.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="UnityEngine.Monetization.csproj">
+      <Project>{746BA146-B4EF-0DDB-226C-EA9F44159381}</Project>
+      <Name>UnityEngine.Monetization</Name>
+    </ProjectReference>
     <ProjectReference Include="com.unity.multiplayer-hlapi.Editor.csproj">
       <Project>{161D9FEB-3D10-2FBE-F9D2-1FA3BF8D5550}</Project>
       <Name>com.unity.multiplayer-hlapi.Editor</Name>
@@ -622,6 +626,10 @@
     <ProjectReference Include="Unity.VSCode.Editor.csproj">
       <Project>{D635224A-A68A-04DA-8C2C-42C2E3FAE883}</Project>
       <Name>Unity.VSCode.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEngine.Advertisements.csproj">
+      <Project>{3B65AD6E-2D77-A483-8AC1-17DB7C2F64FE}</Project>
+      <Name>UnityEngine.Advertisements</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.TextMeshPro.Editor.csproj">
       <Project>{FD46C045-A0BB-A03E-C0E2-814C542B4683}</Project>
@@ -671,6 +679,10 @@
       <Project>{EBEA60AD-EF57-8A53-C8AE-7EE086DD6697}</Project>
       <Name>Unity.TextMeshPro</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.Analytics.DataPrivacy.csproj">
+      <Project>{34F4F09B-F3FE-817C-B846-22B145CE08D5}</Project>
+      <Name>Unity.Analytics.DataPrivacy</Name>
+    </ProjectReference>
     <ProjectReference Include="UnityEditor.XR.LegacyInputHelpers.csproj">
       <Project>{56413006-9CED-C1A2-5D18-6D2FBEF357D3}</Project>
       <Name>UnityEditor.XR.LegacyInputHelpers</Name>
@@ -682,18 +694,6 @@
     <ProjectReference Include="com.unity.multiplayer-hlapi.Runtime.csproj">
       <Project>{D7041750-535C-BCB7-A921-E07190EF5903}</Project>
       <Name>com.unity.multiplayer-hlapi.Runtime</Name>
-    </ProjectReference>
-    <ProjectReference Include="UnityEngine.Monetization.csproj">
-      <Project>{746BA146-B4EF-0DDB-226C-EA9F44159381}</Project>
-      <Name>UnityEngine.Monetization</Name>
-    </ProjectReference>
-    <ProjectReference Include="UnityEngine.Advertisements.csproj">
-      <Project>{3B65AD6E-2D77-A483-8AC1-17DB7C2F64FE}</Project>
-      <Name>UnityEngine.Advertisements</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Analytics.DataPrivacy.csproj">
-      <Project>{34F4F09B-F3FE-817C-B846-22B145CE08D5}</Project>
-      <Name>Unity.Analytics.DataPrivacy</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

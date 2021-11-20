@@ -49,6 +49,7 @@ int Dialog::OpenSourcesTest()
 
 void Dialog::showEvent(QShowEvent *event)
 {
+    event->accept();
     QImage image("../NicePng_vintage-paper-png_9772625.png");
     ui.label->setPixmap(QPixmap::fromImage(image));
     sharedmem.Init();
@@ -59,6 +60,8 @@ void Dialog::showEvent(QShowEvent *event)
     /// !!!!! ----- - AHTUNG RUNNING TESTS - ----------!!!!!!
     //screen->test1();
     screen->test_resize();
+    connect(screen, SIGNAL(sigSetImage(int, QImage&)), &sharedmem, SLOT(writeImage(int, QImage&)));
+
 }
 
 void Dialog::closeEvent(QCloseEvent *)
@@ -93,7 +96,7 @@ void Dialog::loadFromFile()
     ui.label->setScaledContents(true);
     ui.label->repaint();
 
-    sharedmem.writeImage(image);
+    sharedmem.writeImage(0, image);
 }
 
 void Dialog::loadFromMemory()

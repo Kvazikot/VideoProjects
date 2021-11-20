@@ -105,8 +105,10 @@ void VideoScreen::onTimerUpdate()
     Source* src1 = sources[0];
     auto format = QImage::Format_RGB888;
     Mat& img = multi_texture_obj.outMat; //src1->frame;
-    QPixmap pix = QPixmap::fromImage(QImage((unsigned char*) img.data, img.cols, img.rows, format));
+    QImage image = QImage((unsigned char*) img.data, img.cols, img.rows, format);
+    QPixmap pix = QPixmap::fromImage(image);
     emit sigSetPixmap(0, pix);
+    emit sigSetImage(0, image);
     //QApplication::processEvents();
 
 }

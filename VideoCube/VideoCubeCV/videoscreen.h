@@ -260,6 +260,7 @@ public:
     void test_resize();
 signals:
     void sigSetPixmap(int screen_number, QPixmap& pix);
+    void sigSetImage(int screen_number, QImage& image);
 
 public slots:
     void onTimerUpdate();

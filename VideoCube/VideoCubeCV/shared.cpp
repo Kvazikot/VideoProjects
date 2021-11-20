@@ -121,12 +121,13 @@ void Shared::writeImage(QString filename, int w, int h)
     //*dst = 0x44; dst++;
     //*dst = 0x55; dst++;
     //*dst = 0x66; dst++;
-
+    prn("writeImage");
 
 }
 
-void Shared::writeImage(QImage& image)
+void Shared::writeImage(int screen_num, QImage& image)
 {
+    prn("writeImage");
     // load into shared memory
     QBuffer buffer;
     buffer.open(QBuffer::ReadWrite);
