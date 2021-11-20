@@ -25,6 +25,8 @@
 #include <QStringList>
 #include <QMutex>
 #include <QTime>
+#include <random>
+#include <algorithm>
 #include "print.h"
 #include <opencv2/core/utility.hpp>
 #include <opencv2/opencv.hpp>
@@ -150,7 +152,15 @@ public:
     ParallelVideoResizer(std::vector<Source*>* sorces_list, int output_width, int output_height)
     {
         Sorces_list = sorces_list;
+        shuffle();
         output_size = Size(output_width, output_height);
+    }
+
+    void shuffle()
+    {
+        std::random_device rd;
+        std::mt19937 g(rd());
+        std::shuffle(Sorces_list->begin(), Sorces_list->end(), g);
     }
 
     void operator()(const Range& range) const override
