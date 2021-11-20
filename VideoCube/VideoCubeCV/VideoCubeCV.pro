@@ -82,6 +82,7 @@ SOURCES += main.cpp \
 HEADERS += dialog.h \
     print.h \
     shared.h \
+    timer.h \
     videoscreen.h
 
 # Forms and resources

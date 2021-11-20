@@ -27,6 +27,7 @@
 #include <QFuture>
 #include <QThread>
 #include <print.h>
+#include "timer.h"
 #include "videoscreen.h"
 
 #define THREADS_NUMBER 8
@@ -61,7 +62,7 @@ public:
 VideoScreen::VideoScreen()
     : QObject()
 {
-
+    frame_rate = 30;
 }
 
 void VideoScreen::test1()
@@ -80,15 +81,30 @@ void VideoScreen::test1()
 
 void VideoScreen::onTimerUpdate()
 {
-    prn("n frame = %d", 1);
+    Timer t;
 
+    t.start();
     ParallelVideoResizer resizer_obj(&sources, 1024, 768);
-    parallel_for_(Range{ 0, 16 }, resizer_obj, 9);
-    //return;
+    parallel_for_(Range{ 0, 16 }, resizer_obj, 9);    
+    t.stop();
+    prn("ParallelVideoResizer started time %f msecs!", t.time(Timer::MSEC));
+    t.clear();
+
+    // output all sorces
+    for(int i=0; i < sources.size(); i++)
+        sources[i]->show();
+
+    t.start();
+    MultiVideoTexture multi_texture_obj(&sources);
+    parallel_for_(Range{ 0, 16 }, multi_texture_obj, 9);
+    t.stop();
+    prn("MultiVideoTexture started %f msecs!",  t.time(Timer::MSEC));
+    t.clear();
+
     // show source ¹ 1
     Source* src1 = sources[0];
     auto format = QImage::Format_RGB888;
-    Mat& img = src1->frame;
+    Mat& img = multi_texture_obj.outMat; //src1->frame;
     QPixmap pix = QPixmap::fromImage(QImage((unsigned char*) img.data, img.cols, img.rows, format));
     emit sigSetPixmap(0, pix);
     //QApplication::processEvents();
@@ -132,9 +148,8 @@ void VideoScreen::test_resize()
 
 
     QTimer* timer = new QTimer();
-    timer->setInterval(1000);
     connect(timer, SIGNAL(timeout()), this, SLOT(onTimerUpdate()));
-    timer->start(1000);
+    timer->start(qRound(1000./frame_rate));
 }
 
 

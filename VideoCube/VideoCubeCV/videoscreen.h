@@ -46,10 +46,10 @@ public:
         cap = 0;
         this->filename = filename;
         id = rand();
-        frame = Mat3b::zeros(70, 70);
+        frame = Mat3b::zeros(1, 1);
         current_frame = 0;
         for(int i=0; i < CACHE_SIZE + 1; i++)
-            frames_cache.push_back(Mat3b::zeros(70, 70));
+            frames_cache.push_back(Mat3b::zeros(1, 1));
 
     }
     ~Source()
@@ -62,6 +62,10 @@ public:
         cap = 0;
         this->filename = filename;
         return 1;
+    }
+    bool isBlank()
+    {
+        return  (frame.cols == 1) && (frame.rows == 1);
     }
     int reopen()
     {
@@ -77,14 +81,17 @@ public:
     int precache()
     {
         int n_readed = 0;
-        for(int i=0; i < CACHE_SIZE; i++)
+
+        for(int i=0; i < CACHE_SIZE; i++)        
         {
+            mutex.lock();
             if(cap->isOpened()){
-                if( !cap->retrieve(frames_cache[i]) )
-                   break;
+                *cap >> frames_cache[i];
                 n_readed++;
             }
+            mutex.unlock();
         }
+
         return n_readed;
     }
     cv::Mat3b getNextFrame()
@@ -95,7 +102,10 @@ public:
             //n_readed++;
         }
         mutex.unlock();
+
         return frame;
+
+        prn("(current_frame %% CACHE_SIZE) = %d", (current_frame % CACHE_SIZE));
         if((current_frame % CACHE_SIZE) == 0)
            precache();
 
@@ -103,6 +113,7 @@ public:
             frame = frames_cache[current_frame % CACHE_SIZE];
         else
             frame = frames_cache[current_frame];
+
         current_frame++;
         return frame;
     }
@@ -115,6 +126,7 @@ public:
     void show()
     {
         // Display the resulting frame
+        if( isBlank() ) return;
         QString window_name = "src_" + QString::number(id);
         imshow(window_name.toStdString(), frame );
     }
@@ -158,44 +170,64 @@ public:
     }
 };
 
-/*
+
 class MultiVideoTexture : public ParallelLoopBody
 {
-    std::vector<Source> Sorces_list;
-    Mat3b outMat;
+    std::vector<Source*>* Sorces_list;
 public:
+    Mat3b outMat;
     MultiVideoTexture(){}
-    MultiVideoTexture(std::vector<Source>& sorces_list)
+    MultiVideoTexture(std::vector<Source*>* sorces_list)
     {
         Sorces_list = sorces_list;
+        outMat = Mat3b::zeros(100, 100);
     }
 
     void operator()(const Range& range) const override
     {
-            out.
-            for(int i=0; i < Sorces_list.size(); i++)
-            {
-                auto inp1 = Sorces_list[i];
-                Mat& src = inp1.frame;
-                int w = src.cols;
-                int h = src.rows;
-                int y = 0; int x = 0;
-                Vec3b color_red{ 255, 0, 0 };
-                Vec3b color_blue{ 0, 0, 255 };
-                outMat(Range{ y, y + h }, Range{ x, x + w }) = color_red;
-                outMat(Range{ y, y + h }, Range{ x, x + w }) = color_red;
-            }
+        Vec3b color_red{ 255, 0, 0 };
+        //Vec3b color_blue{ 0, 0, 255 };
+
+        int index = range.start/2;
+        Source* inp1 = (*Sorces_list)[index];
+        Mat3b& src = inp1->frame;
+
+        Mat3b temp;
+        int devisor = 1;
+        Size size = Size(outMat.cols/devisor, outMat.rows/devisor);
+        resize(src, temp, size);
+
+        int w = size.width;
+        int h = size.height;
+        int y = 0; int x = 0;
+        if( index == 0 )
+            outMat(Range{ 0, outMat.rows }, Range{ 0, outMat.cols }) = temp;
+
+        //temp.copyTo(outMat);
+        return;
+        if( index == 0 )
+        {
+            outMat(Range{ y, y + h }, Range{ x, x + w }) = temp;
+        }
+        if( index == 1 )
+        {
+            outMat(Range{ y, y + h }, Range{ x + w, x + 2 * w }) = temp;
+        }
+        if( index == 2 )
+            outMat(Range{ y + h, y + 2 * h }, Range{ x, x + w }) = temp;
+        if( index == 3 )
+            outMat(Range{ y + h, y + 2 * h }, Range{ x + w, x + 2 * w }) = temp;
 
     }
 };
-*/
+
 
 class VideoScreen : public QObject
 {
     Q_OBJECT
 public:
     std::vector<Source*> sources;
-
+    double frame_rate;
     VideoScreen();
     void openSources(QStringList filenames);
     void test1();
