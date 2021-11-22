@@ -20,14 +20,17 @@
 
 #include <QApplication>
 #include "dialog.h"
-
+#include "mainwindow.h"
 
 int main(int argc, char *argv[])
 {
     //qApp->addLibraryPath("./platforms");
     QApplication application(argc, argv);
-    Dialog dialog;
-    dialog.show();
+    //Dialog dialog;
+    //dialog.show();
+    MainWindow wnd;
+    wnd.show();
+
     return application.exec();
 }
 

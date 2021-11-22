@@ -1,0 +1,1832 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1019</width>
+    <height>779</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(0, 0, 0);</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="font">
+       <font>
+        <weight>75</weight>
+        <bold>true</bold>
+        <kerning>false</kerning>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(0, 0, 0, 0), stop:0.52 rgba(0, 0, 0, 0), stop:0.565 rgba(82, 121, 76, 33), stop:0.65 rgba(159, 235, 148, 64), stop:0.721925 rgba(255, 238, 150, 129), stop:0.77 rgba(255, 128, 128, 204), stop:0.89 rgba(191, 128, 255, 64), stop:1 rgba(0, 0, 0, 0));
+color: rgb(0, 255, 0);</string>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tab">
+       <attribute name="title">
+        <string>Текст клипа и источники</string>
+       </attribute>
+       <widget class="QTextEdit" name="textEditor">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>80</y>
+          <width>451</width>
+          <height>331</height>
+         </rect>
+        </property>
+        <property name="palette">
+         <palette>
+          <active>
+           <colorrole role="WindowText">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>0</red>
+              <green>255</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="Button">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>0</red>
+              <green>0</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="Text">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>0</red>
+              <green>255</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="ButtonText">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>0</red>
+              <green>255</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="Base">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>0</red>
+              <green>0</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="Window">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>0</red>
+              <green>0</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="PlaceholderText">
+            <brush brushstyle="NoBrush">
+             <color alpha="128">
+              <red>0</red>
+              <green>255</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </active>
+          <inactive>
+           <colorrole role="WindowText">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>0</red>
+              <green>255</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="Button">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>0</red>
+              <green>0</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="Text">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>0</red>
+              <green>255</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="ButtonText">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>0</red>
+              <green>255</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="Base">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>0</red>
+              <green>0</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="Window">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>0</red>
+              <green>0</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="PlaceholderText">
+            <brush brushstyle="NoBrush">
+             <color alpha="128">
+              <red>0</red>
+              <green>255</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </inactive>
+          <disabled>
+           <colorrole role="WindowText">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>0</red>
+              <green>255</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="Button">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>0</red>
+              <green>0</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="Text">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>0</red>
+              <green>255</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="ButtonText">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>0</red>
+              <green>255</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="Base">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>0</red>
+              <green>0</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="Window">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>0</red>
+              <green>0</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="PlaceholderText">
+            <brush brushstyle="NoBrush">
+             <color alpha="128">
+              <red>0</red>
+              <green>255</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </disabled>
+         </palette>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(0, 0, 0);</string>
+        </property>
+        <property name="html">
+         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#00ff00;&quot;&gt;______________________________________________________&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#00ff00;&quot;&gt;# Текст ролика. О вероятности реализации сценария аля &amp;quot;Терминатор&amp;quot;.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#00ff00;&quot;&gt;Kvazikot&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#00ff00;&quot;&gt;июль 2021&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; color:#00ff00;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600; color:#00ff00;&quot;&gt;&amp;lt;00:00:50&amp;gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600; color:#00ff00;&quot;&gt;&amp;lt;v wheeler_1&amp;gt;&amp;lt;e fade_out,para_text&amp;gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#00ff00;&quot;&gt;В известном мысленном эксперименте Джона Уиллера&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#00ff00;&quot;&gt;с двумя щелями и отложенном выборе был предложена[1] проверка гипотезы о том что прошлое можно изменить стирая информацию о наблюдении в будущем.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; color:#00ff00;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600; color:#00ff00;&quot;&gt;[pause][10-20 sec]&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; color:#00ff00;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600; color:#00ff00;&quot;&gt;&amp;lt;00:01:06&amp;gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600; color:#00ff00;&quot;&gt;&amp;lt;v wheeler_1,terminator_nude,nanobot,big_bang1&amp;gt; &amp;lt;e 3d_cube,fade_in,para_text&amp;gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#00ff00;&quot;&gt;Неизвестна точная дата когда Уилеру пришла идея эксперимента с квантовым ластиком. &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#00ff00;&quot;&gt;Я сейчас не говорю о буквальном сценарии когда из машины времени выходят голые терминаторы.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#00ff00;&quot;&gt;Это сделано ради потехи публики как и батарейки в &amp;quot;матрице&amp;quot;, ведь голивудские фильмы расчитанны на массового зрителя.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#00ff00;&quot;&gt;Я говорю о возможности предоставляемые квантовой теорией по стиранию информации в будущем, чтобы влиять на прошлое не имеет значения насколько отдаленное. Дельта t может быть 5 миллисекунд для обнаружения раковой клетки, а может быть возраст рождения вселенной.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; color:#00ff00;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600; color:#00ff00;&quot;&gt;[pause][10-20 sec]&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; color:#00ff00;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600; color:#00ff00;&quot;&gt;&amp;lt;00:02:35&amp;gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#00ff00;&quot;&gt;Что известно точно это то что реализовать эксперимент с отложенным выбором удалось только в восьмидесятых 1984. At the University of Maryland, Carroll Alley, Oleg Jakubowicz, and William Wickes—on a laboratory bench.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#00ff00;&quot;&gt;Странное совпадение - фильм Терминатор вшел в 1984 году. &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; color:#00ff00;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600; color:#00ff00;&quot;&gt;[pause][10-20 sec]&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; color:#00ff00;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600; color:#00ff00;&quot;&gt;&amp;lt;00:03:03&amp;gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#00ff00;&quot;&gt;Учитывая тот факт что deep state уже во всю функционировал и программа DAPRA существовала. &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#00ff00;&quot;&gt;Вероятно уже тогда были выработаны особые протоколы оформления научных статей с несколькими стадиями проверки и рецензирования статей до самого момента допуска в печать. Вам необходимо пройти несколько кругов ада - это снизит вероятность попадания в самую сердцевину чудовища. Точные даты как и наполнение статей могут меняться, &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#00ff00;&quot;&gt;особенно учитывая тот факт что современные сети глубокого обучения могут сгенерировать статью похожую на рукопись или сделанную на старом принтере или печатнй машинке. Важно выявлять подлинности статьи, что конечно невозможно сделать имея скан, а не бумажную версию. Потому что в бумжной версии помогает изотопные метод датирования. &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; color:#00ff00;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600; color:#00ff00;&quot;&gt;&amp;lt;00:04:05&amp;gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#00ff00;&quot;&gt;Идея дапры заключается в разработке гипотетических проектов, но нет законов физики, которые запрещали бы возможность разработки модема для приема &amp;quot;новостей&amp;quot; из будущего. На основе чего можно выиграть любую войну, ведь ретрокаузуальные обратные связи автоматически ведут к желаемому сценарию будущего. Как-то Рэй Крцвейл упоминул как-то о том что Советский Союз был развален благодаря информационным технологиям. &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#00ff00;&quot;&gt;Говоря о Курцвейле необхдимо отметить довольно странную точность его прогнозов, что также подтверждает вес гипотезы о модеме из будущего. &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; color:#00ff00;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#00ff00;&quot;&gt;Кстати говоря об информации из будущего, можно отметить что это способ для того чтобы ускорить расчеты. Ведь мы подаем на вход машины Тьюринга ее будущие результаты[5]. &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; color:#00ff00;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#00ff00;&quot;&gt;Необходимо возродить что-то наподобии технетики предложенной Кудриным для построения филогенетического дерева смартфонов. [2]&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#00ff00;&quot;&gt;На примере одного из самых величайших технических достижений deep state - смартфоне нам необходимо отследить появление  всех прототипов айфона. &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#00ff00;&quot;&gt;Наиболее ранее упоминание мне удалось найти в 2021 году на сайте arhive.org &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#00ff00;&quot;&gt;в сканах французского журнала DESIGN за 1987. Назывался он pocket blue brain.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#00ff00;&quot;&gt;В поиске гугла на момент написания это статьи отсутвует какая-либо информация об этом прототипе, воможно он был один из первых.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#00ff00;&quot;&gt;Он уже тогда имел набор стандартных приложений и являлся универсальным компьютером, только экран был черно-белый.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#00ff00;&quot;&gt;Позже где-то на рубеже 1992 года устройства на подобии карманного компьютера Джефа Хоукинса начали разрабатываться крупнейшими корпорациями того времени NEC, Samsung&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; color:#00ff00;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#00ff00;&quot;&gt;Поскольку свидетельства событий прошлого все время слегка меняются, какие-то уничтожаются физически, какие-то изза несовершенства памяти человека забываются или вспоминаются в искаженном виде, о событиях прошлого можно говорить только в вероятностном смысле. Мы все время находимся в некоей квантово-механической пене, мы видим образ не всего дракона в небе. Иногда появляется отдельные части его тела, по которым можно опознать что это дракон, но потом он опять скрывается в тумане или за облаками. После некоторого времени хаоса и неопределенности наступают резкие скачки в развитии. Сравните ситуацию до начала II мировой войны и после[4]. Довольно странным является факт черездования зим в области ИИ. Например факт того что Марвин Мински выражал критику в отношении supervise learning на основе нейронных сетей и критику Пенроуза и Серля в отношении сильного ИИ в целом, когда они казалось бы продвинули распознавание символов. Эта критика учитывая авторитет ученого возможно повлияла на развите сетей глубокого обучения и методик появившихся после 2007 года на основе big data. &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; color:#00ff00;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>20</y>
+          <width>201</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Magneto</family>
+          <pointsize>12</pointsize>
+          <weight>9</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(60, 238, 33);
+font: 75 12pt &quot;Magneto&quot;;</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::NoFrame</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <property name="text">
+         <string>Clip text</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="markKeywordsButton">
+        <property name="geometry">
+         <rect>
+          <x>490</x>
+          <y>300</y>
+          <width>231</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <family>Magneto</family>
+          <pointsize>12</pointsize>
+          <weight>9</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+          <underline>false</underline>
+         </font>
+        </property>
+        <property name="autoFillBackground">
+         <bool>false</bool>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(60, 238, 33);
+font: 75 12pt &quot;Magneto&quot;;</string>
+        </property>
+        <property name="text">
+         <string>Mark keywords</string>
+        </property>
+        <property name="checkable">
+         <bool>false</bool>
+        </property>
+        <property name="flat">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_5">
+        <property name="geometry">
+         <rect>
+          <x>510</x>
+          <y>380</y>
+          <width>421</width>
+          <height>39</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Magneto</family>
+          <pointsize>12</pointsize>
+          <weight>9</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(60, 238, 33);
+font: 75 12pt &quot;Magneto&quot;;</string>
+        </property>
+        <property name="text">
+         <string>Comments</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="findVideosButton">
+        <property name="geometry">
+         <rect>
+          <x>240</x>
+          <y>5</y>
+          <width>251</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="palette">
+         <palette>
+          <active>
+           <colorrole role="WindowText">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>0</red>
+              <green>255</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="Button">
+            <brush brushstyle="LinearGradientPattern">
+             <gradient startx="0.000000000000000" starty="0.000000000000000" endx="1.000000000000000" endy="0.000000000000000" type="LinearGradient" spread="PadSpread" coordinatemode="ObjectBoundingMode">
+              <gradientstop position="0.000000000000000">
+               <color alpha="255">
+                <red>9</red>
+                <green>41</green>
+                <blue>4</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="0.085000000000000">
+               <color alpha="255">
+                <red>2</red>
+                <green>79</green>
+                <blue>0</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="0.190000000000000">
+               <color alpha="255">
+                <red>50</red>
+                <green>147</green>
+                <blue>22</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="0.275000000000000">
+               <color alpha="255">
+                <red>236</red>
+                <green>191</green>
+                <blue>49</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="0.390000000000000">
+               <color alpha="255">
+                <red>243</red>
+                <green>61</green>
+                <blue>34</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="0.555000000000000">
+               <color alpha="255">
+                <red>135</red>
+                <green>81</green>
+                <blue>60</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="0.667000000000000">
+               <color alpha="255">
+                <red>121</red>
+                <green>75</green>
+                <blue>255</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="0.825000000000000">
+               <color alpha="255">
+                <red>164</red>
+                <green>255</green>
+                <blue>244</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="0.885000000000000">
+               <color alpha="255">
+                <red>104</red>
+                <green>222</green>
+                <blue>71</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="1.000000000000000">
+               <color alpha="255">
+                <red>93</red>
+                <green>128</green>
+                <blue>0</blue>
+               </color>
+              </gradientstop>
+             </gradient>
+            </brush>
+           </colorrole>
+           <colorrole role="Text">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>0</red>
+              <green>255</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="ButtonText">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>0</red>
+              <green>255</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="Base">
+            <brush brushstyle="LinearGradientPattern">
+             <gradient startx="0.000000000000000" starty="0.000000000000000" endx="1.000000000000000" endy="0.000000000000000" type="LinearGradient" spread="PadSpread" coordinatemode="ObjectBoundingMode">
+              <gradientstop position="0.000000000000000">
+               <color alpha="255">
+                <red>9</red>
+                <green>41</green>
+                <blue>4</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="0.085000000000000">
+               <color alpha="255">
+                <red>2</red>
+                <green>79</green>
+                <blue>0</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="0.190000000000000">
+               <color alpha="255">
+                <red>50</red>
+                <green>147</green>
+                <blue>22</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="0.275000000000000">
+               <color alpha="255">
+                <red>236</red>
+                <green>191</green>
+                <blue>49</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="0.390000000000000">
+               <color alpha="255">
+                <red>243</red>
+                <green>61</green>
+                <blue>34</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="0.555000000000000">
+               <color alpha="255">
+                <red>135</red>
+                <green>81</green>
+                <blue>60</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="0.667000000000000">
+               <color alpha="255">
+                <red>121</red>
+                <green>75</green>
+                <blue>255</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="0.825000000000000">
+               <color alpha="255">
+                <red>164</red>
+                <green>255</green>
+                <blue>244</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="0.885000000000000">
+               <color alpha="255">
+                <red>104</red>
+                <green>222</green>
+                <blue>71</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="1.000000000000000">
+               <color alpha="255">
+                <red>93</red>
+                <green>128</green>
+                <blue>0</blue>
+               </color>
+              </gradientstop>
+             </gradient>
+            </brush>
+           </colorrole>
+           <colorrole role="Window">
+            <brush brushstyle="LinearGradientPattern">
+             <gradient startx="0.000000000000000" starty="0.000000000000000" endx="1.000000000000000" endy="0.000000000000000" type="LinearGradient" spread="PadSpread" coordinatemode="ObjectBoundingMode">
+              <gradientstop position="0.000000000000000">
+               <color alpha="255">
+                <red>9</red>
+                <green>41</green>
+                <blue>4</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="0.085000000000000">
+               <color alpha="255">
+                <red>2</red>
+                <green>79</green>
+                <blue>0</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="0.190000000000000">
+               <color alpha="255">
+                <red>50</red>
+                <green>147</green>
+                <blue>22</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="0.275000000000000">
+               <color alpha="255">
+                <red>236</red>
+                <green>191</green>
+                <blue>49</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="0.390000000000000">
+               <color alpha="255">
+                <red>243</red>
+                <green>61</green>
+                <blue>34</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="0.555000000000000">
+               <color alpha="255">
+                <red>135</red>
+                <green>81</green>
+                <blue>60</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="0.667000000000000">
+               <color alpha="255">
+                <red>121</red>
+                <green>75</green>
+                <blue>255</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="0.825000000000000">
+               <color alpha="255">
+                <red>164</red>
+                <green>255</green>
+                <blue>244</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="0.885000000000000">
+               <color alpha="255">
+                <red>104</red>
+                <green>222</green>
+                <blue>71</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="1.000000000000000">
+               <color alpha="255">
+                <red>93</red>
+                <green>128</green>
+                <blue>0</blue>
+               </color>
+              </gradientstop>
+             </gradient>
+            </brush>
+           </colorrole>
+           <colorrole role="PlaceholderText">
+            <brush brushstyle="SolidPattern">
+             <color alpha="128">
+              <red>255</red>
+              <green>0</green>
+              <blue>127</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </active>
+          <inactive>
+           <colorrole role="WindowText">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>0</red>
+              <green>255</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="Button">
+            <brush brushstyle="LinearGradientPattern">
+             <gradient startx="0.000000000000000" starty="0.000000000000000" endx="1.000000000000000" endy="0.000000000000000" type="LinearGradient" spread="PadSpread" coordinatemode="ObjectBoundingMode">
+              <gradientstop position="0.000000000000000">
+               <color alpha="255">
+                <red>9</red>
+                <green>41</green>
+                <blue>4</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="0.085000000000000">
+               <color alpha="255">
+                <red>2</red>
+                <green>79</green>
+                <blue>0</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="0.190000000000000">
+               <color alpha="255">
+                <red>50</red>
+                <green>147</green>
+                <blue>22</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="0.275000000000000">
+               <color alpha="255">
+                <red>236</red>
+                <green>191</green>
+                <blue>49</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="0.390000000000000">
+               <color alpha="255">
+                <red>243</red>
+                <green>61</green>
+                <blue>34</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="0.555000000000000">
+               <color alpha="255">
+                <red>135</red>
+                <green>81</green>
+                <blue>60</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="0.667000000000000">
+               <color alpha="255">
+                <red>121</red>
+                <green>75</green>
+                <blue>255</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="0.825000000000000">
+               <color alpha="255">
+                <red>164</red>
+                <green>255</green>
+                <blue>244</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="0.885000000000000">
+               <color alpha="255">
+                <red>104</red>
+                <green>222</green>
+                <blue>71</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="1.000000000000000">
+               <color alpha="255">
+                <red>93</red>
+                <green>128</green>
+                <blue>0</blue>
+               </color>
+              </gradientstop>
+             </gradient>
+            </brush>
+           </colorrole>
+           <colorrole role="Text">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>0</red>
+              <green>255</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="ButtonText">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>0</red>
+              <green>255</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="Base">
+            <brush brushstyle="LinearGradientPattern">
+             <gradient startx="0.000000000000000" starty="0.000000000000000" endx="1.000000000000000" endy="0.000000000000000" type="LinearGradient" spread="PadSpread" coordinatemode="ObjectBoundingMode">
+              <gradientstop position="0.000000000000000">
+               <color alpha="255">
+                <red>9</red>
+                <green>41</green>
+                <blue>4</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="0.085000000000000">
+               <color alpha="255">
+                <red>2</red>
+                <green>79</green>
+                <blue>0</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="0.190000000000000">
+               <color alpha="255">
+                <red>50</red>
+                <green>147</green>
+                <blue>22</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="0.275000000000000">
+               <color alpha="255">
+                <red>236</red>
+                <green>191</green>
+                <blue>49</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="0.390000000000000">
+               <color alpha="255">
+                <red>243</red>
+                <green>61</green>
+                <blue>34</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="0.555000000000000">
+               <color alpha="255">
+                <red>135</red>
+                <green>81</green>
+                <blue>60</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="0.667000000000000">
+               <color alpha="255">
+                <red>121</red>
+                <green>75</green>
+                <blue>255</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="0.825000000000000">
+               <color alpha="255">
+                <red>164</red>
+                <green>255</green>
+                <blue>244</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="0.885000000000000">
+               <color alpha="255">
+                <red>104</red>
+                <green>222</green>
+                <blue>71</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="1.000000000000000">
+               <color alpha="255">
+                <red>93</red>
+                <green>128</green>
+                <blue>0</blue>
+               </color>
+              </gradientstop>
+             </gradient>
+            </brush>
+           </colorrole>
+           <colorrole role="Window">
+            <brush brushstyle="LinearGradientPattern">
+             <gradient startx="0.000000000000000" starty="0.000000000000000" endx="1.000000000000000" endy="0.000000000000000" type="LinearGradient" spread="PadSpread" coordinatemode="ObjectBoundingMode">
+              <gradientstop position="0.000000000000000">
+               <color alpha="255">
+                <red>9</red>
+                <green>41</green>
+                <blue>4</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="0.085000000000000">
+               <color alpha="255">
+                <red>2</red>
+                <green>79</green>
+                <blue>0</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="0.190000000000000">
+               <color alpha="255">
+                <red>50</red>
+                <green>147</green>
+                <blue>22</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="0.275000000000000">
+               <color alpha="255">
+                <red>236</red>
+                <green>191</green>
+                <blue>49</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="0.390000000000000">
+               <color alpha="255">
+                <red>243</red>
+                <green>61</green>
+                <blue>34</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="0.555000000000000">
+               <color alpha="255">
+                <red>135</red>
+                <green>81</green>
+                <blue>60</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="0.667000000000000">
+               <color alpha="255">
+                <red>121</red>
+                <green>75</green>
+                <blue>255</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="0.825000000000000">
+               <color alpha="255">
+                <red>164</red>
+                <green>255</green>
+                <blue>244</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="0.885000000000000">
+               <color alpha="255">
+                <red>104</red>
+                <green>222</green>
+                <blue>71</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="1.000000000000000">
+               <color alpha="255">
+                <red>93</red>
+                <green>128</green>
+                <blue>0</blue>
+               </color>
+              </gradientstop>
+             </gradient>
+            </brush>
+           </colorrole>
+           <colorrole role="PlaceholderText">
+            <brush brushstyle="SolidPattern">
+             <color alpha="128">
+              <red>255</red>
+              <green>0</green>
+              <blue>127</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </inactive>
+          <disabled>
+           <colorrole role="WindowText">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>0</red>
+              <green>255</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="Button">
+            <brush brushstyle="LinearGradientPattern">
+             <gradient startx="0.000000000000000" starty="0.000000000000000" endx="1.000000000000000" endy="0.000000000000000" type="LinearGradient" spread="PadSpread" coordinatemode="ObjectBoundingMode">
+              <gradientstop position="0.000000000000000">
+               <color alpha="255">
+                <red>9</red>
+                <green>41</green>
+                <blue>4</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="0.085000000000000">
+               <color alpha="255">
+                <red>2</red>
+                <green>79</green>
+                <blue>0</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="0.190000000000000">
+               <color alpha="255">
+                <red>50</red>
+                <green>147</green>
+                <blue>22</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="0.275000000000000">
+               <color alpha="255">
+                <red>236</red>
+                <green>191</green>
+                <blue>49</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="0.390000000000000">
+               <color alpha="255">
+                <red>243</red>
+                <green>61</green>
+                <blue>34</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="0.555000000000000">
+               <color alpha="255">
+                <red>135</red>
+                <green>81</green>
+                <blue>60</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="0.667000000000000">
+               <color alpha="255">
+                <red>121</red>
+                <green>75</green>
+                <blue>255</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="0.825000000000000">
+               <color alpha="255">
+                <red>164</red>
+                <green>255</green>
+                <blue>244</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="0.885000000000000">
+               <color alpha="255">
+                <red>104</red>
+                <green>222</green>
+                <blue>71</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="1.000000000000000">
+               <color alpha="255">
+                <red>93</red>
+                <green>128</green>
+                <blue>0</blue>
+               </color>
+              </gradientstop>
+             </gradient>
+            </brush>
+           </colorrole>
+           <colorrole role="Text">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>0</red>
+              <green>255</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="ButtonText">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>0</red>
+              <green>255</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="Base">
+            <brush brushstyle="LinearGradientPattern">
+             <gradient startx="0.000000000000000" starty="0.000000000000000" endx="1.000000000000000" endy="0.000000000000000" type="LinearGradient" spread="PadSpread" coordinatemode="ObjectBoundingMode">
+              <gradientstop position="0.000000000000000">
+               <color alpha="255">
+                <red>9</red>
+                <green>41</green>
+                <blue>4</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="0.085000000000000">
+               <color alpha="255">
+                <red>2</red>
+                <green>79</green>
+                <blue>0</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="0.190000000000000">
+               <color alpha="255">
+                <red>50</red>
+                <green>147</green>
+                <blue>22</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="0.275000000000000">
+               <color alpha="255">
+                <red>236</red>
+                <green>191</green>
+                <blue>49</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="0.390000000000000">
+               <color alpha="255">
+                <red>243</red>
+                <green>61</green>
+                <blue>34</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="0.555000000000000">
+               <color alpha="255">
+                <red>135</red>
+                <green>81</green>
+                <blue>60</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="0.667000000000000">
+               <color alpha="255">
+                <red>121</red>
+                <green>75</green>
+                <blue>255</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="0.825000000000000">
+               <color alpha="255">
+                <red>164</red>
+                <green>255</green>
+                <blue>244</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="0.885000000000000">
+               <color alpha="255">
+                <red>104</red>
+                <green>222</green>
+                <blue>71</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="1.000000000000000">
+               <color alpha="255">
+                <red>93</red>
+                <green>128</green>
+                <blue>0</blue>
+               </color>
+              </gradientstop>
+             </gradient>
+            </brush>
+           </colorrole>
+           <colorrole role="Window">
+            <brush brushstyle="LinearGradientPattern">
+             <gradient startx="0.000000000000000" starty="0.000000000000000" endx="1.000000000000000" endy="0.000000000000000" type="LinearGradient" spread="PadSpread" coordinatemode="ObjectBoundingMode">
+              <gradientstop position="0.000000000000000">
+               <color alpha="255">
+                <red>9</red>
+                <green>41</green>
+                <blue>4</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="0.085000000000000">
+               <color alpha="255">
+                <red>2</red>
+                <green>79</green>
+                <blue>0</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="0.190000000000000">
+               <color alpha="255">
+                <red>50</red>
+                <green>147</green>
+                <blue>22</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="0.275000000000000">
+               <color alpha="255">
+                <red>236</red>
+                <green>191</green>
+                <blue>49</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="0.390000000000000">
+               <color alpha="255">
+                <red>243</red>
+                <green>61</green>
+                <blue>34</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="0.555000000000000">
+               <color alpha="255">
+                <red>135</red>
+                <green>81</green>
+                <blue>60</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="0.667000000000000">
+               <color alpha="255">
+                <red>121</red>
+                <green>75</green>
+                <blue>255</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="0.825000000000000">
+               <color alpha="255">
+                <red>164</red>
+                <green>255</green>
+                <blue>244</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="0.885000000000000">
+               <color alpha="255">
+                <red>104</red>
+                <green>222</green>
+                <blue>71</blue>
+               </color>
+              </gradientstop>
+              <gradientstop position="1.000000000000000">
+               <color alpha="255">
+                <red>93</red>
+                <green>128</green>
+                <blue>0</blue>
+               </color>
+              </gradientstop>
+             </gradient>
+            </brush>
+           </colorrole>
+           <colorrole role="PlaceholderText">
+            <brush brushstyle="SolidPattern">
+             <color alpha="128">
+              <red>0</red>
+              <green>0</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </disabled>
+         </palette>
+        </property>
+        <property name="font">
+         <font>
+          <family>Magneto</family>
+          <pointsize>12</pointsize>
+          <weight>75</weight>
+          <italic>false</italic>
+          <bold>true</bold>
+          <underline>false</underline>
+         </font>
+        </property>
+        <property name="autoFillBackground">
+         <bool>false</bool>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(9, 41, 4, 255), stop:0.085 rgba(2, 79, 0, 255), stop:0.19 rgba(50, 147, 22, 255), stop:0.275 rgba(236, 191, 49, 255), stop:0.39 rgba(243, 61, 34, 255), stop:0.555 rgba(135, 81, 60, 255), stop:0.667 rgba(121, 75, 255, 255), stop:0.825 rgba(164, 255, 244, 255), stop:0.885 rgba(104, 222, 71, 255), stop:1 rgba(93, 128, 0, 255));</string>
+        </property>
+        <property name="text">
+         <string>Найти видео 
+ для выделенного текста</string>
+        </property>
+        <property name="checkable">
+         <bool>false</bool>
+        </property>
+        <property name="autoDefault">
+         <bool>false</bool>
+        </property>
+        <property name="default">
+         <bool>false</bool>
+        </property>
+        <property name="flat">
+         <bool>false</bool>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="playVideoButton">
+        <property name="geometry">
+         <rect>
+          <x>530</x>
+          <y>10</y>
+          <width>111</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <family>Magneto</family>
+          <pointsize>12</pointsize>
+          <weight>9</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+          <underline>false</underline>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(60, 238, 33);
+font: 75 12pt &quot;Magneto&quot;;</string>
+        </property>
+        <property name="text">
+         <string>Play video</string>
+        </property>
+        <property name="checkable">
+         <bool>false</bool>
+        </property>
+        <property name="default">
+         <bool>false</bool>
+        </property>
+        <property name="flat">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="downloadSourcesButton">
+        <property name="geometry">
+         <rect>
+          <x>490</x>
+          <y>340</y>
+          <width>231</width>
+          <height>29</height>
+         </rect>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <family>Magneto</family>
+          <pointsize>12</pointsize>
+          <weight>9</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+          <underline>false</underline>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(60, 238, 33);
+font: 75 12pt &quot;Magneto&quot;;</string>
+        </property>
+        <property name="text">
+         <string>Download sources</string>
+        </property>
+        <property name="checkable">
+         <bool>false</bool>
+        </property>
+        <property name="flat">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="deleteVideoButton">
+        <property name="geometry">
+         <rect>
+          <x>530</x>
+          <y>30</y>
+          <width>121</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <family>Magneto</family>
+          <pointsize>12</pointsize>
+          <weight>9</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+          <underline>false</underline>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(60, 238, 33);
+font: 75 12pt &quot;Magneto&quot;;</string>
+        </property>
+        <property name="text">
+         <string>Delete video</string>
+        </property>
+        <property name="checkable">
+         <bool>false</bool>
+        </property>
+        <property name="default">
+         <bool>false</bool>
+        </property>
+        <property name="flat">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QTabWidget" name="tabWidget_2">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>420</y>
+          <width>921</width>
+          <height>221</height>
+         </rect>
+        </property>
+        <property name="currentIndex">
+         <number>0</number>
+        </property>
+        <widget class="QWidget" name="tab1">
+         <attribute name="title">
+          <string>Источники</string>
+         </attribute>
+         <widget class="QTableWidget" name="tableWidget">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>10</y>
+            <width>891</width>
+            <height>181</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(0, 0, 0);
+color: rgb(0, 255, 0);</string>
+          </property>
+          <row>
+           <property name="text">
+            <string notr="true">New Row</string>
+           </property>
+          </row>
+          <column>
+           <property name="text">
+            <string>URL</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>n</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Название</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Комментарий</string>
+           </property>
+          </column>
+          <item row="0" column="0">
+           <property name="text">
+            <string>https://youtu.be/V53f9SuV_Hs?t=115
+</string>
+           </property>
+          </item>
+          <item row="0" column="1">
+           <property name="text">
+            <string>1</string>
+           </property>
+          </item>
+          <item row="0" column="2">
+           <property name="text">
+            <string>Великая Тартария. Нас обманывают. Официальную историю опровергают карты</string>
+           </property>
+          </item>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="tab_3">
+         <attribute name="title">
+          <string>Спец эффекты</string>
+         </attribute>
+         <widget class="QListWidget" name="listWidget_3">
+          <property name="geometry">
+           <rect>
+            <x>30</x>
+            <y>40</y>
+            <width>291</width>
+            <height>101</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_4">
+          <property name="geometry">
+           <rect>
+            <x>60</x>
+            <y>20</y>
+            <width>91</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(0, 255, 0);</string>
+          </property>
+          <property name="text">
+           <string>Object name</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_6">
+          <property name="geometry">
+           <rect>
+            <x>350</x>
+            <y>20</y>
+            <width>291</width>
+            <height>20</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#00ff00;&quot;&gt;Property   |  Value&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+         <widget class="QTableWidget" name="tableWidget_2">
+          <property name="geometry">
+           <rect>
+            <x>350</x>
+            <y>40</y>
+            <width>281</width>
+            <height>101</height>
+           </rect>
+          </property>
+          <column>
+           <property name="text">
+            <string>Property</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Value</string>
+           </property>
+          </column>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="tab_2">
+         <attribute name="title">
+          <string>Youtube preview</string>
+         </attribute>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="layoutWidget">
+        <property name="geometry">
+         <rect>
+          <x>500</x>
+          <y>70</y>
+          <width>202</width>
+          <height>213</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <item>
+          <widget class="QLabel" name="label_3">
+           <property name="font">
+            <font>
+             <family>Magneto</family>
+             <pointsize>12</pointsize>
+             <weight>9</weight>
+             <italic>false</italic>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(60, 238, 33);
+font: 75 12pt &quot;Magneto&quot;;</string>
+           </property>
+           <property name="text">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#00ff00;&quot;&gt;URLS&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+           <property name="scaledContents">
+            <bool>false</bool>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QListWidget" name="urlsList">
+           <property name="maximumSize">
+            <size>
+             <width>200</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(0, 0, 0);
+color: rgb(0, 255, 0);</string>
+           </property>
+           <item>
+            <property name="text">
+             <string>http://youtube.com/wdwdwd</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="layoutWidget">
+        <property name="geometry">
+         <rect>
+          <x>740</x>
+          <y>70</y>
+          <width>202</width>
+          <height>213</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <widget class="QLabel" name="label_2">
+           <property name="font">
+            <font>
+             <family>Magneto</family>
+             <pointsize>12</pointsize>
+             <weight>9</weight>
+             <italic>false</italic>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(60, 238, 33);
+font: 75 12pt &quot;Magneto&quot;;</string>
+           </property>
+           <property name="text">
+            <string>Hashtags</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QListWidget" name="hashtagList">
+           <property name="maximumSize">
+            <size>
+             <width>200</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(0, 0, 0);
+color: rgb(0, 255, 0);</string>
+           </property>
+           <item>
+            <property name="text">
+             <string>#эксперимент</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>#батарейка</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>#Уиллер</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>#delayed choice experiment</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>#quantum mechanics</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>#physics</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>#Terminator movie</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QProgressBar" name="progressBar">
+        <property name="geometry">
+         <rect>
+          <x>500</x>
+          <y>410</y>
+          <width>431</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="toolTipDuration">
+         <number>1</number>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(170, 0, 127);</string>
+        </property>
+        <property name="value">
+         <number>24</number>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="format">
+         <string extracomment="333">%p%</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="VFX">
+       <attribute name="title">
+        <string>VFX</string>
+       </attribute>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1019</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>Инструменты</string>
+    </property>
+    <addaction name="action"/>
+    <addaction name="action_2"/>
+    <addaction name="action_3"/>
+    <addaction name="action_4"/>
+    <addaction name="action_7"/>
+   </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>Просмотр</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuUpload">
+    <property name="title">
+     <string>Upload</string>
+    </property>
+    <addaction name="action_youtube"/>
+    <addaction name="action_brighteon"/>
+   </widget>
+   <widget class="QMenu" name="menu_URLS">
+    <property name="title">
+     <string>Контекстное меню URLS</string>
+    </property>
+    <addaction name="actionPlay_video"/>
+    <addaction name="actionDelete_Video"/>
+    <addaction name="actionDownload_all"/>
+    <addaction name="actionSet_Temp_directory"/>
+   </widget>
+   <widget class="QMenu" name="menu_3">
+    <property name="title">
+     <string>Контекстное меню Хештеги</string>
+    </property>
+    <addaction name="action_5"/>
+    <addaction name="action_6"/>
+   </widget>
+   <addaction name="menu"/>
+   <addaction name="menu_2"/>
+   <addaction name="menuUpload"/>
+   <addaction name="menu_URLS"/>
+   <addaction name="menu_3"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="action">
+   <property name="text">
+    <string>Найти и подсветить ключевые слова (или хештеги).</string>
+   </property>
+  </action>
+  <action name="action_2">
+   <property name="text">
+    <string>Скачать источнки изи ютьюба, где встречаются подсвеченные слова.</string>
+   </property>
+  </action>
+  <action name="action_3">
+   <property name="text">
+    <string>Добавиить озвучку в форме речи + музыка </string>
+   </property>
+  </action>
+  <action name="action_4">
+   <property name="text">
+    <string>Собрать клип</string>
+   </property>
+  </action>
+  <action name="action_youtube">
+   <property name="text">
+    <string>Загрузить на youtube</string>
+   </property>
+  </action>
+  <action name="action_brighteon">
+   <property name="text">
+    <string>Загрузить на brighteon</string>
+   </property>
+  </action>
+  <action name="actionPlay_video">
+   <property name="text">
+    <string>Play video</string>
+   </property>
+  </action>
+  <action name="actionDelete_Video">
+   <property name="text">
+    <string>Delete video</string>
+   </property>
+  </action>
+  <action name="actionDownload_all">
+   <property name="text">
+    <string>Download all</string>
+   </property>
+  </action>
+  <action name="actionSet_Temp_directory">
+   <property name="text">
+    <string>Set Temp directory</string>
+   </property>
+  </action>
+  <action name="action_5">
+   <property name="text">
+    <string>Удалить тег</string>
+   </property>
+  </action>
+  <action name="action_6">
+   <property name="text">
+    <string>Добавить тег</string>
+   </property>
+  </action>
+  <action name="action_7">
+   <property name="text">
+    <string>Перегенерировать спец. эффекты </string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

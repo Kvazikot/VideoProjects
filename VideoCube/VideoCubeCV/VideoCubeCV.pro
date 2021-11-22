@@ -1,6 +1,7 @@
 QT += widgets core concurrent
 
 OPENCV_451_PATH = "d:\\opencv"
+INCLUDEPATH += $$(PYTHON_PATH)\\include
 #INCLUDEPATH +=$$OPENCV_451_PATH\\dlib\\dlib\\external\\pybind11\\include\\
 INCLUDEPATH+="$$OPENCV_451_PATH\\modules\\core\\include"
 INCLUDEPATH+="$$OPENCV_451_PATH\\build2\\modules"
@@ -51,7 +52,7 @@ win32:CONFIG(release, debug|release): LIBS+="$$OPENCV_451_PATH\\build2\\lib\\Rel
 win32:CONFIG(release, debug|release): LIBS+="$$OPENCV_451_PATH\\build2\\lib\\Release\\opencv_stitching453.lib"
 win32:CONFIG(release, debug|release): LIBS+="$$OPENCV_451_PATH\\build2\\lib\\Release\\opencv_dnn453.lib"
 win32:CONFIG(release, debug|release): LIBS+="$$OPENCV_451_PATH\\build2\\lib\\Release\\opencv_video453.lib"
-
+win32:CONFIG(release, debug|release): LIBS+="$$(PYTHON_PATH)\\libs\\python39.lib"
 
 win32:CONFIG(debug, debug|release): LIBS+="$$OPENCV_451_PATH\\build2\\lib\\Debug\\opencv_core453d.lib"
 win32:CONFIG(debug, debug|release): LIBS+="$$OPENCV_451_PATH\\build2\\lib\\Debug\\opencv_ml453d.lib"
@@ -68,6 +69,8 @@ win32:CONFIG(debug, debug|release): LIBS+="$$OPENCV_451_PATH\\build2\\lib\\Debug
 win32:CONFIG(debug, debug|release): LIBS+="$$OPENCV_451_PATH\\build2\\lib\\Debug\\opencv_stitching453d.lib"
 win32:CONFIG(debug, debug|release): LIBS+="$$OPENCV_451_PATH\\build2\\lib\\Debug\\opencv_dnn453d.lib"
 win32:CONFIG(debug, debug|release): LIBS+="$$OPENCV_451_PATH\\build2\\lib\\Debug\\opencv_video453d.lib"
+win32:CONFIG(debug, debug|release): LIBS+="$$(PYTHON_PATH)\\libs\\python39_d.lib"
+
 QMAKE_CXXFLAGS_DEBUG+=-Od
 
 INCLUDEPATH += "C:/Program Files (x86)/Windows Kits/10/Include/10.0.17763.0/ucrt"
@@ -75,18 +78,23 @@ LIBS += -L"C:/Program Files (x86)/Windows Kits/10/Lib/10.0.17763.0/ucrt/x64"
 
 SOURCES += main.cpp \
            dialog.cpp  \
+           keybertwrapper.cpp \
+           mainwindow.cpp \
            print.cpp \
            shared.cpp \
            videoscreen.cpp
 
 HEADERS += dialog.h \
+    keybertwrapper.h \
+    mainwindow.h \
     print.h \
     shared.h \
     timer.h \
     videoscreen.h
 
 # Forms and resources
-FORMS += dialog.ui
+FORMS += dialog.ui \
+    mainwindow.ui
 
 
 EXAMPLE_FILES = *.png
