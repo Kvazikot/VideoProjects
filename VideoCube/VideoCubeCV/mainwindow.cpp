@@ -1,4 +1,5 @@
 #include "mainwindow.h"
+#include "keybertwrapper.h"
 #include "ui_mainwindow.h"
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -6,6 +7,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    KeyBERTWrapper bert_object;
 }
 
 MainWindow::~MainWindow()

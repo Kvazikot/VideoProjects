@@ -12,7 +12,6 @@ doc = """
          the learning algorithm to generalize from the training data to unseen situations in a 
          'reasonable' way (see inductive bias).
       """
-       """
 kw_model = KeyBERT()
 keywords = kw_model.extract_keywords(doc)
 print(keywords)

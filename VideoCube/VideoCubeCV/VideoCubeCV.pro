@@ -1,4 +1,5 @@
 QT += widgets core concurrent
+OUTPUT += console
 
 OPENCV_451_PATH = "d:\\opencv"
 INCLUDEPATH += $$(PYTHON_PATH)\\include
