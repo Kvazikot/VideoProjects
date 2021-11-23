@@ -606,7 +606,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(1);
+        tabWidget->setCurrentIndex(0);
         findVideosButton->setDefault(false);
         playVideoButton->setDefault(false);
         deleteVideoButton->setDefault(false);

@@ -97,7 +97,13 @@ KeyBERTWrapper::KeyBERTWrapper(QObject *parent)
 
 }
 
-int KeyBERTWrapper::getKeywordsFromText(QString text)
+void KeyBERTWrapper::getKeywords(std::vector<std::string>& keywords_vector)
+{
+    for(auto i=keywordsMap.begin(); i != keywordsMap.end(); i++)
+       keywords_vector.push_back((*i).first.c_str());
+}
+
+int KeyBERTWrapper::extractKeywordsFromText(QString text)
 {
     script = (char*)malloc(MAX_SYMBOLS);
     PyObject *pName, *pModule, *pDict, *pClass, *pInstance;

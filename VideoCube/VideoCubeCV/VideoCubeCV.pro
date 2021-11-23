@@ -83,6 +83,7 @@ SOURCES += main.cpp \
            mainwindow.cpp \
            print.cpp \
            shared.cpp \
+           vccpparser.cpp \
            videoscreen.cpp
 
 HEADERS += dialog.h \
@@ -91,6 +92,7 @@ HEADERS += dialog.h \
     print.h \
     shared.h \
     timer.h \
+    vccpparser.h \
     videoscreen.h
 
 # Forms and resources

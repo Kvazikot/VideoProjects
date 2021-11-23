@@ -17,8 +17,9 @@ private:
 
 public:
     explicit KeyBERTWrapper(QObject *parent = nullptr);
-    int getKeywordsFromText(QString text);
+    int extractKeywordsFromText(QString text);
     void print(const QString &input);
+    void getKeywords(std::vector<std::string>& keywords_vector);
 
 
 signals:
