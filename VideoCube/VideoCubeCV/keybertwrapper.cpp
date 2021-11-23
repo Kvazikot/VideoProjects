@@ -66,9 +66,9 @@ int ParsePyList(std::string code, std::map<std::string, double>& result_map)
              *pList = NULL;
 
     dict = PyDict_New();
-    if (!dict) goto done;
+    if (!dict)  return -1;
     run_result = PyRun_String(code.c_str(), Py_file_input, dict, dict);
-    if (!run_result) goto done;
+    if (!run_result)  return -1;
     pList = PyDict_GetItemString(dict,"list");
     int n_keywords = PyList_Size(pList);
 
@@ -86,11 +86,7 @@ int ParsePyList(std::string code, std::map<std::string, double>& result_map)
         qDebug() << key.c_str();
     }
 
-
-    //qDebug() << "n_keywords = " << n_keywords;
     return 1;
-    done:
-        return -1;
 
 }
 
