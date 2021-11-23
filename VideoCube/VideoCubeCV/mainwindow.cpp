@@ -59,8 +59,8 @@ void MainWindow::showEvent(QShowEvent *event)
 
 void MainWindow::print(const QString &input)
 {
-    ui->console->setPlainText(input);
-
+    ui->console->appendPlainText(input);
+    ui->console->moveCursor(QTextCursor::End);
 }
 
 void MainWindow::hightlightKeywords(QString in_plain_text, QString& out_html_text, std::vector<std::string>& keywords)
@@ -72,9 +72,10 @@ void MainWindow::getPlainTextWithoutTags(QString& plain_text)
 {
     QString text = ui->textEditor->toPlainText();
     vccp::Parser parser;
-    parser.findtags(text);
-    parser.getPlainTextWithoutTags(text);
-    ui->textEditor->setText(text);
+    parser.parse(text);
+    //parser.findtags(text);
+    //parser.getPlainTextWithoutTags(text);
+    //ui->textEditor->setText(text);
 }
 
 void MainWindow::on_markKeywordsButton_clicked()

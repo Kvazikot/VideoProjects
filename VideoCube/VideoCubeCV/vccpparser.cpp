@@ -1,5 +1,7 @@
+#include "print.h"
 #include "vccpparser.h"
 using namespace vccp;
+
 /*
 ______________________________________________________
 # Текст ролика. О вероятности реализации сценария аля "Терминатор".
@@ -12,15 +14,10 @@ Kvazikot
 с двумя щелями и отложенном выборе был предложена[1] проверка гипотезы о том что прошлое можно изменить стирая информацию о наблюдении в будущем.
 */
 
-std::map<int, char> m = {{VIDEO_SOURCE_TAG, 'v'},
-                         {VFX_EFFECT_TAG, 'e'},
-                         {TIMECODE_TAG, 'c'},
-                         {7, 'd'}};
-
 
 Parser::Parser(QObject *parent) : QObject(parent)
 {
-
+    Init();
 }
 
 void Parser::getPlainTextWithoutTags(QString& in_text)
@@ -62,7 +59,21 @@ void Parser::findtags(QString& text)
     }
 }
 
-void Parser::parse(QString& text)
+void Parser::parse(QString& in_text)
 {
+    tags.clear();
+    findtags(in_text);
+    Tag tag;
+    foreach (tag, tags)
+    {
+        QString body = in_text.mid(tag.start_index + 1, tag.end_index - tag.start_index - 1 );
+        std::string tagName = body.mid(0,1).toStdString();
+        prn("tag %s", tagName.c_str());
+        if( tagNameToCodeMap.find(tagName) != tagNameToCodeMap.end() )
+        {
+            prn("Parser found tag %s", tagName.c_str());
+        }
+        prn(body.toStdString().c_str());
 
+    }
 }
