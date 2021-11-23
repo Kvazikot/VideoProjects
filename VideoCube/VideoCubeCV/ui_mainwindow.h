@@ -19,6 +19,7 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
+#include <QtWidgets/QPlainTextEdit>
 #include <QtWidgets/QProgressBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
@@ -77,6 +78,8 @@ public:
     QListWidget *hashtagList;
     QProgressBar *progressBar;
     QWidget *VFX;
+    QPlainTextEdit *console;
+    QPushButton *runPyButton;
     QMenuBar *menubar;
     QMenu *menu;
     QMenu *menu_2;
@@ -551,6 +554,14 @@ public:
         tabWidget->addTab(tab, QString());
         VFX = new QWidget();
         VFX->setObjectName(QString::fromUtf8("VFX"));
+        console = new QPlainTextEdit(VFX);
+        console->setObjectName(QString::fromUtf8("console"));
+        console->setGeometry(QRect(70, 60, 891, 371));
+        console->setStyleSheet(QString::fromUtf8("background-color: rgb(203, 231, 255);\n"
+"color: rgb(0, 0, 0);"));
+        runPyButton = new QPushButton(VFX);
+        runPyButton->setObjectName(QString::fromUtf8("runPyButton"));
+        runPyButton->setGeometry(QRect(70, 450, 111, 31));
         tabWidget->addTab(VFX, QString());
 
         gridLayout->addWidget(tabWidget, 0, 0, 1, 1);
@@ -595,7 +606,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(0);
+        tabWidget->setCurrentIndex(1);
         findVideosButton->setDefault(false);
         playVideoButton->setDefault(false);
         deleteVideoButton->setDefault(false);
@@ -777,6 +788,11 @@ public:
 
         progressBar->setFormat(QApplication::translate("MainWindow", "%p%", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("MainWindow", "\320\242\320\265\320\272\321\201\321\202 \320\272\320\273\320\270\320\277\320\260 \320\270 \320\270\321\201\321\202\320\276\321\207\320\275\320\270\320\272\320\270", nullptr));
+        console->setPlainText(QApplication::translate("MainWindow", "333\n"
+"22\n"
+"\n"
+"222", nullptr));
+        runPyButton->setText(QApplication::translate("MainWindow", "Run in python", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(VFX), QApplication::translate("MainWindow", "VFX", nullptr));
         menu->setTitle(QApplication::translate("MainWindow", "\320\230\320\275\321\201\321\202\321\200\321\203\320\274\320\265\320\275\321\202\321\213", nullptr));
         menu_2->setTitle(QApplication::translate("MainWindow", "\320\237\321\200\320\276\321\201\320\274\320\276\321\202\321\200", nullptr));

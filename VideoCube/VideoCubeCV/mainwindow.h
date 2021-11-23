@@ -13,10 +13,15 @@ class MainWindow : public QMainWindow
 
 public:
     explicit MainWindow(QWidget *parent = nullptr);
+    void showEvent(QShowEvent *event);
     ~MainWindow();
 
 private slots:
     void on_markKeywordsButton_clicked();
+
+    void print(const QString &input);
+
+    void on_runPyButton_clicked();
 
 private:
     Ui::MainWindow *ui;

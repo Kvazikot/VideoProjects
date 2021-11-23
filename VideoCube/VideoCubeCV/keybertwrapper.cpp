@@ -1,4 +1,4 @@
-/*
+п»ї/*
 + - - - + - + - -
 + - + - + copyright by Vladimir Baranov (Kvazikot)  <br>
 + - + - + email: vsbaranov83@gmail.com  <br>
@@ -21,23 +21,43 @@
 #define PY_SSIZE_T_CLEAN
 #include "Python.h"
 #include <QDebug>
+#include <string>
 #include <iostream>
+#include "print.h"
 
 #include "keybertwrapper.h"
 
-char doc[] = "В известном мысленном эксперименте Джона Уиллера \
-с двумя щелями и отложенном выборе был предложена[1] проверка гипотезы о том что прошлое можно изменить стирая информацию о наблюдении в будущем.\
-Неизвестна точная дата когда Уилеру пришла идея эксперимента с квантовым ластиком. \
-Я сейчас не говорю о буквальном сценарии когда из машины времени выходят голые терминаторы. \
-Это сделано ради потехи публики как и батарейки в \"матрице\", ведь голивудские фильмы расчитанны на массового зрителя. \
-Я говорю о возможности предоставляемые квантовой теорией по стиранию информации в будущем, чтобы влиять на прошлое не имеет значения насколько отдаленное. \
-Дельта t может быть 5 миллисекунд для обнаружения раковой клетки, а может быть возраст рождения вселенной.";
 
-std::string code_py =
-R"(
-def test():
-    return 'hi';
-)";
+static char doc11[] = "Supervised learning is the machine learning task of learning a function that \n \
+maps an input to an output based on example input-output pairs. It infers a \n \
+function from labeled training data consisting of a set of training examples. \n \
+In supervised learning, each example is a pair consisting of an input object \n \
+(typically a vector) and a desired output value (also called the supervisory signal).  \n \
+A supervised learning algorithm analyzes the training data and produces an inferred function, \n \
+which can be used for mapping new examples. An optimal scenario will allow for the \n \
+algorithm to correctly determine the class labels for unseen instances. This requires \n \
+the learning algorithm to generalize from the training data to unseen situations in a \n \
+reasonable way (see inductive bias).";
+
+static char doc22[] = "Р’ РёР·РІРµСЃС‚РЅРѕРј РјС‹СЃР»РµРЅРЅРѕРј СЌРєСЃРїРµСЂРёРјРµРЅС‚Рµ Р”Р¶РѕРЅР° РЈРёР»Р»РµСЂР° \n \
+СЃ РґРІСѓРјСЏ С‰РµР»СЏРјРё Рё РѕС‚Р»РѕР¶РµРЅРЅРѕРј РІС‹Р±РѕСЂРµ Р±С‹Р» РїСЂРµРґР»РѕР¶РµРЅР°[1] РїСЂРѕРІРµСЂРєР° РіРёРїРѕС‚РµР·С‹ Рѕ С‚РѕРј С‡С‚Рѕ РїСЂРѕС€Р»РѕРµ РјРѕР¶РЅРѕ РёР·РјРµРЅРёС‚СЊ СЃС‚РёСЂР°СЏ РёРЅС„РѕСЂРјР°С†РёСЋ Рѕ РЅР°Р±Р»СЋРґРµРЅРёРё РІ Р±СѓРґСѓС‰РµРј. \n\
+РќРµРёР·РІРµСЃС‚РЅР° С‚РѕС‡РЅР°СЏ РґР°С‚Р° РєРѕРіРґР° РЈРёР»РµСЂСѓ РїСЂРёС€Р»Р° РёРґРµСЏ СЌРєСЃРїРµСЂРёРјРµРЅС‚Р° СЃ РєРІР°РЅС‚РѕРІС‹Рј Р»Р°СЃС‚РёРєРѕРј. \n \
+РЇ СЃРµР№С‡Р°СЃ РЅРµ РіРѕРІРѕСЂСЋ Рѕ Р±СѓРєРІР°Р»СЊРЅРѕРј СЃС†РµРЅР°СЂРёРё РєРѕРіРґР° РёР· РјР°С€РёРЅС‹ РІСЂРµРјРµРЅРё РІС‹С…РѕРґСЏС‚ РіРѕР»С‹Рµ С‚РµСЂРјРёРЅР°С‚РѕСЂС‹. \n \
+Р­С‚Рѕ СЃРґРµР»Р°РЅРѕ СЂР°РґРё РїРѕС‚РµС…Рё РїСѓР±Р»РёРєРё РєР°Рє Рё Р±Р°С‚Р°СЂРµР№РєРё РІ \"РјР°С‚СЂРёС†Рµ\", РІРµРґСЊ РіРѕР»РёРІСѓРґСЃРєРёРµ С„РёР»СЊРјС‹ СЂР°СЃС‡РёС‚Р°РЅРЅС‹ РЅР° РјР°СЃСЃРѕРІРѕРіРѕ Р·СЂРёС‚РµР»СЏ. \n \
+РЇ РіРѕРІРѕСЂСЋ Рѕ РІРѕР·РјРѕР¶РЅРѕСЃС‚Рё РїСЂРµРґРѕСЃС‚Р°РІР»СЏРµРјС‹Рµ РєРІР°РЅС‚РѕРІРѕР№ С‚РµРѕСЂРёРµР№ РїРѕ СЃС‚РёСЂР°РЅРёСЋ РёРЅС„РѕСЂРјР°С†РёРё РІ Р±СѓРґСѓС‰РµРј, С‡С‚РѕР±С‹ РІР»РёСЏС‚СЊ РЅР° РїСЂРѕС€Р»РѕРµ РЅРµ РёРјРµРµС‚ Р·РЅР°С‡РµРЅРёСЏ РЅР°СЃРєРѕР»СЊРєРѕ РѕС‚РґР°Р»РµРЅРЅРѕРµ. \n \
+Р”РµР»СЊС‚Р° t РјРѕР¶РµС‚ Р±С‹С‚СЊ 5 РјРёР»Р»РёСЃРµРєСѓРЅРґ РґР»СЏ РѕР±РЅР°СЂСѓР¶РµРЅРёСЏ СЂР°РєРѕРІРѕР№ РєР»РµС‚РєРё, Р° РјРѕР¶РµС‚ Р±С‹С‚СЊ РІРѕР·СЂР°СЃС‚ СЂРѕР¶РґРµРЅРёСЏ РІСЃРµР»РµРЅРЅРѕР№. \n";
+
+
+static char code_template_py4[] = "from keybert import KeyBERT \n\
+doc = \"\"\" \n\
+%1 \n\
+      \"\"\" \n\
+doc = 'Supervised learning is the machine learning task of learning a function that' \n\
+kw_model = KeyBERT() \n\
+list = kw_model.extract_keywords(doc) \n\
+print(list)\
+";
+
 
 int ParsePyList(std::string code, std::map<std::string, double>& result_map)
 {
@@ -47,7 +67,6 @@ int ParsePyList(std::string code, std::map<std::string, double>& result_map)
 
     dict = PyDict_New();
     if (!dict) goto done;
-    code = "list=" + code;
     run_result = PyRun_String(code.c_str(), Py_file_input, dict, dict);
     if (!run_result) goto done;
     pList = PyDict_GetItemString(dict,"list");
@@ -79,6 +98,11 @@ int ParsePyList(std::string code, std::map<std::string, double>& result_map)
 KeyBERTWrapper::KeyBERTWrapper(QObject *parent)
     : QObject(parent)
 {
+
+}
+
+int KeyBERTWrapper::getKeywordsFromText(QString text)
+{
     script = (char*)malloc(MAX_SYMBOLS);
     PyObject *pName, *pModule, *pDict, *pClass, *pInstance;
 
@@ -101,40 +125,30 @@ KeyBERTWrapper::KeyBERTWrapper(QObject *parent)
     else
     {
        qDebug() << "Cannot instantiate the Python class";
-       return;
+       return 0;
+    }
+    PyObject* arg1 = Py_BuildValue("(s)", doc1);
+    PyObject *keywords = PyDict_New();
+    PyDict_SetItemString(keywords, "somearg", Py_True);
+    //PyObject* pList = PyObject_CallMethod(pInstance, "extract_keywords", NULL, arg1);
+    PyObject* pList = PyObject_Call(PyObject_GetAttrString(pInstance, "extract_keywords"), arg1, keywords);
+
+    if(pList != NULL)
+    {
+        int n_keywords = PyList_Size(pList);
+        qDebug() << n_keywords;
     }
 */
+    QString code = QString(code_template_py4).arg(text);
 
-    const Py_ssize_t tuple_length = 2;
-    const unsigned some_limit = 4;
-
-    PyObject *my_list = PyList_New(0);
-    if(my_list == NULL) {
-        // ...
+    int result = ParsePyList(code.toStdString(), keywordsMap);
+    if( result )
+    {
+       qDebug() << "result of code execution!\n" ;
+       for(auto i=keywordsMap.begin(); i != keywordsMap.end(); i++)
+          qDebug() << (*i).first.c_str();
     }
-
-    for(unsigned i = 0; i < some_limit; i++) {
-        PyObject *the_tuple = PyTuple_New(tuple_length);
-        if(the_tuple == NULL) {
-            // ...
-        }
-
-        PyObject *kw = PyUnicode_DecodeASCII("supervised", strlen("supervised"), NULL);
-        PyObject *the_object = PyFloat_FromDouble(rand());
-        if(the_object == NULL) {
-            // ...
-        }
-
-        PyTuple_SET_ITEM(the_tuple, 0, kw);
-        PyTuple_SET_ITEM(the_tuple, 1, the_object);
-
-
-        if(PyList_Append(my_list, the_tuple) == -1) {
-            // ...
-        }
-    }
-
-    PyObject *pList = my_list;//PyObject_CallMethod(pInstance, "extract_keywords", doc);
+/*
     int result = ParsePyList("[('supervised', 0.6676), ('labeled', 0.4896), ('learning', 0.4813), ('training', 0.4134), ('labels', 0.3947)]", keywordsMap);
     if( result )
     {
@@ -142,7 +156,7 @@ KeyBERTWrapper::KeyBERTWrapper(QObject *parent)
        for(auto i=keywordsMap.begin(); i != keywordsMap.end(); i++)
           qDebug() << (*i).first.c_str();
     }
-    return;
+
 
     int n_keywords = PyList_Size(pList);
     for(int i=0; i < n_keywords; i++)
@@ -154,6 +168,8 @@ KeyBERTWrapper::KeyBERTWrapper(QObject *parent)
         double second = PyFloat_AsDouble(probability);
         Py_ssize_t len = 0;
         const char* first =  PyUnicode_AsUTF8AndSize(kw, &len);
+        std::string key = first;
+        keywordsMap[key] = second;
         PyObject_Print(kw, stderr, 0);
         qDebug() << " ----------------- {kw,prob) = " << first << " " << second;
         PyObject_Print(probability, stderr, 0);
@@ -161,7 +177,7 @@ KeyBERTWrapper::KeyBERTWrapper(QObject *parent)
 
         //qDebug() << "kw " << kw << "probability " << probability;
     }
-
-
+*/
      Py_Finalize();
+     return keywordsMap.size();
 }

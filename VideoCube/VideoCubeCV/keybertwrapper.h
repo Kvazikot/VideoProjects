@@ -14,8 +14,11 @@ private:
     char* script;
     std::map<std::string, double>  keywordsMap;
 
+
 public:
     explicit KeyBERTWrapper(QObject *parent = nullptr);
+    int getKeywordsFromText(QString text);
+    void print(const QString &input);
 
 signals:
 
