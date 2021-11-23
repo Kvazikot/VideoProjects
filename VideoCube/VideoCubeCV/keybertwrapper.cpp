@@ -118,14 +118,17 @@ int KeyBERTWrapper::getKeywordsFromText(QString text)
     qDebug("MSB = %02x, LSB = %02x", msb, lsb);
     if(msb==0xba && lsb ==0xb8 && lsb > 2 && msb > 1)
     {
-        QString code = QString(code_template_py4).arg(text);
-
-        int result = ParsePyList(code.toStdString(), keywordsMap);
-        if( result )
+        if(text.size() < MAX_SYMBOLS)
         {
-           qDebug() << "result of code execution!\n" ;
-           for(auto i=keywordsMap.begin(); i != keywordsMap.end(); i++)
-              qDebug() << (*i).first.c_str();
+            QString code = QString(code_template_py4).arg(text);
+
+            int result = ParsePyList(code.toStdString(), keywordsMap);
+            if( result )
+            {
+               qDebug() << "result of code execution!\n" ;
+               for(auto i=keywordsMap.begin(); i != keywordsMap.end(); i++)
+                  qDebug() << (*i).first.c_str();
+            }
         }
     }
 
