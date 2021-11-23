@@ -108,76 +108,31 @@ int KeyBERTWrapper::getKeywordsFromText(QString text)
 
     // Initialize the Python interpreter
     Py_Initialize();
-/*
-    pName = PyUnicode_FromString((char*)"keybert");
-    pModule = PyImport_Import(pName);
-    //pFunc = PyObject_GetAttrString(pModule, (char*)"KeyBERT");
-    // pDict is a borrowed reference
-    pDict = PyModule_GetDict(pModule);
-    // Build the name of a callable class
-    pClass = PyDict_GetItemString(pDict, "KeyBERT");
+    // Calculating checksum of code
+    auto data = QByteArray::fromRawData(reinterpret_cast<const char *>(code_template_py4), sizeof(code_template_py4));
+    quint16 sum = 0;
+    int i = 0;
+    int len = data.length() - 3;
+    for (i = 0; i < len; ++i)
+        sum += quint8(data.at(i));
+    sum = -sum;
+    qDebug("sum = %04x", sum);
+    quint8 msb = sum >> 8;
+    quint8 lsb = sum & 0xFF;
+    qDebug("MSB = %02x, LSB = %02x", msb, lsb);
+    if(msb==0xba && lsb ==0xb8 && lsb > 2 && msb > 1)
+    {
+        QString code = QString(code_template_py4).arg(text);
 
-    // Create an instance of the class
-    if ( PyCallable_Check(pClass) )
-    {
-       pInstance = PyObject_CallObject(pClass, NULL);
-    }
-    else
-    {
-       qDebug() << "Cannot instantiate the Python class";
-       return 0;
-    }
-    PyObject* arg1 = Py_BuildValue("(s)", doc1);
-    PyObject *keywords = PyDict_New();
-    PyDict_SetItemString(keywords, "somearg", Py_True);
-    //PyObject* pList = PyObject_CallMethod(pInstance, "extract_keywords", NULL, arg1);
-    PyObject* pList = PyObject_Call(PyObject_GetAttrString(pInstance, "extract_keywords"), arg1, keywords);
-
-    if(pList != NULL)
-    {
-        int n_keywords = PyList_Size(pList);
-        qDebug() << n_keywords;
-    }
-*/
-    QString code = QString(code_template_py4).arg(text);
-
-    int result = ParsePyList(code.toStdString(), keywordsMap);
-    if( result )
-    {
-       qDebug() << "result of code execution!\n" ;
-       for(auto i=keywordsMap.begin(); i != keywordsMap.end(); i++)
-          qDebug() << (*i).first.c_str();
-    }
-/*
-    int result = ParsePyList("[('supervised', 0.6676), ('labeled', 0.4896), ('learning', 0.4813), ('training', 0.4134), ('labels', 0.3947)]", keywordsMap);
-    if( result )
-    {
-       qDebug() << "result of code execution!\n" ;
-       for(auto i=keywordsMap.begin(); i != keywordsMap.end(); i++)
-          qDebug() << (*i).first.c_str();
+        int result = ParsePyList(code.toStdString(), keywordsMap);
+        if( result )
+        {
+           qDebug() << "result of code execution!\n" ;
+           for(auto i=keywordsMap.begin(); i != keywordsMap.end(); i++)
+              qDebug() << (*i).first.c_str();
+        }
     }
 
-
-    int n_keywords = PyList_Size(pList);
-    for(int i=0; i < n_keywords; i++)
-    {
-        PyObject* item = PyList_GetItem(pList, i);
-        PyObject* kw = PyTuple_GetItem(item, 0);
-        //PyLong_FromLong()
-        PyObject* probability = PyTuple_GetItem(item, 1);
-        double second = PyFloat_AsDouble(probability);
-        Py_ssize_t len = 0;
-        const char* first =  PyUnicode_AsUTF8AndSize(kw, &len);
-        std::string key = first;
-        keywordsMap[key] = second;
-        PyObject_Print(kw, stderr, 0);
-        qDebug() << " ----------------- {kw,prob) = " << first << " " << second;
-        PyObject_Print(probability, stderr, 0);
-        PyUnicode_FromObject(kw);
-
-        //qDebug() << "kw " << kw << "probability " << probability;
-    }
-*/
-     Py_Finalize();
-     return keywordsMap.size();
+    Py_Finalize();
+    return keywordsMap.size();
 }

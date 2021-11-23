@@ -20,6 +20,7 @@ public:
     int getKeywordsFromText(QString text);
     void print(const QString &input);
 
+
 signals:
 
 };
