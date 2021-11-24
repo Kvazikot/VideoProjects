@@ -28,6 +28,8 @@ enum ErrorCode
 {
     NO_ERROR = 0,
     UNKNOWN_TAG = 5001,
+    FORMAT_ERROR = 5003,
+    INT_PARSING_ERROR = 5004,
     UNCLOSED_PARENTHESIS = 5002
 };
 
@@ -57,16 +59,19 @@ struct T
 {
     int code;
     std::string docstring;
+    std::string plugin_name;
     T(){}
     T(int c, std::string doc)
-        :code(c),docstring(doc)
-    {}
+        :code(c),docstring(doc),plugin_name("internal")
+    {
+    }
 };
 
 
 class Parser : public QObject
 {
     Q_OBJECT
+    QTime      current_time_code;
     std::vector<Tag> tags;
     std::vector<VfxObject*> vfx_objects;
     std::vector<VideoSource*> video_sources;
@@ -76,6 +81,7 @@ public:
     void findtags(QString& text);
     void getPlainTextWithoutTags(QString& text);
     ErrorCode parse(QString& text);
+    ErrorCode parse_timecode(QString& body);
 
 signals:
 

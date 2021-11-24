@@ -24,18 +24,6 @@ std::map<std::string, T> tagNameMap =
      };
 
 
-/*
-______________________________________________________
-# Текст ролика. О вероятности реализации сценария аля "Терминатор".
-Kvazikot
-июль 2021
-
-<c 00:00:50>
-<e fade_out(12.2,color1,color2,23),para_text>
-<v wheeler_1><e interlace_fx(40,640,480)>
-В известном мысленном эксперименте Джона Уиллера
-с двумя щелями и отложенном выборе был предложена[1] проверка гипотезы о том что прошлое можно изменить стирая информацию о наблюдении в будущем.
-*/
 
 
 Parser::Parser(QObject *parent) : QObject(parent)
@@ -81,12 +69,50 @@ void Parser::findtags(QString& text)
         }
     }
 }
+/*
+______________________________________________________
+# Текст ролика. О вероятности реализации сценария аля "Терминатор".
+Kvazikot
+июль 2021
+
+<c 00:00:50>
+<e fade_out(12.2,color1,color2,23),para_text>
+<v wheeler_1><e interlace_fx(40,640,480)>
+В известном мысленном эксперименте Джона Уиллера
+с двумя щелями и отложенном выборе был предложена[1] проверка гипотезы о том что прошлое можно изменить стирая информацию о наблюдении в будущем.
+*/
+
+ErrorCode Parser::parse_timecode(QString& body)
+{
+    QStringList tokens = body.split(" ");
+    if( tokens.size() == 2)
+    {
+        QString timestr = tokens[1];
+        QStringList parts = timestr.split(":");
+        if(parts.size() == 3)
+        {
+            bool ok1,ok2,ok3;
+            int h = parts[0].toInt(&ok1);
+            int m = parts[1].toInt(&ok2);
+            int s = parts[2].toInt(&ok3);
+            if(ok1 && ok2 && ok3)
+               this->current_time_code.setHMS(h,m,s);
+            else
+                return ErrorCode::INT_PARSING_ERROR;
+        }
+        else
+            return ErrorCode::FORMAT_ERROR;
+    }
+    return ErrorCode::NO_ERROR;
+}
 
 ErrorCode Parser::parse(QString& in_text)
 {
     tags.clear();
     findtags(in_text);
     Tag tag;
+    ErrorCode err = ErrorCode::NO_ERROR;
+
     foreach (tag, tags)
     {
         QString body = in_text.mid(tag.start_index + 1, tag.end_index - tag.start_index - 1 );
@@ -94,8 +120,18 @@ ErrorCode Parser::parse(QString& in_text)
         prn("tag %s", tagName.c_str());
         if( tagNameMap.find(tagName) != tagNameMap.end() )
         {
+            T tag = tagNameMap[tagName];
             prn("Parser found tag %s", tagName.c_str());
-            prn("Parser tag docstring: %s", tagNameMap[tagName].docstring.c_str());
+            prn("Parser tag docstring: %s", tag.docstring.c_str());
+            switch(tag.code)
+            {
+                case TIMECODE_TAG:
+                    err = parse_timecode(body);
+                    prn("parse_timecode return %d, current_time_code = %s",
+                        err, current_time_code.toString("h:m:s").toStdString().c_str());
+                break;
+
+           }
         }
         else
         {
@@ -106,5 +142,5 @@ ErrorCode Parser::parse(QString& in_text)
         prn(body.toStdString().c_str());
 
     }
-    return ErrorCode::NO_ERROR;
+    return err;
 }
