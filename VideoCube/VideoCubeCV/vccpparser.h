@@ -10,7 +10,7 @@ namespace vccp
 enum TagType
 {
    VIDEO_SOURCE_TAG = 0,
-   VFX_EFFECT_TAG = 1,
+   VFX_TAG = 1,
    TIMECODE_TAG = 2,
    PAUSE_TAG = 3,
    TEXT = 4 // text is also a tag :) hahaha but it is unoffisial tag
@@ -18,10 +18,11 @@ enum TagType
 
 enum EffectType
 {
-    FADEOUT_VFX = 3000,
-    PARATEXT_VFX = 3001,
-    CUBE3D_VFX = 3002,
-    GENERIC_VFX = 3003
+    FADEOUT_VFX = 30000,
+    PARATEXT_VFX = 30001,
+    CUBE3D_VFX = 30002,
+    GENERIC_VFX = 30003,
+    LAST_VFX = 31000
 };
 
 enum ErrorCode
@@ -30,7 +31,8 @@ enum ErrorCode
     UNKNOWN_TAG = 5001,
     FORMAT_ERROR = 5003,
     INT_PARSING_ERROR = 5004,
-    UNCLOSED_PARENTHESIS = 5002
+    UNCLOSED_PARENTHESIS = 5002,
+    VIDEOLIST_PARSING_ERROR = 5006
 };
 
 
@@ -58,10 +60,10 @@ struct VideoSource
 struct T
 {
     int code;
-    std::string docstring;
-    std::string plugin_name;
+    QString docstring;
+    QString plugin_name;
     T(){}
-    T(int c, std::string doc)
+    T(int c, QString doc)
         :code(c),docstring(doc),plugin_name("internal")
     {
     }
@@ -81,7 +83,8 @@ public:
     void findtags(QString& text);
     void getPlainTextWithoutTags(QString& text);
     ErrorCode parse(QString& text);
-    ErrorCode parse_timecode(QString& body);
+    ErrorCode parse_timecode(QString body);
+    ErrorCode parse_video_src(QString body, QStringList& video_list);
 
 signals:
 

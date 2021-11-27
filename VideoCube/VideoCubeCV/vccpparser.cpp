@@ -1,12 +1,13 @@
+#include <QMap>
 #include "print.h"
 #include "vccpparser.h"
 using namespace vccp;
 
-std::map<std::string, T> tagNameMap =
+QMap<QString, T> tagNameMap =
     {{"v",T(VIDEO_SOURCE_TAG,
        "video source tag(v) defines particular video \n"
        "source that need to insert at this time")},
-     {"e",T(VFX_EFFECT_TAG,
+     {"e",T(VFX_TAG,
       "effect tag(e) defines video effect or transition. \n"
       "May take parametres for effects in parenthess.")},
      {"c",T(TIMECODE_TAG,
@@ -82,27 +83,29 @@ Kvazikot
 с двумя щелями и отложенном выборе был предложена[1] проверка гипотезы о том что прошлое можно изменить стирая информацию о наблюдении в будущем.
 */
 
-ErrorCode Parser::parse_timecode(QString& body)
+ErrorCode Parser::parse_timecode(QString body)
 {
-    QStringList tokens = body.split(" ");
-    if( tokens.size() == 2)
+    QStringList parts = body.split(":");
+    if(parts.size() == 3)
     {
-        QString timestr = tokens[1];
-        QStringList parts = timestr.split(":");
-        if(parts.size() == 3)
-        {
-            bool ok1,ok2,ok3;
-            int h = parts[0].toInt(&ok1);
-            int m = parts[1].toInt(&ok2);
-            int s = parts[2].toInt(&ok3);
-            if(ok1 && ok2 && ok3)
-               this->current_time_code.setHMS(h,m,s);
-            else
-                return ErrorCode::INT_PARSING_ERROR;
-        }
+        bool ok1,ok2,ok3;
+        int h = parts[0].toInt(&ok1);
+        int m = parts[1].toInt(&ok2);
+        int s = parts[2].toInt(&ok3);
+        if(ok1 && ok2 && ok3)
+            this->current_time_code.setHMS(h,m,s);
         else
-            return ErrorCode::FORMAT_ERROR;
+            return ErrorCode::INT_PARSING_ERROR;
     }
+    else
+        return ErrorCode::FORMAT_ERROR;
+}
+
+ErrorCode Parser::parse_video_src(QString body, QStringList& video_list)
+{
+    video_list = body.split(",");
+    if(video_list.size() == 0 )
+        return ErrorCode::VIDEOLIST_PARSING_ERROR;
     return ErrorCode::NO_ERROR;
 }
 
@@ -116,19 +119,25 @@ ErrorCode Parser::parse(QString& in_text)
     foreach (tag, tags)
     {
         QString body = in_text.mid(tag.start_index + 1, tag.end_index - tag.start_index - 1 );
-        std::string tagName = body.mid(0,1).toStdString();
-        prn("tag %s", tagName.c_str());
+        QStringList tokens = body.split(" ");
+        if(tokens.size() < 2) continue;
+        QString tagName = tokens[0];
         if( tagNameMap.find(tagName) != tagNameMap.end() )
         {
-            T tag = tagNameMap[tagName];
-            prn("Parser found tag %s", tagName.c_str());
-            prn("Parser tag docstring: %s", tag.docstring.c_str());
-            switch(tag.code)
+            T tag_info = tagNameMap[tagName];
+            print(QString("tag: %1").arg(tagName));
+            print(QString("Parser tag docstring: %1").arg(tag_info.docstring));
+            switch(tag_info.code)
             {
                 case TIMECODE_TAG:
-                    err = parse_timecode(body);
+                    err = parse_timecode(tokens[1]);
                     prn("parse_timecode return %d, current_time_code = %s",
                         err, current_time_code.toString("h:m:s").toStdString().c_str());
+                break;
+                case VIDEO_SOURCE_TAG:
+                    QStringList video_list;
+                    err = parse_video_src(tokens[1], video_list);
+                    prn("parse_video_src return %d list size=%d", err, video_list.size());
                 break;
 
            }
