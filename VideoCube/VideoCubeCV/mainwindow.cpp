@@ -44,6 +44,7 @@ MainWindow::MainWindow(QWidget *parent) :
     QString code = QString(code_template_py4).arg(doc11);
     ui->console->setPlainText(code);
 
+
 }
 
 MainWindow::~MainWindow()
@@ -54,7 +55,7 @@ MainWindow::~MainWindow()
 void MainWindow::showEvent(QShowEvent *event)
 {
     event->accept();
-
+    on_markKeywordsButton_clicked();
 }
 
 void MainWindow::print(const QString &input)

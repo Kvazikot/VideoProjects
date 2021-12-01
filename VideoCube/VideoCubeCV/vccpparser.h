@@ -2,6 +2,7 @@
 #define VCCPPARSER_H
 
 #include <QObject>
+#include <QVector>
 #include <QTime>
 
 namespace vccp
@@ -32,7 +33,10 @@ enum ErrorCode
     FORMAT_ERROR = 5003,
     INT_PARSING_ERROR = 5004,
     UNCLOSED_PARENTHESIS = 5002,
-    VIDEOLIST_PARSING_ERROR = 5006
+    VIDEOLIST_PARSING_ERROR = 5006,
+    EFFECTSLIST_PARSING_ERROR = 5007,
+    NO_ARGS = 5008,
+    UNKNOW_VFX_NAME = 5009
 };
 
 
@@ -47,7 +51,7 @@ struct VfxObject
 {
     QTime      time_code;
     EffectType type;
-    std::vector<QVariant> parametres;
+    QVector<QVariant> parametres;
 };
 
 struct VideoSource
@@ -75,7 +79,7 @@ class Parser : public QObject
     Q_OBJECT
     QTime      current_time_code;
     std::vector<Tag> tags;
-    std::vector<VfxObject*> vfx_objects;
+    QVector<VfxObject*> vfx_objects;
     std::vector<VideoSource*> video_sources;
 
 public:    
@@ -84,8 +88,9 @@ public:
     void getPlainTextWithoutTags(QString& text);
     ErrorCode parse(QString& text);
     ErrorCode parse_timecode(QString body);
+    ErrorCode parse_effects(QString body);
     ErrorCode parse_video_src(QString body, QStringList& video_list);
-
+    ErrorCode parse_vfx_args(QString str, EffectType& type, QVector<QVariant>& out_args);
 signals:
 
 };

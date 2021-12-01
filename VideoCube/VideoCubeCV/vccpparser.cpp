@@ -1,4 +1,6 @@
 #include <QMap>
+#include <QVariant>
+#include <QVector>
 #include "print.h"
 #include "vccpparser.h"
 using namespace vccp;
@@ -109,6 +111,73 @@ ErrorCode Parser::parse_video_src(QString body, QStringList& video_list)
     return ErrorCode::NO_ERROR;
 }
 
+// example: fade_out(12.2,color1,color2,23)
+ErrorCode Parser::parse_vfx_args(QString str, EffectType& type, QVector<QVariant>& out_args)
+{
+    //QRegExp rx("\((.)+\)");
+    QRegExp rx("[(]([\\d\\.\\,\\w]+)[)]");
+    int pos = 0;
+    prn("text str : %s", str.toStdString().c_str());
+
+    if( tagNameMap.find(str)!= tagNameMap.end())
+        type = (EffectType)tagNameMap[str].code;
+
+    if((pos = rx.indexIn(str, pos)) != -1)
+    {
+        print("regexp capture in brackets: " + rx.cap(1));
+        print("before brackets: " + str.left(pos));
+        QString vfx_name = str.left(pos);
+        if( tagNameMap.find(vfx_name)!= tagNameMap.end())
+            type = (EffectType)tagNameMap[vfx_name].code;
+        else
+            type = (EffectType)LAST_VFX;
+    }
+    else
+        return NO_ARGS;
+
+    QStringList  args = rx.cap(1).split(",");
+    if( args.size() == 0 )
+        return NO_ARGS;
+    foreach(QString arg, args)
+    {
+        bool doubleOK, intOK;
+        double valD = arg.toDouble(&doubleOK);
+        int valI = arg.toInt(&intOK);
+        if(intOK)
+            out_args.append(QVariant(valI));
+        else if(doubleOK)
+            out_args.append(QVariant(valD));
+        else
+            out_args.append(arg);
+    }
+
+    return NO_ERROR;
+
+}
+
+
+// example: fade_out(12.2,color1,color2,23) para_text 3dcube
+ErrorCode Parser::parse_effects(QString body)
+{
+    ErrorCode err;
+    QVector<QVariant> args;
+    print("body " + body);
+    QStringList effects_list = body.split(" ");
+    if(effects_list.size() == 0 )
+        return ErrorCode::EFFECTSLIST_PARSING_ERROR;
+    foreach (QString vfx_item, effects_list)
+    {
+        VfxObject* vfx_obj = new VfxObject();
+        EffectType type;
+        err = parse_vfx_args(vfx_item, type, args);
+        vfx_obj->parametres = args;
+        vfx_obj->type = type;
+        prn("parse_vfx_args args.size() = %d", args.size());
+        vfx_objects.append(vfx_obj);
+    }
+    return err;
+}
+
 ErrorCode Parser::parse(QString& in_text)
 {
     tags.clear();
@@ -126,18 +195,25 @@ ErrorCode Parser::parse(QString& in_text)
         {
             T tag_info = tagNameMap[tagName];
             print(QString("tag: %1").arg(tagName));
-            print(QString("Parser tag docstring: %1").arg(tag_info.docstring));
+            //print(QString("Parser tag docstring: %1").arg(tag_info.docstring));
             switch(tag_info.code)
             {
-                case TIMECODE_TAG:
+                case TIMECODE_TAG:                
                     err = parse_timecode(tokens[1]);
-                    prn("parse_timecode return %d, current_time_code = %s",
-                        err, current_time_code.toString("h:m:s").toStdString().c_str());
+                    //prn("parse_timecode return %d, current_time_code = %s",
+                    //    err, current_time_code.toString("h:m:s").toStdString().c_str());
+                break;
+                case VFX_TAG:
+                    prn("vfx ");
+                    tokens.removeAt(0);
+                    err = parse_effects(tokens.join(" "));
+                    prn("parse_effects return %d list size=%d", err, vfx_objects.size());
+
                 break;
                 case VIDEO_SOURCE_TAG:
                     QStringList video_list;
                     err = parse_video_src(tokens[1], video_list);
-                    prn("parse_video_src return %d list size=%d", err, video_list.size());
+                    //prn("parse_video_src return %d list size=%d", err, video_list.size());
                 break;
 
            }

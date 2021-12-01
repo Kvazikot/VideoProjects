@@ -260,15 +260,15 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#00ff00;&quot;&gt;июль 2021&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; color:#00ff00;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt; color:#008000;&quot;&gt;&amp;lt;c&lt;/span&gt;&lt;span style=&quot; font-size:8pt; color:#c0c0c0;&quot;&gt; &lt;/span&gt;&lt;span style=&quot; font-size:8pt; color:#008000;&quot;&gt;00:00:50&amp;gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New'; font-size:8pt; color:#008000;&quot;&gt;&amp;lt;e&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New'; font-size:8pt; color:#c0c0c0;&quot;&gt; &lt;/span&gt;&lt;span style=&quot; font-family:'Courier New'; font-size:8pt; color:#008000;&quot;&gt;fade_out(12.2,color1,color2,23),para_text&amp;gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New'; font-size:8pt; color:#008000;&quot;&gt;&amp;lt;v&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New'; font-size:8pt; color:#c0c0c0;&quot;&gt; &lt;/span&gt;&lt;span style=&quot; font-family:'Courier New'; font-size:8pt; color:#008000;&quot;&gt;wheeler_1&amp;gt;&amp;lt;e&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New'; font-size:8pt; color:#c0c0c0;&quot;&gt; &lt;/span&gt;&lt;span style=&quot; font-family:'Courier New'; font-size:8pt; color:#008000;&quot;&gt;interlace_fx(40,640,480)&amp;gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New'; font-size:8pt; color:#008000;&quot;&gt;&amp;lt;e&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New'; font-size:8pt; color:#c0c0c0;&quot;&gt; &lt;/span&gt;&lt;span style=&quot; font-family:'Courier New'; font-size:8pt; color:#008000;&quot;&gt;fade_out(12.2,color1,color2,23) para_text 3dcube&amp;gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New'; font-size:8pt; color:#008000;&quot;&gt;&amp;lt;v&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New'; font-size:8pt; color:#c0c0c0;&quot;&gt; &lt;/span&gt;&lt;span style=&quot; font-family:'Courier New'; font-size:8pt; color:#008000;&quot;&gt;wheeler_1&amp;gt;&amp;lt;e&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New'; font-size:8pt; color:#c0c0c0;&quot;&gt; &lt;/span&gt;&lt;span style=&quot; font-family:'Courier New'; font-size:8pt; color:#008000;&quot;&gt;interlace_fx(40,640,480) vfx1(12)&amp;gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#00ff00;&quot;&gt;В известном мысленном эксперименте Джона Уиллера&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#00ff00;&quot;&gt;с двумя щелями и отложенном выборе был предложена[1] проверка гипотезы о том что прошлое можно изменить стирая информацию о наблюдении в будущем.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; color:#00ff00;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600; color:#00ff00;&quot;&gt;&amp;lt;p 00:01:00&amp;gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; color:#00ff00;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600; color:#00ff00;&quot;&gt;&amp;lt;c 00:01:06&amp;gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600; color:#00ff00;&quot;&gt;&amp;lt;v wheeler_1,terminator_nude,nanobot,big_bang1&amp;gt; &amp;lt;e 3d_cube,fade_in,para_text&amp;gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600; color:#00ff00;&quot;&gt;&amp;lt;v wheeler_1,terminator_nude,nanobot,big_bang1&amp;gt; &amp;lt;e 3d_cube fade_in para_text&amp;gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#00ff00;&quot;&gt;Неизвестна точная дата когда Уилеру пришла идея эксперимента с квантовым ластиком. &lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#00ff00;&quot;&gt;Я сейчас не говорю о буквальном сценарии когда из машины времени выходят голые терминаторы.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#00ff00;&quot;&gt;Это сделано ради потехи публики как и батарейки в &amp;quot;матрице&amp;quot;, ведь голивудские фильмы расчитанны на массового зрителя.&lt;/span&gt;&lt;/p&gt;
@@ -1401,9 +1401,9 @@ font: 75 12pt &quot;Magneto&quot;;</string>
          <widget class="QTableWidget" name="tableWidget">
           <property name="geometry">
            <rect>
-            <x>10</x>
+            <x>740</x>
             <y>10</y>
-            <width>891</width>
+            <width>161</width>
             <height>181</height>
            </rect>
           </property>
@@ -1452,6 +1452,26 @@ color: rgb(0, 255, 0);</string>
             <string>Великая Тартария. Нас обманывают. Официальную историю опровергают карты</string>
            </property>
           </item>
+         </widget>
+         <widget class="QPlainTextEdit" name="console">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>10</y>
+            <width>711</width>
+            <height>171</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(203, 231, 255);
+color: rgb(0, 0, 0);</string>
+          </property>
+          <property name="plainText">
+           <string>333
+22
+
+222</string>
+          </property>
          </widget>
         </widget>
         <widget class="QWidget" name="tab_3">
@@ -1701,26 +1721,6 @@ color: rgb(0, 255, 0);</string>
        <attribute name="title">
         <string>VFX</string>
        </attribute>
-       <widget class="QPlainTextEdit" name="console">
-        <property name="geometry">
-         <rect>
-          <x>70</x>
-          <y>60</y>
-          <width>891</width>
-          <height>371</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(203, 231, 255);
-color: rgb(0, 0, 0);</string>
-        </property>
-        <property name="plainText">
-         <string>333
-22
-
-222</string>
-        </property>
-       </widget>
        <widget class="QPushButton" name="runPyButton">
         <property name="geometry">
          <rect>
