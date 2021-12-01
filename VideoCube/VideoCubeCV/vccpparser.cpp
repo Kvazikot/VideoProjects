@@ -16,13 +16,13 @@ QMap<QString, T> tagNameMap =
       "timecode tag(c) defines exact time when particular effect apply or video source inserted")},
      {"p",T(PAUSE_TAG,
       "pause tag(p) defines pause beetwen paragraphs of text")},
-     {"fadeout",T(FADEOUT_VFX,
+     {"fade_out",T(FADEOUT_VFX,
       "fadeout(time_sec): fading transition effect. \n"
       "Parametres: time of effect in seconds(float). ")},
-     {"paratext",T(PARATEXT_VFX,
+     {"para_text",T(PARATEXT_VFX,
       "paratext(text_color, background_color): create text layer on a opaque background with current paragraph text. \n"
       "Parametres: text_color, background_color can be in html format like #FF00FF. ")},
-     {"cube3d",T(CUBE3D_VFX,
+     {"3d_cube",T(CUBE3D_VFX,
       "Creates 3d transition effect with rotating cube in space with video textures on each side")},
      };
 
@@ -119,8 +119,6 @@ ErrorCode Parser::parse_vfx_args(QString str, EffectType& type, QVector<QVariant
     int pos = 0;
     prn("text str : %s", str.toStdString().c_str());
 
-    if( tagNameMap.find(str)!= tagNameMap.end())
-        type = (EffectType)tagNameMap[str].code;
 
     if((pos = rx.indexIn(str, pos)) != -1)
     {
@@ -128,16 +126,23 @@ ErrorCode Parser::parse_vfx_args(QString str, EffectType& type, QVector<QVariant
         print("before brackets: " + str.left(pos));
         QString vfx_name = str.left(pos);
         if( tagNameMap.find(vfx_name)!= tagNameMap.end())
+        {
             type = (EffectType)tagNameMap[vfx_name].code;
+            prn("TYPE %d", type);
+        }
         else
             type = (EffectType)LAST_VFX;
     }
     else
-        return NO_ARGS;
+    {
+        if( tagNameMap.find(str)!= tagNameMap.end())
+            type = (EffectType)tagNameMap[str].code;
+        return NO_ERROR;
+    }
 
     QStringList  args = rx.cap(1).split(",");
     if( args.size() == 0 )
-        return NO_ARGS;
+        return NO_ERROR;
     foreach(QString arg, args)
     {
         bool doubleOK, intOK;
@@ -167,13 +172,18 @@ ErrorCode Parser::parse_effects(QString body)
         return ErrorCode::EFFECTSLIST_PARSING_ERROR;
     foreach (QString vfx_item, effects_list)
     {
-        VfxObject* vfx_obj = new VfxObject();
         EffectType type;
         err = parse_vfx_args(vfx_item, type, args);
-        vfx_obj->parametres = args;
-        vfx_obj->type = type;
-        prn("parse_vfx_args args.size() = %d", args.size());
-        vfx_objects.append(vfx_obj);
+        if( err == ErrorCode::NO_ERROR )
+        {
+            VfxObject* vfx_obj = new VfxObject();
+            vfx_obj->parametres = args;
+            vfx_obj->type = type;
+            prn("parse_vfx_args args.size() = %d", args.size());
+            prn("vfx_object type %d created", type);
+            vfx_objects.append(vfx_obj);
+        }
+
     }
     return err;
 }
