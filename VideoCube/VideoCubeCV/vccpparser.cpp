@@ -183,6 +183,7 @@ ErrorCode Parser::parse_effects(QString body)
             prn("vfx_object type %d created", type);
             vfx_objects.append(vfx_obj);
         }
+        args.clear();
 
     }
     return err;

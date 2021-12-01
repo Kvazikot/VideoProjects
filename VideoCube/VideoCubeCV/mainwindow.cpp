@@ -82,6 +82,7 @@ void MainWindow::getPlainTextWithoutTags(QString& plain_text)
 void MainWindow::on_markKeywordsButton_clicked()
 {
     QString text, html_text;
+    ui->console->clear();
     getPlainTextWithoutTags(text);
     return;
     KeyBERTWrapper bert_object;
