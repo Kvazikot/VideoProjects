@@ -1,0 +1,3 @@
+set GOOGLE_APPLICATION_CREDENTIALS="d:\projects\VideoProjects\VideoCube\VideoCubeCV\GoogleSpeechAPI\client_secret_1094778616973-v2vbp1mil814t3v3617lp86scv9s9a50.apps.googleusercontent.com.json"
+python speech_recognition.py
+pause
