@@ -18,10 +18,10 @@
 ```              
 
 # Эффекты
-ID: PARATEXT_SVG_ANIMATION_1 
-Class: SvgTextVfx   
-Module: para_text.cpp
-Description: 
+ID: PARATEXT_SVG_ANIMATION_1 <br/>
+Class: SvgTextVfx   <br/>
+Module: para_text.cpp <br/>
+Description: <br/>
 1. Модуль берет SVG образы букв произвольного шрифта. Заранее подготово\ленных и разрезанных в нужных местах 
 2. Рендерит SVG буквы в нужный параграф текста. 
 3. Анимирует ралетание букв на частицы. 
