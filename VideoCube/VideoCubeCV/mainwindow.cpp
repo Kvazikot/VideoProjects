@@ -73,10 +73,10 @@ void MainWindow::getPlainTextWithoutTags(QString& plain_text)
 {
     QString text = ui->textEditor->toPlainText();
     vccp::Parser parser;
-    parser.parse(text);
-    //parser.findtags(text);
-    //parser.getPlainTextWithoutTags(text);
-    //ui->textEditor->setText(text);
+    //parser.parse(text);
+    parser.findtags(text);
+    parser.getPlainTextWithoutTags(text);
+    ui->textEditor->setText(text);
 }
 
 void MainWindow::on_markKeywordsButton_clicked()
