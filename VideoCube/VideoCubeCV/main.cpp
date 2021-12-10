@@ -61,6 +61,7 @@ void customMessageOutput(QtMsgType type, const QMessageLogContext &context, cons
         abort();
 }
 
+
 int main(int argc, char *argv[])
 {
     //qApp->addLibraryPath("./platforms");

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1019</width>
-    <height>779</height>
+    <width>1315</width>
+    <height>813</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -338,53 +338,11 @@ font: 75 12pt &quot;Magneto&quot;;</string>
          <set>Qt::AlignCenter</set>
         </property>
        </widget>
-       <widget class="QPushButton" name="markKeywordsButton">
-        <property name="geometry">
-         <rect>
-          <x>490</x>
-          <y>300</y>
-          <width>231</width>
-          <height>31</height>
-         </rect>
-        </property>
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="font">
-         <font>
-          <family>Magneto</family>
-          <pointsize>12</pointsize>
-          <weight>9</weight>
-          <italic>false</italic>
-          <bold>false</bold>
-          <underline>false</underline>
-         </font>
-        </property>
-        <property name="autoFillBackground">
-         <bool>false</bool>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: rgb(60, 238, 33);
-font: 75 12pt &quot;Magneto&quot;;</string>
-        </property>
-        <property name="text">
-         <string>Mark keywords</string>
-        </property>
-        <property name="checkable">
-         <bool>false</bool>
-        </property>
-        <property name="flat">
-         <bool>true</bool>
-        </property>
-       </widget>
        <widget class="QLabel" name="label_5">
         <property name="geometry">
          <rect>
-          <x>510</x>
-          <y>380</y>
+          <x>590</x>
+          <y>40</y>
           <width>421</width>
           <height>39</height>
          </rect>
@@ -403,7 +361,7 @@ font: 75 12pt &quot;Magneto&quot;;</string>
 font: 75 12pt &quot;Magneto&quot;;</string>
         </property>
         <property name="text">
-         <string>Comments</string>
+         <string>Render</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
@@ -1259,136 +1217,13 @@ font: 75 12pt &quot;Magneto&quot;;</string>
          <bool>false</bool>
         </property>
        </widget>
-       <widget class="QPushButton" name="playVideoButton">
-        <property name="geometry">
-         <rect>
-          <x>530</x>
-          <y>10</y>
-          <width>111</width>
-          <height>21</height>
-         </rect>
-        </property>
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="font">
-         <font>
-          <family>Magneto</family>
-          <pointsize>12</pointsize>
-          <weight>9</weight>
-          <italic>false</italic>
-          <bold>false</bold>
-          <underline>false</underline>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: rgb(60, 238, 33);
-font: 75 12pt &quot;Magneto&quot;;</string>
-        </property>
-        <property name="text">
-         <string>Play video</string>
-        </property>
-        <property name="checkable">
-         <bool>false</bool>
-        </property>
-        <property name="default">
-         <bool>false</bool>
-        </property>
-        <property name="flat">
-         <bool>true</bool>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="downloadSourcesButton">
-        <property name="geometry">
-         <rect>
-          <x>490</x>
-          <y>340</y>
-          <width>231</width>
-          <height>29</height>
-         </rect>
-        </property>
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="font">
-         <font>
-          <family>Magneto</family>
-          <pointsize>12</pointsize>
-          <weight>9</weight>
-          <italic>false</italic>
-          <bold>false</bold>
-          <underline>false</underline>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: rgb(60, 238, 33);
-font: 75 12pt &quot;Magneto&quot;;</string>
-        </property>
-        <property name="text">
-         <string>Download sources</string>
-        </property>
-        <property name="checkable">
-         <bool>false</bool>
-        </property>
-        <property name="flat">
-         <bool>true</bool>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="deleteVideoButton">
-        <property name="geometry">
-         <rect>
-          <x>530</x>
-          <y>30</y>
-          <width>121</width>
-          <height>21</height>
-         </rect>
-        </property>
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="font">
-         <font>
-          <family>Magneto</family>
-          <pointsize>12</pointsize>
-          <weight>9</weight>
-          <italic>false</italic>
-          <bold>false</bold>
-          <underline>false</underline>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: rgb(60, 238, 33);
-font: 75 12pt &quot;Magneto&quot;;</string>
-        </property>
-        <property name="text">
-         <string>Delete video</string>
-        </property>
-        <property name="checkable">
-         <bool>false</bool>
-        </property>
-        <property name="default">
-         <bool>false</bool>
-        </property>
-        <property name="flat">
-         <bool>true</bool>
-        </property>
-       </widget>
        <widget class="QTabWidget" name="tabWidget_2">
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>420</y>
-          <width>921</width>
-          <height>221</height>
+          <y>460</y>
+          <width>428</width>
+          <height>271</height>
          </rect>
         </property>
         <property name="currentIndex">
@@ -1396,87 +1231,57 @@ font: 75 12pt &quot;Magneto&quot;;</string>
         </property>
         <widget class="QWidget" name="tab1">
          <attribute name="title">
-          <string>Источники</string>
+          <string>Консоль</string>
          </attribute>
-         <widget class="QTableWidget" name="tableWidget">
-          <property name="geometry">
-           <rect>
-            <x>740</x>
-            <y>10</y>
-            <width>161</width>
-            <height>181</height>
-           </rect>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(0, 0, 0);
-color: rgb(0, 255, 0);</string>
-          </property>
-          <row>
-           <property name="text">
-            <string notr="true">New Row</string>
-           </property>
-          </row>
-          <column>
-           <property name="text">
-            <string>URL</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>n</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Название</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Комментарий</string>
-           </property>
-          </column>
+         <layout class="QGridLayout" name="gridLayout_3">
           <item row="0" column="0">
-           <property name="text">
-            <string>https://youtu.be/V53f9SuV_Hs?t=115
-</string>
-           </property>
-          </item>
-          <item row="0" column="1">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="0" column="2">
-           <property name="text">
-            <string>Великая Тартария. Нас обманывают. Официальную историю опровергают карты</string>
-           </property>
-          </item>
-         </widget>
-         <widget class="QPlainTextEdit" name="console">
-          <property name="geometry">
-           <rect>
-            <x>20</x>
-            <y>10</y>
-            <width>711</width>
-            <height>171</height>
-           </rect>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(203, 231, 255);
+           <layout class="QHBoxLayout" name="horizontalLayout">
+            <item>
+             <widget class="QPushButton" name="pushButton_2">
+              <property name="text">
+               <string>Execute</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="lineEdit">
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(255, 255, 255);
 color: rgb(0, 0, 0);</string>
-          </property>
-          <property name="plainText">
-           <string>333
+              </property>
+              <property name="text">
+               <string>cam01.pos = (3,2,1)</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pushButton">
+              <property name="text">
+               <string>Clear</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="1" column="0">
+           <widget class="QPlainTextEdit" name="console">
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(203, 231, 255);
+color: rgb(0, 0, 0);</string>
+            </property>
+            <property name="plainText">
+             <string>333
 22
 
 222</string>
-          </property>
-         </widget>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </widget>
         <widget class="QWidget" name="tab_3">
          <attribute name="title">
-          <string>Спец эффекты</string>
+          <string>Object Inspector</string>
          </attribute>
          <widget class="QListWidget" name="listWidget_3">
           <property name="geometry">
@@ -1540,157 +1345,135 @@ color: rgb(0, 0, 0);</string>
         </widget>
         <widget class="QWidget" name="tab_2">
          <attribute name="title">
-          <string>Youtube preview</string>
+          <string>Urls &amp; Hashtags</string>
          </attribute>
+         <layout class="QGridLayout" name="gridLayout_2">
+          <item row="1" column="0" rowspan="2">
+           <widget class="QListWidget" name="urlsList">
+            <property name="maximumSize">
+             <size>
+              <width>200</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(0, 0, 0);
+color: rgb(0, 255, 0);</string>
+            </property>
+            <item>
+             <property name="text">
+              <string>http://youtube.com/wdwdwd</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QListWidget" name="hashtagList">
+            <property name="maximumSize">
+             <size>
+              <width>200</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(0, 0, 0);
+color: rgb(0, 255, 0);</string>
+            </property>
+            <item>
+             <property name="text">
+              <string>#эксперимент</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>#батарейка</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>#Уиллер</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>#delayed choice experiment</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>#quantum mechanics</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>#physics</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>#Terminator movie</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_3">
+            <property name="font">
+             <font>
+              <family>Magneto</family>
+              <pointsize>12</pointsize>
+              <weight>9</weight>
+              <italic>false</italic>
+              <bold>false</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: rgb(60, 238, 33);
+font: 75 12pt &quot;Magneto&quot;;</string>
+            </property>
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#00ff00;&quot;&gt;URLS&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="scaledContents">
+             <bool>false</bool>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1" rowspan="2">
+           <widget class="QLabel" name="label_2">
+            <property name="font">
+             <font>
+              <family>Magneto</family>
+              <pointsize>12</pointsize>
+              <weight>9</weight>
+              <italic>false</italic>
+              <bold>false</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: rgb(60, 238, 33);
+font: 75 12pt &quot;Magneto&quot;;</string>
+            </property>
+            <property name="text">
+             <string>Hashtags</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </widget>
-       </widget>
-       <widget class="QWidget" name="layoutWidget">
-        <property name="geometry">
-         <rect>
-          <x>500</x>
-          <y>70</y>
-          <width>202</width>
-          <height>213</height>
-         </rect>
-        </property>
-        <layout class="QVBoxLayout" name="verticalLayout">
-         <item>
-          <widget class="QLabel" name="label_3">
-           <property name="font">
-            <font>
-             <family>Magneto</family>
-             <pointsize>12</pointsize>
-             <weight>9</weight>
-             <italic>false</italic>
-             <bold>false</bold>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">color: rgb(60, 238, 33);
-font: 75 12pt &quot;Magneto&quot;;</string>
-           </property>
-           <property name="text">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#00ff00;&quot;&gt;URLS&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-           <property name="scaledContents">
-            <bool>false</bool>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignCenter</set>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QListWidget" name="urlsList">
-           <property name="maximumSize">
-            <size>
-             <width>200</width>
-             <height>16777215</height>
-            </size>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">background-color: rgb(0, 0, 0);
-color: rgb(0, 255, 0);</string>
-           </property>
-           <item>
-            <property name="text">
-             <string>http://youtube.com/wdwdwd</string>
-            </property>
-           </item>
-          </widget>
-         </item>
-        </layout>
-       </widget>
-       <widget class="QWidget" name="layoutWidget">
-        <property name="geometry">
-         <rect>
-          <x>740</x>
-          <y>70</y>
-          <width>202</width>
-          <height>213</height>
-         </rect>
-        </property>
-        <layout class="QVBoxLayout" name="verticalLayout_2">
-         <item>
-          <widget class="QLabel" name="label_2">
-           <property name="font">
-            <font>
-             <family>Magneto</family>
-             <pointsize>12</pointsize>
-             <weight>9</weight>
-             <italic>false</italic>
-             <bold>false</bold>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">color: rgb(60, 238, 33);
-font: 75 12pt &quot;Magneto&quot;;</string>
-           </property>
-           <property name="text">
-            <string>Hashtags</string>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignCenter</set>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QListWidget" name="hashtagList">
-           <property name="maximumSize">
-            <size>
-             <width>200</width>
-             <height>16777215</height>
-            </size>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">background-color: rgb(0, 0, 0);
-color: rgb(0, 255, 0);</string>
-           </property>
-           <item>
-            <property name="text">
-             <string>#эксперимент</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>#батарейка</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>#Уиллер</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>#delayed choice experiment</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>#quantum mechanics</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>#physics</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>#Terminator movie</string>
-            </property>
-           </item>
-          </widget>
-         </item>
-        </layout>
        </widget>
        <widget class="QProgressBar" name="progressBar">
         <property name="geometry">
          <rect>
-          <x>500</x>
-          <y>410</y>
-          <width>431</width>
+          <x>540</x>
+          <y>10</y>
+          <width>751</width>
           <height>23</height>
          </rect>
         </property>
@@ -1715,6 +1498,149 @@ color: rgb(0, 255, 0);</string>
         <property name="format">
          <string extracomment="333">%p%</string>
         </property>
+       </widget>
+       <widget class="QWidget" name="widgetBrowser" native="true">
+        <property name="geometry">
+         <rect>
+          <x>480</x>
+          <y>80</y>
+          <width>801</width>
+          <height>641</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(0, 0, 255);</string>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="comboBox">
+        <property name="geometry">
+         <rect>
+          <x>1070</x>
+          <y>50</y>
+          <width>72</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <item>
+         <property name="text">
+          <string>cam01</string>
+         </property>
+        </item>
+       </widget>
+       <widget class="QSplitter" name="splitter">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>420</y>
+          <width>441</width>
+          <height>28</height>
+         </rect>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <widget class="QPushButton" name="markKeywordsButton">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="font">
+          <font>
+           <family>Magneto</family>
+           <pointsize>12</pointsize>
+           <weight>9</weight>
+           <italic>false</italic>
+           <bold>false</bold>
+           <underline>false</underline>
+          </font>
+         </property>
+         <property name="autoFillBackground">
+          <bool>false</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(60, 238, 33);
+font: 75 12pt &quot;Magneto&quot;;</string>
+         </property>
+         <property name="text">
+          <string>Mark keywords</string>
+         </property>
+         <property name="checkable">
+          <bool>false</bool>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="playVideoButton">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="font">
+          <font>
+           <family>Magneto</family>
+           <pointsize>12</pointsize>
+           <weight>9</weight>
+           <italic>false</italic>
+           <bold>false</bold>
+           <underline>false</underline>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(60, 238, 33);
+font: 75 12pt &quot;Magneto&quot;;</string>
+         </property>
+         <property name="text">
+          <string>Play video</string>
+         </property>
+         <property name="checkable">
+          <bool>false</bool>
+         </property>
+         <property name="default">
+          <bool>false</bool>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="deleteVideoButton">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="font">
+          <font>
+           <family>Magneto</family>
+           <pointsize>12</pointsize>
+           <weight>9</weight>
+           <italic>false</italic>
+           <bold>false</bold>
+           <underline>false</underline>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(60, 238, 33);
+font: 75 12pt &quot;Magneto&quot;;</string>
+         </property>
+         <property name="text">
+          <string>Delete video</string>
+         </property>
+         <property name="checkable">
+          <bool>false</bool>
+         </property>
+         <property name="default">
+          <bool>false</bool>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
+        </widget>
        </widget>
       </widget>
       <widget class="QWidget" name="VFX">
@@ -1744,8 +1670,8 @@ color: rgb(0, 255, 0);</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1019</width>
-     <height>21</height>
+     <width>1315</width>
+     <height>20</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu">
