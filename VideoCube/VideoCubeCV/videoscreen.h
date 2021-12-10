@@ -38,8 +38,6 @@
 #define MAX_SOURCES 20
 #define CACHE_SIZE 30
 
-using namespace cv;
-
 class Source
 {
 public:
@@ -48,10 +46,10 @@ public:
         cap = 0;
         this->filename = filename;
         id = rand();
-        frame = Mat3b::zeros(1, 1);
+        frame = cv::Mat3b::zeros(1, 1);
         current_frame = 0;
         for(int i=0; i < CACHE_SIZE + 1; i++)
-            frames_cache.push_back(Mat3b::zeros(1, 1));
+            frames_cache.push_back(cv::Mat3b::zeros(1, 1));
 
     }
     ~Source()
@@ -120,7 +118,7 @@ public:
         return frame;
     }
 
-    void setFrame(Mat& fr)
+    void setFrame(cv::Mat& fr)
     {
         frame = fr;
     }
@@ -136,8 +134,8 @@ public:
     QString      filename;
     QMutex       mutex;
     cv::VideoCapture* cap;
-    std::vector<Mat3b>  frames_cache;
-    Mat3b frame;
+    std::vector<cv::Mat3b>  frames_cache;
+    cv::Mat3b frame;
     int current_frame;
     int id;
 };
@@ -160,10 +158,10 @@ public:
 
 };
 
-class ParallelVideoResizer : public ParallelLoopBody
+class ParallelVideoResizer : public cv::ParallelLoopBody
 {
     SourcesList sorces_list;
-    Size output_size;
+    cv::Size output_size;
 
 public:
     ParallelVideoResizer(){}
@@ -171,21 +169,21 @@ public:
     {
         sorces_list = *src_list;
         sorces_list.shuffle();
-        output_size = Size(output_width, output_height);
+        output_size = cv::Size(output_width, output_height);
     }
 
 
-    void operator()(const Range& range) const override
+    void operator()(const cv::Range& range) const override
     {
         int devisor = 4;
-        Size size = Size(output_size.width/devisor, output_size.height/devisor);
+        cv::Size size = cv::Size(output_size.width/devisor, output_size.height/devisor);
         prn("range %d %d ", range.start, range.end);
         if( (range.start/2) < sorces_list.size())
         {
             Source* src1 = sorces_list[range.start/2];
             src1->reopen();
-            Mat3b src = src1->getNextFrame();
-            Mat3b temp;
+            cv::Mat3b src = src1->getNextFrame();
+            cv::Mat3b temp;
             resize(src, temp, size);
             src1->setFrame(temp);
         }
@@ -193,32 +191,32 @@ public:
 };
 
 
-class MultiVideoTexture : public ParallelLoopBody
+class MultiVideoTexture : public cv::ParallelLoopBody
 {
     SourcesList sorces_list;
 public:
-    Mat3b outMat;
+    cv::Mat3b outMat;
     MultiVideoTexture(){}
     MultiVideoTexture(std::vector<Source*>* src_list)
     {
         sorces_list = *src_list;
-        outMat = Mat3b::zeros(1024, 768);
+        outMat = cv::Mat3b::zeros(1024, 768);
     }
 
-    void operator()(const Range& range) const override
+    void operator()(const cv::Range& range) const override
     {
-        Vec3b color_red{ 255, 0, 0 };
+        cv::Vec3b color_red{ 255, 0, 0 };
         //Vec3b color_blue{ 0, 0, 255 };
 
         int index = range.start/2;
         if(index >= sorces_list.size())
             return;
         Source* inp1 = sorces_list[index];
-        Mat3b& src = inp1->frame;
+        cv::Mat3b& src = inp1->frame;
 
-        Mat3b temp;
+        cv::Mat3b temp;
         int devisor = 2;
-        Size size = Size(outMat.cols/devisor, outMat.rows/devisor);
+        cv::Size size = cv::Size(outMat.cols/devisor, outMat.rows/devisor);
         resize(src, temp, size);
 
         int w = size.width;
@@ -227,22 +225,22 @@ public:
         //if( index == 0 )
         if( index == 0 )
         {
-            cv::Mat subImg = outMat(Range{ 0, h }, Range{ 0, w });
+            cv::Mat subImg = outMat(cv::Range{ 0, h }, cv::Range{ 0, w });
             temp.copyTo(subImg);
         }
         if( index == 1 )
         {
-            cv::Mat subImg = outMat(Range{ y, y + h }, Range{ x + w, x + 2 * w });
+            cv::Mat subImg = outMat(cv::Range{ y, y + h }, cv::Range{ x + w, x + 2 * w });
             temp.copyTo(subImg);
         }
         if( index == 2 )
         {
-            cv::Mat subImg = outMat(Range{ y + h, y + 2 * h }, Range{ x, x + w });
+            cv::Mat subImg = outMat(cv::Range{ y + h, y + 2 * h }, cv::Range{ x, x + w });
             temp.copyTo(subImg);
         }
         if( index == 3 )
         {
-            cv::Mat subImg = outMat(Range{ y + h, y + 2 * h }, Range{ x + w, x + 2 * w });
+            cv::Mat subImg = outMat(cv::Range{ y + h, y + 2 * h }, cv::Range{ x + w, x + 2 * w });
             temp.copyTo(subImg);
         }
 

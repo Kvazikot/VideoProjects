@@ -1,4 +1,4 @@
-QT += widgets core concurrent
+QT += widgets core concurrent opengl opengl xml
 OUTPUT += console
 
 OPENCV_451_PATH = "d:\\opencv"
@@ -72,10 +72,10 @@ win32:CONFIG(debug, debug|release): LIBS+="$$OPENCV_451_PATH\\build2\\lib\\Debug
 win32:CONFIG(debug, debug|release): LIBS+="$$OPENCV_451_PATH\\build2\\lib\\Debug\\opencv_video453d.lib"
 win32:CONFIG(debug, debug|release): LIBS+="$$(PYTHON_PATH)\\libs\\python39_d.lib"
 
-QMAKE_CXXFLAGS_DEBUG+=-Od
 
-INCLUDEPATH += "C:/Program Files (x86)/Windows Kits/10/Include/10.0.17763.0/ucrt"
-LIBS += -L"C:/Program Files (x86)/Windows Kits/10/Lib/10.0.17763.0/ucrt/x64"
+
+INCLUDEPATH += "C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/ucrt"
+LIBS += -L"C:/Program Files (x86)/Windows Kits/10/Lib/10.0.22000.0/ucrt/x64"
 
 SOURCES += main.cpp \
            dialog.cpp  \
@@ -101,7 +101,20 @@ FORMS += dialog.ui \
 
 
 EXAMPLE_FILES = *.png
-
+QMAKE_CXXFLAGS += /VERBOSE
 # install
 target.path = $$[QT_INSTALL_EXAMPLES]/corelib/ipc/sharedmemory
 INSTALLS += target
+
+# APP7 LIBRARY
+
+win32: LIBS += -L$$PWD/libs/app7CoreLib/release/ -lapp7CoreLib
+
+INCLUDEPATH += $$PWD/libs/app7CoreLib/include
+DEPENDPATH += $$PWD/libs/app7CoreLib/include
+
+
+win32: LIBS += -L$$PWD/libs/3PartyLibs/freeglut-3.2.1/build/lib/Release/ -lfreeglut
+
+INCLUDEPATH += $$PWD/libs/3PartyLibs/freeglut-3.2.1/include
+DEPENDPATH += $$PWD/libs/3PartyLibs/freeglut-3.2.1/include
