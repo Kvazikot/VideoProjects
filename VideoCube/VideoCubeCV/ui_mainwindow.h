@@ -12,9 +12,12 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QComboBox>
 #include <QtWidgets/QGridLayout>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QListWidget>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
@@ -22,11 +25,11 @@
 #include <QtWidgets/QPlainTextEdit>
 #include <QtWidgets/QProgressBar>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QSplitter>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QTableWidget>
 #include <QtWidgets/QTextEdit>
-#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -53,15 +56,15 @@ public:
     QWidget *tab;
     QTextEdit *textEditor;
     QLabel *label;
-    QPushButton *markKeywordsButton;
     QLabel *label_5;
     QPushButton *findVideosButton;
-    QPushButton *playVideoButton;
-    QPushButton *downloadSourcesButton;
-    QPushButton *deleteVideoButton;
     QTabWidget *tabWidget_2;
     QWidget *tab1;
-    QTableWidget *tableWidget;
+    QGridLayout *gridLayout_3;
+    QHBoxLayout *horizontalLayout;
+    QPushButton *pushButton_2;
+    QLineEdit *lineEdit;
+    QPushButton *pushButton;
     QPlainTextEdit *console;
     QWidget *tab_3;
     QListWidget *listWidget_3;
@@ -69,15 +72,18 @@ public:
     QLabel *label_6;
     QTableWidget *tableWidget_2;
     QWidget *tab_2;
-    QWidget *layoutWidget;
-    QVBoxLayout *verticalLayout;
-    QLabel *label_3;
+    QGridLayout *gridLayout_2;
     QListWidget *urlsList;
-    QWidget *layoutWidget1;
-    QVBoxLayout *verticalLayout_2;
-    QLabel *label_2;
     QListWidget *hashtagList;
+    QLabel *label_3;
+    QLabel *label_2;
     QProgressBar *progressBar;
+    QWidget *widgetBrowser;
+    QComboBox *comboBox;
+    QSplitter *splitter;
+    QPushButton *markKeywordsButton;
+    QPushButton *playVideoButton;
+    QPushButton *deleteVideoButton;
     QWidget *VFX;
     QPushButton *runPyButton;
     QMenuBar *menubar;
@@ -92,7 +98,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(1019, 779);
+        MainWindow->resize(1315, 813);
         MainWindow->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 0, 0);"));
         action = new QAction(MainWindow);
         action->setObjectName(QString::fromUtf8("action"));
@@ -193,30 +199,9 @@ public:
         label->setFrameShape(QFrame::NoFrame);
         label->setFrameShadow(QFrame::Raised);
         label->setAlignment(Qt::AlignCenter);
-        markKeywordsButton = new QPushButton(tab);
-        markKeywordsButton->setObjectName(QString::fromUtf8("markKeywordsButton"));
-        markKeywordsButton->setGeometry(QRect(490, 300, 231, 31));
-        QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
-        sizePolicy.setHorizontalStretch(0);
-        sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(markKeywordsButton->sizePolicy().hasHeightForWidth());
-        markKeywordsButton->setSizePolicy(sizePolicy);
-        QFont font2;
-        font2.setFamily(QString::fromUtf8("Magneto"));
-        font2.setPointSize(12);
-        font2.setBold(false);
-        font2.setItalic(false);
-        font2.setUnderline(false);
-        font2.setWeight(9);
-        markKeywordsButton->setFont(font2);
-        markKeywordsButton->setAutoFillBackground(false);
-        markKeywordsButton->setStyleSheet(QString::fromUtf8("color: rgb(60, 238, 33);\n"
-"font: 75 12pt \"Magneto\";"));
-        markKeywordsButton->setCheckable(false);
-        markKeywordsButton->setFlat(true);
         label_5 = new QLabel(tab);
         label_5->setObjectName(QString::fromUtf8("label_5"));
-        label_5->setGeometry(QRect(510, 380, 421, 39));
+        label_5->setGeometry(QRect(590, 40, 421, 39));
         label_5->setFont(font1);
         label_5->setStyleSheet(QString::fromUtf8("color: rgb(60, 238, 33);\n"
 "font: 75 12pt \"Magneto\";"));
@@ -224,6 +209,9 @@ public:
         findVideosButton = new QPushButton(tab);
         findVideosButton->setObjectName(QString::fromUtf8("findVideosButton"));
         findVideosButton->setGeometry(QRect(240, 5, 251, 61));
+        QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(findVideosButton->sizePolicy().hasHeightForWidth());
         findVideosButton->setSizePolicy(sizePolicy);
         QPalette palette1;
@@ -385,85 +373,55 @@ public:
         palette1.setBrush(QPalette::Disabled, QPalette::PlaceholderText, brush15);
 #endif
         findVideosButton->setPalette(palette1);
-        QFont font3;
-        font3.setFamily(QString::fromUtf8("Magneto"));
-        font3.setPointSize(12);
-        font3.setBold(true);
-        font3.setItalic(false);
-        font3.setUnderline(false);
-        font3.setWeight(75);
-        findVideosButton->setFont(font3);
+        QFont font2;
+        font2.setFamily(QString::fromUtf8("Magneto"));
+        font2.setPointSize(12);
+        font2.setBold(true);
+        font2.setItalic(false);
+        font2.setUnderline(false);
+        font2.setWeight(75);
+        findVideosButton->setFont(font2);
         findVideosButton->setAutoFillBackground(false);
         findVideosButton->setStyleSheet(QString::fromUtf8("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(9, 41, 4, 255), stop:0.085 rgba(2, 79, 0, 255), stop:0.19 rgba(50, 147, 22, 255), stop:0.275 rgba(236, 191, 49, 255), stop:0.39 rgba(243, 61, 34, 255), stop:0.555 rgba(135, 81, 60, 255), stop:0.667 rgba(121, 75, 255, 255), stop:0.825 rgba(164, 255, 244, 255), stop:0.885 rgba(104, 222, 71, 255), stop:1 rgba(93, 128, 0, 255));"));
         findVideosButton->setCheckable(false);
         findVideosButton->setAutoDefault(false);
         findVideosButton->setFlat(false);
-        playVideoButton = new QPushButton(tab);
-        playVideoButton->setObjectName(QString::fromUtf8("playVideoButton"));
-        playVideoButton->setGeometry(QRect(530, 10, 111, 21));
-        sizePolicy.setHeightForWidth(playVideoButton->sizePolicy().hasHeightForWidth());
-        playVideoButton->setSizePolicy(sizePolicy);
-        playVideoButton->setFont(font2);
-        playVideoButton->setStyleSheet(QString::fromUtf8("color: rgb(60, 238, 33);\n"
-"font: 75 12pt \"Magneto\";"));
-        playVideoButton->setCheckable(false);
-        playVideoButton->setFlat(true);
-        downloadSourcesButton = new QPushButton(tab);
-        downloadSourcesButton->setObjectName(QString::fromUtf8("downloadSourcesButton"));
-        downloadSourcesButton->setGeometry(QRect(490, 340, 231, 29));
-        sizePolicy.setHeightForWidth(downloadSourcesButton->sizePolicy().hasHeightForWidth());
-        downloadSourcesButton->setSizePolicy(sizePolicy);
-        downloadSourcesButton->setFont(font2);
-        downloadSourcesButton->setStyleSheet(QString::fromUtf8("color: rgb(60, 238, 33);\n"
-"font: 75 12pt \"Magneto\";"));
-        downloadSourcesButton->setCheckable(false);
-        downloadSourcesButton->setFlat(true);
-        deleteVideoButton = new QPushButton(tab);
-        deleteVideoButton->setObjectName(QString::fromUtf8("deleteVideoButton"));
-        deleteVideoButton->setGeometry(QRect(530, 30, 121, 21));
-        sizePolicy.setHeightForWidth(deleteVideoButton->sizePolicy().hasHeightForWidth());
-        deleteVideoButton->setSizePolicy(sizePolicy);
-        deleteVideoButton->setFont(font2);
-        deleteVideoButton->setStyleSheet(QString::fromUtf8("color: rgb(60, 238, 33);\n"
-"font: 75 12pt \"Magneto\";"));
-        deleteVideoButton->setCheckable(false);
-        deleteVideoButton->setFlat(true);
         tabWidget_2 = new QTabWidget(tab);
         tabWidget_2->setObjectName(QString::fromUtf8("tabWidget_2"));
-        tabWidget_2->setGeometry(QRect(10, 420, 921, 221));
+        tabWidget_2->setGeometry(QRect(10, 460, 428, 271));
         tab1 = new QWidget();
         tab1->setObjectName(QString::fromUtf8("tab1"));
-        tableWidget = new QTableWidget(tab1);
-        if (tableWidget->columnCount() < 4)
-            tableWidget->setColumnCount(4);
-        QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
-        tableWidget->setHorizontalHeaderItem(0, __qtablewidgetitem);
-        QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
-        tableWidget->setHorizontalHeaderItem(1, __qtablewidgetitem1);
-        QTableWidgetItem *__qtablewidgetitem2 = new QTableWidgetItem();
-        tableWidget->setHorizontalHeaderItem(2, __qtablewidgetitem2);
-        QTableWidgetItem *__qtablewidgetitem3 = new QTableWidgetItem();
-        tableWidget->setHorizontalHeaderItem(3, __qtablewidgetitem3);
-        if (tableWidget->rowCount() < 1)
-            tableWidget->setRowCount(1);
-        QTableWidgetItem *__qtablewidgetitem4 = new QTableWidgetItem();
-        __qtablewidgetitem4->setText(QString::fromUtf8("New Row"));
-        tableWidget->setVerticalHeaderItem(0, __qtablewidgetitem4);
-        QTableWidgetItem *__qtablewidgetitem5 = new QTableWidgetItem();
-        tableWidget->setItem(0, 0, __qtablewidgetitem5);
-        QTableWidgetItem *__qtablewidgetitem6 = new QTableWidgetItem();
-        tableWidget->setItem(0, 1, __qtablewidgetitem6);
-        QTableWidgetItem *__qtablewidgetitem7 = new QTableWidgetItem();
-        tableWidget->setItem(0, 2, __qtablewidgetitem7);
-        tableWidget->setObjectName(QString::fromUtf8("tableWidget"));
-        tableWidget->setGeometry(QRect(740, 10, 161, 181));
-        tableWidget->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 0, 0);\n"
-"color: rgb(0, 255, 0);"));
+        gridLayout_3 = new QGridLayout(tab1);
+        gridLayout_3->setObjectName(QString::fromUtf8("gridLayout_3"));
+        horizontalLayout = new QHBoxLayout();
+        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
+        pushButton_2 = new QPushButton(tab1);
+        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
+
+        horizontalLayout->addWidget(pushButton_2);
+
+        lineEdit = new QLineEdit(tab1);
+        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
+        lineEdit->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);\n"
+"color: rgb(0, 0, 0);"));
+
+        horizontalLayout->addWidget(lineEdit);
+
+        pushButton = new QPushButton(tab1);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+
+        horizontalLayout->addWidget(pushButton);
+
+
+        gridLayout_3->addLayout(horizontalLayout, 0, 0, 1, 1);
+
         console = new QPlainTextEdit(tab1);
         console->setObjectName(QString::fromUtf8("console"));
-        console->setGeometry(QRect(20, 10, 711, 171));
         console->setStyleSheet(QString::fromUtf8("background-color: rgb(203, 231, 255);\n"
 "color: rgb(0, 0, 0);"));
+
+        gridLayout_3->addWidget(console, 1, 0, 1, 1);
+
         tabWidget_2->addTab(tab1, QString());
         tab_3 = new QWidget();
         tab_3->setObjectName(QString::fromUtf8("tab_3"));
@@ -480,57 +438,27 @@ public:
         tableWidget_2 = new QTableWidget(tab_3);
         if (tableWidget_2->columnCount() < 2)
             tableWidget_2->setColumnCount(2);
-        QTableWidgetItem *__qtablewidgetitem8 = new QTableWidgetItem();
-        tableWidget_2->setHorizontalHeaderItem(0, __qtablewidgetitem8);
-        QTableWidgetItem *__qtablewidgetitem9 = new QTableWidgetItem();
-        tableWidget_2->setHorizontalHeaderItem(1, __qtablewidgetitem9);
+        QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
+        tableWidget_2->setHorizontalHeaderItem(0, __qtablewidgetitem);
+        QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
+        tableWidget_2->setHorizontalHeaderItem(1, __qtablewidgetitem1);
         tableWidget_2->setObjectName(QString::fromUtf8("tableWidget_2"));
         tableWidget_2->setGeometry(QRect(350, 40, 281, 101));
         tabWidget_2->addTab(tab_3, QString());
         tab_2 = new QWidget();
         tab_2->setObjectName(QString::fromUtf8("tab_2"));
-        tabWidget_2->addTab(tab_2, QString());
-        layoutWidget = new QWidget(tab);
-        layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
-        layoutWidget->setGeometry(QRect(500, 70, 202, 213));
-        verticalLayout = new QVBoxLayout(layoutWidget);
-        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
-        verticalLayout->setContentsMargins(0, 0, 0, 0);
-        label_3 = new QLabel(layoutWidget);
-        label_3->setObjectName(QString::fromUtf8("label_3"));
-        label_3->setFont(font1);
-        label_3->setStyleSheet(QString::fromUtf8("color: rgb(60, 238, 33);\n"
-"font: 75 12pt \"Magneto\";"));
-        label_3->setScaledContents(false);
-        label_3->setAlignment(Qt::AlignCenter);
-
-        verticalLayout->addWidget(label_3);
-
-        urlsList = new QListWidget(layoutWidget);
+        gridLayout_2 = new QGridLayout(tab_2);
+        gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
+        urlsList = new QListWidget(tab_2);
         new QListWidgetItem(urlsList);
         urlsList->setObjectName(QString::fromUtf8("urlsList"));
         urlsList->setMaximumSize(QSize(200, 16777215));
         urlsList->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 0, 0);\n"
 "color: rgb(0, 255, 0);"));
 
-        verticalLayout->addWidget(urlsList);
+        gridLayout_2->addWidget(urlsList, 1, 0, 2, 1);
 
-        layoutWidget1 = new QWidget(tab);
-        layoutWidget1->setObjectName(QString::fromUtf8("layoutWidget1"));
-        layoutWidget1->setGeometry(QRect(740, 70, 202, 213));
-        verticalLayout_2 = new QVBoxLayout(layoutWidget1);
-        verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
-        verticalLayout_2->setContentsMargins(0, 0, 0, 0);
-        label_2 = new QLabel(layoutWidget1);
-        label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setFont(font1);
-        label_2->setStyleSheet(QString::fromUtf8("color: rgb(60, 238, 33);\n"
-"font: 75 12pt \"Magneto\";"));
-        label_2->setAlignment(Qt::AlignCenter);
-
-        verticalLayout_2->addWidget(label_2);
-
-        hashtagList = new QListWidget(layoutWidget1);
+        hashtagList = new QListWidget(tab_2);
         new QListWidgetItem(hashtagList);
         new QListWidgetItem(hashtagList);
         new QListWidgetItem(hashtagList);
@@ -543,19 +471,89 @@ public:
         hashtagList->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 0, 0);\n"
 "color: rgb(0, 255, 0);"));
 
-        verticalLayout_2->addWidget(hashtagList);
+        gridLayout_2->addWidget(hashtagList, 2, 1, 1, 1);
 
+        label_3 = new QLabel(tab_2);
+        label_3->setObjectName(QString::fromUtf8("label_3"));
+        label_3->setFont(font1);
+        label_3->setStyleSheet(QString::fromUtf8("color: rgb(60, 238, 33);\n"
+"font: 75 12pt \"Magneto\";"));
+        label_3->setScaledContents(false);
+        label_3->setAlignment(Qt::AlignCenter);
+
+        gridLayout_2->addWidget(label_3, 0, 0, 1, 1);
+
+        label_2 = new QLabel(tab_2);
+        label_2->setObjectName(QString::fromUtf8("label_2"));
+        label_2->setFont(font1);
+        label_2->setStyleSheet(QString::fromUtf8("color: rgb(60, 238, 33);\n"
+"font: 75 12pt \"Magneto\";"));
+        label_2->setAlignment(Qt::AlignCenter);
+
+        gridLayout_2->addWidget(label_2, 0, 1, 2, 1);
+
+        tabWidget_2->addTab(tab_2, QString());
         progressBar = new QProgressBar(tab);
         progressBar->setObjectName(QString::fromUtf8("progressBar"));
-        progressBar->setGeometry(QRect(500, 410, 431, 23));
-        QFont font4;
-        font4.setBold(true);
-        font4.setWeight(75);
-        progressBar->setFont(font4);
+        progressBar->setGeometry(QRect(540, 10, 751, 23));
+        QFont font3;
+        font3.setBold(true);
+        font3.setWeight(75);
+        progressBar->setFont(font3);
         progressBar->setToolTipDuration(1);
         progressBar->setStyleSheet(QString::fromUtf8("color: rgb(170, 0, 127);"));
         progressBar->setValue(24);
         progressBar->setAlignment(Qt::AlignCenter);
+        widgetBrowser = new QWidget(tab);
+        widgetBrowser->setObjectName(QString::fromUtf8("widgetBrowser"));
+        widgetBrowser->setGeometry(QRect(480, 80, 801, 641));
+        widgetBrowser->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 0, 255);"));
+        comboBox = new QComboBox(tab);
+        comboBox->addItem(QString());
+        comboBox->setObjectName(QString::fromUtf8("comboBox"));
+        comboBox->setGeometry(QRect(1070, 50, 72, 22));
+        splitter = new QSplitter(tab);
+        splitter->setObjectName(QString::fromUtf8("splitter"));
+        splitter->setGeometry(QRect(0, 420, 441, 28));
+        splitter->setOrientation(Qt::Horizontal);
+        markKeywordsButton = new QPushButton(splitter);
+        markKeywordsButton->setObjectName(QString::fromUtf8("markKeywordsButton"));
+        sizePolicy.setHeightForWidth(markKeywordsButton->sizePolicy().hasHeightForWidth());
+        markKeywordsButton->setSizePolicy(sizePolicy);
+        QFont font4;
+        font4.setFamily(QString::fromUtf8("Magneto"));
+        font4.setPointSize(12);
+        font4.setBold(false);
+        font4.setItalic(false);
+        font4.setUnderline(false);
+        font4.setWeight(9);
+        markKeywordsButton->setFont(font4);
+        markKeywordsButton->setAutoFillBackground(false);
+        markKeywordsButton->setStyleSheet(QString::fromUtf8("color: rgb(60, 238, 33);\n"
+"font: 75 12pt \"Magneto\";"));
+        markKeywordsButton->setCheckable(false);
+        markKeywordsButton->setFlat(true);
+        splitter->addWidget(markKeywordsButton);
+        playVideoButton = new QPushButton(splitter);
+        playVideoButton->setObjectName(QString::fromUtf8("playVideoButton"));
+        sizePolicy.setHeightForWidth(playVideoButton->sizePolicy().hasHeightForWidth());
+        playVideoButton->setSizePolicy(sizePolicy);
+        playVideoButton->setFont(font4);
+        playVideoButton->setStyleSheet(QString::fromUtf8("color: rgb(60, 238, 33);\n"
+"font: 75 12pt \"Magneto\";"));
+        playVideoButton->setCheckable(false);
+        playVideoButton->setFlat(true);
+        splitter->addWidget(playVideoButton);
+        deleteVideoButton = new QPushButton(splitter);
+        deleteVideoButton->setObjectName(QString::fromUtf8("deleteVideoButton"));
+        sizePolicy.setHeightForWidth(deleteVideoButton->sizePolicy().hasHeightForWidth());
+        deleteVideoButton->setSizePolicy(sizePolicy);
+        deleteVideoButton->setFont(font4);
+        deleteVideoButton->setStyleSheet(QString::fromUtf8("color: rgb(60, 238, 33);\n"
+"font: 75 12pt \"Magneto\";"));
+        deleteVideoButton->setCheckable(false);
+        deleteVideoButton->setFlat(true);
+        splitter->addWidget(deleteVideoButton);
         tabWidget->addTab(tab, QString());
         VFX = new QWidget();
         VFX->setObjectName(QString::fromUtf8("VFX"));
@@ -569,7 +567,7 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 1019, 21));
+        menubar->setGeometry(QRect(0, 0, 1315, 20));
         menu = new QMenu(menubar);
         menu->setObjectName(QString::fromUtf8("menu"));
         menu_2 = new QMenu(menubar);
@@ -608,9 +606,9 @@ public:
 
         tabWidget->setCurrentIndex(0);
         findVideosButton->setDefault(false);
+        tabWidget_2->setCurrentIndex(0);
         playVideoButton->setDefault(false);
         deleteVideoButton->setDefault(false);
-        tabWidget_2->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -722,57 +720,33 @@ public:
 "<p style=\"-qt-paragraph-type:emp"
                         "ty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; color:#00ff00;\"><br /></p></body></html>", nullptr));
         label->setText(QApplication::translate("MainWindow", "Clip text", nullptr));
-        markKeywordsButton->setText(QApplication::translate("MainWindow", "Mark keywords", nullptr));
-        label_5->setText(QApplication::translate("MainWindow", "Comments", nullptr));
+        label_5->setText(QApplication::translate("MainWindow", "Render", nullptr));
         findVideosButton->setText(QApplication::translate("MainWindow", "\320\235\320\260\320\271\321\202\320\270 \320\262\320\270\320\264\320\265\320\276 \n"
 " \320\264\320\273\321\217 \320\262\321\213\320\264\320\265\320\273\320\265\320\275\320\275\320\276\320\263\320\276 \321\202\320\265\320\272\321\201\321\202\320\260", nullptr));
-        playVideoButton->setText(QApplication::translate("MainWindow", "Play video", nullptr));
-        downloadSourcesButton->setText(QApplication::translate("MainWindow", "Download sources", nullptr));
-        deleteVideoButton->setText(QApplication::translate("MainWindow", "Delete video", nullptr));
-        QTableWidgetItem *___qtablewidgetitem = tableWidget->horizontalHeaderItem(0);
-        ___qtablewidgetitem->setText(QApplication::translate("MainWindow", "URL", nullptr));
-        QTableWidgetItem *___qtablewidgetitem1 = tableWidget->horizontalHeaderItem(1);
-        ___qtablewidgetitem1->setText(QApplication::translate("MainWindow", "n", nullptr));
-        QTableWidgetItem *___qtablewidgetitem2 = tableWidget->horizontalHeaderItem(2);
-        ___qtablewidgetitem2->setText(QApplication::translate("MainWindow", "\320\235\320\260\320\267\320\262\320\260\320\275\320\270\320\265", nullptr));
-        QTableWidgetItem *___qtablewidgetitem3 = tableWidget->horizontalHeaderItem(3);
-        ___qtablewidgetitem3->setText(QApplication::translate("MainWindow", "\320\232\320\276\320\274\320\274\320\265\320\275\321\202\320\260\321\200\320\270\320\271", nullptr));
-
-        const bool __sortingEnabled = tableWidget->isSortingEnabled();
-        tableWidget->setSortingEnabled(false);
-        QTableWidgetItem *___qtablewidgetitem4 = tableWidget->item(0, 0);
-        ___qtablewidgetitem4->setText(QApplication::translate("MainWindow", "https://youtu.be/V53f9SuV_Hs?t=115\n"
-"", nullptr));
-        QTableWidgetItem *___qtablewidgetitem5 = tableWidget->item(0, 1);
-        ___qtablewidgetitem5->setText(QApplication::translate("MainWindow", "1", nullptr));
-        QTableWidgetItem *___qtablewidgetitem6 = tableWidget->item(0, 2);
-        ___qtablewidgetitem6->setText(QApplication::translate("MainWindow", "\320\222\320\265\320\273\320\270\320\272\320\260\321\217 \320\242\320\260\321\200\321\202\320\260\321\200\320\270\321\217. \320\235\320\260\321\201 \320\276\320\261\320\274\320\260\320\275\321\213\320\262\320\260\321\216\321\202. \320\236\321\204\320\270\321\206\320\270\320\260\320\273\321\214\320\275\321\203\321\216 \320\270\321\201\321\202\320\276\321\200\320\270\321\216 \320\276\320\277\321\200\320\276\320\262\320\265\321\200\320\263\320\260\321\216\321\202 \320\272\320\260\321\200\321\202\321\213", nullptr));
-        tableWidget->setSortingEnabled(__sortingEnabled);
-
+        pushButton_2->setText(QApplication::translate("MainWindow", "Execute", nullptr));
+        lineEdit->setText(QApplication::translate("MainWindow", "cam01.pos = (3,2,1)", nullptr));
+        pushButton->setText(QApplication::translate("MainWindow", "Clear", nullptr));
         console->setPlainText(QApplication::translate("MainWindow", "333\n"
 "22\n"
 "\n"
 "222", nullptr));
-        tabWidget_2->setTabText(tabWidget_2->indexOf(tab1), QApplication::translate("MainWindow", "\320\230\321\201\321\202\320\276\321\207\320\275\320\270\320\272\320\270", nullptr));
+        tabWidget_2->setTabText(tabWidget_2->indexOf(tab1), QApplication::translate("MainWindow", "\320\232\320\276\320\275\321\201\320\276\320\273\321\214", nullptr));
         label_4->setText(QApplication::translate("MainWindow", "Object name", nullptr));
         label_6->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" color:#00ff00;\">Property   |  Value</span></p></body></html>", nullptr));
-        QTableWidgetItem *___qtablewidgetitem7 = tableWidget_2->horizontalHeaderItem(0);
-        ___qtablewidgetitem7->setText(QApplication::translate("MainWindow", "Property", nullptr));
-        QTableWidgetItem *___qtablewidgetitem8 = tableWidget_2->horizontalHeaderItem(1);
-        ___qtablewidgetitem8->setText(QApplication::translate("MainWindow", "Value", nullptr));
-        tabWidget_2->setTabText(tabWidget_2->indexOf(tab_3), QApplication::translate("MainWindow", "\320\241\320\277\320\265\321\206 \321\215\321\204\321\204\320\265\320\272\321\202\321\213", nullptr));
-        tabWidget_2->setTabText(tabWidget_2->indexOf(tab_2), QApplication::translate("MainWindow", "Youtube preview", nullptr));
-        label_3->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" color:#00ff00;\">URLS</span></p></body></html>", nullptr));
+        QTableWidgetItem *___qtablewidgetitem = tableWidget_2->horizontalHeaderItem(0);
+        ___qtablewidgetitem->setText(QApplication::translate("MainWindow", "Property", nullptr));
+        QTableWidgetItem *___qtablewidgetitem1 = tableWidget_2->horizontalHeaderItem(1);
+        ___qtablewidgetitem1->setText(QApplication::translate("MainWindow", "Value", nullptr));
+        tabWidget_2->setTabText(tabWidget_2->indexOf(tab_3), QApplication::translate("MainWindow", "Object Inspector", nullptr));
 
-        const bool __sortingEnabled1 = urlsList->isSortingEnabled();
+        const bool __sortingEnabled = urlsList->isSortingEnabled();
         urlsList->setSortingEnabled(false);
         QListWidgetItem *___qlistwidgetitem = urlsList->item(0);
         ___qlistwidgetitem->setText(QApplication::translate("MainWindow", "http://youtube.com/wdwdwd", nullptr));
-        urlsList->setSortingEnabled(__sortingEnabled1);
+        urlsList->setSortingEnabled(__sortingEnabled);
 
-        label_2->setText(QApplication::translate("MainWindow", "Hashtags", nullptr));
 
-        const bool __sortingEnabled2 = hashtagList->isSortingEnabled();
+        const bool __sortingEnabled1 = hashtagList->isSortingEnabled();
         hashtagList->setSortingEnabled(false);
         QListWidgetItem *___qlistwidgetitem1 = hashtagList->item(0);
         ___qlistwidgetitem1->setText(QApplication::translate("MainWindow", "#\321\215\320\272\321\201\320\277\320\265\321\200\320\270\320\274\320\265\320\275\321\202", nullptr));
@@ -788,9 +762,17 @@ public:
         ___qlistwidgetitem6->setText(QApplication::translate("MainWindow", "#physics", nullptr));
         QListWidgetItem *___qlistwidgetitem7 = hashtagList->item(6);
         ___qlistwidgetitem7->setText(QApplication::translate("MainWindow", "#Terminator movie", nullptr));
-        hashtagList->setSortingEnabled(__sortingEnabled2);
+        hashtagList->setSortingEnabled(__sortingEnabled1);
 
+        label_3->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" color:#00ff00;\">URLS</span></p></body></html>", nullptr));
+        label_2->setText(QApplication::translate("MainWindow", "Hashtags", nullptr));
+        tabWidget_2->setTabText(tabWidget_2->indexOf(tab_2), QApplication::translate("MainWindow", "Urls & Hashtags", nullptr));
         progressBar->setFormat(QApplication::translate("MainWindow", "%p%", nullptr));
+        comboBox->setItemText(0, QApplication::translate("MainWindow", "cam01", nullptr));
+
+        markKeywordsButton->setText(QApplication::translate("MainWindow", "Mark keywords", nullptr));
+        playVideoButton->setText(QApplication::translate("MainWindow", "Play video", nullptr));
+        deleteVideoButton->setText(QApplication::translate("MainWindow", "Delete video", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("MainWindow", "\320\242\320\265\320\272\321\201\321\202 \320\272\320\273\320\270\320\277\320\260 \320\270 \320\270\321\201\321\202\320\276\321\207\320\275\320\270\320\272\320\270", nullptr));
         runPyButton->setText(QApplication::translate("MainWindow", "Run in python", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(VFX), QApplication::translate("MainWindow", "VFX", nullptr));
