@@ -1,0 +1,20 @@
+#version 410 core
+
+layout(quads, equal_spacing) in;
+//layout(triangles, equal_spacing) in;
+in vec3 tcPosition[];
+out vec3 tePosition;
+uniform float noise;
+uniform mat4 mvp;
+
+void main(void)
+{
+   float u = gl_TessCoord.x, v = gl_TessCoord.y;
+   vec3 a = mix(tcPosition[0], tcPosition[3], u);
+   vec3 b = mix(tcPosition[0], tcPosition[1], u);
+   tePosition = mix(a, b, v);
+
+   gl_Position = mvp * vec4(tePosition, 1);
+
+}
+

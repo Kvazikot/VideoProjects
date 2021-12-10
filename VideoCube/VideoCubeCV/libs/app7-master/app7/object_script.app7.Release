@@ -1,0 +1,17 @@
+.o/main.o
+.o/trajectorydialog.o
+.o/animationdlg.o
+.o/biped.o
+.o/ref.o
+.o/ploter.o
+.o/selsetsdlg.o
+.o/mainwindow.o
+.o/terraindlg.o
+.o/linuxoid.o
+.o/genecurvefitter.o
+.o/animsprite.o
+.o/moc_animationdlg.o
+.o/moc_trajectorydialog.o
+.o/moc_selsetsdlg.o
+.o/moc_mainwindow.o
+.o/moc_terraindlg.o

@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TrajectoryDialog</class>
+ <widget class="QDialog" name="TrajectoryDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>931</width>
+    <height>672</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>TrajectoryDialog</string>
+  </property>
+  <widget class="QFrame" name="qwtframe2">
+   <property name="geometry">
+    <rect>
+     <x>464</x>
+     <y>28</y>
+     <width>448</width>
+     <height>200</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>0</width>
+     <height>200</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>16777215</width>
+     <height>1000</height>
+    </size>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+  </widget>
+  <widget class="QFrame" name="qwtframe3">
+   <property name="geometry">
+    <rect>
+     <x>9</x>
+     <y>253</y>
+     <width>449</width>
+     <height>200</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>0</width>
+     <height>200</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>16777215</width>
+     <height>1000</height>
+    </size>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+  </widget>
+  <widget class="QFrame" name="qwtframe4">
+   <property name="geometry">
+    <rect>
+     <x>464</x>
+     <y>253</y>
+     <width>448</width>
+     <height>200</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>0</width>
+     <height>200</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>16777215</width>
+     <height>1000</height>
+    </size>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+  </widget>
+  <widget class="QFrame" name="qwtframe1">
+   <property name="geometry">
+    <rect>
+     <x>9</x>
+     <y>28</y>
+     <width>449</width>
+     <height>200</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>0</width>
+     <height>200</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>16777215</width>
+     <height>1000</height>
+    </size>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>464</x>
+     <y>9</y>
+     <width>54</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Ускорения</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>9</x>
+     <y>9</y>
+     <width>48</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Скорости</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>9</x>
+     <y>234</y>
+     <width>26</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Углы</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>464</x>
+     <y>234</y>
+     <width>64</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Координаты</string>
+   </property>
+  </widget>
+  <widget class="QPlainTextEdit" name="varEdit">
+   <property name="geometry">
+    <rect>
+     <x>9</x>
+     <y>459</y>
+     <width>449</width>
+     <height>142</height>
+    </rect>
+   </property>
+   <property name="plainText">
+    <string>Ntest=2
+--разрешение для законов скоростей и ускорений
+N=500
+--Во всех тестах время генерации 10 сек
+t_rascheta=20.0
+--Частота съема данных Гц
+f_dat=20
+-- отсечение
+--xmin = 0 xmax = 200 split_level = 0
+--нач позиция
+pos0=0.0,0.1,0.3444
+
+----------------Тест 3. Вертикальный взлет и посадка.
+//Вертикальная скорость vy растет по экспоненте
+//до 5 сек. затем падает также по экспоненте. Ускорение ay постоянно
+AYlaw3{type=SIN Amin=2 Amax=13 }
+AXlaw3{ type=SIN  Amin=-45 Amax=45 T=1 phi0=90 }
+VYlaw3{type=KUS_SPL PTS_XY=[0,0,2,5,3,0,5,0,7,0,8,-5,10,0] Res=12 }
+Rolllaw3{ type=TREUG_NOISE Amin=0 Amax=90 phi0=90 Res=10}
+Pitchlaw3{ type=TREUG_NOISE Amin=0 Amax=30 phi0=30 Res=10}
+
+----------------Тест 4. Полет змейкой в плоскости XZ.
+// Курс изменяется по гармоническому закону с периодом 1 сек.
+// Скорости постоянны. Ускорения постоянны
+//Rolllaw4{ type=KUS_SPL PTS_XY=[0,0,0,2,4,8,6,8,8,2,10,0] Res=333     }
+Pitchlaw4 { type=PAD_Y_AXIS }
+Yawlaw4{ type=SIN  Amin=-45 Amax=45 T=1 phi0=90 }
+//Rolllaw4{ type=SIN  Amin=-45 Amax=45 T=1 phi0=90 }
+VZlaw4{ type=SIN  Amin=-2 Amax=2 T=1 }
+VXlaw4{ type=SIN  Amin=-2 Amax=2 T=1 phi0=90}
+
+
+----------------Тест 1 - гиперболический рост для крена от 0 - 90 линейный рост для тангажа от 0 - 45
+//Rolllaw1{ type=HOLM  Amin=0 Amax=90 tmax=5 Res=10}
+Rolllaw1{ type=KUS_SPL PTS_XY=[0,0,0,2,4,8,6,8,8,2,10,0] Res=333     }
+//Rolllaw1{ type=UP_QUAD  Amin=0 Amax=90 tmax=5 Res=12}
+VYlaw1{type=TREUG_NOISE Amin=0 Amax=90 phi0=91 Res=10 }
+VZlaw1{ type=SIN  Amin=-45 Amax=45 T=1 }
+VXlaw1{ type=SIN  Amin=-45 Amax=45 T=1 phi0=90}
+//AXlaw1{ type=TREUG_NOISE Amin=0 Amax=90 phi0=90 Res=10}
+
+
+----------------Тест 2. Гармоническое изменение углов крена и курса от -45 до 45 с периодом 1 сек.
+Rolllaw2{type=SIN Amin=0 Amax=91 T=1 phi0=0 }
+Yawlaw2{ type=SIN  Amin=-45 Amax=45 T=1 phi0=90}
+
+
+//----------------Тест 5. Полет по прямой из точки А в точку B. Используется line_eq. Время 10 сек.
+// один закон
+law5{ type=LINEEQ A=0,0,0 B=10,10,10  }
+
+//разрешение курса крена тангажа
+ResolutionRoll=100
+ResolutionYaw=100
+ResolutionPitch=100 </string>
+   </property>
+  </widget>
+  <widget class="QPlainTextEdit" name="console">
+   <property name="geometry">
+    <rect>
+     <x>464</x>
+     <y>459</y>
+     <width>448</width>
+     <height>142</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>300</width>
+     <height>0</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>9</x>
+     <y>607</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>update</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>820</x>
+     <y>630</y>
+     <width>60</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(0, 255, 0);</string>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;z&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_6">
+   <property name="geometry">
+    <rect>
+     <x>760</x>
+     <y>630</y>
+     <width>60</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 0, 0);</string>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;x&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_7">
+   <property name="geometry">
+    <rect>
+     <x>700</x>
+     <y>630</y>
+     <width>60</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(0, 0, 255);</string>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;y&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <property name="scaledContents">
+    <bool>false</bool>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="wordWrap">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="clearButton">
+   <property name="geometry">
+    <rect>
+     <x>89</x>
+     <y>607</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>clear</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="autoscale1">
+   <property name="geometry">
+    <rect>
+     <x>73</x>
+     <y>7</y>
+     <width>70</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Autoscale</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>493</x>
+     <y>2</y>
+     <width>415</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QCheckBox" name="autoscale2">
+      <property name="text">
+       <string>Autoscale</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="label_10">
+      <property name="text">
+       <string>Step</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QDoubleSpinBox" name="step">
+      <property name="maximum">
+       <double>10000.989999999999782</double>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="label_8">
+      <property name="text">
+       <string>Ymin</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QDoubleSpinBox" name="yminSB">
+      <property name="minimum">
+       <double>-100000.000000000000000</double>
+      </property>
+      <property name="maximum">
+       <double>100000.000000000000000</double>
+      </property>
+      <property name="singleStep">
+       <double>0.100000000000000</double>
+      </property>
+      <property name="value">
+       <double>-1.000000000000000</double>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="label_9">
+      <property name="text">
+       <string>Ymax</string>
+      </property>
+      <property name="scaledContents">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QDoubleSpinBox" name="ymaxSB">
+      <property name="minimum">
+       <double>-100000.000000000000000</double>
+      </property>
+      <property name="maximum">
+       <double>100000.000000000000000</double>
+      </property>
+      <property name="value">
+       <double>1.000000000000000</double>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

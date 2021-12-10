@@ -1,0 +1,344 @@
+  + - - - + - + - -
+  + - + - + copyright by Vladimir Baranov (Kvazikot)  <br>
+  + - + - + email: vsbaranov83@gmail.com  <br>
+  + - + - + github: http://github.com/Kvazikot/app7  <br>
+```
+                            )            (
+                           /(   (\___/)  )\
+                          ( #)  \ ('')| ( #
+                           ||___c\  > '__||
+                           ||**** ),_/ **'|
+                     .__   |'* ___| |___*'|
+                      \_\  |' (    ~   ,)'|
+                       ((  |' /(.  '  .)\ |
+                        \\_|_/ <_ _____> \______________
+                         /   '-, \   / ,-'      ______  \
+                b'ger   /      (//   \\)     __/     /   \
+                                            './_____/
+```              
+## Musk's Reward Function  
+Punishment for not inovating                  -80 
+Punishment for trying inovating but failing   -5 
+Reward for successful inovation              100000 
+
+Baranov Vladimir vsbaranov83@gmail.com <br>
+Document creation date: 23 September 2019
+
+Not all of my time is devoted to the project. But I try to devote as much time as possible to him.
+
+==================================================
+2018-2019 year
+==================================================
+- Developed fm synthesizer and formant synthesizer. The assembly is carried out using the qt framework in order to be able to output sound on different platforms.
+- In the mingw_buld branch, the passage of the maze using reinforcement learning is implemented. Works only under Windows.
+- Created a scene of a quarter and several houses for working out the movement of cars.
+- Created a scene of packing spheres in a confined space.
+
+==================================================
+2017 year
+==================================================
+--The QLearning class. A separate application has been developed that implements reinforment learning. It is supposed to use this class for teaching an agent to navigate in a maze.
+- The NetBP class. Backpropagation neural network. Works in conjunction with the qlearning algorithm to approximate the utility function.
+- Made app6ML machine learning library
+- Created app6 namespace
+- The linuxoid game is supplemented with an algorithm for calculating the reinforcement parameter. Reinforcement is calculated as a function of three parameters: distance to the enemy, the number of free steps (to the obstacle), and the presence of a coin in a given place in the maze. A red square was made as an advice to the player which move is considered optimal at this step. Here you need to make friends the q-lerning module with the Linux module.
+- As part of the machine learning library, a module has been launched that implements the gradient descent algorithm.
+
+ 
+
+==================================================
+2016 year
+==================================================
+- Rendering is translated to OpenGL 4.0.
+- Matrix classes for compatibility with shaders are taken from Qt
+- Phong fill applied in shaders.
+- Improved scripts max scripts. Export of multimaterials.
+    Improved car rendering with multi-materials
+- In the MTerrain class, the Extrude function by grayscale image is implemented.
+- Added the autopilot of the car, driving around the terrain obstacles.
+- Function that converts HeightMap into a distance map
+- Rule-based control function without machine learning.
+- Avoid_colision mode for avoiding collisions
+- Brake signal for car model
+- MazeGen. Generator of 3d mazes.
+- Simple linuxoid game reminiscent of PacMan in a 3d maze
+- Explosion Sprite
+- AnimationPath class for building roads.
+- Scene with multiple blocks and traffic
+
+==================================================
+2014-2015 year
+==================================================
+- Completion of the GemObject class. Added CopyMesh method.
+Recalculated vehicle axles
+- Removed all compiler bugs
+- New class MTerrain. It is a polygonal mesh from which you can create terrain, such as mountains.
+- Relief can be painted using a separate application.
+- It is possible to generate a fractal mountain landscape.
+- Improved max scripts. Export Animation Motion Capture.
+- A separate application using the app6 engine - Solar system.
+- Removed dependency on glew library
+- The Biped class. Agent with a camera from a third person. Can shoot using an object of the Weapon class
+- Class Weapon. The shots are reminiscent of Railugn from quake. The ballistics is calculated.
+- Writing events of the CInput class to a file
+- Added arguments to command line embedding opengl window into form
+- The project is under version control
+
+================================================== 
+until September 2013
+================================================== 
+1.In max script binary export
+-geometric object
+-export textures
+-coordinates of textures and model of mapping
+-export animation keys to a file readable by the Animation animations.anim class
+-export spheres, boxes, curves
+
+2. Created a virtual scene of the castle walls and a rotating pyramid.
+
+2. The car is now driving on the terrain, the wheels are adapting.
+There is a certain model of wheel vibration damping.
+The car can drive along the waypoints, bending around the unevenness of the relief on the voxel map (the control module needs to be improved)
+
+2.1 The terrain.cpp module
+There are functions for finding the nearest point on the terrain.
+Formation of peaks on the relief.
+
+Now in Grapheditor you can select an image from the app5 camera as a source
+
+2.2 A module for scanning the space with a beam mu_scan in order to obtain depth_image has been made.
+B hit or miss problem solving (ballistics).
+
+2.3 Made module for dividing space into sectors with addressing
+as in the areas of geographical maps. The sectors contain links to objects.
+Objects are now divided into movable and static.
+
+
+3. Modified the Curve module in the Kochaken-Bartels part
+
+4. Build for Linux. A working port with a flight simulator.
+
+5. Docking app5 and grafeditor 5.1.
+The ability to process the image generated by the virtual camera app5 inside the Grapheditor process. The work of the 4SS modules, Morphological filters, the module for imposing strobes by interframe difference, a uniform noise generator has been tested.
+Grapheditor has a new detection block with an adaptive threshold, which is selected based on the nature of the areas, it takes into account the Hausdorff distance and block correlation. All possible combinations of areas are made and, if they are similar, a decision is made whether the area is a target or not
+
+==================================================                       
+April 2013
+==================================================
+The trajectory is set by waypoints (time, altitude, speed, course). The trajectory calculation now follows the correct maneuvers. The plane now "fits" into the nodal points. If the nodal points are incorrectly specified, the calculations may not converge, but the simulator module does not allow such situations.
++ I added an interface for editing a sub-object (parameters of an anchor point belonging to a curve)
+Now the graphs are a little different, states (flight phases) have appeared there. I need to make an approximation so that the states converge, I fitted the curve model to fit using the matlab curve fitting tool.
+Each waypoint or each rudder action can be associated with a state that the simulator should switch, which will lead to one or another maneuver.
+For example
+state 1 - level flight
+state 2 - climb
+state 3 - reversal
+state 4 - landing
+
+Added a lexer similar to ctags for creating a base of automatic help for parameters. It focuses on a certain kind of comments in the source code and shows different options when there are several variables with one key.
+
+Added a visual editor for points on the chart, when specifying piecewise linear functions, splines or jumps
+
+==================================================
+February 2013
+==================================================                
+
+YouTube video
+
+.............................
+
+TrajGen trajectory generator
+Allows to generate trajectories for aircraft acceleration rates and angles. Laws are read from a text file with rules describing each law for example:
+
+TrajectoryLA this class represents
+aircraft trajectory characteristics
+It can write the trajectory parameters at any time to a file.
+Navigational
+
+ data is generated by the Planesim module, by simulating an aircraft flight using
+controller (actually the steering wheel of the aircraft, with separate roll and pitch control).
+or the data are set by the laws of change of angles, (with parameters of noise and spline approximation)
+The same class allows nar
+Draw a trajectory (the Kochaken Bartels curve) from the anchor points and launch the Plane object along this trajectory.
+
+It actually contains a series of trajectories.
+
+Allows to display the trimmed trajectory
+Display the selected trajectory on the graphs
+Display the trajectory of a specific point
+Compare different trajectories on graphs
+.............................
+
+PlaneSim is a module that implements aircraft flight simulation
+using atmospheric phenomena (wind, turbulence)
+
+Control can come from controllers (angles from the X and Y axes) and thrust from the Z axis
+You can set the trajectory analytically, the law of roll change.
+The TrajectoryLA class is responsible for loading and recording the trajectory.
+
+-------------------------------------------------- 
+Functions currently supported
+-------------------------------------------------- 
+Sine wave, Noisy sine wave, Triangular, Gaussian noise, Smoothed noise function, Piecewise linear function with smoothing, exponential jump / fall, quadratic jump / fall (parabola piece), hyperbolic jump
+the PAD_Y_AXIS entry means that the rule is not defined, instead it is given
+
+==================================================                
+Work November - December 2012
+==================================================                
+
+Airplane simulator work
+1. The CPlane class has been created
+All functions for aircraft simulation are moved to planesim.cpp
+The simulation provides an Atmosphere class with atmospheric parameters (influence of turbulent and laminar air flow)
+Functions for generating random numbers according to a given probability density law are moved to the random_staff.cpp module. Generation of the law of change for the roll for a given time (for example, 10 seconds) with smoothing. The resolution of the final signal (the number of noise reports) is selected, then its duration in seconds. Next, cubic spline interpolation is applied to obtain the law of change, for example, of roll. The interpolation module interp.cpp has been created containing functions for constructing smooth functions (cubic splines). On the basis of which the Spline class is created.
+
+
+2. Added work with XBOX controller. Pitch can be controlled using the left axis, roll using the right axis, the Z axis is used to control the aircraft thrust.
+
+Surface terrain
+
+1. The Terrain surface class has been created. In 3d studio max, a surface model was created using the Displace mesh method with anti-aliasing. The base map was prepared in Photoshop using noise generators and different brush templates with a quadratic distribution (for "extruding" mountain peaks). The low poly surface is saved in the terrain01.ASE file. Archive files of objects * .arh containing the surface in binary form have been prepared.
+2. Changed the way GemObject draws the order of traversing mesh faces.
+3. Added the ability to load data of a specific object from an ASE file.
+4. In 4d studio, a number of scripts have been prepared for working with the surface: surface blooming (with the possibility of refinement for morphological filtration)
+5. Created a pool class MPOOL for interactive work with the environment 3d studio max. The idea is as follows: app5 puts scripts in the pool, the max plugin initiates their execution and outputs the results to registered. the shared memory area where the data is taken from app5, It is planned to create a modifier app5Reference and app5Class.
+
+insert the pool diagram using the example of the CVehcle class snap-in inside the 3d max.
+
+Working with plotting in the app5 application
+Created GraficDialog with TeeChart Active X component. Real-time display of heading, roll and pitch angles and coordinates (monitoring).
+
+================================================== ================================
+Work January 2011 - March 2012
+================================================== ================================
+
+The PointArray class now has functions for generating points within a certain area of ​​radius R.
+There are separate classes for arcs, spirals, which are inherited from the Curve class in the krivie.h file
+A point type appeared in the vpnt class, it can be either Waypoint or PointOfCurve. Depending on the mode, its own set of attributes is selected. Waypoint attributes include the heading angle, which can be represented by either spherical or Euler angles and a set of 12 turn options.
+
+- Now you can make classes with drawing gl in the lua language using any editor. These objects are visible in the system, they can be controlled in the same way as built-in ones, they receive events.
+- When saving in other editors, any script from the Interpreter directory is automatically loaded by app5.
+--Starting implementation of animation controllers and statecharts
+--Created a global doubledata object
+- In the grafics application, a double data selection for these graphs has been added.
+--Auto completion for bash-style commands
+--In the file basis.h, a class in the form of 3 arrows showing the directions of possible movement of objects.
+Arrows react to the position of the mouse cursor
+- A new client app5mini has been created. In the categories of objects, only frequently used ones remained (Helpers, curves, invisible). Now you can filter the properties of objects.
+ 
+
+
+Added convenience macros ATTR_HIDE ATTR_UNHIDE READONLY NOT_SAVING for attributes.
+The choice of scripts is now possible through the combobox. The currentscript setting with the name of the current script has appeared in the ini file. You can create a script with the New button. The new file appears in the .. \\ Interpreter directory.
+Carried out all the lines of the type of translations in a separate f
+
+================================================== ================================
+Work October 2011 - January 2012
+================================================== ================================
+Version 1.01 released
+Added MUAPI system call mechanism working through shared memory
+
+Python interpreter (Python IDE) is connected to app5 via MUAPI
+The first script is written on python to make a "pulsating sphere"
+The DemoRecorder class has appeared, the recording of demos to a file has been implemented.
+There is a separate Monitor app5 for monitoring variables
+view the history of DemoRecorder records
+Added object context for more convenient selection in large lists
+
+New directories and files:
+Diagrams and documents - photos of diagrams drawn on paper in the same place for the content of books
+The document "physics of the MU universe" has appeared
+The class template nameofclass.cpp has appeared
+Grafics2 directory where app5 monitor is located
+The Python script is located in mu \ src \ muapi_dll \ start.py in the same dll project.
+
+================================================== ================================
+Work in October 2011
+================================================== ================================
+Version 1.00 Released (Dyson Sphere)
+Help subsystem developed at helpsys.lua
+Added to Curve Spiral is defined by two radii and height
+Added to Curve Arc is defined by two points and height
+An alternative Kochanek-Bartels spline algorithm has been added to Curve (implementation started)
+The mathematics of Euler angles, quaterions is analyzed
+Coordinate axes rendered
+The Camera object is rendered as a tetrider. When the camera is moving, the backlight will light up
+Added functions for displaying a vector with a directional arrow (for visualizing a vector field)
+Fixed bugs in Curve points editing
+ 
+
+================================================== ================================
+Work September 2011
+================================================== ================================
+
+The Curve class implements a visual Hermite spline with the ability to edit individual points and the degree of curvature
+Correct movement of several objects or groups (previously everything was collapsed to one point, the projection of the mouse coordinates to xz or xy)
+Movements, rotations and scaling over trajectory points, an interface to the old functions appeared
+Automatic path fillets (useful for building roads)
+Search Console and ObjectList
+A new way to set numbers:
+We select the digit of any parameter, the mouse wheel switches the next number of this digit and changes the next
+
+
+
+To optimize memory: you can create an EntetyInfo as a reference to the descendant structure, create a PhysicalInfo as a default reference to a dummy
+ do Declare just before entering ObjInspector
+ but the declare still plays a role when calling SET from a script
+ you can make atrs static for all objects of the same class
+ then you need to convert the addresses of properties
+ BUT!! An object can have unique properties (like points in a trajectory)
+ Create dummyclasses with declared properties
+ If there are no attributes, take the standard ones from there
+ It is unacceptable for the game to do Declare () in each object, but it is not necessary
+ SET method can be done via dummyclasses with address resolution
+ It is possible to make dynattrs for unique attributes
+
+================================================== ================================
+Work done in the first half of 2011
+================================================== ================================
+CVehicle class
+contains the implementation of the vehicle motion model
+added car model lotus-evora, model taken from the site http://www.gfx-3d-model.com/
+control of keys o, k, l,;
+
+Physics class CMovement added basic laws,
+for a car and for all objects in Slot1 () of which there is a corresponding rule:
+gravity,
+frictional force from the surface,
+support force (if supported)
+work on rotation, moment of inertia started
+there is a collision calculation by the type of elastic balls
+
+Added path class (can be renamed to Curve, since there will be Bezier curves)
+
+Removed glut window so it works faster
+
+Added Ball class to render a sphere with ball physics
+
+Added CMaterial material manager with the ability to apply shader programs.
+
+Added the ability to create objects of a given class
+
+Implemented selection and movement of objects with the mouse
+After the object is selected, you can find out its properties.
+You can rotate, scale and move the object
+
+
+Improved ObjectList and ObjInspector
+ - added filtering by name
+ - added filtering by group and class
+
+added Charts from Delphi to the library
+while drawing variables from the screen
+
+Visual space. CVisualSpace
+The plane of the earth, so far no relief.
+
+improved GemObject
+- improved rendering with vertex lists,
+- matid is now taken into account
+--serializing GemObject
+
+implemented class ParamScreen and OSD
+prints updated variables to the screen
+there is a survival mode survive mode (what is not updated disappears

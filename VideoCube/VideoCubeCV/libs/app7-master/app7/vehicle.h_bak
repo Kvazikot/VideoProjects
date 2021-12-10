@@ -1,0 +1,197 @@
+#ifndef __VEHICLE_H__
+#define __VEHICLE_H__
+
+#include "group.h"
+#include "curve.h"
+#include "gemobject.h"
+#include <QFile>
+//====================================================================
+//                  VEHICLE
+//====================================================================
+
+
+struct TerrainObject
+{
+    Pnt pos;
+    Pnt rot;
+    Pnt p_near;
+    double Hc;
+    int near_idx; // индекс ближайшей точки
+    int prev_idx;  // индес предыдущей расчетной точки
+    double ts,te,H0,H1,Ht,Htt,Httt;  // для интерполяции высоты
+    GemObject* mesh;
+    TerrainObject()
+    {
+        Hc = 0;
+    }
+    void SetOnTerrain(Pnt& p_near_f,float t_rascheta);
+    void AddConstantHeight(double Hconst){Hc = Hconst;}
+};
+
+
+class CVehicle : public Group
+{
+        Q_OBJECT
+public:
+    int      num;     // номер
+    Pnt      pos;
+    Pnt		 kurs;    // курс
+    Pnt		 kurs_arrow;
+    Pnt		 kren;    // крен
+    float    r;       // радиус колес
+    float	 speed;   // мгновенная скорость м \ с
+    float	 ffw;     //частота вращения передних колес Гц
+    float	 fbw;     //частота вращения задних колес   Гц
+    int      dir;     //вперед=-1 назад=1
+    float	 S;      // пройденный путь (за время ttek - t0) в м.
+    float    t0;     // время момента создания или вызова OnStart
+    float    wp_delta; //расстояние между вейпоинтами
+    float    trenie;
+    float    wang;
+    float    max_wang;
+    float    delkoof;
+    float    porog;
+    string   curvesnames;
+    int		 icurve;		//индекс траектории
+    //Pnt      campts[2][24];
+    //PivotPoint	pp1,pp2;	  // точки установки камеры игрока(16 точек по сторонам света)
+    Pnt campts1[24];
+    Pnt lookpts2[24];
+    int      nCamPnt;		  // номер текущей позиции камеры
+
+
+    double	    dt;					// время с предыдущего запуска расчетов
+    double		_t1, _t2, _freq;    // temps
+
+    GemObject* w0,*w1,*w2,*w3; //модели колес
+    GemObject* kuzov;         //моделm кузова
+    Curve*     activeTraj;   // текущая траектория
+    VPnt*	   vp,*vp2;			// расчетная точка
+    vector<Curve*> trajs;
+    vector<Pnt> waipoints;    // путевые точки
+    Pnt			target_wp;    // целевая путевая точка
+    bool		bReachTargetWp; //достигли точки назначения target_wp
+    bool        bShowWaipoints;
+    string		camPnt;
+    bool bGoToFinish;		// едем вперед по траектории
+
+
+    //для точки по траектории
+    Pnt p_near;    // ближайшая \ расчетная
+    float t_rascheta; // время ближайшей точки
+    int near_idx; // индекс ближайшей точки
+    int prev_idx;  // индес предыдущей расчетной точки
+    double timeNewP;
+    char   gstr[1024];
+    string nullstring;
+
+    vector<TerrainObject> terrain_objs;
+    Pnt P, Z, WW;
+    // РЕЖИМЫ РАБОТЫ
+    bool bDetectWalls;
+    bool bGoByWaypoints;
+
+    CVehicle();
+    CVehicle(const CVehicle& B){}
+    void SetCamPoints();
+    void LoadDefModels(int n);
+    int LoadModels(string kuzname, string wn);
+    void Reset();
+    void AssignTrajectory();
+    void Krivizna();
+    void InputControl();
+    void ListCurves();
+    void Trenie();
+    void LimitKurs();
+    void KursArrow();
+    void WheelReturn();
+    void OnStart();     // РЅР° СЃС‚Р°СЂС‚ С‚СЂР°РµРєС‚РѕСЂРёРё
+    void FindNearPnt(Curve* traj, Pnt& p, int& idx); // РЅР°Р№С‚Рё Р±Р»РёР¶ С‚РѕС‡РєСѓ С‚СЂР°РµРєС‚РѕСЂРёРё
+    int FindForward(Curve* traj, int pi_from, Pnt& p_to, float dist); // С‚РѕС‡РєР° РІРїРµСЂРµРґ РїРѕ С‚СЂР°РµРєС‚РѕСЂРёРё РЅР° Р·Р°РґР°РЅРЅСѓСЋ РґРёСЃС‚Р°РЅС†РёСЋ
+    int FindBackward(Curve* traj, int pi_from, Pnt& p_to, float dist);// С‚РѕС‡РєР° РЅР°Р·Р°Рґ РїРѕ С‚СЂР°РµРєС‚РѕСЂРёРё РЅР° Р·Р°РґР°РЅРЅСѓСЋ РґРёСЃС‚Р°РЅС†РёСЋ
+    int FindWaipoints(Curve* traj, int pi_from, float d, float maxdist, vector<Pnt>& waipoints);
+    void FindNearWayPoint(vector<Pnt>& waipoints, Pnt& p, int& idx);
+    bool CheckReachTargetWp();
+    void CalcGravity(Object* obj);
+    void Serialize( QFile& arhive, bool IsStoring );
+    void func3(){};
+    void func4(){};
+
+    void Declare()
+    {
+        classname = "CVehicle";
+        if(name =="")
+          SetName("veh01");
+
+        //SET_METHOD("Object", "float,float,float",(char*)classname.c_str(), "move", move);
+        //SET_METHOD("Object", "int",(char*)classname.c_str(), "LoadDefModels", LoadDefModels);
+        SET_OBJECT(this,(char*)name.c_str());
+
+
+        bHideStdAttrs = true;
+        bool bHide = false;
+        SET_ATTR("num", &num, "int", bHide);
+        //SET_ATTR("campos", &kompass_dir, "selector", bHide);
+        SET_ATTR("name", &name, "string", bHide);
+        SET_ATTR("OnStart",&nullstring,"func", bHide);
+        SET_ATTR("Krivizna",&nullstring,"func", bHide);
+        SET_ATTR("pos", &ei.coord, "Pnt", bHide);
+        SET_ATTR("trenie", &trenie, "float", bHide);
+        SET_ATTR("speed", &v.x, "float", bHide);
+        SET_ATTR("wp_delta", &wp_delta, "float", bHide);
+        SET_ATTR("ShowWaipoints", &bShowWaipoints, "bool", bHide);
+        //SET_ATTR("bDetectWalls", &bDetectWalls, "bool", bHide);
+        //SET_ATTR("bGoByWaypoints", &bGoByWaypoints, "bool", bHide);
+        SET_ATTR("trajectory",&curvesnames, "selector", bHide);
+        SET_ATTR("delkoof", &delkoof, "float", bHide);
+
+        bHide = true;
+        SET_ATTR("porog", &porog, "float", bHide);
+        SET_ATTR("kurs", &kurs, "Pnt", bHide);
+        SET_ATTR("kurs_arrow", &kurs_arrow, "Pnt", bHide);
+        SET_ATTR("kren", &kren, "Pnt", bHide);
+        SET_ATTR("ffw", &ffw, "float", bHide);
+        SET_ATTR("fbw", &fbw, "float", bHide);
+        SET_ATTR("dir", &dir, "int", bHide);
+        SET_ATTR("wang", &wang, "float", bHide);
+        SET_ATTR("max_wang", &max_wang, "float", bHide);
+
+
+
+        // fill entety info
+        //CRuntimeClass* pMyRTClass= GetRuntimeClass();
+        ei.name = name;
+        ei.classname = "CVehicle";
+        ei.groupname = "Vehicles";
+        sprintf(gstr,"%d", this);
+        ei.GUID = gstr;
+        ei.material = "no material";
+        ei.model = "no model";
+
+        Group::Declare();
+        Object::Declare();
+
+        //	CALL("cam1", (char*)classname.c_str(), "move2");
+    }
+
+    void NullReferences();
+
+    // [11]
+    void move(float dx, float dy, float dz)
+    {
+        ei.coord.x+=dx;
+        ei.coord.y+=dy;
+        ei.coord.z+=dz;
+    }
+    virtual void Slot1(); //timer slot
+    void Render();
+    void OnSelect();
+    void OnUnselect();
+    void OnReceiveInput();
+    void OnAttrChange(t_atr& a);
+};
+
+
+CVehicle* asVeh(Object* o);
+
+#endif

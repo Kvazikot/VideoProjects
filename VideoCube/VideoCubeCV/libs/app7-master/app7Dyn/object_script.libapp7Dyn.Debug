@@ -1,0 +1,19 @@
+CREATE debug/libapp7Dyn.a
+ADDMOD .o/demper.o
+ADDMOD .o/law.o
+ADDMOD .o/plane.o
+ADDMOD .o/planesim.o
+ADDMOD .o/polet.o
+ADDMOD .o/traj_gen.o
+ADDMOD .o/terrain.o
+ADDMOD .o/vehicle.o
+ADDMOD .o/player.o
+ADDMOD .o/spherevehiclecolision.o
+ADDMOD .o/mterrain.o
+ADDMOD .o/car_autopilot.o
+ADDMOD .o/hmprocessing.o
+ADDMOD .o/mazegen.o
+ADDMOD .o/fractalterrain.o
+ADDMOD .o/moc_vehicle.o
+ADDMOD .o/moc_car_autopilot.o
+SAVE

@@ -1,0 +1,4 @@
+#ifndef APP6CORELIB_H
+#define APP6CORELIB_H
+
+#endif // APP6CORELIB_H

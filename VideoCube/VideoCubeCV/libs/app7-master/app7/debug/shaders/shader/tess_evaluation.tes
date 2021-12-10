@@ -1,0 +1,95 @@
+#version 410
+
+layout( quads ) in;
+
+out vec3 TENormal;
+out vec3 MyNormal;
+out vec4 TEPosition;
+
+uniform int TessLevel;
+uniform mat4 MVP;
+uniform mat4 ModelViewMatrix;
+uniform mat3 NormalMatrix;
+//uniform int  index_from_shader;
+vec3 computeNormal()
+{
+
+   float u = gl_TessCoord.x;
+   float v = gl_TessCoord.y;
+
+   float indexu = u*TessLevel;
+   float indexv = v*TessLevel;
+
+   int index1 = int( indexu*(TessLevel+1)*2+indexv*2 ) ;
+   int index2 = int( (indexu+1)*(TessLevel+1)*2+indexv*2 ) ;
+   int index3 = int( indexu*(TessLevel+1)*2+(indexv+1)*2 ) ;
+
+   vec3 pt1 = gl_in[index1].gl_Position.xyz;
+   vec3 pt2 = gl_in[index2].gl_Position.xyz;
+   vec3 pt3 = gl_in[index3].gl_Position.xyz;
+
+   vec3 x = normalize( pt1 - pt2 );
+   vec3 z = normalize( pt1 - pt3 );
+   vec3 n = cross( z, x );
+   return n;
+
+}
+
+// для конуса
+void main()
+{
+	float u = gl_TessCoord.x;
+        float v = gl_TessCoord.y;
+
+	float indexu = u*TessLevel;
+	float indexv = v*TessLevel;
+
+	float ind = indexu*(TessLevel+1)*2+indexv*2;
+
+	int index = int(ind);
+        //index_from_shader = index;
+
+	vec3 pt = gl_in[index].gl_Position.xyz;
+
+        vec3 no = gl_in[index+1].gl_Position.xyz;
+
+	TEPosition = vec4(pt,1.0);
+
+    // Transform to clip coordinates
+    gl_Position = MVP * TEPosition;
+
+    // Convert to camera coordinates
+    TEPosition = MVP * TEPosition;//ModelViewMatrix * TEPosition;
+    TENormal = normalize(NormalMatrix * no);
+    //TENormal = vec3(u,v,0);
+    TENormal = no;
+    //MyNormal = vec3(u,v,0);
+}
+
+
+/*
+// для модели
+void main()
+{
+    float u = gl_TessCoord.x, v = gl_TessCoord.y;
+    int index = 0;
+    vec3 p0 = gl_in[index].gl_Position.xyz;
+    vec3 p3 = gl_in[index+3].gl_Position.xyz;
+    vec3 p12 = gl_in[index+12].gl_Position.xyz;
+    vec3 p15 = gl_in[index+15].gl_Position.xyz;
+    vec3 a = mix(p0, p3, u);
+    vec3 b = mix(p12, p15, u);
+    vec3 pt = mix(a, b, v);
+
+    TEPosition = vec4(pt,1.0);
+    //tePatchDistance = vec4(u, v, 1-u, 1-v);
+    //gl_Position = Projection * Modelview * vec4(tePosition, 1);
+    // Transform to clip coordinates
+    gl_Position = MVP * TEPosition;
+
+    // Convert to camera coordinates
+    TEPosition = ModelViewMatrix * TEPosition;
+
+}
+
+*/

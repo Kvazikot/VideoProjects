@@ -1,0 +1,1146 @@
+#include "vehicle.h"
+#include "glcode.h"
+#include "cinput.h"
+#include "param_screen_bcb.h"
+#include "cobjregistry.h"
+#include "print.h"
+#include "timer.h"
+#include "matrix.h"
+#include "param_screen_bcb.h"
+
+#include "terrain.h"
+
+string kompass_dir = "n nu nd w wu wd e eu ed s su sd nw nwu nwd ne neu ned sw swu swd se seu sed";
+extern Timer* gtimer;
+CObjRegistry& MREG = CObjRegistry::getInstance2();
+ParamScreen& pscr = ParamScreen::getInstance();
+
+CVehicle* asVeh(Object* o)
+{
+    return (CVehicle*)o;
+}
+
+CVehicle::CVehicle()
+{
+    Object();
+    num = 0;
+    ei.coord = Pnt(0,0,0);
+    kuzov = NULL;
+    w0 = NULL; w1 = NULL; w2 = NULL; w3 = NULL;
+    fbw = 1;
+    ffw = 1;
+    dir = 1;
+    //QueryPerformanceCounter((LARGE_INTEGER *)&_t2);
+    //QueryPerformanceCounter((LARGE_INTEGER *)&_t1);
+    _t2 = Timer::gtimer.fsec;
+    _t1 = Timer::gtimer.fsec;
+    wp_delta = 0;
+    porog = 10;
+    speed = 0; // m/c
+    kurs = Pnt(0,0,0);
+    trenie =0.05;
+    r   = 0.6;
+    t0 = Timer::gtimer.sec;
+    S = 0;
+    delkoof = 0.11;
+    max_wang = 45;
+    wang = 10.0; // угол поворота колес
+
+    isCanRender = true;
+    isEntety = true;
+    isHidden = 0;
+    isGroup = true;
+    isGroupMovable = false;
+    icurve = -1;
+    w0 = new GemObject();
+    w1 = new GemObject();
+    w2 = new GemObject();
+    w3 = new GemObject();
+    kuzov = new GemObject();
+    trajs.push_back((Curve*)0);
+    activeTraj = 0;
+
+
+    // запрос на апдейт
+    Connect();
+
+
+}
+
+void CVehicle::Serialize( QFile& arhive, bool IsStoring )
+{
+
+}
+
+// на старт траектории
+void CVehicle::OnStart()
+{
+    if ( activeTraj == 0 )
+        return;
+
+    if ( activeTraj->pts.size() == 0)
+        return;
+
+    t0 = Timer::gtimer.sec ;
+    S = 0;
+    ei.coord = *(Pnt*)activeTraj->pts[0];
+
+}
+
+// расчет кривизны траектории
+//----------------------------------------------------------
+void CVehicle::Krivizna()
+{
+    vector<double> Skr;
+    int i,j;
+
+    //return;
+    if(activeTraj==0) return;
+
+    //точки траектории
+    vector<Pnt>& pts = activeTraj->spl;
+
+    //индексы поворотов
+      // 0 - начало поворота
+      // 1 - конец поворота
+    vector<int> pnt_i;
+    pnt_i.resize(pts.size());
+
+    Skr.resize(pts.size());
+
+
+    for(i=0; i < pts.size() - 1; i++ )
+    {
+        Skr[i] = (pts[i]->y - pts[i+1]->y) / (pts[i]->x - pts[i+1]->x);
+        prn(pts[i].toStr().c_str());
+
+    }
+
+    prn("-----");
+    // порог кривизны
+    //float porog = 12;
+    for(i=0; i < pts.size(); i++ )
+    {
+        if( fabs(Skr[i]) < porog )
+            Skr[i] = 0;
+        else
+          prn("%f",Skr[i]);
+    }
+
+
+
+    int start = 0, end = 0, max = 0;
+    float Smax = 0;
+
+    //поиски начала поворота и конца
+/*    for(i=0; i < pts.size(); i++ )
+    {
+        if(( Skr[i] > 0 ) && ( start == 0 ) )
+            start = i;
+
+
+        if( Skr[i] == 0)
+        {
+            end = i;
+            start = 0;
+        }
+
+        pnt_i[i] = 0;
+
+        if( start == 0 )
+            pnt_i[i] = 1;
+
+        if( end == 0 )
+            pnt_i[i] = 2;
+    }
+*/
+    //максимум
+    for(i=0; i < pts.size(); i++ )
+    {
+
+        //if( Skr[i] > Smax )
+        Skr[i] = fabs(Skr[i]);
+        if( Skr[i] > Smax )
+        {
+            Smax = Skr[i];
+            max = 1;
+        }
+        else
+            max = 0;
+
+        // аксимальная кривизна траектории
+        if( max == 1 )
+        {
+            pnt_i[i] = 3;
+            //prn("Skr_max=%f", Skr[i]);
+        }
+    }
+
+
+
+
+    prn("porog = %f", porog);
+    prn("-----");
+
+
+}
+
+
+//
+//sector(Pnt p1, Pnt p2)
+
+
+
+// расчет пути
+double put_se(vector<VPnt*>& pts, int s, int e)
+{
+    int i=0;
+    double summ;
+
+    for( i = s; i <= e; i++ )
+    {
+        summ+= sqrt (sq(pts[i]->x - pts[i+1]->x) + sq(pts[i]->y - pts[i+1]->y));
+    }
+
+    return summ;
+}
+
+
+
+
+//----------------------------------------------------------
+/*Скорость на повороте = const
+1. Расчет Skr по pts
+2. Заполнить массив индексов поворотов pvt_i
+
+
+3. Когда прошли точку pvt0_start
+   Рачет угла поворота r_alfa расчет dSalfa = put_se(pvt0_i, pvte_i)
+   Расчет приращения dwang = dSalfa / V_start
+*/
+
+
+//выполняется присвоение траектории
+//поиск вейпоинтов
+//сброс переменных
+
+void CVehicle::AssignTrajectory()
+{
+    if( icurve>0 && icurve<trajs.size() )
+    {
+        activeTraj = trajs[icurve];
+    }
+    if(activeTraj!=0)
+      FindWaipoints(activeTraj, 0, wp_delta, 100, waipoints);
+
+    near_idx = 0;
+    target_wp = Pnt(ei.coord.x+5,ei.coord.y,ei.coord.z);
+    bReachTargetWp = 1;
+}
+
+void CVehicle::ListCurves()
+{
+    vector<Object*>::iterator i;
+    curvesnames = "Not_Assigned ";
+
+    for(i = MREG.allObj.begin(); i!=MREG.allObj.end(); i++)
+    {
+        if((*i)->classname == "Curve")
+        {
+            curvesnames+=(*i)->name + " ";
+            trajs.push_back((Curve*)(*i));
+        }
+    }
+    //icurve = 1;
+
+}
+
+void CVehicle::LoadDefModels(int n)
+{
+    LoadModels("kuzov", "w0");
+}
+
+int CVehicle::LoadModels(string kuzname, string wn)
+{
+    int ok = 0;
+    kuzov->LoadMesh(kuzname);
+    if(kuzov == NULL)
+        ei.model = kuzname;
+    kuzov->groupname = name;
+
+    //load mesh
+    w0->LoadMesh("w0");
+    w0->CenterModel();
+    w0->groupname = name;
+    w1->LoadMesh("w1");
+    w1->CenterModel();
+
+    w1->groupname = name;
+    w2->LoadMesh("w2");
+    w2->CenterModel();
+
+    w2->groupname = name;
+    w3->LoadMesh("w3");
+    w3->CenterModel();
+
+    w3->groupname = name;
+
+    //add to group
+    AddObj(kuzov); AddObj(w0); AddObj(w1); AddObj(w2); AddObj(w3);
+    ListCurves();
+    //icurve = 1;
+    //AssignTrajectory();
+
+
+    //add as terrain objects
+    TerrainObject o;
+    o.mesh = w0; o.near_idx = -1; o.H1 = 0; terrain_objs.push_back(o);
+    o.mesh = w1; o.near_idx = -1; o.H1 = 0; terrain_objs.push_back(o);
+    o.mesh = w2; o.near_idx = -1; o.H1 = 0; terrain_objs.push_back(o);
+    o.mesh = w3; o.near_idx = -1; o.H1 = 0; terrain_objs.push_back(o);
+    o.mesh = kuzov; o.near_idx = -1; o.H1 = 0; terrain_objs.push_back(o);
+
+
+
+    //РґРѕР±Р°РІРёС‚СЊ РІРёР·СѓР°Р»СЊРЅСѓСЋ С‚РѕС‡РєСѓ (РґР»СЏ РїСЂРёРєРёРґРєРё)
+    vp = new VPnt();
+    vp->x = rand()%10; vp->y = rand()%10; vp->z = rand()%10;
+    vp->SetName("vp1");
+    vp->alias = vp->name;
+    //vp->R = 20;
+    //vp->Declare();
+    MREG.AddObj(vp);
+
+    vp2 = new VPnt();
+    vp2->x = rand()%10; vp->y = rand()%10; vp->z = rand()%10;
+    vp2->SetName("vp2");
+    vp2->alias = vp2->name;
+    //vp2->Declare();
+    MREG.AddObj(vp2);
+
+
+    return ok;
+}
+
+float mc2kmh(float mc){ return (float)mc * 3600 / 1000; }
+
+float kmh2mc(float kmh) { return (float)kmh * 1000 /3600; }
+
+void CVehicle::FindNearPnt(Curve* traj, Pnt& p, int& idx)
+{
+    if ( traj == 0 )
+        return;
+
+    if ( traj->pts.size() == 0)
+        return;
+
+    //ei.coord = *(Pnt*)activeTraj->pts[0];
+    float min = INT_MAX;
+    float rr;
+    map<int,int> mp;
+    for(int i=0; i < traj->spl.size(); i++)
+    {
+        rr = rasst(ei.coord, traj->spl[i]);
+        if( rr < min)
+        {
+            min = rr;
+            mp[min] = i;
+        }
+    }
+    pscr.updf("rasst",min);
+    idx = mp[min];
+    p = traj->spl[mp[min]];
+    //prn("min %f %d", r, mp[min] );
+
+}
+
+void CVehicle::FindNearWayPoint(vector<Pnt>& waipoints, Pnt& p, int& idx)
+{
+    float min = INT_MAX;
+    float rs;
+    map<int,int> mp;
+    idx = -1;
+    if(waipoints.size()==0) return;
+    for(int i=0; i < waipoints.size(); i++)
+    {
+        rs = rasst(p, waipoints[i]);
+        if( rs < min)
+        {
+            min = rs;
+            mp[min] = i;
+        }
+    }
+    //updf("rasst",min);
+    idx = mp[min];
+    //p =waipoints[mp[min]];
+    //prn("min %f %d", r, mp[min] );
+
+}
+
+// точка вперед по траектории на заданную дистанцию
+int CVehicle::FindForward(Curve* traj, int pi_from, Pnt& p_to, float dist)
+{
+    Pnt p_from = traj->spl[pi_from];
+    for(int i=pi_from; i < traj->spl.size(); i++)
+    {
+        p_to = traj->spl[i];
+        float rr = rasst(p_from,p_to);
+        if(rr > dist)
+        {
+            return i;
+        }
+            //break;
+
+    }
+}
+
+//разбить траекторию на вейпоинты
+// указывается расстояние между вейпоинтами на траектории и максимальное расстояние просмотра
+// сохраняется в waipoints
+int CVehicle::FindWaipoints(Curve* traj, int pi_from, float d, float maxdist, vector<Pnt>& waipoints)
+{
+    float rr,r2;
+    Pnt p_to;
+    Pnt p_from = traj->spl[pi_from];
+    Pnt p_from0 = p_from;
+
+    waipoints.clear();
+    for(int i=pi_from; i < traj->spl.size(); i++)
+    {
+        p_to = traj->spl[i];
+        rr = rasst(p_from, p_to);
+        if(rr > d)
+        {
+            waipoints.push_back(p_to);
+            p_from = p_to;
+        }
+        r2 = rasst(p_from0, p_to);
+        if(r2 > maxdist)
+            break;
+
+    }
+
+    return 0;
+}
+
+// точка назад по траектории на заданную дистанцию
+int CVehicle::FindBackward(Curve* traj, int pi_from, Pnt& p_to, float dist)
+{
+    Pnt p_from = traj->spl[pi_from];
+    for(int i=pi_from; i >= 0; i--)
+    {
+        p_to = traj->spl[i];
+        float rr = rasst(p_from,p_to);
+        if(rr > dist)
+        {
+            return i;
+        }
+    }
+}
+
+//выставляет флаг bReachTargetWp если достигли точки
+bool CVehicle::CheckReachTargetWp()
+{
+    float rr = rasst(ei.coord, target_wp);
+    if(rr < 2 )
+      bReachTargetWp = true;
+    else
+         bReachTargetWp = false;
+    return bReachTargetWp;
+
+}
+
+void CVehicle::OnReceiveInput()
+{
+    prn("input!");
+}
+
+//применяем управление
+void CVehicle::InputControl()
+{
+    float ac = 0.33;
+
+    CInput& iinput = CInput::getInstance2();
+    //если нет управления - выход
+
+    if(iinput.bKeyPressed == false) return;
+
+    kurs = kurs0;
+    speed = v.x;
+    //iinput.keystates[]; //РІР»РµРІРѕ
+    if( iinput.keystates['o'] ) // РіР°Р·
+    {
+        //mu_printf("CVehicle::Slot1 gaz");
+        if(speed<0)
+        {
+            speed+=2*ac;
+        }
+        else speed+=ac;
+
+    }
+    if( iinput.keystates['k'] ) // газ
+    {
+        //mu_printf("left");
+        //kurs.x-=5;
+        if(wang<max_wang)
+            wang+=2;
+    }
+    if( iinput.keystates[';'] ) // влево
+
+    {
+        //mu_printf("right");
+        //kurs.x+=5;
+        if(wang>-max_wang)
+            wang-=2;
+    }
+    if( iinput.keystates['l'] ) // вправо
+    {
+        //mu_printf("CVehicle::Slot1 brake");
+        if(speed == 0)
+        {
+            speed-=ac;
+        }
+        else
+        {
+            if(speed >0)
+            {
+                speed-=ac*2;
+                if(speed < 0)
+                    speed = 0;
+            }
+            else
+            {
+                speed-=ac;
+            }
+        }
+        //sprintf(gstr, "speed = %f kmh", mc2kmh(speed));
+        //cosd.SetTopText(gstr, 100);
+    }
+    if( iinput.keystates[32] ) // space
+        speed = 0;
+
+
+
+
+
+}
+
+void interp(double TTek, double t1, double t0, double h1, double h0, double* hh, double* hht, double* hhtt)
+{
+     double DT, A, AT, ATT, B, BT, BTT, a;
+     DT = t1 - t0;
+     A = (t1 - TTek) * (t1 - TTek) * (2.0 * (TTek - t0) + DT);
+     AT = 6.0 * TTek * TTek + 2.0 * (DT - 2.0 * t0 - 4.0 * t1) * TTek +  4.0 * t1 * t0 - 2.0 * t1 * DT + 2.0 * t1 * t1;
+     ATT = 12.0 * TTek + 2.0 * (DT - 2.0 * t0 - 4.0 * t1);
+     B = (TTek - t0) * (TTek - t0) * (2.0 * (t1 - TTek) + DT);
+     BT = -6.0 * TTek * TTek + 2.0 * (2.0 * t1 + DT + 4.0 * t0) * TTek - (4.0 * t0 * t1 + 2.0 * t0 * DT + 2.0 * t0 * t0);
+     BTT = -12.0 * TTek + 2.0 * (2.0 * t1 + DT + 4.0 * t0);
+     a = DT * DT * DT;
+     *hh = (h0 * A + h1 * B) / a;
+     *hht = (h0 * AT + h1 * BT) / a;
+     *hhtt = (h0 * ATT + h1 * BTT) / a;
+}
+
+
+void TerrainObject::SetOnTerrain(Pnt& p_near_f, float t_rascheta)
+{
+    PPnt* ps; // стартовая точка на рельефе
+    PPnt* pe; // конечная точка на рельефе через t_rascheta
+    PPnt* p;
+
+    Terrain* ter = (Terrain*)MREG.FindObj("terrain");
+
+    if( ter==0 ) { return; }
+
+    if( near_idx == -1 )
+    {
+        p = ter->FindNearestP(p_near_f);  // по всему ландшафту
+        pe = p;
+        near_idx = p->i;
+        ts = Timer::gtimer.fsec;
+        te = Timer::gtimer.fsec + t_rascheta;
+    }
+    else
+    {
+        p = ter->FindClosestTo(p_near_f, near_idx, 500, 0); // 100 точек в окрестности near_idx точки
+        if(p==0) { near_idx = -1; return; }
+
+        double dy=0;
+
+        if( ter->IsIdxValid( prev_idx ) )
+        {
+            dy = *(ter->get_pnt(p->i)->y) - *(ter->get_pnt(prev_idx)->y);
+            dy = fabs(dy);
+        }
+
+
+        //if(p->i != prev_idx )
+        //if( dy > bounds.y/4 )
+        if((te  - Timer::gtimer.fsec ) < 0.5)
+        //if(dy > 0.05)
+        {
+
+            near_idx = p->i;
+            ps = ter->FindClosestTo(pos, near_idx, 500, 0);
+            pe = p;
+            near_idx = p->i;
+            ts = Timer::gtimer.fsec;
+            te = Timer::gtimer.fsec + t_rascheta;
+            H0 = *ps->y;
+            H1  = *pe->y;
+            //prn("назначена точка точка ps = %d pe = %d \n перепад высот с %lf по %lf dy=%f", ps->i, pe->i, H0, H1, dy);
+            p_near = Pnt(*(pe->x), *(pe->y), *(pe->z));
+        }
+
+
+        prev_idx = near_idx;
+
+    }
+
+    // найдена расчетная точка на ландшафте
+    //ИНТЕРПОЛИРОВАТЬ
+    if(H1!=0)
+    {
+        interp(Timer::gtimer.fsec, te, ts, H1, H0, &Ht, &Htt, &Httt);
+        mesh->ei.coord = pos;
+        mesh->ei.coord.y = Hc + Ht;
+        //prn("H tek = %f", Ht);
+        //prn("raschet dlya %s", mesh->name.c_str());
+    }
+
+    //AssignMyCoord();
+
+
+}
+
+
+//расчет влияния гравитация
+void CVehicle::CalcGravity(Object* obj)
+{
+    Pnt* coord = &obj->ei.coord;
+    Pnt* v = &obj->v;
+    Pnt* kurs0 = &obj->kurs0;
+    float dist;
+
+    _t2 = Timer::gtimer.fsec;
+     double _time=(double)(_t2-_t1);
+
+    if((coord->y > 0) && (!obj->onOpora))
+    {
+        dist = 9.8 * (double)_time * _time / 2. ;
+        coord->y -= dist;
+        if(coord->y < 0)
+            coord->y = 0;
+
+        dist = v->x * 0.05;
+        coord->z  = coord->z - dist * sin(GR * kurs0->x);
+        coord->x  =  coord->x - dist * cos(GR * kurs0->x);
+    }
+    _t1 = Timer::gtimer.fsec;
+
+}
+
+
+
+//влияние трения
+void CVehicle::Trenie()
+{
+    float trenie1 = trenie;
+    if((rand()/RAND_MAX)>0.5)
+    {
+        trenie1 = trenie * rand()/RAND_MAX*10;
+        //trenie1 = trenie1 / (0.1*speed);
+    }
+
+    if(speed > 0)
+    {
+        speed-=trenie1;
+        if(speed<0)
+            speed = 0;
+    }
+
+    if(speed < 0)
+    {
+        speed+=trenie1;
+        if(speed>0)
+            speed = 0;
+    }
+}
+
+//Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРёР№ РІРѕР·РІСЂР°С‚ СЂСѓР»СЏ РїРѕСЃР»Рµ РІРѕРїРѕСЂРѕС‚Р°
+void CVehicle::WheelReturn()
+{
+
+    if((wang<2) && (wang>0))
+        wang=0;
+    if((wang>2) && (wang>0))
+        wang-=2*(float)wang/max_wang;
+    if((wang<-2) && (wang<0))
+        wang-=2*(float)wang/max_wang;
+    if((wang>-2) && (wang<0))
+        wang=0;
+}
+
+//автоматический возврат руля после вопорота
+void CVehicle::LimitKurs()
+{
+//	prn("%f", kurs.x);
+    if ( kurs.x > 160 )
+        kurs.x = kurs.x - 360;
+
+    if ( kurs.x < 0 )
+        kurs.x = kurs.x + 360;
+
+    KursArrow();
+
+}
+
+//ограничение угла курса
+void CVehicle::KursArrow()
+{
+
+    kurs_arrow = kurs;
+    kurs_arrow.x = 90 - kurs_arrow.x;
+    return;
+
+    if( kurs.x < 90 )
+        kurs_arrow.x = 90 - kurs_arrow.x;
+    else if ( (kurs.x) > 90 && (kurs.x < 180))
+       kurs_arrow.x =  90 - kurs_arrow.x;
+    else if ( (kurs.x > 180) && (kurs.x < 270))
+    {
+       kurs_arrow.x =  (90 - (kurs_arrow.x+180));
+
+       //kurs_arrow.x-=kurs_arrow.x;
+       //int a=1;
+       //kurs_arrow.x+=180;
+    }
+    else if (  (kurs.x > 270) && (kurs.x < 360) )
+    {
+       kurs_arrow.x =   (90 - (kurs_arrow.x+180));
+       //int a=1;
+       //kurs_arrow.x+=180;
+    }
+
+
+//    if ( kurs_arrow.x < -90 )
+  //      kurs_arrow.x = kurs_arrow.x + 360;
+
+    return;
+
+    //prn("kurs.x = %f",kurs.x);
+
+    //prn("kurs_arrow.x = %f",kurs_arrow.x);
+}
+
+void CVehicle::Slot1() //timer slot
+{
+    static float cnt=0;
+    static float phi1=0, phi2=0;
+    int idx;
+
+
+
+    if((kuzov->vertices == NULL) || (w0->vertices==NULL)|| (w1->vertices==NULL)|| (w2->vertices==NULL)|| (w3->vertices==NULL))
+    {
+        LoadModels("kuzov", "w0");
+        return;
+    }
+
+
+    //применяем управление
+    InputControl();
+
+    //Krivizna();
+
+    //возврат руля после поворота
+    WheelReturn();
+
+    //влияние трения
+    Trenie();
+
+    //скорости вращения колес
+    ffw = speed / 2*M_PI;
+    fbw = speed / 2*M_PI;
+
+    //расчитываем курс от угла поворота колес
+    kurs.x-= wang * speed / delkoof;
+
+    // Делаем цикл симуляции
+    _t2 = Timer::gtimer.fsec;
+     double _time=(double)(_t2-_t1);
+     dt = _time;
+     if(dt > 1) dt = 0.000000000001;
+     if(dt < 0) dt = 0.000000000001;
+
+    float dist = speed * dt; //2 * M_PI * r * 0.05 *ffw;
+
+    S+=dist;
+
+    // поиск ближайшей путевой точки
+    if( activeTraj != 0)
+    {
+
+
+        int i0 = near_idx;
+          FindNearPnt(activeTraj, p_near, near_idx);
+        int i1 = near_idx;
+
+
+        if( near_idx != i0)
+        {
+            if( i1 > i0)
+            {
+                bGoToFinish = true;
+                RGB2GL2(RGB(0,255,0),vp->color);
+                RGB2GL2(RGB(0,0,255),vp2->color);
+
+            }
+            else
+            {
+                bGoToFinish = false;
+                RGB2GL2(RGB(0,255,0),vp2->color);
+                RGB2GL2(RGB(0,0,255),vp->color);
+            }
+        }
+
+        if(bGoToFinish)
+           pscr.upds("WhereTo","Finish");
+        else
+              pscr.upds("WhereTo","Start");
+
+
+        CheckReachTargetWp();
+
+        if( bReachTargetWp )
+        {
+            prn("target_wp");
+            FindNearWayPoint(waipoints, ei.coord, idx);
+            idx-=1;
+            if(idx<0)
+                idx=waipoints.size()-1;
+
+/*            if( CHECK_IDX(waipoints,idx) )
+            {
+                target_wp = waipoints[idx];
+                pscr.upds("target_wp",target_wp.toStr());
+            }
+            else
+                target_wp = Pnt(ei.coord.x+5,ei.coord.y,ei.coord.z);
+*/
+        }
+
+        //расчитать вперед или назад по траектории на расстояние до 4 едениц
+        //if( bForward )
+        float max_dal = 4; // максимальная дистанция от машины до расчетной точки
+        Pnt p_to;
+        int fi = FindForward(activeTraj, near_idx, p_to, max_dal);
+        *(Pnt*)vp = p_to;
+        //else
+        int bi = FindBackward(activeTraj, near_idx, p_to, max_dal);
+        *(Pnt*)vp2 = p_to; //p_near;
+
+        pscr.updi("fi", fi);        pscr.updi("bi", bi);
+
+        ei.coord.z  = ei.coord.z - dist*sin(GR * kurs.x);
+        ei.coord.y  = ei.coord.y + dist*sin(GR * kurs.y);
+        ei.coord.x =  ei.coord.x - dist*cos(GR * kurs.x);
+
+
+    }
+    else
+    {
+        ei.coord.z  = ei.coord.z - dist*sin(GR * kurs.x);
+        ei.coord.y  = ei.coord.y + dist*sin(GR * kurs.y);
+        ei.coord.x  = ei.coord.x - dist*cos(GR * kurs.x);
+    }
+
+
+
+    //AssignMyCoord();
+    kuzov->ei.coord = ei.coord;
+    Pnt C0 = ei.coord;
+
+    // расчет положения колес от-но рамы
+    Pnt& w0p = w0->ei.coord;
+    Pnt& w1p = w1->ei.coord;
+    Pnt& w2p = w2->ei.coord;
+    Pnt& w3p = w3->ei.coord;
+
+
+
+    float w = bounds.z / 2;
+    float l = bounds.x /2;
+    prn("w=%f l=%f",w,l);
+
+    //1. точка переднего вала - P
+    float al = 90 - kurs.x ;
+    P = Pnt(l*sin(GR*al), 0, l*cos(GR*al));
+    Z = Pnt(l*sin(GR*(al+180)), 0, l*cos(GR*(al+180)));
+    w2p = Pnt(0, 0, w);
+    rotateAboutY(w2p, GR*(al + 90));
+    translate_p(w2p, P.x, P.y, P.z);
+    w3p = Pnt(0, 0, -w);
+    rotateAboutY(w3p, GR*(al + 90));
+    translate_p(w3p, P.x, P.y, P.z);
+
+    translate_p(P, C0.x, C0.y, C0.z);
+    translate_p(Z, C0.x, C0.y, C0.z);
+    translate_p(w3p, C0.x, C0.y-0.3, C0.z);
+    translate_p(w2p, C0.x, C0.y-0.3, C0.z);
+    WW = w2p;
+
+
+
+
+
+    terrain_objs[0].pos = w0->ei.coord;
+    terrain_objs[1].pos = w1->ei.coord;
+    terrain_objs[2].pos = w2->ei.coord;
+    terrain_objs[3].pos = w3->ei.coord;
+    terrain_objs[4].pos = kuzov->ei.coord;
+
+    /*
+    // интерполяция высоты
+    for(int i=0; i<terrain_objs.size(); i++)
+    //int i=4;
+    {
+            //расчет на секунду вперед
+        float dist2 = speed * t_rascheta;
+        Pnt p_near_f;
+        p_near_f.z  = terrain_objs[i].pos.z - dist2*sin(GR * kurs.x);
+        p_near_f.y  = terrain_objs[i].pos.y + dist2*sin(GR * kurs.y);
+        p_near_f.x  = terrain_objs[i].pos.x - dist2*cos(GR * kurs.x);
+        terrain_objs[i].AddConstantHeight(2);
+        terrain_objs[i].SetOnTerrain(p_near_f, t_rascheta);
+        p_near = terrain_objs[i].p_near;
+    }
+    */
+
+    //print(w1p.toStr().c_str());
+
+
+   // CalcGravity(this);
+
+    //угол поворота кузова
+    //kuzov->rot0 = Pnt(kurs.z, kurs.x, kurs.y);
+    kuzov->rot = Pnt(kurs.z, kurs.x, kurs.y);
+    //mu_printf(kuzov->rot.toStr().c_str());
+
+    //ограничение курса
+    LimitKurs();
+
+    // вращение колес
+    if ( phi1 > 360 )
+        phi1 = phi1 - 360;
+    if ( phi2 > 360 )
+        phi2 = phi2 - 360;
+
+    phi1 = phi1 + 360*0.05*ffw;  //50ms * частота передних
+
+
+        //mu_printf("%f", kurs.x);
+    w0->rot = Pnt(0, wang, phi1); w0->dir = dir;
+    w1->rot = Pnt(0, wang, phi1); w1->dir = dir;
+    w0->rot0 = Pnt(kurs.z, -kurs.x, 0); w0->dir = dir;
+    w1->rot0 = Pnt(kurs.z, -kurs.x, 0); w1->dir = dir;
+    //w0->ei.coord = Pnt(ei.coord.x ,ei.coord.y, ei.coord.z);
+    //w1->ei.coord = Pnt(ei.coord.x ,ei.coord.y, ei.coord.z);
+    phi2 = phi2 + 360*0.05*fbw;  //50ms * частота задних
+    w2->rot = Pnt(0, 0, phi2); w2->dir = dir;
+    w3->rot = Pnt(0, 0, phi2); w3->dir = dir;
+    w2->rot0 = Pnt(kurs.z, -kurs.x, 0); w2->dir = dir;
+    w3->rot0 = Pnt(kurs.z, -kurs.x, 0); w3->dir = dir;
+    //w2->ei.coord = ei.coord;
+    //w3->ei.coord = ei.coord;
+
+
+
+    pscr.upd("carPos", ei.coord);
+    pscr.upd("speed", speed);
+    pscr.upd("wang", wang);
+    pscr.upd("kurs", kurs.x);
+    pscr.upd("S", S);
+    //mu_printf("Pos=%s",ei.coord.toStr().c_str());
+
+    //TEST ON VERTEX FLOATING
+    /*
+
+    for(int i=0; i<kuzov->vert_count; i++)
+    {
+    flags.bChangedRenderMode = true;
+    kuzov->vertices[i*3] = 10 * rand() / RAND_MAX;
+    }
+
+    */
+    //bounds = kuzov->bounds;
+    v = Pnt(speed,0,0);
+    kurs0 = kurs;
+    _t1 = Timer::gtimer.fsec;
+
+}
+
+void CVehicle::Render()
+{
+    static double mat[3][3],mat3[3][3],mat4[3][3],mat5[3][3],mat6[3][3];
+    static double mat2[3][3];
+    static double Mat[4][4],Mat2[4][4],Mat3[4][4],Mat4[4][4],Mat5[4][4],Mat6[4][4],Mat7[4][4];
+
+      if((kuzov->vertices == NULL) || (w0->vertices==NULL)|| (w1->vertices==NULL)|| (w2->vertices==NULL)|| (w3->vertices==NULL))
+        return;
+    {
+        kuzov->Render();
+        w0->Render();
+        w1->Render();
+        w2->Render();
+        w3->Render();
+    }
+
+
+    if( bShowWaipoints )
+      draw_pts(waipoints,"",RGB(130,11,11),0);
+
+    //Р»РёРЅРёСЏ РґРѕ target point
+    set_col(RGB(255,0,0));
+    glBegin(GL_LINES);
+        glVertex3f(ei.coord.x,ei.coord.y,ei.coord.z);
+        glVertex3f(target_wp.x,target_wp.y, target_wp.z);
+    glEnd();
+    unset_col();
+
+
+    //РІРµРєС‚РѕСЂ РєСѓСЂСЃР°
+     Pnt kp1(0,0,0), kp2(0,0,-4);
+
+
+
+    tvect v;
+    mroty(kurs_arrow.x*GR, mat2);   // mat3344(mat2,Mat2);
+    mvmult(3,mat2,(float*)&kp1,(float*)&v.A);
+    mvmult(3,mat2,(float*)&kp2,(float*)&v.B);
+    //draw_p("kp2", v.B, RGB(255,0,0),1);
+
+
+
+
+    //prn("T(%s) ->%f %f", ei.coord.toStr().c_str(), f1, f2);
+    v.A.x+=ei.coord.x;
+    v.A.y+=ei.coord.y;
+    v.A.z+=ei.coord.z;
+    v.B.x+=ei.coord.x;
+    v.B.y+=ei.coord.y;
+    v.B.z+=ei.coord.z;
+
+    //draw_v(v, 0.3, RGB(0,0,255));
+    //prn("v = %s %s ", v.A.toStr().c_str(), v.B.toStr().c_str());
+
+    //draw_p("v", v.B, RGB(255,0,0),1);
+
+    pscr.upds("A",v.B.toStr());
+    pscr.upds("B",v.A.toStr());
+    tvect V(ei.coord, target_wp);
+    draw_v(V, 0.3, RGB(255,0,0));
+
+    //С‚РѕС‡РєР° РЅР°Р·РЅР°С‡РµРЅРёСЏ
+    draw_p("target_wp", target_wp, RGB(255,0,0),1);
+
+    if( bReachTargetWp )
+        draw_p("target_wp", target_wp, RGB(0,0,255),1);
+
+
+    SetCamPoints();
+
+//	draw_p("dp",dp,RGB(0,0,0),1);
+
+
+}
+
+void CVehicle::NullReferences()
+{
+    kuzov->vertices = NULL;
+    w0->vertices = NULL;
+    w1->vertices = NULL;
+    w2->vertices = NULL;
+    w3->vertices = NULL;
+};
+
+
+void CVehicle::OnSelect()
+{
+    mu_printf("CVehicle::OnSelect()");
+    SelectAll();
+    ListCurves();
+}
+
+void CVehicle::OnUnselect()
+{
+    mu_printf("CVehicle::OnUnselect()");
+    UnSelectAll();
+}
+
+
+void CVehicle::SetCamPoints()
+{
+    Pnt rt;
+    rt = Pnt(0, (90 - kurs.x) * GR, 0);
+    //pp1.GetProjections( ei.coord, rt, 8 , campts1);
+    //pp2.GetProjections( ei.coord, rt, 10,  lookpts2);
+
+
+}
+
+
+
+//object inspector event
+void CVehicle::OnAttrChange(t_atr& a)
+{
+    static int ft= 1;
+
+    if(isLoading)
+    {
+
+        ft = 0;
+        //return;
+    }
+
+    mu_printf("CVehicle::OnAttrChange %s", a.name.c_str());
+    if(  (a.name == "trajectory")  )
+    {
+        icurve = a.data;
+        AssignTrajectory();
+        //prn("%d", 1);
+        return;
+    }
+
+//"n nu nd w wu wd e eu ed s su sd nw nwu nwd ne neu ned sw swu swd se seu sed";
+    if(  (a.name == "campos")  )
+    {
+        nCamPnt = a.data;
+        prn("campos[0..24] = %d", nCamPnt);
+
+        return;
+    }
+
+
+    if(  (a.name == "wp_delta")  )
+    {
+        AssignTrajectory();
+        return;
+    }
+
+       if(  (a.name == "Krivizna")  )
+    {
+        Krivizna();
+        return;
+    }
+      if(  (a.name == "OnStart")  )
+    {
+        OnStart();
+        return;
+    }
+
+
+    Object::OnAttrChange(a);
+
+}
+

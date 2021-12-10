@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TerrainDlg</class>
+ <widget class="QDialog" name="TerrainDlg">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>545</width>
+    <height>316</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_2">
+   <item row="0" column="0" colspan="7">
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QGroupBox" name="groupBox_2">
+       <property name="title">
+        <string>Mesh propities</string>
+       </property>
+       <widget class="QDoubleSpinBox" name="SizeX">
+        <property name="geometry">
+         <rect>
+          <x>14</x>
+          <y>94</y>
+          <width>160</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="maximum">
+         <double>1000000.000000000000000</double>
+        </property>
+        <property name="value">
+         <double>100.000000000000000</double>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="HeightSegs">
+        <property name="geometry">
+         <rect>
+          <x>14</x>
+          <y>42</y>
+          <width>160</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="maximum">
+         <number>100000</number>
+        </property>
+        <property name="value">
+         <number>2</number>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label">
+        <property name="geometry">
+         <rect>
+          <x>180</x>
+          <y>16</y>
+          <width>161</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Width segs </string>
+        </property>
+       </widget>
+       <widget class="QDoubleSpinBox" name="SizeY">
+        <property name="geometry">
+         <rect>
+          <x>14</x>
+          <y>120</y>
+          <width>160</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="maximum">
+         <double>1000000.000000000000000</double>
+        </property>
+        <property name="value">
+         <double>100.000000000000000</double>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_4">
+        <property name="geometry">
+         <rect>
+          <x>180</x>
+          <y>94</y>
+          <width>161</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Size X</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_3">
+        <property name="geometry">
+         <rect>
+          <x>180</x>
+          <y>68</y>
+          <width>161</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Length segs </string>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="widthSegs">
+        <property name="geometry">
+         <rect>
+          <x>14</x>
+          <y>16</y>
+          <width>160</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="maximum">
+         <number>100000</number>
+        </property>
+        <property name="value">
+         <number>50</number>
+        </property>
+        <property name="displayIntegerBase">
+         <number>10</number>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="LengthSegs">
+        <property name="geometry">
+         <rect>
+          <x>14</x>
+          <y>68</y>
+          <width>160</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="maximum">
+         <number>100000</number>
+        </property>
+        <property name="value">
+         <number>50</number>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_2">
+        <property name="geometry">
+         <rect>
+          <x>180</x>
+          <y>42</y>
+          <width>161</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Height segs </string>
+        </property>
+       </widget>
+       <widget class="QDoubleSpinBox" name="SizeZ">
+        <property name="geometry">
+         <rect>
+          <x>14</x>
+          <y>146</y>
+          <width>160</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="maximum">
+         <double>1000000.000000000000000</double>
+        </property>
+        <property name="value">
+         <double>100.000000000000000</double>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_5">
+        <property name="geometry">
+         <rect>
+          <x>180</x>
+          <y>120</y>
+          <width>161</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Size Y</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_6">
+        <property name="geometry">
+         <rect>
+          <x>180</x>
+          <y>146</y>
+          <width>161</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Size Z</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_10">
+        <property name="geometry">
+         <rect>
+          <x>180</x>
+          <y>220</y>
+          <width>161</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>hconst</string>
+        </property>
+       </widget>
+       <widget class="QDoubleSpinBox" name="hconst">
+        <property name="geometry">
+         <rect>
+          <x>14</x>
+          <y>220</y>
+          <width>160</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="maximum">
+         <double>100000.000000000000000</double>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_9">
+        <property name="geometry">
+         <rect>
+          <x>180</x>
+          <y>168</y>
+          <width>161</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Detail</string>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="detail">
+        <property name="geometry">
+         <rect>
+          <x>14</x>
+          <y>168</y>
+          <width>160</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="maximum">
+         <number>1111</number>
+        </property>
+        <property name="value">
+         <number>8</number>
+        </property>
+       </widget>
+       <widget class="QDoubleSpinBox" name="Roughness">
+        <property name="geometry">
+         <rect>
+          <x>14</x>
+          <y>194</y>
+          <width>160</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="maximum">
+         <double>9911.989999999999782</double>
+        </property>
+        <property name="value">
+         <double>0.700000000000000</double>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_8">
+        <property name="geometry">
+         <rect>
+          <x>180</x>
+          <y>194</y>
+          <width>161</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Roughness</string>
+        </property>
+       </widget>
+      </widget>
+     </item>
+     <item>
+      <widget class="QGroupBox" name="groupBox">
+       <property name="title">
+        <string>Maze</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout">
+        <item row="2" column="1">
+         <widget class="QLabel" name="label_13">
+          <property name="text">
+           <string>wall width</string>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="0">
+         <spacer name="verticalSpacer">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="1" column="1">
+         <widget class="QLabel" name="label_12">
+          <property name="text">
+           <string>cellY</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QSpinBox" name="cellsY">
+          <property name="value">
+           <number>8</number>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QLabel" name="label_11">
+          <property name="text">
+           <string>cellX</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QSpinBox" name="cellsX">
+          <property name="value">
+           <number>8</number>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QSpinBox" name="wall_height">
+          <property name="maximum">
+           <number>1000</number>
+          </property>
+          <property name="value">
+           <number>10</number>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSpinBox" name="wall_width">
+          <property name="value">
+           <number>3</number>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <widget class="QLabel" name="label_7">
+          <property name="text">
+           <string>wall height</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0">
+         <widget class="QSpinBox" name="ylevel">
+          <property name="minimum">
+           <number>-1000</number>
+          </property>
+          <property name="maximum">
+           <number>10000</number>
+          </property>
+          <property name="value">
+           <number>-20</number>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="1">
+         <widget class="QLabel" name="label_14">
+          <property name="text">
+           <string>ylevel</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="0">
+         <widget class="QSpinBox" name="Ncoins">
+          <property name="maximum">
+           <number>1000</number>
+          </property>
+          <property name="value">
+           <number>20</number>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="1">
+         <widget class="QLabel" name="label_15">
+          <property name="text">
+           <string>N coins</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="1" column="3">
+    <widget class="QPushButton" name="generateMaze">
+     <property name="text">
+      <string>Create Maze</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="4">
+    <widget class="QPushButton" name="genCoins">
+     <property name="text">
+      <string>Create Coins</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="2">
+    <widget class="QPushButton" name="generateButton">
+     <property name="text">
+      <string>Generate Fractal</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="6">
+    <spacer name="horizontalSpacer">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>180</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="1" column="0">
+    <widget class="QPushButton" name="createButton">
+     <property name="text">
+      <string>Create</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="5">
+    <widget class="QPushButton" name="clear">
+     <property name="text">
+      <string>Clear</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
