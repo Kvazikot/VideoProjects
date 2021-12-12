@@ -1,6 +1,6 @@
 QT += widgets core concurrent opengl xml
 OUTPUT += console
-CONFIG += c++11
+
 OPENCV_451_PATH = "d:\\opencv"
 INCLUDEPATH += $$(PYTHON_PATH)\\include
 #INCLUDEPATH +=$$OPENCV_451_PATH\\dlib\\dlib\\external\\pybind11\\include\\
@@ -38,45 +38,44 @@ INCLUDEPATH+="$$OPENCV_451_PATH\\modules\\stitching\\include"
 #INCLUDEPATH+="$$OPENCV_451_PATH\\modules\\world\\include"
 
 
-win32:CONFIG(release, debug|release): LIBS+=-L"$$OPENCV_451_PATH\\build_mingw\\lib\\" -lopencv_core453
-win32:CONFIG(release, debug|release): LIBS+=-L"$$OPENCV_451_PATH\\build_mingw\\lib\\" -lopencv_ml453
-win32:CONFIG(release, debug|release): LIBS+=-L"$$OPENCV_451_PATH\\build_mingw\\lib\\" -lopencv_flann453
-win32:CONFIG(release, debug|release): LIBS+=-L"$$OPENCV_451_PATH\\build_mingw\\lib\\" -lopencv_imgproc453
-win32:CONFIG(release, debug|release): LIBS+=-L"$$OPENCV_451_PATH\\build_mingw\\lib\\" -lopencv_photo453
-win32:CONFIG(release, debug|release): LIBS+=-L"$$OPENCV_451_PATH\\build_mingw\\lib\\" -lopencv_features2d453
-win32:CONFIG(release, debug|release): LIBS+=-L"$$OPENCV_451_PATH\\build_mingw\\lib\\" -lopencv_imgcodecs453
-LIBS+=-L"$$OPENCV_451_PATH\\build_mingw\\lib\\" -lopencv_videoio453
-LIBS+=-L"$$OPENCV_451_PATH\\build_mingw\\lib\\" -lopencv_highgui453
-win32:CONFIG(release, debug|release): LIBS+=-L"$$OPENCV_451_PATH\\build_mingw\\lib\\" -lopencv_ts453
-win32:CONFIG(release, debug|release): LIBS+=-L"$$OPENCV_451_PATH\\build_mingw\\lib\\" -lopencv_calib3d453
-win32:CONFIG(release, debug|release): LIBS+=-L"$$OPENCV_451_PATH\\build_mingw\\lib\\" -lopencv_objdetect453
-win32:CONFIG(release, debug|release): LIBS+=-L"$$OPENCV_451_PATH\\build_mingw\\lib\\" -lopencv_stitching453
-win32:CONFIG(release, debug|release): LIBS+=-L"$$OPENCV_451_PATH\\build_mingw\\lib\\" -lopencv_dnn453
-win32:CONFIG(release, debug|release): LIBS+=-L"$$OPENCV_451_PATH\\build_mingw\\lib\\" -lopencv_video453
-win32:CONFIG(release, debug|release): LIBS+=-L"$$(PYTHON_PATH)\\libs\\" -lpython39
+win32:CONFIG(release, debug|release): LIBS+="$$OPENCV_451_PATH\\build2\\lib\\Release\\opencv_core453.lib"
+win32:CONFIG(release, debug|release): LIBS+="$$OPENCV_451_PATH\\build2\\lib\\Release\\opencv_ml453.lib"
+win32:CONFIG(release, debug|release): LIBS+="$$OPENCV_451_PATH\\build2\\lib\\Release\\opencv_flann453.lib"
+win32:CONFIG(release, debug|release): LIBS+="$$OPENCV_451_PATH\\build2\\lib\\Release\\opencv_imgproc453.lib"
+win32:CONFIG(release, debug|release): LIBS+="$$OPENCV_451_PATH\\build2\\lib\\Release\\opencv_photo453.lib"
+win32:CONFIG(release, debug|release): LIBS+="$$OPENCV_451_PATH\\build2\\lib\\Release\\opencv_features2d453.lib"
+win32:CONFIG(release, debug|release): LIBS+="$$OPENCV_451_PATH\\build2\\lib\\Release\\opencv_imgcodecs453.lib"
+LIBS+="$$OPENCV_451_PATH\\build2\\lib\\Release\\opencv_videoio453.lib"
+LIBS+="$$OPENCV_451_PATH\\build2\\lib\\Release\\opencv_highgui453.lib"
+win32:CONFIG(release, debug|release): LIBS+="$$OPENCV_451_PATH\\build2\\lib\\Release\\opencv_ts453.lib"
+win32:CONFIG(release, debug|release): LIBS+="$$OPENCV_451_PATH\\build2\\lib\\Release\\opencv_calib3d453.lib"
+win32:CONFIG(release, debug|release): LIBS+="$$OPENCV_451_PATH\\build2\\lib\\Release\\opencv_objdetect453.lib"
+win32:CONFIG(release, debug|release): LIBS+="$$OPENCV_451_PATH\\build2\\lib\\Release\\opencv_stitching453.lib"
+win32:CONFIG(release, debug|release): LIBS+="$$OPENCV_451_PATH\\build2\\lib\\Release\\opencv_dnn453.lib"
+win32:CONFIG(release, debug|release): LIBS+="$$OPENCV_451_PATH\\build2\\lib\\Release\\opencv_video453.lib"
+win32:CONFIG(release, debug|release): LIBS+="$$(PYTHON_PATH)\\libs\\python39.lib"
+
+win32:CONFIG(debug, debug|release): LIBS+="$$OPENCV_451_PATH\\build2\\lib\\Debug\\opencv_core453d.lib"
+win32:CONFIG(debug, debug|release): LIBS+="$$OPENCV_451_PATH\\build2\\lib\\Debug\\opencv_ml453d.lib"
+win32:CONFIG(debug, debug|release): LIBS+="$$OPENCV_451_PATH\\build2\\lib\\Debug\\opencv_flann453d.lib"
+win32:CONFIG(debug, debug|release): LIBS+="$$OPENCV_451_PATH\\build2\\lib\\Debug\\opencv_imgproc453d.lib"
+win32:CONFIG(debug, debug|release): LIBS+="$$OPENCV_451_PATH\\build2\\lib\\Debug\\opencv_photo453d.lib"
+win32:CONFIG(debug, debug|release): LIBS+="$$OPENCV_451_PATH\\build2\\lib\\Debug\\opencv_features2d453d.lib"
+win32:CONFIG(debug, debug|release): LIBS+="$$OPENCV_451_PATH\\build2\\lib\\Debug\\opencv_imgcodecs453d.lib"
+win32:CONFIG(debug, debug|release): LIBS+="$$OPENCV_451_PATH\\build2\\lib\\Debug\\opencv_video453d.lib"
+#win32:CONFIG(debug, debug|release): LIBS+="$$OPENCV_451_PATH\\build2\\lib\\Debug\\opencv_highgui453d.lib"
+win32:CONFIG(debug, debug|release): LIBS+="$$OPENCV_451_PATH\\build2\\lib\\Debug\\opencv_ts453d.lib"
+win32:CONFIG(debug, debug|release): LIBS+="$$OPENCV_451_PATH\\build2\\lib\\Debug\\opencv_calib3d453d.lib"
+win32:CONFIG(debug, debug|release): LIBS+="$$OPENCV_451_PATH\\build2\\lib\\Debug\\opencv_objdetect453d.lib"
+win32:CONFIG(debug, debug|release): LIBS+="$$OPENCV_451_PATH\\build2\\lib\\Debug\\opencv_stitching453d.lib"
+win32:CONFIG(debug, debug|release): LIBS+="$$OPENCV_451_PATH\\build2\\lib\\Debug\\opencv_dnn453d.lib"
+win32:CONFIG(debug, debug|release): LIBS+="$$OPENCV_451_PATH\\build2\\lib\\Debug\\opencv_video453d.lib"
+win32:CONFIG(debug, debug|release): LIBS+="$$(PYTHON_PATH)\\libs\\python39_d.lib"
 
 
-#win32:CONFIG(debug, debug|release): LIBS+=-L"$$OPENCV_451_PATH\\build_mingw\\lib\\" -lopencv_core453d
-#win32:CONFIG(debug, debug|release): LIBS+=-L"$$OPENCV_451_PATH\\build_mingw\\lib\\" -lopencv_ml453d
-#win32:CONFIG(debug, debug|release): LIBS+=-L"$$OPENCV_451_PATH\\build_mingw\\lib\\" -lopencv_flann453d
-#win32:CONFIG(debug, debug|release): LIBS+=-L"$$OPENCV_451_PATH\\build_mingw\\lib\\" -lopencv_imgproc453d
-#win32:CONFIG(debug, debug|release): LIBS+=-L"$$OPENCV_451_PATH\\build_mingw\\lib\\" -lopencv_photo453d
-#win32:CONFIG(debug, debug|release): LIBS+=-L"$$OPENCV_451_PATH\\build_mingw\\lib\\" -lopencv_features2d453d
-#win32:CONFIG(debug, debug|release): LIBS+=-L"$$OPENCV_451_PATH\\build_mingw\\lib\\" -lopencv_imgcodecs453d
-#win32:CONFIG(debug, debug|release): LIBS+=-L"$$OPENCV_451_PATH\\build_mingw\\lib\\" -lopencv_video453d
-##win32:CONFIG(debug, debug|release): LIBS+=-L"$$OPENCV_451_PATH\\build_mingw\\lib\\" -lopencv_highgui453d
-#win32:CONFIG(debug, debug|release): LIBS+=-L"$$OPENCV_451_PATH\\build_mingw\\lib\\" -lopencv_ts453d
-#win32:CONFIG(debug, debug|release): LIBS+=-L"$$OPENCV_451_PATH\\build_mingw\\lib\\" -lopencv_calib3d453d
-#win32:CONFIG(debug, debug|release): LIBS+=-L"$$OPENCV_451_PATH\\build_mingw\\lib\\" -lopencv_objdetect453d
-#win32:CONFIG(debug, debug|release): LIBS+=-L"$$OPENCV_451_PATH\\build_mingw\\lib\\" -lopencv_stitching453d
-#win32:CONFIG(debug, debug|release): LIBS+=-L"$$OPENCV_451_PATH\\build_mingw\\lib\\" -lopencv_dnn453d
-#win32:CONFIG(debug, debug|release): LIBS+=-L"$$OPENCV_451_PATH\\build_mingw\\lib\\" -lopencv_video453d
-#win32:CONFIG(debug, debug|release): LIBS+="$$(PYTHON_PATH)\\libs\\python39_d
 
-
-
-#INCLUDEPATH += "C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/ucrt"
-#LIBS += -L"C:/Program Files (x86)/Windows Kits/10/Lib/10.0.22000.0/ucrt/x64"
+INCLUDEPATH += "C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/ucrt"
+LIBS += -L"C:/Program Files (x86)/Windows Kits/10/Lib/10.0.22000.0/ucrt/x64"
 
 SOURCES += main.cpp \
            dialog.cpp  \
@@ -102,34 +101,8 @@ FORMS += dialog.ui \
 
 
 EXAMPLE_FILES = *.png
-QMAKE_CXXFLAGS += -v -v
+QMAKE_CXXFLAGS += /VERBOSE
 # install
 target.path = $$[QT_INSTALL_EXAMPLES]/corelib/ipc/sharedmemory
 INSTALLS += target
 
-# APP7 LIBRARY
-
-
-
-
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/libs/app7-master/app7CoreLib/release/ -lapp7CoreLib
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/libs/app7-master/app7CoreLib/debug/ -lapp7CoreLib
-
-INCLUDEPATH += $$PWD/libs/app7-master/include
-DEPENDPATH += $$PWD/libs/app7-master/include
-
-win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$PWD/libs/app7-master/app7CoreLib/release/libapp7CoreLib.a
-else:win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$PWD/libs/app7-master/app7CoreLib/debug/libapp7CoreLib.a
-else:win32:!win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$PWD/libs/app7-master/app7CoreLib/release/app7CoreLib.lib
-else:win32:!win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$PWD/libs/app7-master/app7CoreLib/debug/app7CoreLib.lib
-
-win32: LIBS += -Ld:/Qt/Qt5.12.10/Tools/mingw730_64/x86_64-w64-mingw32/lib/ -lopengl32
-win32: LIBS += -lglu32
-INCLUDEPATH += -Ld:/Qt/Qt5.12.10/Tools/mingw730_64/x86_64-w64-mingw32/include
-DEPENDPATH += -Ld:/Qt/Qt5.12.10/Tools/mingw730_64/x86_64-w64-mingw32/include
-
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/libs/3PartyLibs/freeglut/lib/ -llibfreeglut.dll
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/libs/3PartyLibs/freeglut/lib/ -llibfreeglut.dlld
-
-INCLUDEPATH += $$PWD/libs/3PartyLibs/freeglut/include
-DEPENDPATH += $$PWD/libs/3PartyLibs/freeglut/include
