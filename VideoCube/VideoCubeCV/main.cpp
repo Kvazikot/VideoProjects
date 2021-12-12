@@ -95,12 +95,14 @@ int main(int argc, char *argv[])
         //QObject::connect(glw,SIGNAL(ObjectsIsLoaded()),anim_dialog,SLOT(OnObjsLoad()));
         //QObject::connect(glw,SIGNAL(ObjectsIsLoaded()),ter_dialog,SLOT(OnObjsLoad()));
     }
-*/
+
+
     Kirpich* kirpich = new Kirpich("cube",20,20,20);
 
     CObjRegistry* reg = new CObjRegistry();
     reg->AddObj(kirpich);
     prn("Test");
+*/
 
     return application.exec();
 }

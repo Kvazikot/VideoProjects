@@ -38,22 +38,22 @@ INCLUDEPATH+="$$OPENCV_451_PATH\\modules\\stitching\\include"
 #INCLUDEPATH+="$$OPENCV_451_PATH\\modules\\world\\include"
 
 
-win32:CONFIG(release, debug|release): LIBS+=-L"$$OPENCV_451_PATH\\build_mingw\\lib\\" -lopencv_core453
-win32:CONFIG(release, debug|release): LIBS+=-L"$$OPENCV_451_PATH\\build_mingw\\lib\\" -lopencv_ml453
-win32:CONFIG(release, debug|release): LIBS+=-L"$$OPENCV_451_PATH\\build_mingw\\lib\\" -lopencv_flann453
-win32:CONFIG(release, debug|release): LIBS+=-L"$$OPENCV_451_PATH\\build_mingw\\lib\\" -lopencv_imgproc453
-win32:CONFIG(release, debug|release): LIBS+=-L"$$OPENCV_451_PATH\\build_mingw\\lib\\" -lopencv_photo453
-win32:CONFIG(release, debug|release): LIBS+=-L"$$OPENCV_451_PATH\\build_mingw\\lib\\" -lopencv_features2d453
-win32:CONFIG(release, debug|release): LIBS+=-L"$$OPENCV_451_PATH\\build_mingw\\lib\\" -lopencv_imgcodecs453
+win32:CONFIG(debug|release, debug|release): LIBS+=-L"$$OPENCV_451_PATH\\build_mingw\\lib\\" -lopencv_core453
+win32:CONFIG(debug|release, debug|release): LIBS+=-L"$$OPENCV_451_PATH\\build_mingw\\lib\\" -lopencv_ml453
+win32:CONFIG(debug|release, debug|release): LIBS+=-L"$$OPENCV_451_PATH\\build_mingw\\lib\\" -lopencv_flann453
+win32:CONFIG(debug|release, debug|release): LIBS+=-L"$$OPENCV_451_PATH\\build_mingw\\lib\\" -lopencv_imgproc453
+win32:CONFIG(debug|release, debug|release): LIBS+=-L"$$OPENCV_451_PATH\\build_mingw\\lib\\" -lopencv_photo453
+win32:CONFIG(debug|release, debug|release): LIBS+=-L"$$OPENCV_451_PATH\\build_mingw\\lib\\" -lopencv_features2d453
+win32:CONFIG(debug|release, debug|release): LIBS+=-L"$$OPENCV_451_PATH\\build_mingw\\lib\\" -lopencv_imgcodecs453
 LIBS+=-L"$$OPENCV_451_PATH\\build_mingw\\lib\\" -lopencv_videoio453
 LIBS+=-L"$$OPENCV_451_PATH\\build_mingw\\lib\\" -lopencv_highgui453
-win32:CONFIG(release, debug|release): LIBS+=-L"$$OPENCV_451_PATH\\build_mingw\\lib\\" -lopencv_ts453
-win32:CONFIG(release, debug|release): LIBS+=-L"$$OPENCV_451_PATH\\build_mingw\\lib\\" -lopencv_calib3d453
-win32:CONFIG(release, debug|release): LIBS+=-L"$$OPENCV_451_PATH\\build_mingw\\lib\\" -lopencv_objdetect453
-win32:CONFIG(release, debug|release): LIBS+=-L"$$OPENCV_451_PATH\\build_mingw\\lib\\" -lopencv_stitching453
-win32:CONFIG(release, debug|release): LIBS+=-L"$$OPENCV_451_PATH\\build_mingw\\lib\\" -lopencv_dnn453
-win32:CONFIG(release, debug|release): LIBS+=-L"$$OPENCV_451_PATH\\build_mingw\\lib\\" -lopencv_video453
-win32:CONFIG(release, debug|release): LIBS+=-L"$$(PYTHON_PATH)\\libs\\" -lpython39
+win32:CONFIG(debug|release, debug|release): LIBS+=-L"$$OPENCV_451_PATH\\build_mingw\\lib\\" -lopencv_ts453
+win32:CONFIG(debug|release, debug|release): LIBS+=-L"$$OPENCV_451_PATH\\build_mingw\\lib\\" -lopencv_calib3d453
+win32:CONFIG(debug|release, debug|release): LIBS+=-L"$$OPENCV_451_PATH\\build_mingw\\lib\\" -lopencv_objdetect453
+win32:CONFIG(debug|release, debug|release): LIBS+=-L"$$OPENCV_451_PATH\\build_mingw\\lib\\" -lopencv_stitching453
+win32:CONFIG(debug|release, debug|release): LIBS+=-L"$$OPENCV_451_PATH\\build_mingw\\lib\\" -lopencv_dnn453
+win32:CONFIG(debug|release, debug|release): LIBS+=-L"$$OPENCV_451_PATH\\build_mingw\\lib\\" -lopencv_video453
+win32:CONFIG(debug|release, debug|release): LIBS+=-L"$$(PYTHON_PATH)\\libs\\" -lpython39
 
 
 #win32:CONFIG(debug, debug|release): LIBS+=-L"$$OPENCV_451_PATH\\build_mingw\\lib\\" -lopencv_core453d
@@ -71,7 +71,7 @@ win32:CONFIG(release, debug|release): LIBS+=-L"$$(PYTHON_PATH)\\libs\\" -lpython
 #win32:CONFIG(debug, debug|release): LIBS+=-L"$$OPENCV_451_PATH\\build_mingw\\lib\\" -lopencv_stitching453d
 #win32:CONFIG(debug, debug|release): LIBS+=-L"$$OPENCV_451_PATH\\build_mingw\\lib\\" -lopencv_dnn453d
 #win32:CONFIG(debug, debug|release): LIBS+=-L"$$OPENCV_451_PATH\\build_mingw\\lib\\" -lopencv_video453d
-#win32:CONFIG(debug, debug|release): LIBS+="$$(PYTHON_PATH)\\libs\\python39_d
+#win32:CONFIG(debug, debug|release): LIBS+=-L"$$(PYTHON_PATH)\\libs\\" -lpython39_d
 
 
 
@@ -128,8 +128,8 @@ win32: LIBS += -lglu32
 INCLUDEPATH += -Ld:/Qt/Qt5.12.10/Tools/mingw730_64/x86_64-w64-mingw32/include
 DEPENDPATH += -Ld:/Qt/Qt5.12.10/Tools/mingw730_64/x86_64-w64-mingw32/include
 
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/libs/3PartyLibs/freeglut/lib/ -llibfreeglut.dll
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/libs/3PartyLibs/freeglut/lib/ -llibfreeglut.dlld
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/libs/3PartyLibs/freeglut/lib/x64 -llibfreeglut.dll
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/libs/3PartyLibs/freeglut/lib/x64 -llibfreeglut.dll
 
 INCLUDEPATH += $$PWD/libs/3PartyLibs/freeglut/include
 DEPENDPATH += $$PWD/libs/3PartyLibs/freeglut/include
