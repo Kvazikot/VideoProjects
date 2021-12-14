@@ -1,8 +1,10 @@
-QT += widgets core concurrent opengl xml
-OUTPUT += console
+QT += gui widgets core concurrent opengl xml
 
+OUTPUT += console
+CONFIG+ = c++17
+PYTHON_PATH = "C:\\Users\\Vova\\AppData\\Local\\Programs\\Python\\Python39"
 OPENCV_451_PATH = "d:\\opencv"
-INCLUDEPATH += $$(PYTHON_PATH)\\include
+INCLUDEPATH += $$PYTHON_PATH\\include
 #INCLUDEPATH +=$$OPENCV_451_PATH\\dlib\\dlib\\external\\pybind11\\include\\
 INCLUDEPATH+="$$OPENCV_451_PATH\\modules\\core\\include"
 INCLUDEPATH+="$$OPENCV_451_PATH\\build2\\modules"
@@ -53,7 +55,7 @@ win32:CONFIG(release, debug|release): LIBS+="$$OPENCV_451_PATH\\build2\\lib\\Rel
 win32:CONFIG(release, debug|release): LIBS+="$$OPENCV_451_PATH\\build2\\lib\\Release\\opencv_stitching453.lib"
 win32:CONFIG(release, debug|release): LIBS+="$$OPENCV_451_PATH\\build2\\lib\\Release\\opencv_dnn453.lib"
 win32:CONFIG(release, debug|release): LIBS+="$$OPENCV_451_PATH\\build2\\lib\\Release\\opencv_video453.lib"
-win32:CONFIG(release, debug|release): LIBS+="$$(PYTHON_PATH)\\libs\\python39.lib"
+win32:CONFIG(release, debug|release): LIBS+="$$PYTHON_PATH\\libs\\python39.lib"
 
 win32:CONFIG(debug, debug|release): LIBS+="$$OPENCV_451_PATH\\build2\\lib\\Debug\\opencv_core453d.lib"
 win32:CONFIG(debug, debug|release): LIBS+="$$OPENCV_451_PATH\\build2\\lib\\Debug\\opencv_ml453d.lib"
@@ -70,12 +72,16 @@ win32:CONFIG(debug, debug|release): LIBS+="$$OPENCV_451_PATH\\build2\\lib\\Debug
 win32:CONFIG(debug, debug|release): LIBS+="$$OPENCV_451_PATH\\build2\\lib\\Debug\\opencv_stitching453d.lib"
 win32:CONFIG(debug, debug|release): LIBS+="$$OPENCV_451_PATH\\build2\\lib\\Debug\\opencv_dnn453d.lib"
 win32:CONFIG(debug, debug|release): LIBS+="$$OPENCV_451_PATH\\build2\\lib\\Debug\\opencv_video453d.lib"
-win32:CONFIG(debug, debug|release): LIBS+="$$(PYTHON_PATH)\\libs\\python39_d.lib"
+win32:CONFIG(debug, debug|release): LIBS+="$$PYTHON_PATH\\libs\\python39_d.lib"
 
+INCLUDEPATH+="C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/ucrt/"
+INCLUDEPATH+="C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/"
+INCLUDEPATH+="C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/"
+INCLUDEPATH+="C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/VC/Tools/MSVC/14.16.27023/include"
+LIBS+=-L"C:\Program Files (x86)\Windows Kits\10\Lib\10.0.19041.0\um\x64"
+LIBS+=-L"C:\Program Files (x86)\Windows Kits\10\Lib\10.0.19041.0\ucrt\x64"
+LIBS+=-L"C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/VC/Tools/MSVC/14.16.27023/lib/x64/"
 
-
-INCLUDEPATH += "C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/ucrt"
-LIBS += -L"C:/Program Files (x86)/Windows Kits/10/Lib/10.0.22000.0/ucrt/x64"
 
 SOURCES += main.cpp \
            dialog.cpp  \

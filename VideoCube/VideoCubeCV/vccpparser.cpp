@@ -1,5 +1,6 @@
 ﻿#include <QMap>
 #include <QVariant>
+#include <QStringList>
 #include <QVector>
 #include "print.h"
 #include "vccpparser.h"

@@ -51,7 +51,7 @@ void Dialog::showEvent(QShowEvent *event)
 {
     event->accept();
     QImage image("../NicePng_vintage-paper-png_9772625.png");
-    ui.label->setPixmap(QPixmap::fromImage(image));
+    //ui.label->setPixmap(QPixmap::fromImage(image));
     sharedmem.Init();
     sharedmem.writeImage("../NicePng_vintage-paper-png_9772625.png", image.width(), image.height());
     VideoScreen* screen = new VideoScreen();

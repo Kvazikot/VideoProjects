@@ -69,10 +69,10 @@ int main(int argc, char *argv[])
     qInstallMessageHandler(customMessageOutput); // custom message handler for debugging
 
     QApplication application(argc, argv);
-    //Dialog dialog;
-    //dialog.show();
-    MainWindow wnd;
-    wnd.show();
+    Dialog dialog;
+    dialog.show();
+    //MainWindow wnd;
+    //wnd.show();
 
     prn("Test");
 
