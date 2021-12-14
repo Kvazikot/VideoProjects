@@ -11,7 +11,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{56413006-9CED-C1A2-5D18-6D2FBEF357D3}</ProjectGuid>
+    <ProjectGuid>{078185DE-C895-0E84-E0A2-2E982252384E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>UnityEditor.XR.LegacyInputHelpers</AssemblyName>
@@ -255,19 +255,19 @@
  <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.Editor">
- <HintPath>D:/projects/VideoProjects/VideoCube/Library/PackageCache/com.unity.analytics@3.3.5/Unity.Analytics.Editor.dll</HintPath>
+ <HintPath>D:/projects/VideoProjects/VideoCube/UnityCubeProject/Library/PackageCache/com.unity.analytics@3.3.5/Unity.Analytics.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.Tracker">
- <HintPath>D:/projects/VideoProjects/VideoCube/Library/PackageCache/com.unity.analytics@3.3.5/Unity.Analytics.Tracker.dll</HintPath>
+ <HintPath>D:/projects/VideoProjects/VideoCube/UnityCubeProject/Library/PackageCache/com.unity.analytics@3.3.5/Unity.Analytics.Tracker.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.StandardEvents">
- <HintPath>D:/projects/VideoProjects/VideoCube/Library/PackageCache/com.unity.analytics@3.3.5/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll</HintPath>
+ <HintPath>D:/projects/VideoProjects/VideoCube/UnityCubeProject/Library/PackageCache/com.unity.analytics@3.3.5/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Purchasing">
- <HintPath>D:/projects/VideoProjects/VideoCube/Library/PackageCache/com.unity.purchasing@2.0.6/Editor/UnityEditor.Purchasing.dll</HintPath>
+ <HintPath>D:/projects/VideoProjects/VideoCube/UnityCubeProject/Library/PackageCache/com.unity.purchasing@2.0.6/Editor/UnityEditor.Purchasing.dll</HintPath>
  </Reference>
  <Reference Include="nunit.framework">
- <HintPath>D:/projects/VideoProjects/VideoCube/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
+ <HintPath>D:/projects/VideoProjects/VideoCube/UnityCubeProject/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
  </Reference>
  <Reference Include="mscorlib">
  <HintPath>C:/Program Files/Unity/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
@@ -626,27 +626,27 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="UnityEngine.XR.LegacyInputHelpers.csproj">
-      <Project>{952E8C41-7D77-FAB7-E991-C276E286C2CF}</Project>
+      <Project>{C6964C77-9028-C796-4D9D-C5B084B4B833}</Project>
       <Name>UnityEngine.XR.LegacyInputHelpers</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEngine.SpatialTracking.csproj">
-      <Project>{796FBD6C-CCF6-9C4B-2B26-A4F1912B222C}</Project>
+      <Project>{66C985F4-3724-C657-705B-39C3413E1A51}</Project>
       <Name>UnityEngine.SpatialTracking</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEditor.UI.csproj">
-      <Project>{E7184177-E83C-473F-8F36-F80E3F4F748A}</Project>
+      <Project>{5936A285-AF2E-00EA-BB6E-EFE2488B4F2B}</Project>
       <Name>UnityEditor.UI</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEngine.UI.csproj">
-      <Project>{038D552B-BFAA-65DB-5977-FF50E757871A}</Project>
+      <Project>{DF4F8460-9B94-95BF-3C3D-ECD7C82A1996}</Project>
       <Name>UnityEngine.UI</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEditor.TestRunner.csproj">
-      <Project>{2F205C42-AB0E-AFBC-9A95-0C0B8B085912}</Project>
+      <Project>{6E7089F8-5CF5-CB06-FC89-9891C3E32F5D}</Project>
       <Name>UnityEditor.TestRunner</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEngine.TestRunner.csproj">
-      <Project>{BB82309A-70A0-23A7-D91E-D52FD11EC6DA}</Project>
+      <Project>{CC8FB9C9-067E-9503-46F5-82C24461FCC4}</Project>
       <Name>UnityEngine.TestRunner</Name>
     </ProjectReference>
   </ItemGroup>

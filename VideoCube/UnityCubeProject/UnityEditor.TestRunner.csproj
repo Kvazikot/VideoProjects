@@ -11,7 +11,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{2F205C42-AB0E-AFBC-9A95-0C0B8B085912}</ProjectGuid>
+    <ProjectGuid>{6E7089F8-5CF5-CB06-FC89-9891C3E32F5D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>UnityEditor.TestRunner</AssemblyName>
@@ -406,19 +406,19 @@
  <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
  </Reference>
  <Reference Include="nunit.framework">
- <HintPath>D:/projects/VideoProjects/VideoCube/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
+ <HintPath>D:/projects/VideoProjects/VideoCube/UnityCubeProject/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
  </Reference>
  <Reference Include="Mono.Cecil">
- <HintPath>D:/projects/VideoProjects/VideoCube/Library/PackageCache/nuget.mono-cecil@0.1.6-preview/Mono.Cecil.dll</HintPath>
+ <HintPath>D:/projects/VideoProjects/VideoCube/UnityCubeProject/Library/PackageCache/nuget.mono-cecil@0.1.6-preview/Mono.Cecil.dll</HintPath>
  </Reference>
  <Reference Include="Mono.Cecil.Pdb">
- <HintPath>D:/projects/VideoProjects/VideoCube/Library/PackageCache/nuget.mono-cecil@0.1.6-preview/Mono.Cecil.Pdb.dll</HintPath>
+ <HintPath>D:/projects/VideoProjects/VideoCube/UnityCubeProject/Library/PackageCache/nuget.mono-cecil@0.1.6-preview/Mono.Cecil.Pdb.dll</HintPath>
  </Reference>
  <Reference Include="Mono.Cecil.Mdb">
- <HintPath>D:/projects/VideoProjects/VideoCube/Library/PackageCache/nuget.mono-cecil@0.1.6-preview/Mono.Cecil.Mdb.dll</HintPath>
+ <HintPath>D:/projects/VideoProjects/VideoCube/UnityCubeProject/Library/PackageCache/nuget.mono-cecil@0.1.6-preview/Mono.Cecil.Mdb.dll</HintPath>
  </Reference>
  <Reference Include="Mono.Cecil.Rocks">
- <HintPath>D:/projects/VideoProjects/VideoCube/Library/PackageCache/nuget.mono-cecil@0.1.6-preview/Mono.Cecil.Rocks.dll</HintPath>
+ <HintPath>D:/projects/VideoProjects/VideoCube/UnityCubeProject/Library/PackageCache/nuget.mono-cecil@0.1.6-preview/Mono.Cecil.Rocks.dll</HintPath>
  </Reference>
  <Reference Include="mscorlib">
  <HintPath>C:/Program Files/Unity/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
@@ -777,7 +777,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="UnityEngine.TestRunner.csproj">
-      <Project>{BB82309A-70A0-23A7-D91E-D52FD11EC6DA}</Project>
+      <Project>{CC8FB9C9-067E-9503-46F5-82C24461FCC4}</Project>
       <Name>UnityEngine.TestRunner</Name>
     </ProjectReference>
   </ItemGroup>
