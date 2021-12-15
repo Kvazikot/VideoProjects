@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: WhiteBalance
   m_EditorClassIdentifier: 
   active: 1
+  m_AdvancedMode: 0
   temperature:
     m_OverrideState: 1
     m_Value: 1
@@ -52,6 +53,7 @@ MonoBehaviour:
   m_Name: Exposure
   m_EditorClassIdentifier: 
   active: 1
+  m_AdvancedMode: 0
   mode:
     m_OverrideState: 0
     m_Value: 4
@@ -208,6 +210,7 @@ MonoBehaviour:
   m_Name: Fog
   m_EditorClassIdentifier: 
   active: 1
+  m_AdvancedMode: 0
   quality:
     m_OverrideState: 0
     m_Value: 3
@@ -311,5 +314,8 @@ MonoBehaviour:
     min: 0
     max: 1
   directionalLightsOnly:
+    m_OverrideState: 0
+    m_Value: 0
+  filter:
     m_OverrideState: 0
     m_Value: 0
