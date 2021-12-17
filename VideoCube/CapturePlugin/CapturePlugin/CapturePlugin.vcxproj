@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{3145D3F8-BEB2-44D2-8985-6EFE240B7AFC}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>CapturePlugin</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um;D:\opencv\include;D:\opencv\modules\core\include;d:\opencv\build2\;d:\opencv\build2\modules;d:\opencv\modules\calib3d\include\;d:\opencv\modules\core\include;d:\opencv\modules\dnn\include;d:\opencv\modules\features2d\include;d:\opencv\modules\stitching\include;d:\opencv\modules\ml\include;d:\opencv\modules\photo\include;d:\opencv\modules\objdetect\include;d:\opencv\modules\gapi\include;d:\opencv\modules\video\include;d:\opencv\modules\videoio\include;d:\opencv\modules\imgproc\include;d:\opencv\modules\imgcodecs\include;d:\opencv\modules\highgui\include;d:\opencv\modules\flann\include</IncludePath>
+    <LibraryPath>D:\opencv\build2\lib\Debug;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um;D:\opencv\include;D:\opencv\modules\core\include;d:\opencv\build2\;d:\opencv\build2\modules;d:\opencv\modules\calib3d\include\;d:\opencv\modules\core\include;d:\opencv\modules\dnn\include;d:\opencv\modules\features2d\include;d:\opencv\modules\stitching\include;d:\opencv\modules\ml\include;d:\opencv\modules\photo\include;d:\opencv\modules\objdetect\include;d:\opencv\modules\gapi\include;d:\opencv\modules\video\include;d:\opencv\modules\videoio\include;d:\opencv\modules\imgproc\include;d:\opencv\modules\imgcodecs\include;d:\opencv\modules\highgui\include;d:\opencv\modules\flann\include</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um;D:\opencv\include;D:\opencv\modules\core\include;d:\opencv\build2\;d:\opencv\build2\modules;d:\opencv\modules\calib3d\include\;d:\opencv\modules\core\include;d:\opencv\modules\dnn\include;d:\opencv\modules\features2d\include;d:\opencv\modules\stitching\include;d:\opencv\modules\ml\include;d:\opencv\modules\photo\include;d:\opencv\modules\objdetect\include;d:\opencv\modules\gapi\include;d:\opencv\modules\video\include;d:\opencv\modules\videoio\include;d:\opencv\modules\imgproc\include;d:\opencv\modules\imgcodecs\include;d:\opencv\modules\highgui\include;d:\opencv\modules\flann\include</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;CAPTUREPLUGIN_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <AdditionalDependencies>d:\opencv\build2\lib\Debug\opencv_core453d.lib;d:\opencv\build2\lib\Debug\opencv_ml453d.lib;d:\opencv\build2\lib\Debug\opencv_flann453d.lib;d:\opencv\build2\lib\Debug\opencv_imgproc453d.lib;d:\opencv\build2\lib\Debug\opencv_photo453d.lib;d:\opencv\build2\lib\Debug\opencv_features2d453d.lib;d:\opencv\build2\lib\Debug\opencv_imgcodecs453d.lib;d:\opencv\build2\lib\Debug\opencv_ts453d.lib;d:\opencv\build2\lib\Debug\opencv_calib3d453d.lib;d:\opencv\build2\lib\Debug\opencv_objdetect453d.lib;d:\opencv\build2\lib\Debug\opencv_stitching453d.lib;d:\opencv\build2\lib\Debug\opencv_dnn453d.lib;d:\opencv\build2\lib\Debug\opencv_video453d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;CAPTUREPLUGIN_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;CAPTUREPLUGIN_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <AdditionalDependencies>d:\opencv\build2\lib\Release\opencv_core453.lib;d:\opencv\build2\lib\Release\opencv_ml453.lib;d:\opencv\build2\lib\Release\opencv_flann453.lib;d:\opencv\build2\lib\Release\opencv_imgproc453.lib;d:\opencv\build2\lib\Release\opencv_photo453.lib;d:\opencv\build2\lib\Release\opencv_features2d453.lib;d:\opencv\build2\lib\Release\opencv_imgcodecs453.lib;d:\opencv\build2\lib\Release\opencv_videoio453.lib;d:\opencv\build2\lib\Release\opencv_highgui453.lib;d:\opencv\build2\lib\Release\opencv_ts453.lib;d:\opencv\build2\lib\Release\opencv_calib3d453.lib;d:\opencv\build2\lib\Release\opencv_objdetect453.lib;d:\opencv\build2\lib\Release\opencv_stitching453.lib;d:\opencv\build2\lib\Release\opencv_dnn453.lib;d:\opencv\build2\lib\Release\opencv_video453.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;CAPTUREPLUGIN_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <AdditionalDependencies>d:\opencv\build2\lib\Release\opencv_core453.lib;d:\opencv\build2\lib\Release\opencv_ml453.lib;d:\opencv\build2\lib\Release\opencv_flann453.lib;d:\opencv\build2\lib\Release\opencv_imgproc453.lib;d:\opencv\build2\lib\Release\opencv_photo453.lib;d:\opencv\build2\lib\Release\opencv_features2d453.lib;d:\opencv\build2\lib\Release\opencv_imgcodecs453.lib;d:\opencv\build2\lib\Release\opencv_videoio453.lib;d:\opencv\build2\lib\Release\opencv_highgui453.lib;d:\opencv\build2\lib\Release\opencv_ts453.lib;d:\opencv\build2\lib\Release\opencv_calib3d453.lib;d:\opencv\build2\lib\Release\opencv_objdetect453.lib;d:\opencv\build2\lib\Release\opencv_stitching453.lib;d:\opencv\build2\lib\Release\opencv_dnn453.lib;d:\opencv\build2\lib\Release\opencv_video453.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="framework.h" />
+    <ClInclude Include="pch.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="pch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

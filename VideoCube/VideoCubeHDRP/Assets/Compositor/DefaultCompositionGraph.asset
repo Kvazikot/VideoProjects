@@ -31,3 +31,9 @@ MonoBehaviour:
     rangeLimits: {x: 0, y: 0}
     flags: 4
     canBeUsedAsRT: 1
+  - propertyName: Texture2D_ab4fe5c3d5184f7a98c7b6c6d8e13be4
+    propertyType: 4
+    value: {x: 0, y: 0, z: 0, w: 0}
+    rangeLimits: {x: 0, y: 0}
+    flags: 4
+    canBeUsedAsRT: 1
