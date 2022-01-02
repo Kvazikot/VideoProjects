@@ -1,4 +1,4 @@
-#ifndef MAINWINDOW_H
+﻿#ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
 #include <QMainWindow>
@@ -15,7 +15,7 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = nullptr);
     void showEvent(QShowEvent *event);
-    void hightlightKeywords(QString in_plain_text, QString& out_html_text, std::vector<std::string>& keywords);
+    void hightlightKeywords(QString in_plain_text, QString& out_html_text, std::vector<QString>& keywords);
     void getPlainTextWithoutTags(QString& plain_text);
     ~MainWindow();
 

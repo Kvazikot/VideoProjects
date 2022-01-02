@@ -84,6 +84,7 @@ LIBS+=-L"C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/VC/Tools/
 
 
 SOURCES += main.cpp \
+           ObfuscateNow.cpp \
            dialog.cpp  \
            keybertwrapper.cpp \
            mainwindow.cpp \
@@ -93,6 +94,7 @@ SOURCES += main.cpp \
            videoscreen.cpp
 
 HEADERS += dialog.h \
+    ObfuscateNow.h \
     keybertwrapper.h \
     mainwindow.h \
     print.h \

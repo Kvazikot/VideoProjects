@@ -97,7 +97,7 @@ KeyBERTWrapper::KeyBERTWrapper(QObject *parent)
 
 }
 
-void KeyBERTWrapper::getKeywords(std::vector<std::string>& keywords_vector)
+void KeyBERTWrapper::getKeywords(std::vector<QString>& keywords_vector)
 {
     for(auto i=keywordsMap.begin(); i != keywordsMap.end(); i++)
        keywords_vector.push_back((*i).first.c_str());

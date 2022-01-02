@@ -1,7 +1,8 @@
-#ifndef KEYBERTWRAPPER_H
+﻿#ifndef KEYBERTWRAPPER_H
 #define KEYBERTWRAPPER_H
 
 #include <QObject>
+#include <QString>
 #include <map>
 
 // 10 kb buffer
@@ -19,7 +20,7 @@ public:
     explicit KeyBERTWrapper(QObject *parent = nullptr);
     int extractKeywordsFromText(QString text);
     void print(const QString &input);
-    void getKeywords(std::vector<std::string>& keywords_vector);
+    void getKeywords(std::vector<QString>& keywords_vector);
 
 
 signals:

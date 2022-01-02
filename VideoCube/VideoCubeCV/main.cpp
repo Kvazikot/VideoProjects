@@ -21,6 +21,7 @@
 #include <QApplication>
 #include <QTextStream>
 #include "dialog.h"
+#include "print.h"
 #include "mainwindow.h"
 
 const QString logFilePath = "VideoCube.log";
@@ -44,6 +45,7 @@ void customMessageOutput(QtMsgType type, const QMessageLogContext &context, cons
         QTextStream ts(&outFile);
         ts << endl;
         ts << txt << endl;
+        print(txt);
         outFile.close();
     }
     if( logToStderr)
@@ -69,10 +71,10 @@ int main(int argc, char *argv[])
     qInstallMessageHandler(customMessageOutput); // custom message handler for debugging
 
     QApplication application(argc, argv);
-    Dialog dialog;
-    dialog.show();
-    //MainWindow wnd;
-    //wnd.show();
+    //Dialog dialog;
+    //dialog.show();
+    MainWindow wnd;
+    wnd.show();
 
     prn("Test");
 
