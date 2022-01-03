@@ -1,4 +1,4 @@
-/**********************************************************************
+﻿/**********************************************************************
  *  Project App6
  *
  *  print.cpp
@@ -92,7 +92,7 @@ void prn(const char* fmt,...)
     va_end(ap);
     
 	cns.prn(mu_printftmp);
-    qDebug(mu_printftmp);
+    //qDebug(mu_printftmp);
 }
 
 void log_status(const char* fmt,...)

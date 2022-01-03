@@ -35,7 +35,7 @@ void customMessageOutput(QtMsgType type, const QMessageLogContext &context, cons
     QTime time = QTime::currentTime();
     QString formattedTime = time.toString("hh:mm:ss.zzz");
     QByteArray formattedTimeMsg = formattedTime.toLocal8Bit();
-    QString logLevelName = msgLevelHash[type];
+    QString logLevelName = "";//msgLevelHash[type];
     QByteArray logLevelMsg = logLevelName.toLocal8Bit();
 
     if (logToFile) {

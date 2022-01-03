@@ -21,9 +21,15 @@
 #define PY_SSIZE_T_CLEAN
 #include "Python.h"
 #include <QDebug>
+#include <QFile>
+#include <QProcess>
+#include <QApplication>
 #include <string>
 #include <iostream>
+#include <sstream>
+#include "stdout_module.h"
 #include "print.h"
+#include "windows.h"
 
 #include "keybertwrapper.h"
 
@@ -52,23 +58,81 @@ static char code_template_py4[] = "from keybert import KeyBERT \n\
 doc = \"\"\" \n\
 %1 \n\
       \"\"\" \n\
-doc = 'Supervised learning is the machine learning task of learning a function that' \n\
 kw_model = KeyBERT() \n\
 list = kw_model.extract_keywords(doc) \n\
 print(list)\
 ";
 
+static PyObject* redirection_stdoutredirect(PyObject *self, PyObject *args)
+{
+    const char *string;
+    if(!PyArg_ParseTuple(args, "s", &string))
+        return NULL;
+    //pass string onto somewhere
+    Py_INCREF(Py_None);
+    return Py_None;
+}
 
-int ParsePyList(std::string code, std::map<std::string, double>& result_map)
+static PyMethodDef RedirectionMethods[] = {
+{"stdoutredirect", redirection_stdoutredirect, METH_VARARGS,
+        "stdout redirection helper"}, {NULL, NULL, 0, NULL} };
+
+int KeyBERTWrapper::ParsePyList(std::string code, std::map<std::string, double>& result_map)
 {
     PyObject *dict = NULL,
              *run_result = NULL,
              *pList = NULL;
 
     dict = PyDict_New();
+    executionError = 0;
     if (!dict)  return -1;
     run_result = PyRun_String(code.c_str(), Py_file_input, dict, dict);
-    if (!run_result)  return -1;
+    if (!run_result)
+    {
+        PyErr_Print();
+        executionError = 1;
+        return 1;
+
+        PyObject *sysmodule;
+        PyObject *pystdout;
+        PyObject *pystdoutdata;
+        char string1[10000];
+        char* string = &string1[0];
+        sysmodule = PyImport_ImportModule("sys");
+        pystdout = PyObject_GetAttrString(sysmodule, "stdout");
+        pystdoutdata = PyObject_GetAttrString(pystdout, "data");
+        if(pystdoutdata == NULL )
+        {
+            prn("no data!");
+            return -1;
+        }
+        //return -1;
+
+        //PyObject * obj = PyUnicode_AsEncodedString(pystdoutdata,"UTF8",NULL);
+        Py_ssize_t len = 0;
+        const char* str =  PyUnicode_AsUTF8AndSize(pystdoutdata, &len);
+        //prn(str);
+        //print(string);
+
+        //QString out(QProcess::readAllStandardOutput());
+        //print(out);
+        return -1;
+
+        std::streambuf * pbuf = buffer.rdbuf();
+        std::streamsize size = pbuf->pubseekoff(0,buffer.end);
+        pbuf->pubseekoff(0,buffer.beg);       // rewind
+        auto contents = new char [size];
+        pbuf->sgetn (contents,size);
+        prn(contents);
+        prn("size buffer %d", (int)size);
+
+        // When done redirect cout to its old self
+        std::cout.rdbuf(sbuf);
+
+        err_string = contents;
+
+        return -1;
+    }
     pList = PyDict_GetItemString(dict,"list");
     int n_keywords = PyList_Size(pList);
 
@@ -83,17 +147,55 @@ int ParsePyList(std::string code, std::map<std::string, double>& result_map)
         const char* first =  PyUnicode_AsUTF8AndSize(kw, &len);
         std::string key = first;
         result_map[key] = second;
-        qDebug() << key.c_str();
+
     }
+
+    // When done redirect cout to its old self
+    std::cout.rdbuf(sbuf);
 
     return 1;
 
 }
+static struct PyModuleDef cModPyDem =
+{
+    PyModuleDef_HEAD_INIT,
+    "redirection", /* name of module */
+    "",          /* module documentation, may be NULL */
+    -1,          /* size of per-interpreter state of the module, or -1 if the module keeps state in global variables. */
+    RedirectionMethods
+};
 
+static struct PyModuleDef moduledef = {
+     PyModuleDef_HEAD_INIT,
+     "redirection",     /* m_name */
+     "This is a module",  /* m_doc */
+     -1,                  /* m_size */
+     RedirectionMethods,    /* m_methods */
+     NULL,                /* m_reload */
+     NULL,                /* m_traverse */
+     NULL,                /* m_clear */
+     NULL,                /* m_free */
+ };
 
 KeyBERTWrapper::KeyBERTWrapper(QObject *parent)
     : QObject(parent)
 {
+    //in main...
+    //Py_Initialize();
+    PyInit_hello();
+    auto hellomodule = PyImport_ImportModule("hello");
+    prn("PyModule_Create= %d",PyModule_Create(&moduledef));
+    PyRun_SimpleString("hello.hello()\n\
+import sys\n\
+class StdoutCatcher:\n\
+    def write(self, stuff):\n\
+        redirection.stdoutredirect(stuff)\n\
+sys.stdout = StdoutCatcher()\n\
+print(\"STDOUT!!!!\")\n\
+");
+
+
+//    Py_Finalize();
 
 }
 
@@ -105,11 +207,18 @@ void KeyBERTWrapper::getKeywords(std::vector<QString>& keywords_vector)
 
 int KeyBERTWrapper::extractKeywordsFromText(QString text)
 {
+
+    // Save cout's buffer here
+    //sbuf = std::cerr.rdbuf();
+
+    // Redirect cout to our stringstream buffer or any other ostream
+    //std::cerr.rdbuf(buffer.rdbuf());
+
     script = (char*)malloc(MAX_SYMBOLS);
     PyObject *pName, *pModule, *pDict, *pClass, *pInstance;
 
     // Initialize the Python interpreter
-    Py_Initialize();
+    //Py_Initialize();
     // Calculating checksum of code
     auto data = QByteArray::fromRawData(reinterpret_cast<const char *>(code_template_py4), sizeof(code_template_py4));
     quint16 sum = 0;
@@ -122,18 +231,24 @@ int KeyBERTWrapper::extractKeywordsFromText(QString text)
     quint8 msb = sum >> 8;
     quint8 lsb = sum & 0xFF;
     qDebug("MSB = %02x, LSB = %02x", msb, lsb);
-    if(msb==0xba && lsb ==0xb8 && lsb > 2 && msb > 1)
+    //if(msb==0xba && lsb ==0xb8 && lsb > 2 && msb > 1)
     {
         if(text.size() < MAX_SYMBOLS)
         {
             QString code = QString(code_template_py4).arg(text);
+            code = "# -*- coding: UTF-8 -*-\n" + code;
+            //print("=====================");
+            //print(code);
+            //print("=====================");
 
             int result = ParsePyList(code.toStdString(), keywordsMap);
             if( result )
             {
-               qDebug() << "result of code execution!\n" ;
+               print("keywords list:");
+               print("======================================");
                for(auto i=keywordsMap.begin(); i != keywordsMap.end(); i++)
-                  qDebug() << (*i).first.c_str();
+                  print(QString((*i).first.c_str()) + "\t" +  QString::number((*i).second) + "\n");
+               print("======================================");
             }
         }
     }

@@ -90,6 +90,7 @@ SOURCES += main.cpp \
            mainwindow.cpp \
            print.cpp \
            shared.cpp \
+           stdout_module.cpp \
            vccpparser.cpp \
            videoscreen.cpp
 
@@ -99,6 +100,7 @@ HEADERS += dialog.h \
     mainwindow.h \
     print.h \
     shared.h \
+    stdout_module.h \
     timer.h \
     vccpparser.h \
     videoscreen.h
